@@ -1,0 +1,64 @@
+cmake_minimum_required(VERSION 2.6)
+project(tunnel-library)
+
+set( LIBTUNNEL_TARGET_NAME tunnel )
+
+include_directories( ..
+  ${BEAR_ENGINE_INCLUDE_DIRECTORY}
+  ${BEAR_GENERIC_ITEMS_INCLUDE_DIRECTORY}
+  )
+
+#-------------------------------------------------------------------------------
+set( LIBTUNNEL_SOURCE_FILES
+  code/player.cpp
+)
+
+add_library( ${LIBTUNNEL_TARGET_NAME} SHARED ${LIBTUNNEL_SOURCE_FILES} )
+
+set_target_properties(
+  ${LIBTUNNEL_TARGET_NAME}
+  PROPERTIES
+  INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${TUNNEL_INSTALL_CUSTOM_LIBRARY_DIR}"
+  )
+
+if( NOT WIN32 )
+  set_target_properties(
+    ${LIBTUNNEL_TARGET_NAME}
+    PROPERTIES
+    COMPILE_DEFINITIONS "TUNNEL_TEXT_DOMAIN_PATH=${CMAKE_INSTALL_PREFIX}/${TRANSLATIONS_INSTALL_DIR}"
+    )
+endif( NOT WIN32 )
+
+if( TUNNEL_CAN_RESTART_LEVEL )
+  set_target_properties(
+    ${LIBTUNNEL_TARGET_NAME}
+    PROPERTIES
+    COMPILE_DEFINITIONS "TUNNEL_CAN_RESTART_LEVEL=1"
+    )
+endif( TUNNEL_CAN_RESTART_LEVEL )
+
+install(
+  TARGETS ${LIBTUNNEL_TARGET_NAME}
+  DESTINATION ${TUNNEL_INSTALL_CUSTOM_LIBRARY_DIR}
+  )
+
+set(
+  LIBTUNNEL_LINK_LIBRARIES
+  bear_engine
+  bear_generic_items
+  bear_gui
+  ${CLAW_CONFIGURATION_FILE_LIBRARIES}
+  ${Boost_SIGNALS_LIBRARY}
+  )
+
+if(WIN32 OR APPLE)
+  set(
+    LIBTUNNEL_LINK_LIBRARIES
+    ${LIBTUNNEL_LINK_LIBRARIES}
+    intl )
+endif(WIN32 OR APPLE)
+
+target_link_libraries(
+  ${LIBTUNNEL_TARGET_NAME}
+  ${LIBTUNNEL_LINK_LIBRARIES}
+  )
