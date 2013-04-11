@@ -10,7 +10,43 @@ include_directories( ..
 
 #-------------------------------------------------------------------------------
 set( LIBTUNNEL_SOURCE_FILES
+  code/controller_config.cpp
+  code/controller_layout.cpp
+  code/gui_command.cpp
   code/player.cpp
+  code/player_action.cpp
+  code/player_pending_action.cpp
+  code/player_proxy.cpp
+
+  network/message/code/player_action_message.cpp
+
+  player_state/code/state_captive.cpp  
+  player_state/code/state_cling.cpp
+  player_state/code/state_clung_jump.cpp
+  player_state/code/state_crouch.cpp
+  player_state/code/state_dead.cpp
+  player_state/code/state_fall.cpp
+  player_state/code/state_float.cpp
+  player_state/code/state_hang.cpp
+  player_state/code/state_game_over.cpp
+  player_state/code/state_idle.cpp
+  player_state/code/state_jump.cpp
+  player_state/code/state_look_upward.cpp
+  player_state/code/state_paralyze.cpp
+  player_state/code/state_player.cpp
+  player_state/code/state_roar.cpp 
+  player_state/code/state_run.cpp
+  player_state/code/state_slap.cpp
+  player_state/code/state_start_cling.cpp
+  player_state/code/state_start_hang.cpp
+  player_state/code/state_start_jump.cpp
+  player_state/code/state_sink.cpp
+  player_state/code/state_swimming.cpp
+  player_state/code/state_vertical_jump.cpp
+  player_state/code/state_wait.cpp
+  player_state/code/state_walk.cpp
+
+  util/code/player_util.cpp
 )
 
 add_library( ${LIBTUNNEL_TARGET_NAME} SHARED ${LIBTUNNEL_SOURCE_FILES} )

@@ -8,11 +8,10 @@
  * \brief The class describing a player.
  * \author Sebastien Angibaud
  */
-#ifndef __PTB_PLAYER_HPP__
-#define __PTB_PLAYER_HPP__
+#ifndef __TUNNEL_PLAYER_HPP__
+#define __TUNNEL_PLAYER_HPP__
 
-#include "ptb/player_signals.hpp"
-#include "ptb/item_brick/item_with_single_player_action_reader.hpp"
+#include "tunnel/item_brick/item_with_single_player_action_reader.hpp"
 
 #include "engine/model.hpp"
 
@@ -21,7 +20,7 @@
 
 #include "engine/export.hpp"
 
-namespace ptb
+namespace tunnel
 {
   class state_player;
 
@@ -86,9 +85,6 @@ namespace ptb
     void pre_cache();
     void on_enters_layer();
 
-    bool is_valid() const;
-    bool set_u_integer_field( const std::string& name, unsigned int value );
-
     void save_position( const bear::universe::position_type& p );
     void save_current_position();
 
@@ -98,18 +94,12 @@ namespace ptb
     void stop_action( player_action::value_type a );
     void start_action_model(const std::string& action);
 
+    void set_offensive_phase( bool status );
     void set_authorized_action(player_action::value_type a, bool value);
     void authorize_action( const std::string& a );
     void authorize_all_actions();
     void disable_all_actions();
 
-    // The full namespace is used for the return type to ease the automatic
-    // generation of the player_proxy class
-    const ptb::gauge& get_oxygen_gauge() const;
-    const ptb::gauge& get_cold_gauge() const;
-    const ptb::gauge& get_heat_gauge() const;
-
-    ptb::player_signals& get_signals();
     double get_jump_time_ratio() const;
     void update_throw_time_ratio();
     void set_throw_down(bool value);
@@ -130,11 +120,7 @@ namespace ptb
     void set_want_clung_jump(bool status);
     bool want_clung_jump() const;
 
-    void receive_oxygen(double oxygen);
-
     bear::universe::position_type hot_spot() const;
-    unsigned int get_index() const;
-    void set_index( unsigned int index );
 
     void set_spot_minimum
     ( bear::universe::coordinate_type x, bear::universe::coordinate_type y );
@@ -148,7 +134,6 @@ namespace ptb
     void stop();
 
   public:
-    void apply_change_object();
     void apply_move_right();
     void apply_move_left();
     void apply_impulse_jump();
@@ -157,7 +142,7 @@ namespace ptb
     void apply_start_jump();
     void apply_vertical_jump();
     void apply_fall();
-    virtual void apply_idle();
+    void apply_idle();
     void apply_walk();
     void apply_run();
     void apply_slap();
@@ -187,22 +172,19 @@ namespace ptb
     void apply_float();
     void apply_swim_jump();
     void apply_dive();
-    void apply_sniff();
 
-    virtual void choose_wait_state();
-    virtual void choose_idle_state();
-    virtual void choose_walk_state();
-    virtual bear::universe::coordinate_type get_vertical_jump_force() const = 0;
-
+    void choose_wait_state();
+    void choose_idle_state();
+    void choose_walk_state();
+    bear::universe::coordinate_type get_vertical_jump_force() const;
+    
   private:
-    virtual void progress_in_water(bear::universe::time_type elapsed_time);
     void progress_in_water(bear::universe::time_type elapsed_time);
     void to_string( std::string& str ) const;
 
     void progress_walk( bear::universe::time_type elapsed_time );
     void progress_idle( bear::universe::time_type elapsed_time );
-    virtual void progress_continue_idle
-    ( bear::universe::time_type elapsed_time );
+    void progress_continue_idle( bear::universe::time_type elapsed_time );
     void progress_jump( bear::universe::time_type elapsed_time );
     void progress_fall( bear::universe::time_type elapsed_time );
     void progress_dead( bear::universe::time_type elapsed_time );
@@ -240,38 +222,27 @@ namespace ptb
     void do_stop_look_upward();
     void do_stop_crouch();
     void progress_spot( bear::universe::time_type elapsed_time );
-    void progress_gauges( bear::universe::time_type elapsed_time );
-    void progress_oxygen_gauge( bear::universe::time_type elapsed_time );
-    void progress_heat_gauge( bear::universe::time_type elapsed_time );
-    void progress_cold_gauge( bear::universe::time_type elapsed_time );
-
+    
     bool test_walk();
     bool test_bottom_contact();
     bool test_in_sky_or_swimm();
     void brake();
-    void create_bubble();
     void roar_shake();
     void shake(double force, bear::universe::time_type duration) const;
 
+    void render_halos
+    ( std::list<bear::engine::scene_visual>& visuals ) const;
     void render_jump_halo
     ( std::list<bear::engine::scene_visual>& visuals ) const;
+    void get_visuals_without_invincibility
+    ( std::list<bear::engine::scene_visual>& visuals ) const;
 
-    void progress_continue_idle(bear::universe::time_type elapsed_time);
     void take_new_hat();
     void start_take_hat();
     void take_out_hat();
+    bear::universe::coordinate_type get_move_force_in_walk() const;
 
     static void init_exported_methods();
-
-  private:
-    /** \brief Number of oxygen's units. */
-    static const double s_max_oxygen_gauge;
-
-    /** \brief Number of fire's units in gauge. */
-    static const double s_max_heat_gauge;
-
-    /** \brief Number of ice's units in gauge. */
-    static const double s_max_cold_gauge;
 
   protected:
     /** \brief Number of actions of the state named "wait". */
@@ -299,9 +270,6 @@ namespace ptb
     /** \brief The different states of Player. */
     std::vector<state_player*> m_states;
 
-    /** \brief The signals of the player. */
-    player_signals m_signals;
-
     /** \brief Indicates if each action is authorized. */
     std::vector<bool> m_authorized_action;
 
@@ -313,15 +281,6 @@ namespace ptb
 
     /** \brief Indicates the ratio of the length of preparation of the jump. */
     double m_jump_time_ratio;
-
-    /** \brief The gauge that manages the oxygen. */
-    gauge m_oxygen_gauge;
-
-    /** \brief The gauge that manages the cold. */
-    gauge m_cold_gauge;
-
-    /** \brief The gauge that manages the heat. */
-    gauge m_heat_gauge;
 
     /** \brief Indicates if Player look up. */
     bool m_status_look_upward;
@@ -363,16 +322,7 @@ namespace ptb
     bear::universe::time_type m_jump_time;
 
     /** \brief Indicates the time since player is invincible. */
-    bear::universe::time_type m_invincible_time;
-
-    /** \brief The id of invincible effect. */
-    std::size_t m_invincible_id_effect;
-
-    /** \brief Indicates if Player want to throw up. */
-    bool m_throw_up;
-
-    /** \brief Indicates if Player want to throw down. */
-    bool m_throw_down;
+    bool m_offensive_phase;
 
     /** \brief Indicates if Player is lazy. */
     bool m_lazy;
@@ -389,18 +339,12 @@ namespace ptb
     /** \brief The current force in y axis when Player jumps. */
     bear::universe::coordinate_type m_jump_force;
 
-    /** \brief The index of this player. */
-    unsigned int m_index;
-
     /** \brief The number of succesive iteration for which this player
         has a bottom contact. */
     unsigned int m_nb_bottom_contact;
 
     /** \brief The number of item that controls Player. */
     unsigned int m_controller_number;
-
-    /** \brief Indicates if Player want to change orientation in injure. */
-    bool m_injured_orientation;
 
     /** \brief Position of the hot spot, relative to the center of mass. */
     bear::universe::position_type m_hot_spot_position;
@@ -420,33 +364,8 @@ namespace ptb
     /** \brief Indicates if Plee has a hat. */
     bool m_has_hat;
 
-    /** \brief Number of oxygen's units loss in the water during one second. */
-    static const double s_oxygen_loss_speed;
-
-    /** \brief Number of oxygen's units won in the water during one second. */
-    static const double s_oxygen_inspiration_speed;
-
-    /** \brief Number of fire's units loss in the fire environment
-     * during one second. */
-    static const double s_fire_loss_speed;
-
-    /** \brief Number of fire's units won in the fire environment
-     * during one second. */
-    static const double s_fire_increase_speed;
-
-    /** \brief Number of ice's units loss in the ice environment
-     * during one second. */
-    static const double s_ice_loss_speed;
-
-    /** \brief Number of ice's units won in the ice environment
-     * during one second. */
-    static const double s_ice_increase_speed;
-
     /** \brief The maximum halo height. */
     static const bear::universe::size_type s_max_halo_height;
-
-    /** \brief The maximum halo hand width. */
-    static const bear::universe::size_type s_max_halo_hand_width;
 
     /** \brief  The time to crouch. */
     static const bear::universe::time_type s_time_to_crouch;
@@ -466,11 +385,9 @@ namespace ptb
     /** \brief The time over which Player cannot hang. */
     static const bear::universe::time_type s_max_time_to_hang;
 
-    /** \brief The time over which Player cannot float in air. */
-    static const bear::universe::time_type s_max_time_air_float;
-
     /** \brief How long do we allow to add a force when jumping */
     static const bear::universe::time_type s_max_time_continue_jump;
+
     /** \brief The right force of Plee in idle state. */
     static const bear::universe::coordinate_type s_move_force_in_idle;
 
@@ -514,6 +431,6 @@ namespace ptb
     /** \brief The density of Plee. */
     static const double s_density;
   }; // class player
-} // namespace ptb
+} // namespace tunnel
 
-#endif // __PTB_PLAYER_HPP__
+#endif // __TUNNEL_PLAYER_HPP__
