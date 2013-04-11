@@ -2,6 +2,7 @@ sprite_sheet "forest-2" 1024 x 1024 margin 1
 
 tree "tree/tree.xcf.bz2"
 ground "ground/ground-grass.xcf.bz2"
+wall "wall/base-block.xcf.bz2"
 
 "left branch" autosize * 0.5 with tree
   "left"
@@ -41,4 +42,9 @@ ground "ground/ground-grass.xcf.bz2"
 
 "leaves 6" "4" * 0.5 with ground
   "4"
+  ;
+
+"wall fill left" "left mask" * 0.5 with wall
+  "walls"
+  mask "left mask"
   ;
