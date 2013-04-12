@@ -1,8 +1,11 @@
-grass 1: 0 0 247 162
-wall fill left: 0 163 125 297
-grass 3: 248 0 247 150
-leaves 6: 496 0 359 94
-left branch: 126 163 244 123
-grass 2: 126 287 181 160
-grass 5: 371 163 327 75
-grass 4: 308 287 171 93
+wall fill middle: 0 0 330 372
+wall fill bottom: 331 0 375 133
+wall fill left: 0 373 132 311
+wall fill bottom left: 331 134 208 194
+grass 1: 540 134 247 162
+grass 3: 133 373 247 150
+leaves 6: 381 373 359 94
+left branch: 707 0 244 123
+grass 2: 788 134 181 160
+grass 5: 133 524 327 75
+grass 4: 741 373 171 93
