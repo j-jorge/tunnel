@@ -34,7 +34,7 @@
 </fields>
     </item><!-- bear::world_parameters -->
 
-    <item class_name='bear::camera_on_object' fixed='false' id='camera'>
+    <item class_name='tunnel::camera_on_player' fixed='false' id='camera'>
 <fields>
 <field name='base_item.position.bottom'>
 <real value='141'/>
@@ -72,11 +72,11 @@
 <field name='camera.valid_min.y'>
 <real value='100'/>
 </field>
-<field name='camera_on_object.items'>
-<item_reference value='player'/>
+<field name='messageable_item.name'>
+<string value='camera'/>
 </field>
 </fields>
-    </item><!-- bear::camera_on_object -->
+    </item><!-- tunnel::camera_on_player -->
 
     <item class_name='bear::decorative_item' fixed='true'>
 <fields>

@@ -150,6 +150,8 @@ tunnel::player::player( const player& p )
  */
 void tunnel::player::init()
 {
+  set_name( util::get_player_name(1) );
+
   set_z_fixed(false);
   set_weak_collisions(false);
   m_offensive_phase = false;

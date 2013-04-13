@@ -14,6 +14,7 @@
 #include "tunnel/item_brick/item_with_single_player_action_reader.hpp"
 
 #include "engine/model.hpp"
+#include "engine/messageable_item.hpp"
 
 #include <set>
 #include <list>
@@ -31,7 +32,8 @@ namespace tunnel
   class player :
     public item_with_single_player_action_reader
   < bear::engine::model
-    < bear::engine::base_item > >
+    < bear::engine::messageable_item
+      < bear::engine::base_item > > >
   {
     DECLARE_BASE_ITEM(player);
 
@@ -39,7 +41,8 @@ namespace tunnel
     /** \brief The type of the parent class. */
     typedef item_with_single_player_action_reader
     < bear::engine::model
-      < bear::engine::base_item > > super;
+      < bear::engine::messageable_item
+        < bear::engine::base_item > > > super;
 
     TEXT_INTERFACE_DECLARE_METHOD_LIST(super, init_exported_methods)
 

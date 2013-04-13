@@ -3,6 +3,7 @@
   <inherit>
     <class>bear::base_item</class>
     <class>bear::model</class>
+    <class>bear::messageable_item</class>
     <class>tunnel::item_with_single_player_action_reader</class>
   </inherit>
 </item>

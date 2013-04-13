@@ -11,6 +11,7 @@ include_directories( ..
 #-------------------------------------------------------------------------------
 set( LIBTUNNEL_SOURCE_FILES
   code/add_ingame_layers.cpp
+  code/camera_on_player.cpp
   code/controller_config.cpp
   code/controller_layout.cpp
   code/gui_command.cpp
