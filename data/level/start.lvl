@@ -314,7 +314,7 @@
 
   </layer><!-- decoration_layer -->
 
-  <layer class_name='decoration_layer' name='deco arri&#232;re' width='8000' height='6000' fit_level='1' tag='couche 1'>
+  <layer class_name='decoration_layer' name='background' width='8000' height='6000' fit_level='1' tag='group 1'>
 
 <items>
     <item class_name='bear::decorative_item' fixed='true'>
@@ -445,7 +445,7 @@
 
   </layer><!-- decoration_layer -->
 
-  <layer class_name='action_layer' name='action' width='8000' height='6000' fit_level='1' tag='couche 1'>
+  <layer class_name='action_layer' name='action' width='8000' height='6000' fit_level='1' tag='group 1'>
 
 <items>
     <item class_name='tunnel::add_ingame_layers' fixed='false'>
@@ -567,7 +567,7 @@
 
   </layer><!-- action_layer -->
 
-  <layer class_name='decoration_layer' name='deco avant' width='8000' height='6000' fit_level='1' tag='couche 1'>
+  <layer class_name='decoration_layer' name='foreground' width='8000' height='6000' fit_level='1' tag='group 1'>
 
 <items>
     <item class_name='bear::decorative_item' fixed='true'>
@@ -677,7 +677,7 @@
 
   </layer><!-- decoration_layer -->
 
-  <layer class_name='decoration_layer' name='deco arri&#232;re' width='8000' height='6000' fit_level='1' tag='couche 2'>
+  <layer class_name='decoration_layer' name='background' width='8000' height='6000' fit_level='1' tag='group 2'>
 
 <items>
     <item class_name='bear::decorative_item' fixed='true'>
@@ -780,7 +780,7 @@
 
   </layer><!-- decoration_layer -->
 
-  <layer class_name='action_layer' name='action' width='8000' height='6000' fit_level='1' tag='couche 2'>
+  <layer class_name='action_layer' name='action' width='8000' height='6000' fit_level='1' tag='group 2'>
 
 <items>
     <item class_name='tunnel::add_ingame_layers' fixed='false'>
@@ -844,7 +844,7 @@
 
   </layer><!-- action_layer -->
 
-  <layer class_name='decoration_layer' name='deco avant' width='8000' height='6000' fit_level='1' tag='couche 2'>
+  <layer class_name='decoration_layer' name='foreground' width='8000' height='6000' fit_level='1' tag='group 2'>
 
 <items>
     <item class_name='bear::decorative_item' fixed='true'>
