@@ -43,6 +43,7 @@ void tunnel::state_slap::start()
  */
 void tunnel::state_slap::stop()
 {
+  m_player_instance.set_offensive_phase(false);
 } // state_slap::stop()
 
 /*----------------------------------------------------------------------------*/
