@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.6)
 project(rp-launcher)
 
-set( TUNNEL_LAUNCHER_TARGET_NAME tunnel )
-set( TUNNEL_DEMO_LAUNCHER_TARGET_NAME tunnel-demo )
+set( TUNNEL_LAUNCHER_TARGET_NAME tunnel-launcher )
+set( TUNNEL_DEMO_LAUNCHER_TARGET_NAME tunnel-demo-launcher )
 
 include_directories( . ${BEAR_ENGINE_INCLUDE_DIRECTORY} )
 

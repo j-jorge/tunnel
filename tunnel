@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RUNNING_BEAR=./bin/tunnel
+RUNNING_BEAR=./bin/tunnel-launcher
 
 MODE="$1"
 ARGS="--log-level=verbose --log-file=log.txt"

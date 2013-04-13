@@ -8,13 +8,13 @@
  * \brief The main class of the application.
  * \author Julien Jorge
  */
-#ifndef __BEAR_LAUNCHER_HPP__
-#define __BEAR_LAUNCHER_HPP__
+#ifndef __TUNNEL_LAUNCHER_HPP__
+#define __TUNNEL_LAUNCHER_HPP__
 
 #include <claw/application.hpp>
 #include "engine/game.hpp"
 
-namespace rp
+namespace tunnel
 {
   /**
    * \brief The main class of the application.
@@ -43,6 +43,6 @@ namespace rp
     bear::engine::game* m_game;
 
   }; // class launcher
-} // namespace bear
+} // namespace tunnel
 
-#endif // __BEAR_LAUNCHER_HPP__
+#endif // __TUNNEL_LAUNCHER_HPP__
