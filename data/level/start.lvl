@@ -336,6 +336,23 @@
 </fields>
     </item><!-- bear::decorative_item -->
 
+    <item class_name='tunnel::clingable' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='480'/>
+</field>
+<field name='base_item.position.left'>
+<real value='601'/>
+</field>
+<field name='base_item.size.height'>
+<real value='206'/>
+</field>
+<field name='base_item.size.width'>
+<real value='65'/>
+</field>
+</fields>
+    </item><!-- tunnel::clingable -->
+
     <item class_name='bear::block' fixed='true'>
 <fields>
 <field name='item_with_friction.top_friction'>
