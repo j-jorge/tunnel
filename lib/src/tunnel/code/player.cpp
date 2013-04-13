@@ -117,11 +117,11 @@ tunnel::player::player()
     m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
     m_hot_spot_balance_move(0, 0)
 {
-  init();
-
   set_mass(s_mass);
   set_density(s_density);
   set_size( 50, 110 );
+
+  init();
 } // player::player()
 
 /*----------------------------------------------------------------------------*/
