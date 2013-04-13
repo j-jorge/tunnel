@@ -263,6 +263,10 @@ void tunnel::player::progress( bear::universe::time_type elapsed_time )
 void
 tunnel::player::get_visual( std::list<bear::engine::scene_visual>& visuals ) const
 {
+  super::get_visual(visuals);
+
+  render_halos(visuals);
+
   std::list< std::list<bear::engine::scene_visual> >::const_iterator it;
 
   for ( it = m_last_visuals.begin(); it != m_last_visuals.end(); ++it )
