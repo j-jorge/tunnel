@@ -5,7 +5,7 @@
 */
 /**
  * \file
- * \brief Implementation of the rp::launcher class.
+ * \brief Implementation of the tunnel::launcher class.
  * \author Julien Jorge
  */
 #include "launcher.hpp"
@@ -27,7 +27,7 @@
  * \param argc Number of program arguments.
  * \param argv Program arguments.
  */
-rp::launcher::launcher( int& argc, char** &argv )
+tunnel::launcher::launcher( int& argc, char** &argv )
   : claw::application(argc, argv), m_game(NULL)
 {
 #ifdef BEAR_TEXT_DOMAIN_PATH
@@ -45,13 +45,13 @@ rp::launcher::launcher( int& argc, char** &argv )
     help();
   else
     create_game( argc, argv );
-} // running_rp::launcher()
+} // running_tunnel::launcher()
 
 /*----------------------------------------------------------------------------*/
 /**
  * \brief Destructor.
  */
-rp::launcher::~launcher()
+tunnel::launcher::~launcher()
 {
   delete m_game;
 } // running_bear::~running_bear()
@@ -60,7 +60,7 @@ rp::launcher::~launcher()
 /**
  * \brief Run the application.
  */
-int rp::launcher::run()
+int tunnel::launcher::run()
 {
   std::string text_domain_dir;
 
@@ -118,11 +118,11 @@ int rp::launcher::run()
  * \param argc Number of program arguments.
  * \param argv Program arguments.
  */
-void rp::launcher::create_game( int& argc, char** &argv )
+void tunnel::launcher::create_game( int& argc, char** &argv )
 {
   const std::string data_path_argument( get_data_path_argument() );
   const std::string generic_item_argument( get_generic_items_argument() );
-  const std::string rp_argument( get_rp_argument() );
+  const std::string tunnel_argument( get_tunnel_argument() );
 
   const char* default_args[] =
     {
@@ -150,7 +150,7 @@ void rp::launcher::create_game( int& argc, char** &argv )
       "--auto-load-symbols",
 #else
       generic_item_argument.c_str(),
-      rp_argument.c_str(),
+      tunnel_argument.c_str(),
 #endif
 
       "--stats-destination=http://www.stuff-o-matic.com/asgp/stats/save.php",
@@ -190,7 +190,7 @@ void rp::launcher::create_game( int& argc, char** &argv )
 /**
  * \brief Print some help about the usage of the program.
  */
-void rp::launcher::help() const
+void tunnel::launcher::help() const
 {
   m_arguments.help( bear_gettext("engine_options") );
   std::cout << '\n';
@@ -201,7 +201,7 @@ void rp::launcher::help() const
 /**
  * \brief Returns the path of the program.
  */
-std::string rp::launcher::get_application_path() const
+std::string tunnel::launcher::get_application_path() const
 {
   const std::string p( m_arguments.get_program_name() );
   std::string::size_type pos;
@@ -222,7 +222,7 @@ std::string rp::launcher::get_application_path() const
 /**
  * \brief Returns the argument that gives the path of the data directory.
  */
-std::string rp::launcher::get_data_path_argument() const
+std::string tunnel::launcher::get_data_path_argument() const
 {
   std::string a( "--data-path=" );
 
@@ -241,7 +241,7 @@ std::string rp::launcher::get_data_path_argument() const
 /**
  * \brief Returns the argument that gives the path of the generic items library.
  */
-std::string rp::launcher::get_generic_items_argument() const
+std::string tunnel::launcher::get_generic_items_argument() const
 {
   std::string a( "--item-library=" );
 
@@ -258,7 +258,7 @@ std::string rp::launcher::get_generic_items_argument() const
 /**
  * \brief Returns the argument that gives the path of the game's library.
  */
-std::string rp::launcher::get_rp_argument() const
+std::string tunnel::launcher::get_tunnel_argument() const
 {
   std::string a( "--item-library=" );
 
@@ -269,4 +269,4 @@ std::string rp::launcher::get_rp_argument() const
 #else
   return a + STRINGIZE(TUNNEL_LIBRARY_PATH);
 #endif
-} // launcher::get_rp_argument()
+} // launcher::get_tunnel_argument()

@@ -14,4 +14,4 @@
 #include <SDL/SDL.h> // needed on OSX because there SDL needs to hijack 'main'
 #endif
 
-CLAW_APPLICATION_IMPLEMENT(rp::launcher)
+CLAW_APPLICATION_IMPLEMENT(tunnel::launcher)

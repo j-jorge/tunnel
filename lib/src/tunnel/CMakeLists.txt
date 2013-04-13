@@ -10,6 +10,7 @@ include_directories( ..
 
 #-------------------------------------------------------------------------------
 set( LIBTUNNEL_SOURCE_FILES
+  code/add_ingame_layers.cpp
   code/controller_config.cpp
   code/controller_layout.cpp
   code/gui_command.cpp
@@ -17,6 +18,10 @@ set( LIBTUNNEL_SOURCE_FILES
   code/player_action.cpp
   code/player_pending_action.cpp
   code/player_proxy.cpp
+
+  layer/code/misc_layer.cpp
+
+  message/code/get_player_instance.cpp
 
   network/message/code/player_action_message.cpp
 

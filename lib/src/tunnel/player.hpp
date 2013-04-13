@@ -33,6 +33,8 @@ namespace tunnel
   < bear::engine::model
     < bear::engine::base_item > >
   {
+    DECLARE_BASE_ITEM(player);
+
   public:
     /** \brief The type of the parent class. */
     typedef item_with_single_player_action_reader
