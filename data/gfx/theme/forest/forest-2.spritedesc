@@ -45,21 +45,31 @@ wall "wall/base-block.xcf.bz2"
   ;
 
 "wall fill left" "left mask" * 0.5 with wall
-  "walls"
+  "common"
+  "center"
   mask "left mask"
   ;
 
 "wall fill bottom left" "bottom left mask" * 0.5 with wall
-  "walls"
+  "common"
+  "center"
   mask "bottom left mask"
   ;
 
 "wall fill bottom" "bottom mask" * 0.5 with wall
-  "walls"
+  "common"
+  "center"
   mask "bottom mask"
   ;
 
 "wall fill middle" "middle mask" * 0.5 with wall
-  "walls"
+  "common"
+  "center"
+  mask "middle mask"
+  ;
+
+"wall fill middle 2" "middle mask" * 0.5 with wall
+  "common"
+  "center 2"
   mask "middle mask"
   ;
