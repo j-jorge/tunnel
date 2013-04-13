@@ -18,6 +18,8 @@ set( LIBTUNNEL_SOURCE_FILES
   code/player_pending_action.cpp
   code/player_proxy.cpp
 
+  message/code/get_player_instance.cpp
+
   network/message/code/player_action_message.cpp
 
   player_state/code/state_captive.cpp  
