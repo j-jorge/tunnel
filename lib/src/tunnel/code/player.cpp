@@ -1970,12 +1970,12 @@ bool tunnel::player::is_in_floating() const
  */
 void tunnel::player::update_orientation()
 {
-  if ( get_current_action_name()!= "captive" )
+  if ( get_current_action_name() != "captive" )
     {
       if ( get_speed().x < 0 )
-        get_rendering_attributes().mirror(false);
-      else if ( get_speed().x > 0 )
         get_rendering_attributes().mirror(true);
+      else if ( get_speed().x > 0 )
+        get_rendering_attributes().mirror(false);
     }
 } // player::update_orientation()
 
