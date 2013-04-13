@@ -38,14 +38,13 @@ namespace tunnel
 
   private:
     void default_controls_for_player_1();
-    void default_controls_for_player_2();
 
   private:
     /** \brief The base name of the controller files. */
     const std::string m_base_layout_file_name;
 
     /** \brief The controller layout for the players. */
-    static controller_layout s_controller_layout[2];
+    static controller_layout s_controller_layout[1];
 
   }; // class controller_config
 } // namespace tunnel

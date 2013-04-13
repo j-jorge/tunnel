@@ -18,7 +18,7 @@
 #include <fstream>
 
 /*----------------------------------------------------------------------------*/
-tunnel::controller_layout tunnel::controller_config::s_controller_layout[2];
+tunnel::controller_layout tunnel::controller_config::s_controller_layout[1];
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -29,8 +29,6 @@ tunnel::controller_config::controller_config()
 {
   if ( s_controller_layout[0].empty() )
     default_controls_for_player_1();
-  if ( s_controller_layout[1].empty() )
-    default_controls_for_player_2();
 } // controller_config::controller_config
 
 /*----------------------------------------------------------------------------*/
@@ -40,7 +38,6 @@ tunnel::controller_config::controller_config()
 void tunnel::controller_config::load()
 {
   load_controller_layout(1);
-  load_controller_layout(2);
 } // controller_config::save()
 
 /*----------------------------------------------------------------------------*/
@@ -50,7 +47,6 @@ void tunnel::controller_config::load()
 void tunnel::controller_config::save() const
 {
   save_controller_layout(1);
-  save_controller_layout(2);
 } // controller_config::save()
 
 /*----------------------------------------------------------------------------*/
@@ -178,24 +174,3 @@ void tunnel::controller_config::default_controls_for_player_1()
     (bear::input::keyboard::kc_pause, gui_command::pause);
 } // controller_config::default_controls_for_player_1()
 
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Define the default controls for the second player.
- */
-void tunnel::controller_config::default_controls_for_player_2()
-{
-  s_controller_layout[1].set_action_joystick
-    (0, bear::input::joystick::jc_axis_left, player_action::move_left);
-  s_controller_layout[1].set_action_joystick
-    (0, bear::input::joystick::jc_axis_right, player_action::move_right);
-  s_controller_layout[1].set_action_joystick
-    (0, bear::input::joystick::jc_axis_up,  player_action::look_upward);
-  s_controller_layout[1].set_action_joystick
-    (0, bear::input::joystick::jc_axis_down, player_action::crouch);
-  s_controller_layout[1].set_action_joystick
-    (0, bear::input::joystick::jc_button_1, player_action::slap);
-  s_controller_layout[1].set_action_joystick
-    (0, bear::input::joystick::jc_button_4, player_action::jump);
-  s_controller_layout[1].set_command_joystick
-    (0, bear::input::joystick::jc_button_7, gui_command::pause);
-} // controller_config::default_controls_for_player_2()
