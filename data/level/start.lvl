@@ -3,6 +3,17 @@
   <layer class_name='action_layer' name='' width='8000' height='6000' fit_level='1' tag=''>
 
 <items>
+    <item class_name='tunnel::add_ingame_layers' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='125'/>
+</field>
+<field name='base_item.position.left'>
+<real value='141'/>
+</field>
+</fields>
+    </item><!-- tunnel::add_ingame_layers -->
+
     <item class_name='bear::camera_on_object' fixed='false' id='camera'>
 <fields>
 <field name='base_item.position.bottom'>

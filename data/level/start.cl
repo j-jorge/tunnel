@@ -5,7 +5,7 @@
 8000
 6000
 
-16
+17
 1
 70
 action_layer
@@ -512,4 +512,13 @@ gfx/theme/forest/forest-2.png
 1
 1
 0
+32
+tunnel::add_ingame_layers
+0
+42
+base_item.position.bottom
+125
+42
+base_item.position.left
+141
 0
