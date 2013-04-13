@@ -99,6 +99,8 @@ const bear::universe::coordinate_type tunnel::player::s_speed_to_run = 580;
 const double tunnel::player::s_mass = 100;
 const double tunnel::player::s_density = 1.5;
 
+BASE_ITEM_EXPORT( player, tunnel )
+
 /*----------------------------------------------------------------------------*/
 /**
  * \brief Constructor.
@@ -278,7 +280,7 @@ void tunnel::player::pre_cache()
   super::pre_cache();
 
   // player
-  get_level_globals().load_model("model/plee/player.cm");
+  get_level_globals().load_model("model/player/plee.cm");
   
   // halo for soul
   get_level_globals().load_image("gfx/plee/misc.png");
@@ -288,36 +290,9 @@ void tunnel::player::pre_cache()
 
   // halo for vertical jump
   get_level_globals().load_animation("animation/plee/halo.canim");
-  get_level_globals().load_animation("animation/plee/halo_hand.canim");
-
-  // small honeypot
-  get_level_globals().load_animation("animation/powerup/small_fire.canim");
-  get_level_globals().load_animation("animation/powerup/small_air.canim");
-  get_level_globals().load_animation("animation/powerup/small_water.canim");
-
-  // stones
-  get_level_globals().load_model("model/stones/stone.cm");
-  get_level_globals().load_model("model/stones/air_stone.cm");
-  get_level_globals().load_model("model/stones/water_stone.cm");
-  get_level_globals().load_model("model/stones/fire_stone.cm");
-  get_level_globals().load_model("model/stones/air_fire_stone.cm");
-  get_level_globals().load_model("model/stones/air_water_stone.cm");
-  get_level_globals().load_model("model/stones/water_fire_stone.cm");
-  get_level_globals().load_model("model/stones/air_fire_water_stone.cm");
-  get_level_globals().load_animation("animation/stones/sliver_1.canim");
-  get_level_globals().load_animation("animation/stones/sliver_2.canim");
-  get_level_globals().load_animation("animation/stones/sliver_3.canim");
-  get_level_globals().load_animation("animation/stones/sliver_4.canim");
-  get_level_globals().load_animation("animation/stones/sliver_5.canim");
-  get_level_globals().load_animation("animation/steam.canim");
-
-  // musics
-  get_level_globals().load_sound("music/1-up.ogg");
-  get_level_globals().load_sound("music/game-over.ogg");
-  get_level_globals().load_sound("music/invincibility.ogg");
 
   // sounds
-  get_level_globals().load_sound("sound/grr.wav");
+  get_level_globals().load_sound("sound/plee/grr.wav");
   get_level_globals().load_sound("sound/plee/snore.ogg");
 } // player::pre_cache()
 
@@ -347,7 +322,7 @@ void tunnel::player::on_enters_layer()
 
   get_level().add_interest_around(this);
 
-  set_model_actor( get_level_globals().get_model("model/plee/player.cm") );
+  set_model_actor( get_level_globals().get_model("model/player/plee.cm") );
   start_action_model("idle");
 
   m_wait_state_number = 3;
