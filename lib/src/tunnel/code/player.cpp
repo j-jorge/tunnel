@@ -1289,6 +1289,16 @@ void tunnel::player::choose_walk_state()
 
 /*---------------------------------------------------------------------------*/
 /**
+ * \brief Get the force of vertical jump.
+ */
+bear::universe::coordinate_type
+tunnel::player::get_vertical_jump_force() const
+{
+  return s_vertical_jump_force;
+} // player::get_vertical_jump_force()
+
+/*---------------------------------------------------------------------------*/
+/**
  * \brief Progress in the water.
  * \param elapsed_time Elapsed time since the last call.
  */
