@@ -15,11 +15,15 @@ set( LIBTUNNEL_SOURCE_FILES
   code/clingable.cpp
   code/controller_config.cpp
   code/controller_layout.cpp
+  code/game_variables.cpp
   code/gui_command.cpp
+  code/layer_border.cpp
   code/player.cpp
   code/player_action.cpp
+  code/player_killer.cpp
   code/player_pending_action.cpp
   code/player_proxy.cpp
+  code/player_stop_block.cpp
 
   layer/code/misc_layer.cpp
 

@@ -52,13 +52,13 @@ namespace tunnel
     static unsigned int get_persistent_lives_count();
     static void set_persistent_lives_count( unsigned int c );
 
-    static std::string get_score_variable_name(unsigned int p );
-    static unsigned int get_score( unsigned int p );
-    static unsigned int get_persistent_score( unsigned int p );
-    static void set_score( unsigned int p, unsigned int c );
-    static void set_persistent_score( unsigned int p, unsigned int c );
-    static void add_score( unsigned int p, unsigned int c );
-    static void sub_score( unsigned int p, unsigned int c );
+    static std::string get_score_variable_name();
+    static unsigned int get_score();
+    static unsigned int get_persistent_score();
+    static void set_score( unsigned int c );
+    static void set_persistent_score( unsigned int c );
+    static void add_score( unsigned int c );
+    static void sub_score( unsigned int c );
 
     static std::string get_string_default( const std::string& n );
 

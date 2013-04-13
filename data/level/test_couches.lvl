@@ -109,10 +109,10 @@
     <item class_name='tunnel::add_ingame_layers' fixed='false'>
 <fields>
 <field name='base_item.position.bottom'>
-<real value='125'/>
+<real value='216'/>
 </field>
 <field name='base_item.position.left'>
-<real value='141'/>
+<real value='48'/>
 </field>
 </fields>
     </item><!-- tunnel::add_ingame_layers -->
@@ -136,6 +136,17 @@
 </field>
 </fields>
     </item><!-- bear::world_parameters -->
+
+    <item class_name='tunnel::layer_border' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='130'/>
+</field>
+<field name='base_item.position.left'>
+<real value='144'/>
+</field>
+</fields>
+    </item><!-- tunnel::layer_border -->
 
     <item class_name='tunnel::camera_on_player' fixed='false' id='camera'>
 <fields>
@@ -441,6 +452,37 @@
   <layer class_name='action_layer' name='action' width='8000' height='6000' fit_level='1' tag='couche 2'>
 
 <items>
+    <item class_name='bear::world_parameters' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='65'/>
+</field>
+<field name='base_item.position.left'>
+<real value='256'/>
+</field>
+<field name='world_parameters.default_density'>
+<real value='0.001'/>
+</field>
+<field name='world_parameters.gravity.y'>
+<real value='-60'/>
+</field>
+<field name='world_parameters.unit'>
+<real value='50'/>
+</field>
+</fields>
+    </item><!-- bear::world_parameters -->
+
+    <item class_name='tunnel::layer_border' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='131'/>
+</field>
+<field name='base_item.position.left'>
+<real value='256'/>
+</field>
+</fields>
+    </item><!-- tunnel::layer_border -->
+
     <item class_name='tunnel::add_ingame_layers' fixed='false'>
 <fields>
 <field name='base_item.position.bottom'>
