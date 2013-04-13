@@ -334,6 +334,7 @@ void tunnel::player::on_enters_layer()
   m_wait_state_number = 3;
   m_has_main_hat = true;
   m_has_hat = true;
+  save_position(get_center_of_mass());
 } // player::on_enters_layer()
 
 /*----------------------------------------------------------------------------*/
@@ -1002,22 +1003,8 @@ void tunnel::player::apply_look_upward()
  */
 void tunnel::player::apply_die()
 {
-  if ( game_variables::get_lives_count() > 0 )
-    {
-      if ( game_variables::get_lives_count() > 0 )
-        game_variables::set_lives_count( game_variables::get_lives_count() - 1);
-      
-      set_state(dead_state);
-      m_progress = &player::progress_dead;
-    }
-  else
-    {
-      if ( get_current_action_name() != "game_over" )
-        {
-          start_action_model("game_over");
-          apply_game_over();
-        }
-    }
+  set_state(dead_state);
+  m_progress = &player::progress_dead;
 } // player::apply_die()
 
 /*----------------------------------------------------------------------------*/
