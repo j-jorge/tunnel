@@ -150,8 +150,11 @@ endif()
 
 #-------------------------------------------------------------------------------
 subdirs(
+  launcher
   lib
   data
+  #release
+  #desktop
   )
 
 install(
