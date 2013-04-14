@@ -1063,8 +1063,6 @@ void tunnel::player::apply_end_teleport()
   update_layer_visibility();
   update_layer_activity();
 
-  start_action_model("idle");
-  
   bear::engine::level::layer_iterator it = get_level().layer_begin();
   
   for ( it = get_level().layer_begin(); it != get_level().layer_end(); ++it )

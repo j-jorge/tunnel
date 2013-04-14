@@ -871,10 +871,10 @@ tunnel::camera_on_player
 0
 42
 base_item.position.bottom
-641
+304
 42
 base_item.position.left
-463
+894
 42
 base_item.size.height
 720
