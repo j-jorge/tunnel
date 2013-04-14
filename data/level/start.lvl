@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <level name='' width='8000' height='6000' music=''>
-  <layer class_name='decoration_layer' name='far' width='1689' height='950' fit_level='0' tag='common'>
+  <layer class_name='decoration_layer' name='far' width='1689' height='950' fit_level='0' tag=''>
 
 <items>
     <item class_name='bear::decorative_item' fixed='true'>
@@ -157,7 +157,7 @@
 
   </layer><!-- decoration_layer -->
 
-  <layer class_name='decoration_layer' name='near' width='2560' height='1440' fit_level='0' tag='common'>
+  <layer class_name='decoration_layer' name='near' width='2560' height='1440' fit_level='0' tag=''>
 
 <items>
     <item class_name='bear::decorative_item' fixed='false'>
@@ -420,24 +420,13 @@
   <layer class_name='action_layer' name='action' width='8000' height='6000' fit_level='1' tag='group 2'>
 
 <items>
-    <item class_name='tunnel::add_ingame_layers' fixed='false'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='125'/>
-</field>
-<field name='base_item.position.left'>
-<real value='841'/>
-</field>
-</fields>
-    </item><!-- tunnel::add_ingame_layers -->
-
     <item class_name='bear::world_parameters' fixed='false'>
 <fields>
 <field name='base_item.position.bottom'>
-<real value='65'/>
+<real value='87'/>
 </field>
 <field name='base_item.position.left'>
-<real value='842'/>
+<real value='566'/>
 </field>
 <field name='world_parameters.default_density'>
 <real value='0.001'/>
@@ -450,6 +439,28 @@
 </field>
 </fields>
     </item><!-- bear::world_parameters -->
+
+    <item class_name='tunnel::layer_border' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='152'/>
+</field>
+<field name='base_item.position.left'>
+<real value='568'/>
+</field>
+</fields>
+    </item><!-- tunnel::layer_border -->
+
+    <item class_name='tunnel::add_ingame_layers' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='125'/>
+</field>
+<field name='base_item.position.left'>
+<real value='841'/>
+</field>
+</fields>
+    </item><!-- tunnel::add_ingame_layers -->
 
     <item class_name='bear::block' fixed='true'>
 <fields>
@@ -799,6 +810,48 @@
 </field>
 </fields>
     </item><!-- tunnel::camera_on_player -->
+
+    <item class_name='tunnel::add_ingame_layers' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='238'/>
+</field>
+<field name='base_item.position.left'>
+<real value='416'/>
+</field>
+</fields>
+    </item><!-- tunnel::add_ingame_layers -->
+
+    <item class_name='bear::world_parameters' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='87'/>
+</field>
+<field name='base_item.position.left'>
+<real value='510'/>
+</field>
+<field name='world_parameters.default_density'>
+<real value='0.001'/>
+</field>
+<field name='world_parameters.gravity.y'>
+<real value='-60'/>
+</field>
+<field name='world_parameters.unit'>
+<real value='50'/>
+</field>
+</fields>
+    </item><!-- bear::world_parameters -->
+
+    <item class_name='tunnel::layer_border' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='152'/>
+</field>
+<field name='base_item.position.left'>
+<real value='512'/>
+</field>
+</fields>
+    </item><!-- tunnel::layer_border -->
 
     <item class_name='bear::block' fixed='true'>
 <fields>

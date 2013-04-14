@@ -140,7 +140,8 @@ tunnel::player::player( const player& p )
     m_nb_bottom_contact(0), m_controller_number(0),
     m_hot_spot_position(0, 0),
     m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
-    m_hot_spot_balance_move(0, 0), m_current_tag(0)
+    m_hot_spot_balance_move(0, 0), 
+    m_current_tag(p.m_current_tag), m_tags(p.m_tags)
 {
   init();
 } // player::player()
@@ -153,7 +154,6 @@ void tunnel::player::init()
 {
   set_name( util::get_player_name(1) );
 
-  m_current_tag = 0;
   set_z_fixed(false);
   set_weak_collisions(false);
   m_offensive_phase = false;
@@ -1013,13 +1013,10 @@ void tunnel::player::apply_teleport()
   set_state(player::teleport_state);
   m_progress = &player::progress_teleport;
 
-  std::cout << "start teleport" << std::endl;
-  
   unsigned int next = m_current_tag + 1;
   if ( next == m_tags.size() )
     next = 0;
 
-  std::cout << "courrant:" <<  m_tags[m_current_tag] << std::endl;
   bear::engine::level::layer_iterator it = get_level().layer_begin();
 
   for ( ; it != get_level().layer_end(); ++it )
@@ -1036,7 +1033,6 @@ void tunnel::player::apply_teleport()
  */
 void tunnel::player::apply_abort_teleport()
 {
-  std::cout << "stop teleport" << std::endl;
   start_action_model("idle");
 
   unsigned int next = m_current_tag + 1;
@@ -1058,6 +1054,13 @@ void tunnel::player::apply_abort_teleport()
  */
 void tunnel::player::apply_end_teleport()
 {
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+  bear::engine::level::layer_iterator it_layer = get_level().layer_end();
+
+  for ( ; it != get_level().layer_end(); ++it )
+    if ( is_in_layer(*it) )
+      it_layer = it;
+
   m_current_tag++;
   if ( m_current_tag == m_tags.size() )
     m_current_tag = 0;
@@ -1065,11 +1068,18 @@ void tunnel::player::apply_end_teleport()
   update_layer_visibility();
   update_layer_activity();
 
-  std::cout << "new tag : " << m_tags[m_current_tag] << std::endl;
-
-  // to do
-  // Do the teleportation
   start_action_model("idle");
+  
+  for ( it = get_level().layer_begin(); it != get_level().layer_end(); ++it )
+    if ( it->get_tag() == m_tags[m_current_tag] && it->has_world() )
+      {
+        player * p = new player(*this);
+        p->set_center_of_mass( get_center_of_mass() );
+        it->add_item(*p);
+      }  
+
+  if ( it_layer != get_level().layer_end() )
+    it_layer->drop_item(*this);
 } // player::apply_end_teleport()
 
 /*----------------------------------------------------------------------------*/
@@ -2511,18 +2521,13 @@ tunnel::player::get_move_force_in_walk() const
  */
 void tunnel::player::update_layer_visibility()
 {
-  std::cout << "courrant:" <<  m_tags[m_current_tag] << std::endl;
   bear::engine::level::layer_iterator it = get_level().layer_begin();
 
   for ( ; it != get_level().layer_end(); ++it )
-    {
-      if ( it->get_tag().empty() )
-        it->set_visible(true);
-      else 
-        it->set_visible( it->get_tag() == m_tags[m_current_tag] ); 
-    
-      std::cout << it->get_tag() << " : " << it->is_visible() << std::endl;
-    }     
+    if ( it->get_tag().empty() )
+      it->set_visible(true);
+    else 
+      it->set_visible( it->get_tag() == m_tags[m_current_tag] ); 
 } // player::update_layer_visibility()
 
 /*---------------------------------------------------------------------------*/
@@ -2539,7 +2544,6 @@ void tunnel::player::update_layer_activity()
     else 
       it->set_active( it->get_tag() == m_tags[m_current_tag] );    
 } // player::update_layer_activity()
-
 
 /*----------------------------------------------------------------------------*/
 /**
