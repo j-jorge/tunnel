@@ -11153,7 +11153,7 @@ align_bottom
 1
 
 teleport
-2
+1
 idle
 0
 0
@@ -11238,7 +11238,7 @@ align_bottom
 1
 1
 
-1
+0.5
 apply_end_teleport
 40
 110

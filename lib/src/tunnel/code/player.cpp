@@ -107,16 +107,16 @@ BASE_ITEM_EXPORT( player, tunnel )
  * \brief Constructor.
  */
 tunnel::player::player()
-  : m_current_state(roar_state), m_last_visual_time(0),
-    m_status_look_upward(false),
-    m_status_crouch(false), m_can_cling(false),
-    m_cling_orientation(false), m_halo_animation(NULL),
-    m_halo_hand_animation(NULL), m_move_right(false), m_move_left(false),
-    m_move_force(0), m_nb_bottom_contact(0),
-    m_controller_number(0),
-    m_hot_spot_position(0, 0),
-    m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
-    m_hot_spot_balance_move(0, 0), m_current_tag(0)
+: m_current_state(roar_state), m_last_visual_time(0),
+  m_status_look_upward(false),
+  m_status_crouch(false), m_can_cling(false),
+  m_cling_orientation(false), m_halo_animation(NULL),
+  m_halo_hand_animation(NULL), m_move_right(false), m_move_left(false),
+  m_move_force(0), m_nb_bottom_contact(0),
+  m_controller_number(0),
+  m_hot_spot_position(0, 0),
+  m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
+  m_hot_spot_balance_move(0, 0), m_initial_tag(0), m_current_tag(0)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -140,7 +140,7 @@ tunnel::player::player( const player& p )
     m_nb_bottom_contact(0), m_controller_number(0),
     m_hot_spot_position(0, 0),
     m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
-    m_hot_spot_balance_move(0, 0), 
+    m_hot_spot_balance_move(0, 0), m_initial_tag(p.m_initial_tag),
     m_current_tag(p.m_current_tag), m_tags(p.m_tags)
 {
   init();
@@ -389,6 +389,8 @@ bool tunnel::player::set_string_field
       for ( unsigned int i = 0; i != m_tags.size(); ++i )
         if ( m_tags[i] == value )
           m_current_tag = i;
+    
+      m_initial_tag = m_current_tag;
     }
   else
     result = super::set_string_field(name, value);
@@ -1054,13 +1056,6 @@ void tunnel::player::apply_abort_teleport()
  */
 void tunnel::player::apply_end_teleport()
 {
-  bear::engine::level::layer_iterator it = get_level().layer_begin();
-  bear::engine::level::layer_iterator it_layer = get_level().layer_end();
-
-  for ( ; it != get_level().layer_end(); ++it )
-    if ( is_in_layer(*it) )
-      it_layer = it;
-
   m_current_tag++;
   if ( m_current_tag == m_tags.size() )
     m_current_tag = 0;
@@ -1070,16 +1065,19 @@ void tunnel::player::apply_end_teleport()
 
   start_action_model("idle");
   
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+  
   for ( it = get_level().layer_begin(); it != get_level().layer_end(); ++it )
     if ( it->get_tag() == m_tags[m_current_tag] && it->has_world() )
       {
         player * p = new player(*this);
+        std::cout << this << " cree " << p << std::endl;
         p->set_center_of_mass( get_center_of_mass() );
+
         it->add_item(*p);
       }  
 
-  if ( it_layer != get_level().layer_end() )
-    it_layer->drop_item(*this);
+  get_layer().drop_item(*this);
 } // player::apply_end_teleport()
 
 /*----------------------------------------------------------------------------*/
@@ -2076,6 +2074,10 @@ bool tunnel::player::is_crushed() const
  */
 void tunnel::player::regenerate()
 {
+  m_current_tag = m_initial_tag;
+  update_layer_visibility();
+  update_layer_activity();
+
   set_center_of_mass( m_saved_position );
   stop();
 

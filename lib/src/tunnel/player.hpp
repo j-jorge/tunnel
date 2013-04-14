@@ -94,7 +94,7 @@ namespace tunnel
     bool set_string_list_field
     ( const std::string& name, const std::vector<std::string>& value );
     bool set_string_field( const std::string& name, const std::string& value );
-
+    
     bool is_valid() const;
 
     void save_position( const bear::universe::position_type& p );
@@ -382,6 +382,9 @@ namespace tunnel
 
     /** \brief Indicates if Plee has a hat. */
     bool m_has_hat;
+
+    /** \brief Indicates the current tag. */
+    unsigned int m_initial_tag;    
 
     /** \brief Indicates the current tag. */
     unsigned int m_current_tag;
