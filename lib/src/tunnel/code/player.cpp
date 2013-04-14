@@ -116,7 +116,7 @@ tunnel::player::player()
     m_controller_number(0),
     m_hot_spot_position(0, 0),
     m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
-    m_hot_spot_balance_move(0, 0)
+    m_hot_spot_balance_move(0, 0), m_current_tag(0)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -140,7 +140,7 @@ tunnel::player::player( const player& p )
     m_nb_bottom_contact(0), m_controller_number(0),
     m_hot_spot_position(0, 0),
     m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
-    m_hot_spot_balance_move(0, 0)
+    m_hot_spot_balance_move(0, 0), m_current_tag(0)
 {
   init();
 } // player::player()
@@ -153,6 +153,7 @@ void tunnel::player::init()
 {
   set_name( util::get_player_name(1) );
 
+  m_current_tag = 0;
   set_z_fixed(false);
   set_weak_collisions(false);
   m_offensive_phase = false;
@@ -337,7 +338,73 @@ void tunnel::player::on_enters_layer()
   m_has_main_hat = true;
   m_has_hat = true;
   save_position(get_center_of_mass());
+
+  update_layer_visibility();
+  update_layer_activity();
 } // player::on_enters_layer()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set a field of type list of <std::string>.
+ * \param name The name of the field.
+ * \param value The new value of the field.
+ * \return false if the field "name" is unknow, true otherwise.
+ */
+bool tunnel::player::set_string_list_field
+( const std::string& name, const std::vector<std::string>& value )
+{
+  bool result = false;
+
+  if ( name == "player.tags" )
+    {
+      m_tags.resize(value.size());
+
+      for (std::size_t i=0; i!=value.size(); ++i)
+        m_tags[i] = value[i].c_str();
+
+      result = true;
+    }
+  else
+    result = super::set_string_list_field( name, value );
+
+  return result;
+} // player::set_string_list_field()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set a field of type string.
+ * \param name The name of the field.
+ * \param value The new value of the field.
+ * \return false if the field "name" is unknow, true otherwise.
+ */
+bool tunnel::player::set_string_field
+( const std::string& name, const std::string& value )
+{
+  bool result = true;
+
+  if (name == "player.initial_tag")
+    {
+      m_current_tag = m_tags.size();
+      
+      for ( unsigned int i = 0; i != m_tags.size(); ++i )
+        if ( m_tags[i] == value )
+          m_current_tag = i;
+    }
+  else
+    result = super::set_string_field(name, value);
+
+  return result;
+} // player::set_string_field()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Tell if the item is correctly initialized.
+ */
+bool tunnel::player::is_valid() const
+{
+  return ! m_tags.empty() && ( m_current_tag < m_tags.size() ) 
+    && super::is_valid();
+} // player::is_valid()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -947,7 +1014,43 @@ void tunnel::player::apply_teleport()
   m_progress = &player::progress_teleport;
 
   std::cout << "start teleport" << std::endl;
+  
+  unsigned int next = m_current_tag + 1;
+  if ( next == m_tags.size() )
+    next = 0;
+
+  std::cout << "courrant:" <<  m_tags[m_current_tag] << std::endl;
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+
+  for ( ; it != get_level().layer_end(); ++it )
+    if ( it->get_tag() == m_tags[next] )
+      {
+        it->set_visible(true);
+        it->set_active(true);
+      }
 } // player::apply_teleport()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Apply the action abort teleport.
+ */
+void tunnel::player::apply_abort_teleport()
+{
+  std::cout << "stop teleport" << std::endl;
+  start_action_model("idle");
+
+  unsigned int next = m_current_tag + 1;
+  if ( next == m_tags.size() )
+    next = 0;
+
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+  for ( ; it != get_level().layer_end(); ++it )
+    if ( it->get_tag() == m_tags[next] )
+      {
+        it->set_visible(false);
+        it->set_active(false);
+      }
+} // player::apply_abort_teleport()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -955,11 +1058,17 @@ void tunnel::player::apply_teleport()
  */
 void tunnel::player::apply_end_teleport()
 {
-  std::cout << "end teleport" << std::endl;
+  m_current_tag++;
+  if ( m_current_tag == m_tags.size() )
+    m_current_tag = 0;
+  
+  update_layer_visibility();
+  update_layer_activity();
+
+  std::cout << "new tag : " << m_tags[m_current_tag] << std::endl;
 
   // to do
   // Do the teleportation
-
   start_action_model("idle");
 } // player::apply_end_teleport()
 
@@ -2395,6 +2504,41 @@ tunnel::player::get_move_force_in_walk() const
     (s_move_force_max_in_walk - s_move_force_min_in_walk)
     / s_time_to_run;
 } // player::get_move_force_in_walk()
+
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Update visibility of layer.
+ */
+void tunnel::player::update_layer_visibility()
+{
+  std::cout << "courrant:" <<  m_tags[m_current_tag] << std::endl;
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+
+  for ( ; it != get_level().layer_end(); ++it )
+    {
+      if ( it->get_tag().empty() )
+        it->set_visible(true);
+      else 
+        it->set_visible( it->get_tag() == m_tags[m_current_tag] ); 
+    
+      std::cout << it->get_tag() << " : " << it->is_visible() << std::endl;
+    }     
+} // player::update_layer_visibility()
+
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Update activity of layer.
+ */
+void tunnel::player::update_layer_activity()
+{
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+
+  for ( ; it != get_level().layer_end(); ++it )
+    if ( it->get_tag().empty() )
+      it->set_active(true);
+    else 
+      it->set_active( it->get_tag() == m_tags[m_current_tag] );    
+} // player::update_layer_activity()
 
 
 /*----------------------------------------------------------------------------*/

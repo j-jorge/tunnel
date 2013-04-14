@@ -51,8 +51,7 @@ void tunnel::state_teleport::stop()
  */
 void tunnel::state_teleport::do_stop_teleport()
 {
-  std::cout << "stop teleport" << std::endl;
-  m_player_instance.start_action_model("idle");
+  m_player_instance.apply_abort_teleport();
 } // state_teleport::do_stop_teleport()
 
 /*----------------------------------------------------------------------------*/
