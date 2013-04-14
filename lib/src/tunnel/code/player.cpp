@@ -35,6 +35,7 @@
 #include "tunnel/player_state/state_game_over.hpp"
 #include "tunnel/player_state/state_run.hpp"
 #include "tunnel/player_state/state_slap.hpp"
+#include "tunnel/player_state/state_teleport.hpp"
 #include "tunnel/player_state/state_start_jump.hpp"
 #include "tunnel/player_state/state_vertical_jump.hpp"
 #include "tunnel/player_state/state_look_upward.hpp"
@@ -164,7 +165,7 @@ void tunnel::player::init()
   m_last_bottom_left = bear::universe::position_type(0, 0);
   m_run_time = 0;
 
-  m_states.resize(27);
+  m_states.resize(28);
   m_states[walk_state] = new state_walk(this);
   m_states[idle_state] = new state_idle(this);
   m_states[jump_state] = new state_jump(this);
@@ -174,6 +175,7 @@ void tunnel::player::init()
   m_states[roar_state] = new state_roar(this);
   m_states[run_state] = new state_run(this);
   m_states[slap_state] = new state_slap(this);
+  m_states[teleport_state] = new state_teleport(this);
   m_states[start_jump_state] = new state_start_jump(this);
   m_states[vertical_jump_state] = new state_vertical_jump(this);
   m_states[look_upward_state] = new state_look_upward(this);
@@ -373,6 +375,8 @@ void tunnel::player::start_action( player_action::value_type a )
         m_states[m_current_state]->do_jump(); break;
       case player_action::slap :
         m_states[m_current_state]->do_slap(); break;
+      case player_action::teleport :
+        m_states[m_current_state]->do_teleport(); break;
       case player_action::look_upward : do_start_look_upward(); break;
       case player_action::crouch : do_start_crouch(); break;
       case player_action::captive : break;
@@ -412,6 +416,7 @@ void tunnel::player::do_action
             case player_action::jump :
               m_states[m_current_state]->do_continue_jump(); break;
             case player_action::slap : break;
+            case player_action::teleport : break;
             case player_action::look_upward :
               m_states[m_current_state]->do_continue_look_upward(); break;
             case player_action::crouch :
@@ -447,6 +452,8 @@ void tunnel::player::stop_action( player_action::value_type a )
       case player_action::jump :
         m_states[m_current_state]->do_stop_vertical_jump(); break;
       case player_action::slap : break;
+      case player_action::teleport : 
+        m_states[m_current_state]->do_stop_teleport(); break;
       case player_action::look_upward : do_stop_look_upward(); break;
       case player_action::crouch :
         do_stop_crouch(); break;
@@ -928,6 +935,33 @@ void tunnel::player::apply_slap()
   m_progress = &player::progress_slap;
   apply_attack();
 } // player::apply_slap()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Apply the action teleport.
+ */
+void tunnel::player::apply_teleport()
+{
+  m_move_force = s_move_force_in_idle;
+  set_state(player::teleport_state);
+  m_progress = &player::progress_teleport;
+
+  std::cout << "start teleport" << std::endl;
+} // player::apply_teleport()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Apply the action end teleport.
+ */
+void tunnel::player::apply_end_teleport()
+{
+  std::cout << "end teleport" << std::endl;
+
+  // to do
+  // Do the teleportation
+
+  start_action_model("idle");
+} // player::apply_end_teleport()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -1513,6 +1547,17 @@ void tunnel::player::progress_slap( bear::universe::time_type elapsed_time )
   else if ( has_left_contact() )
     apply_move_left();
 } // player::progress_slap()
+
+
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Do one iteration in the state .
+ * \param elapsed_time Elapsed time since the last call.
+ */
+void tunnel::player::progress_teleport( bear::universe::time_type elapsed_time )
+{
+  
+} // player::progress_teleport()
 
 /*---------------------------------------------------------------------------*/
 /**
@@ -2373,6 +2418,8 @@ void tunnel::player::init_exported_methods()
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_run, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_sink, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_slap, void );
+  TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_teleport, void );
+  TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_end_teleport, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_attack, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_start_cling, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_start_hang, void );

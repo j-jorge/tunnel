@@ -30,6 +30,7 @@ std::string tunnel::player_action::to_string( value_type a )
     case look_upward:   result = "look_upward" ; break;
     case crouch:        result = "crouch" ; break;
     case slap:          result = "slap" ; break;
+    case teleport:      result = "teleport" ; break;
     case captive:       result = "captive" ; break;
     case release:       result = "release" ; break;
     case roar:          result = "roar" ; break;
@@ -69,6 +70,8 @@ tunnel::player_action::from_string( const std::string& s )
     a = crouch;
   else if ( s == "slap" )
     a = slap;
+  else if ( s == "teleport" )
+    a = teleport;
   else if ( s == "captive" )
     a = captive;
   else if ( s == "release" )

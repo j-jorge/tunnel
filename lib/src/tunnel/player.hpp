@@ -58,6 +58,7 @@ namespace tunnel
         roar_state,
         run_state,
         slap_state,
+        teleport_state,
         start_jump_state,
         vertical_jump_state,
         look_upward_state,
@@ -151,6 +152,8 @@ namespace tunnel
     void apply_walk();
     void apply_run();
     void apply_slap();
+    void apply_teleport();
+    void apply_end_teleport();
     void apply_attack();
     void apply_captive();
     void apply_release();
@@ -197,6 +200,7 @@ namespace tunnel
     void progress_roar( bear::universe::time_type elapsed_time );
     void progress_run( bear::universe::time_type elapsed_time );
     void progress_slap( bear::universe::time_type elapsed_time );
+    void progress_teleport( bear::universe::time_type elapsed_time );
     void progress_start_jump( bear::universe::time_type elapsed_time );
     void progress_vertical_jump( bear::universe::time_type elapsed_time );
     void progress_crouch( bear::universe::time_type elapsed_time );

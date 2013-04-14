@@ -53,6 +53,7 @@ set( LIBTUNNEL_SOURCE_FILES
   player_state/code/state_start_jump.cpp
   player_state/code/state_sink.cpp
   player_state/code/state_swimming.cpp
+  player_state/code/state_teleport.cpp
   player_state/code/state_vertical_jump.cpp
   player_state/code/state_wait.cpp
   player_state/code/state_walk.cpp
