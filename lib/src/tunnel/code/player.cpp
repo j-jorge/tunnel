@@ -247,7 +247,7 @@ void tunnel::player::progress( bear::universe::time_type elapsed_time )
     {
       if ( m_progress != NULL )
         (this->*m_progress)(elapsed_time);
-
+      
       if ( is_only_in_environment(bear::universe::water_environment) )
         progress_in_water(elapsed_time);
 
@@ -1081,9 +1081,9 @@ void tunnel::player::apply_end_teleport()
             get_level().set_camera(*(bear::engine::base_item*)(item.get()));
           }
         
+        start_action_model("idle");
         get_layer().drop_item(*this);
         it->add_item(*this);
-        start_action_model("idle");
       }
 } // player::apply_end_teleport()
 
@@ -1571,6 +1571,7 @@ void tunnel::player::progress_jump( bear::universe::time_type elapsed_time )
  */
 void tunnel::player::progress_fall( bear::universe::time_type elapsed_time )
 {
+  std::cout << "progress_fall " << has_owner() << std::endl;
   if ( !test_bottom_contact() )
     {
       if ( is_only_in_environment(bear::universe::water_environment) )
@@ -1680,7 +1681,6 @@ void tunnel::player::progress_slap( bear::universe::time_type elapsed_time )
  */
 void tunnel::player::progress_teleport( bear::universe::time_type elapsed_time )
 {
-  
 } // player::progress_teleport()
 
 /*---------------------------------------------------------------------------*/

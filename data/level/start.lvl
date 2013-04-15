@@ -856,9 +856,6 @@
 <field name='messageable_item.name'>
 <string value='player_1'/>
 </field>
-<field name='player.camera'>
-<item_reference value='camera'/>
-</field>
 <field name='player.initial_tag'>
 <string value='group 1'/>
 </field>
