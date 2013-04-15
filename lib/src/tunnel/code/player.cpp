@@ -1078,6 +1078,7 @@ void tunnel::player::apply_end_teleport()
           {
             get_layer().drop_item(*(bear::engine::base_item*)(item.get()));
             it->add_item(*(bear::engine::base_item*)(item.get()));
+            get_level().set_camera(*(bear::engine::base_item*)(item.get()));
           }
         
         get_layer().drop_item(*this);
