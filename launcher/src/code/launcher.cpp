@@ -153,7 +153,7 @@ void tunnel::launcher::create_game( int& argc, char** &argv )
       tunnel_argument.c_str(),
 #endif
 
-      "--stats-destination=http://www.stuff-o-matic.com/asgp/stats/save.php",
+      //"--stats-destination=http://dev.stuff-o-matic.com:4080/tunnel/stats/save.php",
       "--start-level=level/start.cl",
       NULL
     };

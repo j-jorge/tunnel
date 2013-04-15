@@ -84,6 +84,23 @@ void tunnel::state_player::do_slap()
 
 /*----------------------------------------------------------------------------*/
 /**
+ * \brief Tell that the teleport is stopped.
+ */
+void tunnel::state_player::do_stop_teleport()
+{
+} // state_player::do_stop_teleport()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Make the player doing teleport.
+ */
+void tunnel::state_player::do_teleport()
+{
+  m_player_instance.start_action_model("teleport");
+} // state_player::do_teleport()
+
+/*----------------------------------------------------------------------------*/
+/**
  * \brief Make the player look upward.
  */
 void tunnel::state_player::do_look_upward()

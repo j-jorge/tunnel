@@ -6,4 +6,13 @@
     <class>bear::messageable_item</class>
     <class>tunnel::item_with_single_player_action_reader</class>
   </inherit>
+  <fields>
+    <field type="string" name="player.tags" list="true" required="true">
+      <description>The list of tags.</description>
+    </field>
+    <field type="string" name="player.initial_tag" required="true">
+      <description>The initial tag.</description>
+      <after field="player.tags"/>
+    </field>
+  </fields>
 </item>

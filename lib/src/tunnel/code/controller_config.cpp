@@ -167,7 +167,9 @@ void tunnel::controller_config::default_controls_for_player_1()
   s_controller_layout[0].set_action_key
     (bear::input::keyboard::kc_down, player_action::crouch);
   s_controller_layout[0].set_action_key
-    (bear::input::keyboard::kc_f, player_action::slap);
+    (bear::input::keyboard::kc_f, player_action::slap); 
+  s_controller_layout[0].set_action_key
+    (bear::input::keyboard::kc_d, player_action::teleport);
   s_controller_layout[0].set_action_key
     (bear::input::keyboard::kc_space, player_action::jump);
   s_controller_layout[0].set_command_key

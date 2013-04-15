@@ -58,6 +58,7 @@ namespace tunnel
         roar_state,
         run_state,
         slap_state,
+        teleport_state,
         start_jump_state,
         vertical_jump_state,
         look_upward_state,
@@ -89,6 +90,12 @@ namespace tunnel
     void get_visual( std::list<bear::engine::scene_visual>& visuals ) const;
     void pre_cache();
     void on_enters_layer();
+
+    bool set_string_list_field
+    ( const std::string& name, const std::vector<std::string>& value );
+    bool set_string_field( const std::string& name, const std::string& value );
+    
+    bool is_valid() const;
 
     void save_position( const bear::universe::position_type& p );
     void save_current_position();
@@ -151,6 +158,9 @@ namespace tunnel
     void apply_walk();
     void apply_run();
     void apply_slap();
+    void apply_teleport();
+    void apply_abort_teleport();
+    void apply_end_teleport();
     void apply_attack();
     void apply_captive();
     void apply_release();
@@ -197,6 +207,7 @@ namespace tunnel
     void progress_roar( bear::universe::time_type elapsed_time );
     void progress_run( bear::universe::time_type elapsed_time );
     void progress_slap( bear::universe::time_type elapsed_time );
+    void progress_teleport( bear::universe::time_type elapsed_time );
     void progress_start_jump( bear::universe::time_type elapsed_time );
     void progress_vertical_jump( bear::universe::time_type elapsed_time );
     void progress_crouch( bear::universe::time_type elapsed_time );
@@ -246,6 +257,9 @@ namespace tunnel
     void start_take_hat();
     void take_out_hat();
     bear::universe::coordinate_type get_move_force_in_walk() const;
+   
+    void update_layer_visibility();
+    void update_layer_activity();
 
     static void init_exported_methods();
 
@@ -368,6 +382,15 @@ namespace tunnel
 
     /** \brief Indicates if Plee has a hat. */
     bool m_has_hat;
+
+    /** \brief Indicates the current tag. */
+    unsigned int m_initial_tag;    
+
+    /** \brief Indicates the current tag. */
+    unsigned int m_current_tag;
+
+    /** \brief The list of tags. */
+    std::vector< std::string > m_tags;
 
     /** \brief The maximum halo height. */
     static const bear::universe::size_type s_max_halo_height;

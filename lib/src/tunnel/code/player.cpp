@@ -22,6 +22,7 @@
 
 #include "universe/forced_movement/forced_tracking.hpp"
 
+#include "tunnel/camera_on_player.hpp"
 #include "tunnel/defines.hpp"
 #include "tunnel/player_action.hpp"
 
@@ -35,6 +36,7 @@
 #include "tunnel/player_state/state_game_over.hpp"
 #include "tunnel/player_state/state_run.hpp"
 #include "tunnel/player_state/state_slap.hpp"
+#include "tunnel/player_state/state_teleport.hpp"
 #include "tunnel/player_state/state_start_jump.hpp"
 #include "tunnel/player_state/state_vertical_jump.hpp"
 #include "tunnel/player_state/state_look_upward.hpp"
@@ -106,16 +108,16 @@ BASE_ITEM_EXPORT( player, tunnel )
  * \brief Constructor.
  */
 tunnel::player::player()
-  : m_current_state(roar_state), m_last_visual_time(0),
-    m_status_look_upward(false),
-    m_status_crouch(false), m_can_cling(false),
-    m_cling_orientation(false), m_halo_animation(NULL),
-    m_halo_hand_animation(NULL), m_move_right(false), m_move_left(false),
-    m_move_force(0), m_nb_bottom_contact(0),
-    m_controller_number(0),
-    m_hot_spot_position(0, 0),
-    m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
-    m_hot_spot_balance_move(0, 0)
+: m_current_state(roar_state), m_last_visual_time(0),
+  m_status_look_upward(false),
+  m_status_crouch(false), m_can_cling(false),
+  m_cling_orientation(false), m_halo_animation(NULL),
+  m_halo_hand_animation(NULL), m_move_right(false), m_move_left(false),
+  m_move_force(0), m_nb_bottom_contact(0),
+  m_controller_number(0),
+  m_hot_spot_position(0, 0),
+  m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
+  m_hot_spot_balance_move(0, 0), m_initial_tag(0), m_current_tag(0)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -139,7 +141,8 @@ tunnel::player::player( const player& p )
     m_nb_bottom_contact(0), m_controller_number(0),
     m_hot_spot_position(0, 0),
     m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
-    m_hot_spot_balance_move(0, 0)
+    m_hot_spot_balance_move(0, 0), m_initial_tag(p.m_initial_tag),
+    m_current_tag(p.m_current_tag), m_tags(p.m_tags)
 {
   init();
 } // player::player()
@@ -164,7 +167,7 @@ void tunnel::player::init()
   m_last_bottom_left = bear::universe::position_type(0, 0);
   m_run_time = 0;
 
-  m_states.resize(27);
+  m_states.resize(28);
   m_states[walk_state] = new state_walk(this);
   m_states[idle_state] = new state_idle(this);
   m_states[jump_state] = new state_jump(this);
@@ -174,6 +177,7 @@ void tunnel::player::init()
   m_states[roar_state] = new state_roar(this);
   m_states[run_state] = new state_run(this);
   m_states[slap_state] = new state_slap(this);
+  m_states[teleport_state] = new state_teleport(this);
   m_states[start_jump_state] = new state_start_jump(this);
   m_states[vertical_jump_state] = new state_vertical_jump(this);
   m_states[look_upward_state] = new state_look_upward(this);
@@ -335,7 +339,75 @@ void tunnel::player::on_enters_layer()
   m_has_main_hat = true;
   m_has_hat = true;
   save_position(get_center_of_mass());
+
+  update_layer_visibility();
+  update_layer_activity();
 } // player::on_enters_layer()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set a field of type list of <std::string>.
+ * \param name The name of the field.
+ * \param value The new value of the field.
+ * \return false if the field "name" is unknow, true otherwise.
+ */
+bool tunnel::player::set_string_list_field
+( const std::string& name, const std::vector<std::string>& value )
+{
+  bool result = false;
+
+  if ( name == "player.tags" )
+    {
+      m_tags.resize(value.size());
+
+      for (std::size_t i=0; i!=value.size(); ++i)
+        m_tags[i] = value[i].c_str();
+
+      result = true;
+    }
+  else
+    result = super::set_string_list_field( name, value );
+
+  return result;
+} // player::set_string_list_field()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set a field of type string.
+ * \param name The name of the field.
+ * \param value The new value of the field.
+ * \return false if the field "name" is unknow, true otherwise.
+ */
+bool tunnel::player::set_string_field
+( const std::string& name, const std::string& value )
+{
+  bool result = true;
+
+  if (name == "player.initial_tag")
+    {
+      m_current_tag = m_tags.size();
+      
+      for ( unsigned int i = 0; i != m_tags.size(); ++i )
+        if ( m_tags[i] == value )
+          m_current_tag = i;
+    
+      m_initial_tag = m_current_tag;
+    }
+  else
+    result = super::set_string_field(name, value);
+
+  return result;
+} // player::set_string_field()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Tell if the item is correctly initialized.
+ */
+bool tunnel::player::is_valid() const
+{
+  return ! m_tags.empty() && ( m_current_tag < m_tags.size() ) 
+    && super::is_valid();
+} // player::is_valid()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -373,6 +445,8 @@ void tunnel::player::start_action( player_action::value_type a )
         m_states[m_current_state]->do_jump(); break;
       case player_action::slap :
         m_states[m_current_state]->do_slap(); break;
+      case player_action::teleport :
+        m_states[m_current_state]->do_teleport(); break;
       case player_action::look_upward : do_start_look_upward(); break;
       case player_action::crouch : do_start_crouch(); break;
       case player_action::captive : break;
@@ -412,6 +486,7 @@ void tunnel::player::do_action
             case player_action::jump :
               m_states[m_current_state]->do_continue_jump(); break;
             case player_action::slap : break;
+            case player_action::teleport : break;
             case player_action::look_upward :
               m_states[m_current_state]->do_continue_look_upward(); break;
             case player_action::crouch :
@@ -447,6 +522,8 @@ void tunnel::player::stop_action( player_action::value_type a )
       case player_action::jump :
         m_states[m_current_state]->do_stop_vertical_jump(); break;
       case player_action::slap : break;
+      case player_action::teleport : 
+        m_states[m_current_state]->do_stop_teleport(); break;
       case player_action::look_upward : do_stop_look_upward(); break;
       case player_action::crouch :
         do_stop_crouch(); break;
@@ -928,6 +1005,87 @@ void tunnel::player::apply_slap()
   m_progress = &player::progress_slap;
   apply_attack();
 } // player::apply_slap()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Apply the action teleport.
+ */
+void tunnel::player::apply_teleport()
+{
+  m_move_force = s_move_force_in_idle;
+  set_state(player::teleport_state);
+  m_progress = &player::progress_teleport;
+
+  unsigned int next = m_current_tag + 1;
+  if ( next == m_tags.size() )
+    next = 0;
+
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+
+  for ( ; it != get_level().layer_end(); ++it )
+    if ( it->get_tag() == m_tags[next] )
+      {
+        it->set_visible(true);
+        it->set_active(true);
+      }
+} // player::apply_teleport()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Apply the action abort teleport.
+ */
+void tunnel::player::apply_abort_teleport()
+{
+  start_action_model("idle");
+
+  unsigned int next = m_current_tag + 1;
+  if ( next == m_tags.size() )
+    next = 0;
+
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+  for ( ; it != get_level().layer_end(); ++it )
+    if ( it->get_tag() == m_tags[next] )
+      {
+        it->set_visible(false);
+        it->set_active(false);
+      }
+} // player::apply_abort_teleport()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Apply the action end teleport.
+ */
+void tunnel::player::apply_end_teleport()
+{
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+  bool ok = false;
+  
+  m_current_tag++;
+  if ( m_current_tag == m_tags.size() )
+    m_current_tag = 0;
+
+  update_layer_visibility();
+  update_layer_activity();
+
+  for ( it = get_level().layer_begin(); 
+        ! ok && it != get_level().layer_end(); ++it )
+    if ( it->get_tag() == m_tags[m_current_tag] && it->has_world() )
+      {
+        ok = true;
+        
+        bear::universe::item_handle item = get_level().get_camera();
+        if ( item != bear::universe::item_handle(NULL) )
+          {
+            get_layer().drop_item(*(bear::engine::base_item*)(item.get()));
+            it->add_item(*(bear::engine::base_item*)(item.get()));
+            get_level().set_camera(*(bear::engine::base_item*)(item.get()));
+          }
+        
+        get_layer().drop_item(*this);
+        it->add_item(*this);
+        start_action_model("idle");
+      }
+} // player::apply_end_teleport()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -1514,6 +1672,17 @@ void tunnel::player::progress_slap( bear::universe::time_type elapsed_time )
     apply_move_left();
 } // player::progress_slap()
 
+
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Do one iteration in the state .
+ * \param elapsed_time Elapsed time since the last call.
+ */
+void tunnel::player::progress_teleport( bear::universe::time_type elapsed_time )
+{
+  
+} // player::progress_teleport()
+
 /*---------------------------------------------------------------------------*/
 /**
  * \brief Do one iteration in the state .
@@ -1912,6 +2081,10 @@ bool tunnel::player::is_crushed() const
  */
 void tunnel::player::regenerate()
 {
+  m_current_tag = m_initial_tag;
+  update_layer_visibility();
+  update_layer_activity();
+
   set_center_of_mass( m_saved_position );
   stop();
 
@@ -2351,6 +2524,35 @@ tunnel::player::get_move_force_in_walk() const
     / s_time_to_run;
 } // player::get_move_force_in_walk()
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Update visibility of layer.
+ */
+void tunnel::player::update_layer_visibility()
+{
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+
+  for ( ; it != get_level().layer_end(); ++it )
+    if ( it->get_tag().empty() )
+      it->set_visible(true);
+    else 
+      it->set_visible( it->get_tag() == m_tags[m_current_tag] ); 
+} // player::update_layer_visibility()
+
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Update activity of layer.
+ */
+void tunnel::player::update_layer_activity()
+{
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+
+  for ( ; it != get_level().layer_end(); ++it )
+    if ( it->get_tag().empty() )
+      it->set_active(true);
+    else 
+      it->set_active( it->get_tag() == m_tags[m_current_tag] );    
+} // player::update_layer_activity()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -2373,6 +2575,8 @@ void tunnel::player::init_exported_methods()
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_run, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_sink, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_slap, void );
+  TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_teleport, void );
+  TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_end_teleport, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_attack, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_start_cling, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_start_hang, void );

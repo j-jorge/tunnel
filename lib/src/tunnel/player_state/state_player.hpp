@@ -39,6 +39,8 @@ namespace tunnel
     virtual void do_jump();
     virtual void do_continue_jump();
     virtual void do_slap();
+    virtual void do_teleport();
+    virtual void do_stop_teleport();
     virtual void do_stop_vertical_jump();
     virtual void do_look_upward();
     virtual void do_continue_look_upward();

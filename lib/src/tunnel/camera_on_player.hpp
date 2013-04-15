@@ -73,7 +73,8 @@ namespace tunnel
     /*----------------------------------------------------------------------*/
   public:
     camera_on_player();
-
+    camera_on_player( const camera_on_player& c );
+    
     void build();
     void progress( bear::universe::time_type elapsed_time );
 
