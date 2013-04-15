@@ -1,16 +1,14 @@
 wall fill middle: 0 0 330 372
 wall fill middle 2: 331 0 330 372
 wall fill left: 662 0 132 311
-flower 1-1: 795 0 161 212
-flower 1-2: 0 373 161 212
-flower 1-3: 162 373 161 212
-flower 1-4: 324 373 161 212
-wall fill bottom left: 486 373 208 194
-grass 1: 695 373 247 162
-grass 2: 0 586 181 160
-grass 3: 182 586 247 150
-wall fill bottom: 430 586 375 133
-left branch: 0 747 244 123
-leaves 6: 245 747 359 94
-grass 4: 795 213 171 93
-grass 5: 605 747 327 75
+blue flower 2: 795 0 131 237
+blue flower 1: 0 373 145 210
+wall fill bottom left: 146 373 208 194
+grass 1: 355 373 247 162
+grass 2: 603 373 181 160
+grass 3: 0 584 247 150
+wall fill bottom: 248 584 375 133
+left branch: 624 584 244 123
+leaves 6: 0 735 359 94
+grass 4: 785 373 171 93
+grass 5: 360 735 327 75
