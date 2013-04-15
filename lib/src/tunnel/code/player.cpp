@@ -22,6 +22,7 @@
 
 #include "universe/forced_movement/forced_tracking.hpp"
 
+#include "tunnel/camera_on_player.hpp"
 #include "tunnel/defines.hpp"
 #include "tunnel/player_action.hpp"
 
@@ -1056,26 +1057,33 @@ void tunnel::player::apply_abort_teleport()
  */
 void tunnel::player::apply_end_teleport()
 {
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+  bool ok = false;
+  
   m_current_tag++;
   if ( m_current_tag == m_tags.size() )
     m_current_tag = 0;
-  
+
   update_layer_visibility();
   update_layer_activity();
 
-  bear::engine::level::layer_iterator it = get_level().layer_begin();
-  
-  for ( it = get_level().layer_begin(); it != get_level().layer_end(); ++it )
+  for ( it = get_level().layer_begin(); 
+        ! ok && it != get_level().layer_end(); ++it )
     if ( it->get_tag() == m_tags[m_current_tag] && it->has_world() )
       {
-        player * p = new player(*this);
-        std::cout << this << " cree " << p << std::endl;
-        p->set_center_of_mass( get_center_of_mass() );
-
-        it->add_item(*p);
-      }  
-
-  get_layer().drop_item(*this);
+        ok = true;
+        
+        bear::universe::item_handle item = get_level().get_camera();
+        if ( item != bear::universe::item_handle(NULL) )
+          {
+            get_layer().drop_item(*(bear::engine::base_item*)(item.get()));
+            it->add_item(*(bear::engine::base_item*)(item.get()));
+          }
+        
+        get_layer().drop_item(*this);
+        it->add_item(*this);
+        start_action_model("idle");
+      }
 } // player::apply_end_teleport()
 
 /*----------------------------------------------------------------------------*/

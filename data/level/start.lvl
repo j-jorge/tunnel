@@ -462,50 +462,6 @@
 </fields>
     </item><!-- tunnel::add_ingame_layers -->
 
-    <item class_name='tunnel::camera_on_player' fixed='false' id='camera-2'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='304'/>
-</field>
-<field name='base_item.position.left'>
-<real value='894'/>
-</field>
-<field name='base_item.size.height'>
-<real value='720'/>
-</field>
-<field name='base_item.size.width'>
-<real value='1280'/>
-</field>
-<field name='camera.active'>
-<bool value='1'/>
-</field>
-<field name='camera.max_zoom_length'>
-<real value='500'/>
-</field>
-<field name='camera.size.min_height'>
-<real value='720'/>
-</field>
-<field name='camera.size.min_width'>
-<real value='1280'/>
-</field>
-<field name='camera.valid_max.x'>
-<real value='24900'/>
-</field>
-<field name='camera.valid_max.y'>
-<real value='4900'/>
-</field>
-<field name='camera.valid_min.x'>
-<real value='150'/>
-</field>
-<field name='camera.valid_min.y'>
-<real value='100'/>
-</field>
-<field name='messageable_item.name'>
-<string value='camera 2'/>
-</field>
-</fields>
-    </item><!-- tunnel::camera_on_player -->
-
     <item class_name='bear::block' fixed='true'>
 <fields>
 <field name='item_with_friction.top_friction'>
@@ -899,6 +855,9 @@
 </field>
 <field name='messageable_item.name'>
 <string value='player_1'/>
+</field>
+<field name='player.camera'>
+<item_reference value='camera'/>
 </field>
 <field name='player.initial_tag'>
 <string value='group 1'/>

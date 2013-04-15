@@ -47,6 +47,19 @@ bool tunnel::camera_on_player::set_placement_message::apply_to( camera_on_player
 tunnel::camera_on_player::camera_on_player()
   : m_placement(lock_player), m_progress(&camera_on_player::progress_no_player)
 {
+  set_name("camera");
+  set_active_on_build();
+} // camera_on_player::camera_on_player()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Constructor.
+ */
+tunnel::camera_on_player::camera_on_player( const camera_on_player& c )
+  : super(c), 
+    m_placement(lock_player), m_progress(&camera_on_player::progress_no_player)
+{
+  set_name("camera");
   set_active_on_build();
 } // camera_on_player::camera_on_player()
 
@@ -64,7 +77,8 @@ void tunnel::camera_on_player::build()
  * \brief Do one step in the progression of the item.
  * \param elapsed_time Elapsed time since the last call.
  */
-void tunnel::camera_on_player::progress( bear::universe::time_type elapsed_time )
+void tunnel::camera_on_player::progress
+( bear::universe::time_type elapsed_time )
 {
   (this->*m_progress)(elapsed_time);
 } // camera_on_player::progress()
@@ -114,8 +128,7 @@ tunnel::camera_on_player::set_player( bear::universe::time_type elapsed_time )
  */
 void tunnel::camera_on_player::search_player()
 {
-  if ( m_player == NULL )
-    m_player = util::find_player( get_level_globals(), 1 );
+  m_player = util::find_player( get_level_globals(), 1 );
 } // camera_on_player::search_player()
 
 /*----------------------------------------------------------------------------*/
@@ -126,12 +139,13 @@ void tunnel::camera_on_player::search_player()
 void tunnel::camera_on_player::progress_no_player
 ( bear::universe::time_type elapsed_time )
 {
-  search_player();
+   std::cout << "progress_no_player" << std::endl;
+   search_player();
 
-  if ( m_player!=NULL )
+  if ( m_player != NULL )
     {
+      std::cout << "\tno_player" << std::endl;
       m_progress = &camera_on_player::progress_with_player;
-
       teleport( m_player.hot_spot() );
     }
   else
@@ -146,6 +160,15 @@ void tunnel::camera_on_player::progress_no_player
 void tunnel::camera_on_player::progress_with_player
 ( bear::universe::time_type elapsed_time )
 {
-  progress_zoom(elapsed_time);
-  auto_position(elapsed_time);
+  std::cout << "progress_with_player" << std::endl;
+  search_player();
+
+  if ( m_player != NULL )
+    {
+      std::cout << "\tPLAYER" << std::endl;
+      progress_zoom(elapsed_time);
+      auto_position(elapsed_time);
+    }
+  else
+    m_progress = &camera_on_player::progress_no_player;
 } // camera_on_player::progress_with_player()
