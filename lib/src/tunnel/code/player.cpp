@@ -62,7 +62,7 @@ const bear::universe::time_type tunnel::player::s_time_to_crouch = 0.5;
 const bear::universe::time_type tunnel::player::s_time_to_look_upward = 0.5;
 const bear::universe::time_type tunnel::player::s_time_to_wait = 3;
 const bear::universe::time_type tunnel::player::s_time_to_jump = 1;
-const bear::universe::time_type tunnel::player::s_time_to_run = 1.2;
+const bear::universe::time_type tunnel::player::s_time_to_run = 3; // 1.2;
 const bear::universe::time_type tunnel::player::s_max_time_to_cling = 0.3;
 const bear::universe::time_type tunnel::player::s_max_time_to_hang = 1;
 const bear::universe::time_type tunnel::player::s_max_time_continue_jump = 0.26;
@@ -77,16 +77,16 @@ const bear::universe::coordinate_type
 tunnel::player::s_move_force_in_vertical_jump = 50000;
 
 const bear::universe::coordinate_type
-tunnel::player::s_move_force_in_run = 450000;
+tunnel::player::s_move_force_in_run = 350000; // 450000;
 
 const bear::universe::coordinate_type
 tunnel::player::s_move_force_in_swimming = 80000;
 
 const bear::universe::coordinate_type
-tunnel::player::s_move_force_min_in_walk = 50000;
+tunnel::player::s_move_force_min_in_walk = 50000; // 50000 
 
 const bear::universe::coordinate_type
-tunnel::player::s_move_force_max_in_walk = 300000;
+tunnel::player::s_move_force_max_in_walk = 300000; // 300000
 
 const bear::universe::coordinate_type tunnel::player::s_jump_force = 2600000;
 
@@ -96,7 +96,7 @@ tunnel::player::s_jump_force_in_float = 11500000;
 const bear::universe::coordinate_type
 tunnel::player::s_vertical_jump_force = 8500000;
 
-const bear::universe::coordinate_type tunnel::player::s_speed_to_run = 580;
+const bear::universe::coordinate_type tunnel::player::s_speed_to_run = 580; // 580 
 
 const double tunnel::player::s_mass = 100;
 const double tunnel::player::s_density = 1.5;
@@ -2522,6 +2522,13 @@ tunnel::player::get_move_force_in_walk() const
     std::min(m_run_time, s_time_to_run)*
     (s_move_force_max_in_walk - s_move_force_min_in_walk)
     / s_time_to_run;
+  
+  /*
+    return s_move_force_min_in_walk +
+    std::min(m_run_time, s_time_to_run)*
+    (s_move_force_max_in_walk - s_move_force_min_in_walk)
+    / s_time_to_run;
+  */
 } // player::get_move_force_in_walk()
 
 /*---------------------------------------------------------------------------*/
