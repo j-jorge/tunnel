@@ -233,6 +233,7 @@ void tunnel::player::progress( bear::universe::time_type elapsed_time )
 
   super::progress(elapsed_time);
   
+  progress_shaders();
   m_state_time += elapsed_time;
   m_run_time += elapsed_time;
   m_jump_time += elapsed_time;
@@ -307,6 +308,11 @@ void tunnel::player::pre_cache()
   // sounds
   get_level_globals().load_sound("sound/plee/grr.wav");
   get_level_globals().load_sound("sound/plee/snore.ogg");
+
+  // shader
+  get_level_globals().load_shader("shader/tunnel_origin.frag");
+  get_level_globals().load_shader("shader/tunnel_target.frag");
+  get_level_globals().load_shader("shader/tunnel_common.frag");
 } // player::pre_cache()
 
 /*----------------------------------------------------------------------------*/
@@ -345,6 +351,10 @@ void tunnel::player::on_enters_layer()
 
   update_layer_visibility();
   update_layer_activity();
+
+  m_origin_shader = glob.get_shader("shader/tunnel_origin.frag");
+  m_target_shader = glob.get_shader("shader/tunnel_target.frag");
+  m_common_shader = glob.get_shader("shader/tunnel_common.frag");
 } // player::on_enters_layer()
 
 /*----------------------------------------------------------------------------*/
@@ -2569,43 +2579,23 @@ bool tunnel::player::check_can_teleport( unsigned int tag ) const
 
 /*----------------------------------------------------------------------------*/
 /**
- * \brief Update shaders.
+ * \brief Progress the shaders.
  */
-void tunnel::player::update_shaders()
+void tunnel::player::progress_shaders()
 {  
-  bear::engine::level::layer_iterator it = get_level().layer_begin();
-
-  // shaders
-  for ( it = get_level().layer_begin(); it != get_level().layer_end(); ++it )
-    if ( it->get_tag() == m_tags[m_next_tag] )
-      {
-        if ( it->has_world() )
-          {
-            bear::layer_shader * s = new bear::layer_shader();
-            it->add_item(*s);
-            s->set_kill_delay(0.5);
-            s->add_layer_tag(m_tags[m_next_tag]);
-            s->set_shader_file("shader/tunnel_target.frag");
-          }
-      }
-    else if ( it->get_tag() == m_tags[m_current_tag] )
-      {
-        if ( it->has_world() )
-          {
-            bear::layer_shader * s = new bear::layer_shader();
-            it->add_item(*s);
-            s->set_kill_delay(0.5);
-            s->add_layer_tag(m_tags[m_current_tag]);
-            s->set_shader_file("shader/tunnel_origin.frag");
-          }
-      }
-    else
-      {
-        bear::layer_shader * s = new bear::layer_shader();
-        it->add_item(*s);
-        s->set_kill_delay(0.4);
-        s->set_shader_file("shader/tunnel_common.frag");
-      }
+  if ( get_current_action_name() == "teleport"  )
+    {
+      bear::engine::level::layer_iterator it = get_level().layer_begin();
+      
+      for ( it = get_level().layer_begin(); 
+            it != get_level().layer_end(); ++it )
+        if ( it->get_tag() == m_tags[m_next_tag] )
+          it->set_shader( m_target_shader );
+        else if ( it->get_tag() == m_tags[m_current_tag] )
+          it->set_shader( m_origin_shader );
+        else
+          it->set_shader( m_common_shader );
+    }
 } // player::update_shaders()
 
 /*----------------------------------------------------------------------------*/
@@ -2638,8 +2628,6 @@ void tunnel::player::teleport_in_new_layer()
  */
 void tunnel::player::on_level_progress_done()
 {
-  update_shaders();
-
   m_current_tag = m_next_tag;
 
   update_layer_visibility();

@@ -15,6 +15,7 @@
 
 #include "engine/model.hpp"
 #include "engine/messageable_item.hpp"
+#include "visual/shader_program.hpp"
 
 #include <set>
 #include <list>
@@ -265,7 +266,7 @@ namespace tunnel
     void update_layer_activity();
 
     bool check_can_teleport( unsigned int tag ) const;
-    void update_shaders();
+    void progress_shaders();
     void teleport_in_new_layer();
 
     void on_level_progress_done();
@@ -410,6 +411,15 @@ namespace tunnel
     /** \brief The connection to the signal emitted by the end of the progress
         of the layer. */
     boost::signals::connection m_level_progress_done;
+
+    /** \brief The shader for origin layer. */
+    bear::visual::shader_program m_origin_shader;
+
+    /** \brief The shader for target layer. */
+    bear::visual::shader_program m_target_shader;
+
+    /** \brief The shader for common layer. */
+    bear::visual::shader_program m_common_shader;
 
     /** \brief The maximum halo height. */
     static const bear::universe::size_type s_max_halo_height;
