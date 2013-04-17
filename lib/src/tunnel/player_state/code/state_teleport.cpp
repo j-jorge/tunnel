@@ -51,7 +51,7 @@ void tunnel::state_teleport::stop()
  */
 void tunnel::state_teleport::do_stop_teleport()
 {
-  m_player_instance.apply_abort_teleport();
+  m_player_instance.apply_abort_tunnel();
 } // state_teleport::do_stop_teleport()
 
 /*----------------------------------------------------------------------------*/

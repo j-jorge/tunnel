@@ -84,9 +84,9 @@ namespace tunnel
     void apply_run() const;
     void apply_sink() const;
     void apply_slap() const;
+    void apply_open_tunnel() const;
+    void apply_abort_tunnel() const;
     void apply_teleport() const;
-    void apply_abort_teleport() const;
-    void apply_end_teleport() const;
     void apply_start_cling() const;
     void apply_start_hang() const;
     void apply_start_jump() const;

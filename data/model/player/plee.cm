@@ -11153,7 +11153,7 @@ align_bottom
 1
 
 teleport
-1
+3
 idle
 0
 0
@@ -11172,7 +11172,7 @@ hat
 1
 2
 0
-apply_teleport
+apply_open_tunnel
 40
 110
 align_left
@@ -11238,8 +11238,8 @@ align_bottom
 1
 1
 
-0.5
-apply_end_teleport
+2
+apply_teleport
 40
 110
 align_left

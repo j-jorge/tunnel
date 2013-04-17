@@ -19,7 +19,7 @@
 #include "generic_items/tweener_item.hpp"
 #include "generic_items/camera_shaker.hpp"
 #include "generic_items/decorative_effect.hpp"
-
+#include "generic_items/shader/layer_shader.hpp"
 #include "universe/forced_movement/forced_tracking.hpp"
 
 #include "tunnel/camera_on_player.hpp"
@@ -62,7 +62,7 @@ const bear::universe::time_type tunnel::player::s_time_to_crouch = 0.5;
 const bear::universe::time_type tunnel::player::s_time_to_look_upward = 0.5;
 const bear::universe::time_type tunnel::player::s_time_to_wait = 3;
 const bear::universe::time_type tunnel::player::s_time_to_jump = 1;
-const bear::universe::time_type tunnel::player::s_time_to_run = 3; // 1.2;
+const bear::universe::time_type tunnel::player::s_time_to_run = 2.5; // 1.2;
 const bear::universe::time_type tunnel::player::s_max_time_to_cling = 0.3;
 const bear::universe::time_type tunnel::player::s_max_time_to_hang = 1;
 const bear::universe::time_type tunnel::player::s_max_time_continue_jump = 0.26;
@@ -117,7 +117,8 @@ tunnel::player::player()
   m_controller_number(0),
   m_hot_spot_position(0, 0),
   m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
-  m_hot_spot_balance_move(0, 0), m_initial_tag(0), m_current_tag(0)
+  m_hot_spot_balance_move(0, 0), m_initial_tag(0), m_current_tag(0),
+  m_next_tag(0), m_want_teleport(false), m_camera(NULL), m_next_layer(NULL)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -142,7 +143,8 @@ tunnel::player::player( const player& p )
     m_hot_spot_position(0, 0),
     m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
     m_hot_spot_balance_move(0, 0), m_initial_tag(p.m_initial_tag),
-    m_current_tag(p.m_current_tag), m_tags(p.m_tags)
+    m_current_tag(p.m_current_tag), m_next_tag(p.m_next_tag), m_tags(p.m_tags),
+    m_want_teleport(false), m_camera(NULL), m_next_layer(NULL)
 {
   init();
 } // player::player()
@@ -229,7 +231,7 @@ void tunnel::player::progress( bear::universe::time_type elapsed_time )
     dummy_progress_input_actions(elapsed_time);
 
   super::progress(elapsed_time);
-
+  
   m_state_time += elapsed_time;
   m_run_time += elapsed_time;
   m_jump_time += elapsed_time;
@@ -1008,17 +1010,17 @@ void tunnel::player::apply_slap()
 
 /*----------------------------------------------------------------------------*/
 /**
- * \brief Apply the action teleport.
+ * \brief Apply the action open tunnel.
  */
-void tunnel::player::apply_teleport()
+void tunnel::player::apply_open_tunnel()
 {
+  m_teleport_state_save = *this;
+
   m_move_force = s_move_force_in_idle;
   set_state(player::teleport_state);
   m_progress = &player::progress_teleport;
 
-  unsigned int next = m_current_tag + 1;
-  if ( next == m_tags.size() )
-    next = 0;
+  unsigned int next = ( m_current_tag + 1 ) % m_tags.size();
 
   bear::engine::level::layer_iterator it = get_level().layer_begin();
 
@@ -1028,19 +1030,17 @@ void tunnel::player::apply_teleport()
         it->set_visible(true);
         it->set_active(true);
       }
-} // player::apply_teleport()
+} // player::apply_onpen_tunnel()
 
 /*----------------------------------------------------------------------------*/
 /**
- * \brief Apply the action abort teleport.
+ * \brief Apply the action abort tunnel.
  */
-void tunnel::player::apply_abort_teleport()
+void tunnel::player::apply_abort_tunnel()
 {
   start_action_model("idle");
 
-  unsigned int next = m_current_tag + 1;
-  if ( next == m_tags.size() )
-    next = 0;
+  unsigned int next = (m_current_tag + 1) % m_tags.size();
 
   bear::engine::level::layer_iterator it = get_level().layer_begin();
   for ( ; it != get_level().layer_end(); ++it )
@@ -1049,43 +1049,25 @@ void tunnel::player::apply_abort_teleport()
         it->set_visible(false);
         it->set_active(false);
       }
-} // player::apply_abort_teleport()
+} // player::apply_abort_tunnel()
 
 /*----------------------------------------------------------------------------*/
 /**
- * \brief Apply the action end teleport.
+ * \brief Apply the action teleport.
  */
-void tunnel::player::apply_end_teleport()
+void tunnel::player::apply_teleport()
 {
-  bear::engine::level::layer_iterator it = get_level().layer_begin();
-  bool ok = false;
-  
-  m_current_tag++;
-  if ( m_current_tag == m_tags.size() )
-    m_current_tag = 0;
+  unsigned int next = (m_current_tag + 1) % m_tags.size();
 
-  update_layer_visibility();
-  update_layer_activity();
-
-  for ( it = get_level().layer_begin(); 
-        ! ok && it != get_level().layer_end(); ++it )
-    if ( it->get_tag() == m_tags[m_current_tag] && it->has_world() )
-      {
-        ok = true;
-        
-        bear::universe::item_handle item = get_level().get_camera();
-        if ( item != bear::universe::item_handle(NULL) )
-          {
-            get_layer().drop_item(*(bear::engine::base_item*)(item.get()));
-            it->add_item(*(bear::engine::base_item*)(item.get()));
-            get_level().set_camera(*(bear::engine::base_item*)(item.get()));
-          }
-        
-        start_action_model("idle");
-        get_layer().drop_item(*this);
-        it->add_item(*this);
-      }
-} // player::apply_end_teleport()
+  if ( check_can_teleport(next) )
+    {
+      start_action_model("idle");
+      m_want_teleport = true;
+      m_next_tag = next;
+    }
+  //else
+  //  abort_teleport();
+} // player::apply_teleport()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -1442,6 +1424,15 @@ tunnel::player::get_vertical_jump_force() const
   return s_vertical_jump_force;
 } // player::get_vertical_jump_force()
 
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Inform the item that it quits its owner.
+ */
+void tunnel::player::on_quit_owner()
+{
+  end_of_progress();
+} // player::on_quit_owner()
+
 /*---------------------------------------------------------------------------*/
 /**
  * \brief Progress in the water.
@@ -1571,7 +1562,6 @@ void tunnel::player::progress_jump( bear::universe::time_type elapsed_time )
  */
 void tunnel::player::progress_fall( bear::universe::time_type elapsed_time )
 {
-  std::cout << "progress_fall " << has_owner() << std::endl;
   if ( !test_bottom_contact() )
     {
       if ( is_only_in_environment(bear::universe::water_environment) )
@@ -2563,6 +2553,112 @@ void tunnel::player::update_layer_activity()
 
 /*----------------------------------------------------------------------------*/
 /**
+ * \brief Test if the player can teleport in a given tag.
+ */
+bool tunnel::player::check_can_teleport( unsigned int tag ) const
+{
+  bool result = false;
+  
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+  
+  for ( it = get_level().layer_begin(); 
+        it != get_level().layer_end() && ! result ; ++it )
+    {
+      // TODO Ajouter test de collision
+      if ( it->get_tag() == m_tags[tag] && it->has_world() )
+        result = true;
+    }
+
+  return result;
+} //player::check_can_teleport()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Inform that it is the end of the progress.
+ */
+void tunnel::player::end_of_progress()
+{
+  if ( m_want_teleport )
+    {
+      update_shaders();
+
+      m_current_tag = m_next_tag;
+
+      update_layer_visibility();
+      update_layer_activity();
+      
+      teleport_in_new_layer();
+      m_want_teleport = false;
+    }
+} // player::end_of_progress()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Update shaders.
+ */
+void tunnel::player::update_shaders()
+{  
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+
+  // shaders
+  for ( it = get_level().layer_begin(); it != get_level().layer_end(); ++it )
+    if ( it->get_tag() == m_tags[m_next_tag] )
+      {
+        if ( it->has_world() )
+          {
+            bear::layer_shader * s = new bear::layer_shader();
+            it->add_item(*s);
+            s->set_kill_delay(0.5);
+            s->add_layer_tag(m_tags[m_next_tag]);
+            s->set_shader_file("shader/tunnel_target.frag");
+          }
+      }
+    else if ( it->get_tag() == m_tags[m_current_tag] )
+      {
+        if ( it->has_world() )
+          {
+            bear::layer_shader * s = new bear::layer_shader();
+            it->add_item(*s);
+            s->set_kill_delay(0.5);
+            s->add_layer_tag(m_tags[m_current_tag]);
+            s->set_shader_file("shader/tunnel_origin.frag");
+          }
+      }
+    else
+      {
+        bear::layer_shader * s = new bear::layer_shader();
+        it->add_item(*s);
+        s->set_kill_delay(0.4);
+        s->set_shader_file("shader/tunnel_common.frag");
+      }
+} // player::update_shaders()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Teleport in new layer.
+ */
+void tunnel::player::teleport_in_new_layer()
+{
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+
+  for ( it = get_level().layer_begin(); it != get_level().layer_end(); ++it )
+    if ( it->get_tag() == m_tags[m_current_tag] && it->has_world() )
+      {
+        bear::universe::item_handle item = get_level().get_camera();
+        if ( item != bear::universe::item_handle(NULL) )
+          {
+            //get_layer().drop_item(*(bear::engine::base_item*)(item.get()));
+            //it->add_item(*(bear::engine::base_item*)(item.get()));
+          }
+
+        
+        get_layer().drop_item(*this);
+        it->add_item(*this);
+      }
+} // player::teleport_in_new_layer()
+
+/*----------------------------------------------------------------------------*/
+/**
  * \brief Export the methods of the class.
  */
 void tunnel::player::init_exported_methods()
@@ -2582,8 +2678,8 @@ void tunnel::player::init_exported_methods()
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_run, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_sink, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_slap, void );
+  TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_open_tunnel, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_teleport, void );
-  TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_end_teleport, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_attack, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_start_cling, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_start_hang, void );

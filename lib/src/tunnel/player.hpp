@@ -158,9 +158,9 @@ namespace tunnel
     void apply_walk();
     void apply_run();
     void apply_slap();
+    void apply_open_tunnel();
+    void apply_abort_tunnel();
     void apply_teleport();
-    void apply_abort_teleport();
-    void apply_end_teleport();
     void apply_attack();
     void apply_captive();
     void apply_release();
@@ -192,7 +192,10 @@ namespace tunnel
     void choose_idle_state();
     void choose_walk_state();
     bear::universe::coordinate_type get_vertical_jump_force() const;
-    
+
+  protected:
+    void on_quit_owner();
+
   private:
     void progress_in_water(bear::universe::time_type elapsed_time);
     void to_string( std::string& str ) const;
@@ -260,6 +263,11 @@ namespace tunnel
    
     void update_layer_visibility();
     void update_layer_activity();
+
+    bool check_can_teleport( unsigned int tag ) const;
+    void end_of_progress();
+    void update_shaders();
+    void teleport_in_new_layer();
 
     static void init_exported_methods();
 
@@ -389,8 +397,23 @@ namespace tunnel
     /** \brief Indicates the current tag. */
     unsigned int m_current_tag;
 
+    /** \brief Indicates the next tag. */
+    unsigned int m_next_tag;
+
     /** \brief The list of tags. */
     std::vector< std::string > m_tags;
+
+    /** \brief Indicates if the player want to teleport. */
+    bool m_want_teleport;
+
+    /** \brief A pointer on the camera. */
+    bear::engine::base_item* m_camera;
+
+    /** \brief A pointer on the next layer for teleportation. */
+    bear::engine::layer* m_next_layer;
+
+    /** \brief A copy of physical item attributes before teleportation. */
+    bear::universe::physical_item_state m_teleport_state_save;
 
     /** \brief The maximum halo height. */
     static const bear::universe::size_type s_max_halo_height;

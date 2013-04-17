@@ -1,6 +1,7 @@
 #version 120
 
 uniform sampler2D texture;
+// uniform float tunnel_radius;
 
 void main(void)
 {
