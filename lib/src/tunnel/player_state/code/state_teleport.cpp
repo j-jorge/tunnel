@@ -62,3 +62,40 @@ void tunnel::state_teleport::do_teleport()
 {
   // Player can't do a new teleport.
 } // state_teleport::do_teleport()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Move the player to the left.
+ */
+void tunnel::state_teleport::do_move_left()
+{
+  // we can't move in this state
+} // state_teleport::do_move_left()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Move the player to the left.
+ */
+void tunnel::state_teleport::do_move_right()
+{
+   // we can't move in this state
+} // state_teleport::do_move_right()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Do a jump.
+ */
+void tunnel::state_teleport::do_jump()
+{
+   // we can't jump in this state
+} // state_teleport::do_jump()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Make the player doing slap.
+ */
+void tunnel::state_teleport::do_slap()
+{
+   // we can't slap in this state
+} // state_teleport::do_slap()
+

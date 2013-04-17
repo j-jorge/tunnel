@@ -269,6 +269,7 @@ namespace tunnel
     void progress_shaders();
     void teleport_in_new_layer();
     void finish_abort_tunnel();
+    void thwart_gravity();
 
     void on_level_progress_done();
 

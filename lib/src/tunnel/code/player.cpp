@@ -1026,6 +1026,7 @@ void tunnel::player::apply_slap()
  */
 void tunnel::player::apply_open_tunnel()
 {
+  stop();
   m_teleport_time = 0;
   m_tunnel_aborted = false;
   m_teleport_state_save = *this;
@@ -1664,6 +1665,8 @@ void tunnel::player::progress_slap( bear::universe::time_type elapsed_time )
  */
 void tunnel::player::progress_teleport( bear::universe::time_type elapsed_time )
 {
+  thwart_gravity();
+
   if ( m_tunnel_aborted )
     {
       if ( m_teleport_time > elapsed_time )
@@ -1887,20 +1890,7 @@ void tunnel::player::progress_cling( bear::universe::time_type elapsed_time )
             speed.y *= 0.9;
 
           set_speed(speed);
-
-          if ( get_layer().has_world() )
-            {
-              bear::universe::force_type force
-                ( - get_mass() * get_layer().get_world().get_gravity() );
-
-              if ( (get_density() != 0) &&
-                   ( get_mass() != std::numeric_limits<double>::infinity() )  )
-                force += get_layer().get_world().get_gravity() * get_mass() *
-                  get_layer().get_world().get_average_density
-                  (get_bounding_box()) / get_density();
-
-              add_external_force(force);
-            }
+          thwart_gravity();
         }
     }
 } // player::progress_cling()
@@ -2082,6 +2072,8 @@ void tunnel::player::regenerate()
   update_layer_activity();
 
   set_center_of_mass( m_saved_position + bear::universe::position_type(0,50) );
+  set_state(idle_state);
+  choose_idle_state();
   stop();
 
   m_last_visual_time = 0;
@@ -2221,8 +2213,6 @@ void tunnel::player::progress_spot( bear::universe::time_type elapsed_time )
  */
 void tunnel::player::stop()
 {
-  set_state(idle_state);
-  choose_idle_state();
   set_speed( bear::universe::speed_type(0, 0) );
   set_internal_force(bear::universe::force_type(0, 0));
   set_external_force(bear::universe::force_type(0, 0));
@@ -2658,6 +2648,27 @@ void tunnel::player::finish_abort_tunnel()
         it->set_active(false);
       }
 } // player::finish_abort_tunnel()
+
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Give force to thwart the gravity.
+ */
+void tunnel::player::thwart_gravity()
+{
+  if ( get_layer().has_world() )
+    {
+      bear::universe::force_type force
+        ( - get_mass() * get_layer().get_world().get_gravity() );
+      
+      if ( (get_density() != 0) &&
+           ( get_mass() != std::numeric_limits<double>::infinity() )  )
+        force += get_layer().get_world().get_gravity() * get_mass() *
+          get_layer().get_world().get_average_density
+          (get_bounding_box()) / get_density();
+      
+      add_external_force(force);
+    }
+} // player::thwart_gravity()
 
 /*----------------------------------------------------------------------------*/
 /**

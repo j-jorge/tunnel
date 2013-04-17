@@ -34,6 +34,10 @@ namespace tunnel
 
     virtual void do_stop_teleport();
     virtual void do_teleport();
+    virtual void do_move_left();
+    virtual void do_move_right();
+    virtual void do_jump();
+    virtual void do_slap();
 
   private:
     /* \brief The initial value of normal_defensive_power. */
