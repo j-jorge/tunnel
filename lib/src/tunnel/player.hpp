@@ -264,14 +264,11 @@ namespace tunnel
     void update_layer_visibility();
     void update_layer_activity();
 
-<<<<<<< HEAD
     bool check_can_teleport( unsigned int tag ) const;
-    void end_of_progress();
     void update_shaders();
     void teleport_in_new_layer();
-=======
+
     void on_level_progress_done();
->>>>>>> 28daa88b8d56133425e1d4d791497d1c2bdeefb2
 
     static void init_exported_methods();
 
@@ -406,15 +403,6 @@ namespace tunnel
 
     /** \brief The list of tags. */
     std::vector< std::string > m_tags;
-
-    /** \brief Indicates if the player want to teleport. */
-    bool m_want_teleport;
-
-    /** \brief A pointer on the camera. */
-    bear::engine::base_item* m_camera;
-
-    /** \brief A pointer on the next layer for teleportation. */
-    bear::engine::layer* m_next_layer;
 
     /** \brief A copy of physical item attributes before teleportation. */
     bear::universe::physical_item_state m_teleport_state_save;

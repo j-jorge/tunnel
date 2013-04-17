@@ -118,7 +118,7 @@ tunnel::player::player()
   m_hot_spot_position(0, 0),
   m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
   m_hot_spot_balance_move(0, 0), m_initial_tag(0), m_current_tag(0),
-  m_next_tag(0), m_want_teleport(false), m_camera(NULL), m_next_layer(NULL)
+  m_next_tag(0)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -143,8 +143,7 @@ tunnel::player::player( const player& p )
     m_hot_spot_position(0, 0),
     m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
     m_hot_spot_balance_move(0, 0), m_initial_tag(p.m_initial_tag),
-    m_current_tag(p.m_current_tag), m_next_tag(p.m_next_tag), m_tags(p.m_tags),
-    m_want_teleport(false), m_camera(NULL), m_next_layer(NULL)
+    m_current_tag(p.m_current_tag), m_next_tag(p.m_next_tag), m_tags(p.m_tags)
 {
   init();
 } // player::player()
@@ -1064,15 +1063,14 @@ void tunnel::player::apply_teleport()
   if ( check_can_teleport(next) )
     {
       start_action_model("idle");
-      m_want_teleport = true;
       m_next_tag = next;
+
+      m_level_progress_done =
+        get_level().on_progress_done
+        ( boost::bind( &player::on_level_progress_done, this ) );
     }
   //else
   //  abort_teleport();
-
-  m_level_progress_done =
-    get_level().on_progress_done
-    ( boost::bind( &player::on_level_progress_done, this ) );
 } // player::apply_end_teleport()
 
 /*----------------------------------------------------------------------------*/
@@ -1429,15 +1427,6 @@ tunnel::player::get_vertical_jump_force() const
 {
   return s_vertical_jump_force;
 } // player::get_vertical_jump_force()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Inform the item that it quits its owner.
- */
-void tunnel::player::on_quit_owner()
-{
-  end_of_progress();
-} // player::on_quit_owner()
 
 /*---------------------------------------------------------------------------*/
 /**
@@ -2559,7 +2548,6 @@ void tunnel::player::update_layer_activity()
 
 /*----------------------------------------------------------------------------*/
 /**
-<<<<<<< HEAD
  * \brief Test if the player can teleport in a given tag.
  */
 bool tunnel::player::check_can_teleport( unsigned int tag ) const
@@ -2578,26 +2566,6 @@ bool tunnel::player::check_can_teleport( unsigned int tag ) const
 
   return result;
 } //player::check_can_teleport()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Inform that it is the end of the progress.
- */
-void tunnel::player::end_of_progress()
-{
-  if ( m_want_teleport )
-    {
-      update_shaders();
-
-      m_current_tag = m_next_tag;
-
-      update_layer_visibility();
-      update_layer_activity();
-      
-      teleport_in_new_layer();
-      m_want_teleport = false;
-    }
-} // player::end_of_progress()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -2664,44 +2632,20 @@ void tunnel::player::teleport_in_new_layer()
       }
 } // player::teleport_in_new_layer()
 
-
 /*----------------------------------------------------------------------------*/
 /**
  * \brief Teleports the player in the target layer.
  */
 void tunnel::player::on_level_progress_done()
 {
-  ++m_current_tag;
+  update_shaders();
 
-  if ( m_current_tag == m_tags.size() )
-    m_current_tag = 0;
+  m_current_tag = m_next_tag;
 
   update_layer_visibility();
   update_layer_activity();
-
-  bool ok = false;
-  
-  for ( bear::engine::level::layer_iterator it = get_level().layer_begin(); 
-        ! ok && (it != get_level().layer_end()); ++it )
-    if ( (it->get_tag() == m_tags[m_current_tag]) && it->has_world() )
-      {
-        ok = true;
-        
-        bear::universe::item_handle item = get_level().get_camera();
-        if ( item != bear::universe::item_handle(NULL) )
-          {
-            bear::engine::base_item* const camera
-              ( static_cast<bear::engine::base_item*>( item.get() ) );
-
-            camera->get_layer().drop_item( *camera );
-            it->add_item( *camera );
-            get_level().set_camera( *camera );
-          }
-        
-        start_action_model("idle");
-        get_layer().drop_item(*this);
-        it->add_item(*this);
-      }
+      
+  teleport_in_new_layer();
 
   m_level_progress_done.disconnect();
 } // player::on_level_progress_done()
