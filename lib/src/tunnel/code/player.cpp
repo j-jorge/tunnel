@@ -2074,10 +2074,14 @@ bool tunnel::player::is_crushed() const
 void tunnel::player::regenerate()
 {
   m_current_tag = m_initial_tag;
+  m_next_tag = m_initial_tag;
+  m_level_progress_done =
+          get_level().on_progress_done
+          ( boost::bind( &player::on_level_progress_done, this ) );
   update_layer_visibility();
   update_layer_activity();
 
-  set_center_of_mass( m_saved_position );
+  set_center_of_mass( m_saved_position + bear::universe::position_type(0,50) );
   stop();
 
   m_last_visual_time = 0;
