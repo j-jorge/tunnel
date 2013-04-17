@@ -19,7 +19,7 @@
 #include <set>
 #include <list>
 
-#include "engine/export.hpp"
+#include <boost/signals/connection.hpp>
 
 namespace tunnel
 {
@@ -261,6 +261,8 @@ namespace tunnel
     void update_layer_visibility();
     void update_layer_activity();
 
+    void on_level_progress_done();
+
     static void init_exported_methods();
 
   protected:
@@ -391,6 +393,10 @@ namespace tunnel
 
     /** \brief The list of tags. */
     std::vector< std::string > m_tags;
+
+    /** \brief The connection to the signal emitted by the end of the progress
+        of the layer. */
+    boost::signals::connection m_level_progress_done;
 
     /** \brief The maximum halo height. */
     static const bear::universe::size_type s_max_halo_height;
