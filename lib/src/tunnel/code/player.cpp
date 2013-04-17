@@ -2587,6 +2587,17 @@ void tunnel::player::progress_shaders()
       m_origin_shader.set_variable("tunnel_radius",distance);
       m_common_shader.set_variable("tunnel_radius",distance);
 
+      bear::universe::position_type center = 
+        get_center_of_mass() - get_level().get_camera_center() + 
+        get_level().get_camera_size() / 2;
+
+      m_target_shader.set_variable("center_x", center.x);
+      m_target_shader.set_variable("center_y", center.y);
+      m_origin_shader.set_variable("center_x", center.x);
+      m_origin_shader.set_variable("center_y", center.y);
+      m_common_shader.set_variable("center_x", center.x);
+      m_common_shader.set_variable("center_y", center.y);
+
       bear::engine::level::layer_iterator it = get_level().layer_begin();
       
       for ( it = get_level().layer_begin(); 

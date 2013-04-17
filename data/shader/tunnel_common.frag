@@ -2,6 +2,8 @@
 
 uniform sampler2D texture;
 uniform float tunnel_radius;
+uniform float center_x;
+uniform float center_y;
 
 float curve_outside( float v )
 {
@@ -17,8 +19,6 @@ float curve_inside( float v )
 void main(void)
 {
   vec4 color = texture2D(texture, gl_TexCoord[0].st);
-  const float center_x = 640;
-  const float center_y = 360;
 
   float dx = gl_FragCoord.x - center_x;
   float dy = gl_FragCoord.y - center_y;
