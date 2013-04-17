@@ -266,12 +266,14 @@ namespace tunnel
     void update_layer_activity();
 
     bool check_can_teleport() const;
-    void progress_shaders();
+    void init_shaders();
+    void remove_shaders();
     void teleport_in_new_layer();
     void finish_abort_tunnel();
     void thwart_gravity();
 
     void on_level_progress_done();
+    void on_init_shaders();
 
     static void init_exported_methods();
 
@@ -419,7 +421,15 @@ namespace tunnel
 
     /** \brief The connection to the signal emitted by the end of the progress
         of the layer. */
-    boost::signals::connection m_level_progress_done;
+    boost::signals::connection m_level_progress_done;    
+
+    /** \brief The connection to the signal emitted by the end of the progress
+        of the layer. */
+    boost::signals::connection m_init_shaders;
+
+    /** \brief The connection to the signal emitted by the end of the progress
+        of the layer. */
+    boost::signals::connection m_remove_shaders;  
 
     /** \brief The shader for origin layer. */
     bear::visual::shader_program m_origin_shader;
@@ -429,6 +439,18 @@ namespace tunnel
 
     /** \brief The shader for common layer. */
     bear::visual::shader_program m_common_shader;
+
+    /** \brief Indicates that the initial position is saved. */
+    bool m_do_saved_position;
+
+    /** \brief The minimum radius of teleportation circle. */
+    static const bear::universe::coordinate_type s_min_teleportation_radius;
+
+    /** \brief The maximum radius of teleportation circle. */
+    static const bear::universe::coordinate_type s_max_teleportation_radius;
+
+    /** \brief The time before a teleportation. */
+    static const bear::universe::coordinate_type s_time_before_teleportation;
 
     /** \brief The maximum halo height. */
     static const bear::universe::size_type s_max_halo_height;

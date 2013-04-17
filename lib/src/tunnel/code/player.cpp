@@ -57,6 +57,13 @@
 
 #include <claw/tween/easing/easing_linear.hpp>
 
+const bear::universe::coordinate_type 
+tunnel::player::s_min_teleportation_radius = 80;
+const bear::universe::coordinate_type 
+tunnel::player::s_max_teleportation_radius = 300;
+const bear::universe::coordinate_type 
+tunnel::player::s_time_before_teleportation = 1.5;
+
 const bear::universe::size_type tunnel::player::s_max_halo_height = 64;
 const bear::universe::time_type tunnel::player::s_time_to_crouch = 0.5;
 const bear::universe::time_type tunnel::player::s_time_to_look_upward = 0.5;
@@ -118,7 +125,8 @@ tunnel::player::player()
   m_hot_spot_position(0, 0),
   m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
   m_hot_spot_balance_move(0, 0), m_initial_tag(0), m_current_tag(0),
-  m_next_tag(0), m_teleport_time(0), m_tunnel_aborted(false)
+  m_next_tag(0), m_teleport_time(0), m_tunnel_aborted(false),
+  m_do_saved_position(false)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -144,7 +152,8 @@ tunnel::player::player( const player& p )
     m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
     m_hot_spot_balance_move(0, 0), m_initial_tag(p.m_initial_tag),
     m_current_tag(p.m_current_tag), m_next_tag(p.m_next_tag), m_tags(p.m_tags),
-    m_teleport_time(p.m_teleport_time), m_tunnel_aborted(p.m_tunnel_aborted)
+    m_teleport_time(p.m_teleport_time), m_tunnel_aborted(p.m_tunnel_aborted),
+    m_do_saved_position(false)
 {
   init();
 } // player::player()
@@ -165,7 +174,6 @@ void tunnel::player::init()
   set_spot_maximum(200, 220);
   set_spot_balance_move(3, 15);
 
-  save_current_position();
   m_last_bottom_left = bear::universe::position_type(0, 0);
   m_run_time = 0;
 
@@ -234,7 +242,6 @@ void tunnel::player::progress( bear::universe::time_type elapsed_time )
 
   super::progress(elapsed_time);
   
-  progress_shaders();
   m_state_time += elapsed_time;
   m_run_time += elapsed_time;
   m_jump_time += elapsed_time;
@@ -328,8 +335,6 @@ void tunnel::player::on_enters_layer()
   for ( unsigned int i=0; i <= player_action::max_value; ++i)
     m_authorized_action[i] = true;
 
-  save_current_position();
-
   m_wait_state_number = 0;
   m_want_clung_jump = false;
   bear::engine::level_globals& glob = get_level_globals();
@@ -348,7 +353,9 @@ void tunnel::player::on_enters_layer()
   m_wait_state_number = 3;
   m_has_main_hat = true;
   m_has_hat = true;
-  save_position(get_center_of_mass());
+
+  if ( ! m_do_saved_position ) 
+    save_position(get_center_of_mass());
 
   update_layer_visibility();
   update_layer_activity();
@@ -431,6 +438,7 @@ bool tunnel::player::is_valid() const
 void tunnel::player::save_position( const bear::universe::position_type& p )
 {
   m_saved_position = p;
+  m_do_saved_position = true;
 } // player::save_position()
 
 /*----------------------------------------------------------------------------*/
@@ -1038,6 +1046,10 @@ void tunnel::player::apply_open_tunnel()
   m_next_tag = ( m_current_tag + 1 ) % m_tags.size();
 
   bear::engine::level::layer_iterator it = get_level().layer_begin();
+
+  m_init_shaders =
+    get_level().on_progress_done
+    ( boost::bind( &player::on_init_shaders, this ) );
 
   for ( ; it != get_level().layer_end(); ++it )
     if ( it->get_tag() == m_tags[m_next_tag] )
@@ -1670,12 +1682,17 @@ void tunnel::player::progress_teleport( bear::universe::time_type elapsed_time )
   if ( m_tunnel_aborted )
     {
       if ( m_teleport_time > elapsed_time )
-        m_teleport_time -= elapsed_time;
+        m_teleport_time -= 2 * elapsed_time;
       else
         finish_abort_tunnel();
     }
   else
-    m_teleport_time += elapsed_time;
+    {
+      m_teleport_time += elapsed_time;
+
+      if ( m_teleport_time >= s_time_before_teleportation )
+        apply_teleport();
+    }
 } // player::progress_teleport()
 
 /*---------------------------------------------------------------------------*/
@@ -2570,40 +2587,51 @@ bool tunnel::player::check_can_teleport() const
 
 /*----------------------------------------------------------------------------*/
 /**
- * \brief Progress the shaders.
+ * \brief init the shaders.
  */
-void tunnel::player::progress_shaders()
+void tunnel::player::init_shaders()
 {  
-  if ( get_current_action_name() == "teleport"  )
-    {
-      double distance = m_teleport_time * 300.0; 
-      m_target_shader.set_variable("tunnel_radius",distance);
-      m_origin_shader.set_variable("tunnel_radius",distance);
-      m_common_shader.set_variable("tunnel_radius",distance);
+  double radius = s_min_teleportation_radius +
+    m_teleport_time / s_time_before_teleportation * 
+    ( s_max_teleportation_radius - s_min_teleportation_radius ); 
+  m_target_shader.set_variable("tunnel_radius",radius);
+  m_origin_shader.set_variable("tunnel_radius",radius);
+  m_common_shader.set_variable("tunnel_radius",radius);
+  
+  bear::universe::position_type center = 
+    get_center_of_mass() - get_level().get_camera_center() + 
+    get_level().get_camera_size() / 2;
+  
+  m_target_shader.set_variable("center_x", center.x);
+  m_target_shader.set_variable("center_y", center.y);
+  m_origin_shader.set_variable("center_x", center.x);
+  m_origin_shader.set_variable("center_y", center.y);
+  m_common_shader.set_variable("center_x", center.x);
+  m_common_shader.set_variable("center_y", center.y);
+  
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+  
+  for ( it = get_level().layer_begin(); 
+        it != get_level().layer_end(); ++it )
+    if ( it->get_tag() == m_tags[m_next_tag] )
+      it->set_shader( m_target_shader );
+    else if ( it->get_tag() == m_tags[m_current_tag] )
+      it->set_shader( m_origin_shader );
+    else
+      it->set_shader( m_common_shader );
+} // player::init_shaders()
 
-      bear::universe::position_type center = 
-        get_center_of_mass() - get_level().get_camera_center() + 
-        get_level().get_camera_size() / 2;
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief  in the target layer.
+ */
+void tunnel::player::remove_shaders()
+{
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
 
-      m_target_shader.set_variable("center_x", center.x);
-      m_target_shader.set_variable("center_y", center.y);
-      m_origin_shader.set_variable("center_x", center.x);
-      m_origin_shader.set_variable("center_y", center.y);
-      m_common_shader.set_variable("center_x", center.x);
-      m_common_shader.set_variable("center_y", center.y);
-
-      bear::engine::level::layer_iterator it = get_level().layer_begin();
-      
-      for ( it = get_level().layer_begin(); 
-            it != get_level().layer_end(); ++it )
-        if ( it->get_tag() == m_tags[m_next_tag] )
-          it->set_shader( m_target_shader );
-        else if ( it->get_tag() == m_tags[m_current_tag] )
-          it->set_shader( m_origin_shader );
-        else
-          it->set_shader( m_common_shader );
-    }
-} // player::update_shaders()
+  for ( it = get_level().layer_begin(); it != get_level().layer_end(); ++it )
+    it->set_shader( bear::visual::shader_program() );
+} // player::remove_shaders()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -2629,6 +2657,7 @@ void tunnel::player::teleport_in_new_layer()
         get_layer().drop_item(*this);
         it->add_item(*this);
         start_action_model("idle");
+        set_physical_state(m_teleport_state_save);
       }
 } // player::teleport_in_new_layer()
 
@@ -2639,6 +2668,7 @@ void tunnel::player::teleport_in_new_layer()
 void tunnel::player::finish_abort_tunnel()
 {
   start_action_model("idle");
+  set_physical_state(m_teleport_state_save);
 
   bear::engine::level::layer_iterator it = get_level().layer_begin();
   for ( ; it != get_level().layer_end(); ++it )
@@ -2682,9 +2712,24 @@ void tunnel::player::on_level_progress_done()
   update_layer_activity();
       
   teleport_in_new_layer();
-
+  
   m_level_progress_done.disconnect();
 } // player::on_level_progress_done()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Event that init shaders for all layer.
+ */
+void tunnel::player::on_init_shaders()
+{
+  if ( get_current_action_name() == "teleport" ) 
+    init_shaders();
+  else
+    {
+      remove_shaders();
+      m_init_shaders.disconnect();
+    }
+} // player::on_init_shaders()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -2726,8 +2771,6 @@ void tunnel::player::init_exported_methods()
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_swim_in_float, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_swim_up_in_float, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, roar_shake, void );
-
-  TEXT_INTERFACE_CONNECT_METHOD_0( player, save_current_position, void );
 
   TEXT_INTERFACE_CONNECT_METHOD_1
     ( player, authorize_action, void, const std::string& );
