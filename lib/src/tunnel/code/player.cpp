@@ -2625,12 +2625,11 @@ void tunnel::player::teleport_in_new_layer()
         bear::universe::item_handle item = get_level().get_camera();
         if ( item != bear::universe::item_handle(NULL) )
           {
-            /*
-              bear::engine::base_item * obj = 
+            bear::engine::base_item * obj = 
               (bear::engine::base_item*)(item.get());
             get_layer().drop_item(*obj);
             it->add_item(*obj);
-            */
+            get_level().set_camera(*obj);
           }
         
         get_layer().drop_item(*this);
