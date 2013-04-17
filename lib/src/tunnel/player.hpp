@@ -19,7 +19,7 @@
 #include <set>
 #include <list>
 
-#include "engine/export.hpp"
+#include <boost/signals/connection.hpp>
 
 namespace tunnel
 {
@@ -264,10 +264,14 @@ namespace tunnel
     void update_layer_visibility();
     void update_layer_activity();
 
+<<<<<<< HEAD
     bool check_can_teleport( unsigned int tag ) const;
     void end_of_progress();
     void update_shaders();
     void teleport_in_new_layer();
+=======
+    void on_level_progress_done();
+>>>>>>> 28daa88b8d56133425e1d4d791497d1c2bdeefb2
 
     static void init_exported_methods();
 
@@ -414,6 +418,10 @@ namespace tunnel
 
     /** \brief A copy of physical item attributes before teleportation. */
     bear::universe::physical_item_state m_teleport_state_save;
+
+    /** \brief The connection to the signal emitted by the end of the progress
+        of the layer. */
+    boost::signals::connection m_level_progress_done;
 
     /** \brief The maximum halo height. */
     static const bear::universe::size_type s_max_halo_height;

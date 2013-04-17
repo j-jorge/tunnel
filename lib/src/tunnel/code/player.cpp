@@ -215,6 +215,8 @@ tunnel::player::~player()
 
   if ( m_halo_hand_animation )
     delete m_halo_hand_animation;
+
+  m_level_progress_done.disconnect();
 } // player::~player()
 
 /*---------------------------------------------------------------------------*/
@@ -266,8 +268,8 @@ void tunnel::player::progress( bear::universe::time_type elapsed_time )
  * \brief Get the sprite representing the item.
  * \param visuals (out) The sprites of the item, and their positions.
  */
-void
-tunnel::player::get_visual( std::list<bear::engine::scene_visual>& visuals ) const
+void tunnel::player::get_visual
+( std::list<bear::engine::scene_visual>& visuals ) const
 {
   super::get_visual(visuals);
 
@@ -1067,7 +1069,11 @@ void tunnel::player::apply_teleport()
     }
   //else
   //  abort_teleport();
-} // player::apply_teleport()
+
+  m_level_progress_done =
+    get_level().on_progress_done
+    ( boost::bind( &player::on_level_progress_done, this ) );
+} // player::apply_end_teleport()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -2553,6 +2559,7 @@ void tunnel::player::update_layer_activity()
 
 /*----------------------------------------------------------------------------*/
 /**
+<<<<<<< HEAD
  * \brief Test if the player can teleport in a given tag.
  */
 bool tunnel::player::check_can_teleport( unsigned int tag ) const
@@ -2656,6 +2663,48 @@ void tunnel::player::teleport_in_new_layer()
         it->add_item(*this);
       }
 } // player::teleport_in_new_layer()
+
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Teleports the player in the target layer.
+ */
+void tunnel::player::on_level_progress_done()
+{
+  ++m_current_tag;
+
+  if ( m_current_tag == m_tags.size() )
+    m_current_tag = 0;
+
+  update_layer_visibility();
+  update_layer_activity();
+
+  bool ok = false;
+  
+  for ( bear::engine::level::layer_iterator it = get_level().layer_begin(); 
+        ! ok && (it != get_level().layer_end()); ++it )
+    if ( (it->get_tag() == m_tags[m_current_tag]) && it->has_world() )
+      {
+        ok = true;
+        
+        bear::universe::item_handle item = get_level().get_camera();
+        if ( item != bear::universe::item_handle(NULL) )
+          {
+            bear::engine::base_item* const camera
+              ( static_cast<bear::engine::base_item*>( item.get() ) );
+
+            camera->get_layer().drop_item( *camera );
+            it->add_item( *camera );
+            get_level().set_camera( *camera );
+          }
+        
+        start_action_model("idle");
+        get_layer().drop_item(*this);
+        it->add_item(*this);
+      }
+
+  m_level_progress_done.disconnect();
+} // player::on_level_progress_done()
 
 /*----------------------------------------------------------------------------*/
 /**
