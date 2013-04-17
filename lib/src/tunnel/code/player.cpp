@@ -118,7 +118,7 @@ tunnel::player::player()
   m_hot_spot_position(0, 0),
   m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
   m_hot_spot_balance_move(0, 0), m_initial_tag(0), m_current_tag(0),
-  m_next_tag(0)
+  m_next_tag(0), m_teleport_time(0), m_tunnel_aborted(false)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -143,7 +143,8 @@ tunnel::player::player( const player& p )
     m_hot_spot_position(0, 0),
     m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
     m_hot_spot_balance_move(0, 0), m_initial_tag(p.m_initial_tag),
-    m_current_tag(p.m_current_tag), m_next_tag(p.m_next_tag), m_tags(p.m_tags)
+    m_current_tag(p.m_current_tag), m_next_tag(p.m_next_tag), m_tags(p.m_tags),
+    m_teleport_time(p.m_teleport_time), m_tunnel_aborted(p.m_tunnel_aborted)
 {
   init();
 } // player::player()
@@ -1025,23 +1026,25 @@ void tunnel::player::apply_slap()
  */
 void tunnel::player::apply_open_tunnel()
 {
+  m_teleport_time = 0;
+  m_tunnel_aborted = false;
   m_teleport_state_save = *this;
 
   m_move_force = s_move_force_in_idle;
   set_state(player::teleport_state);
   m_progress = &player::progress_teleport;
 
-  unsigned int next = ( m_current_tag + 1 ) % m_tags.size();
+  m_next_tag = ( m_current_tag + 1 ) % m_tags.size();
 
   bear::engine::level::layer_iterator it = get_level().layer_begin();
 
   for ( ; it != get_level().layer_end(); ++it )
-    if ( it->get_tag() == m_tags[next] )
+    if ( it->get_tag() == m_tags[m_next_tag] )
       {
         it->set_visible(true);
         it->set_active(true);
       }
-} // player::apply_onpen_tunnel()
+} // player::apply_open_tunnel()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -1049,17 +1052,7 @@ void tunnel::player::apply_open_tunnel()
  */
 void tunnel::player::apply_abort_tunnel()
 {
-  start_action_model("idle");
-
-  unsigned int next = (m_current_tag + 1) % m_tags.size();
-
-  bear::engine::level::layer_iterator it = get_level().layer_begin();
-  for ( ; it != get_level().layer_end(); ++it )
-    if ( it->get_tag() == m_tags[next] )
-      {
-        it->set_visible(false);
-        it->set_active(false);
-      }
+  m_tunnel_aborted = true;
 } // player::apply_abort_tunnel()
 
 /*----------------------------------------------------------------------------*/
@@ -1068,19 +1061,15 @@ void tunnel::player::apply_abort_tunnel()
  */
 void tunnel::player::apply_teleport()
 {
-  unsigned int next = (m_current_tag + 1) % m_tags.size();
-
-  if ( check_can_teleport(next) )
+  if ( ! m_tunnel_aborted )
     {
-      start_action_model("idle");
-      m_next_tag = next;
-
-      m_level_progress_done =
-        get_level().on_progress_done
-        ( boost::bind( &player::on_level_progress_done, this ) );
+      if ( check_can_teleport() )
+        m_level_progress_done =
+          get_level().on_progress_done
+          ( boost::bind( &player::on_level_progress_done, this ) );
     }
-  //else
-  //  abort_teleport();
+  else
+    apply_abort_tunnel();
 } // player::apply_end_teleport()
 
 /*----------------------------------------------------------------------------*/
@@ -1668,7 +1657,6 @@ void tunnel::player::progress_slap( bear::universe::time_type elapsed_time )
     apply_move_left();
 } // player::progress_slap()
 
-
 /*---------------------------------------------------------------------------*/
 /**
  * \brief Do one iteration in the state .
@@ -1676,6 +1664,15 @@ void tunnel::player::progress_slap( bear::universe::time_type elapsed_time )
  */
 void tunnel::player::progress_teleport( bear::universe::time_type elapsed_time )
 {
+  if ( m_tunnel_aborted )
+    {
+      if ( m_teleport_time > elapsed_time )
+        m_teleport_time -= elapsed_time;
+      else
+        finish_abort_tunnel();
+    }
+  else
+    m_teleport_time += elapsed_time;
 } // player::progress_teleport()
 
 /*---------------------------------------------------------------------------*/
@@ -2558,9 +2555,9 @@ void tunnel::player::update_layer_activity()
 
 /*----------------------------------------------------------------------------*/
 /**
- * \brief Test if the player can teleport in a given tag.
+ * \brief Test if the player can teleport in the next tag.
  */
-bool tunnel::player::check_can_teleport( unsigned int tag ) const
+bool tunnel::player::check_can_teleport() const
 {
   bool result = false;
   
@@ -2570,7 +2567,7 @@ bool tunnel::player::check_can_teleport( unsigned int tag ) const
         it != get_level().layer_end() && ! result ; ++it )
     {
       // TODO Ajouter test de collision
-      if ( it->get_tag() == m_tags[tag] && it->has_world() )
+      if ( it->get_tag() == m_tags[m_next_tag] && it->has_world() )
         result = true;
     }
 
@@ -2585,6 +2582,11 @@ void tunnel::player::progress_shaders()
 {  
   if ( get_current_action_name() == "teleport"  )
     {
+      double distance = m_teleport_time * 300.0; 
+      m_target_shader.set_variable("tunnel_radius",distance);
+      m_origin_shader.set_variable("tunnel_radius",distance);
+      m_common_shader.set_variable("tunnel_radius",distance);
+
       bear::engine::level::layer_iterator it = get_level().layer_begin();
       
       for ( it = get_level().layer_begin(); 
@@ -2612,15 +2614,36 @@ void tunnel::player::teleport_in_new_layer()
         bear::universe::item_handle item = get_level().get_camera();
         if ( item != bear::universe::item_handle(NULL) )
           {
-            //get_layer().drop_item(*(bear::engine::base_item*)(item.get()));
-            //it->add_item(*(bear::engine::base_item*)(item.get()));
+            /*
+              bear::engine::base_item * obj = 
+              (bear::engine::base_item*)(item.get());
+            get_layer().drop_item(*obj);
+            it->add_item(*obj);
+            */
           }
-
         
         get_layer().drop_item(*this);
         it->add_item(*this);
+        start_action_model("idle");
       }
 } // player::teleport_in_new_layer()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Apply the action abort tunnel.
+ */
+void tunnel::player::finish_abort_tunnel()
+{
+  start_action_model("idle");
+
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+  for ( ; it != get_level().layer_end(); ++it )
+    if ( it->get_tag() == m_tags[m_next_tag] )
+      {
+        it->set_visible(false);
+        it->set_active(false);
+      }
+} // player::finish_abort_tunnel()
 
 /*----------------------------------------------------------------------------*/
 /**

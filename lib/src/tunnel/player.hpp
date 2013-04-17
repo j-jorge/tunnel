@@ -265,9 +265,10 @@ namespace tunnel
     void update_layer_visibility();
     void update_layer_activity();
 
-    bool check_can_teleport( unsigned int tag ) const;
+    bool check_can_teleport() const;
     void progress_shaders();
     void teleport_in_new_layer();
+    void finish_abort_tunnel();
 
     void on_level_progress_done();
 
@@ -407,6 +408,13 @@ namespace tunnel
 
     /** \brief A copy of physical item attributes before teleportation. */
     bear::universe::physical_item_state m_teleport_state_save;
+
+    /** \brief The time last the last teleportation command 
+        (open tunnel or abort). */
+    bear::universe::time_type  m_teleport_time;
+
+    /** \brief Indicates that the tunnel is aborted. */
+    bool m_tunnel_aborted;
 
     /** \brief The connection to the signal emitted by the end of the progress
         of the layer. */
