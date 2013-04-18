@@ -1,14 +1,10 @@
 #version 120
 
-uniform sampler2D texture;
-uniform float tunnel_radius;
-uniform float center_x;
-uniform float center_y;
+#pragma include "tunnel_shader.frag"
 
 float curve_outside( float v )
 {
   return sin( v * 3.14159 / 2 );
-  //  return v * v * v;
 }
 
 float curve_inside( float v )
