@@ -2594,20 +2594,22 @@ void tunnel::player::init_shaders()
   double radius = s_min_teleportation_radius +
     m_teleport_time / s_time_before_teleportation * 
     ( s_max_teleportation_radius - s_min_teleportation_radius ); 
-  m_target_shader.set_variable("tunnel_radius",radius);
-  m_origin_shader.set_variable("tunnel_radius",radius);
-  m_common_shader.set_variable("tunnel_radius",radius);
+  m_target_shader.set_variable("g_tunnel_radius", radius);
+  m_origin_shader.set_variable("g_tunnel_radius", radius);
+  m_common_shader.set_variable("g_tunnel_radius", radius);
   
   bear::universe::position_type center = 
     get_center_of_mass() - get_level().get_camera_center() + 
     get_level().get_camera_size() / 2;
   
-  m_target_shader.set_variable("center_x", center.x);
-  m_target_shader.set_variable("center_y", center.y);
-  m_origin_shader.set_variable("center_x", center.x);
-  m_origin_shader.set_variable("center_y", center.y);
-  m_common_shader.set_variable("center_x", center.x);
-  m_common_shader.set_variable("center_y", center.y);
+  m_target_shader.set_variable("g_tunnel_center_x", center.x);
+  m_target_shader.set_variable("g_tunnel_center_y", center.y);
+
+  m_origin_shader.set_variable("g_tunnel_center_x", center.x);
+  m_origin_shader.set_variable("g_tunnel_center_y", center.y);
+
+  m_common_shader.set_variable("g_tunnel_center_x", center.x);
+  m_common_shader.set_variable("g_tunnel_center_y", center.y);
   
   bear::engine::level::layer_iterator it = get_level().layer_begin();
   
