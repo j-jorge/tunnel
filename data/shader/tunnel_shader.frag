@@ -14,25 +14,48 @@ uniform float g_tunnel_center_x;
 /** \brief The y-coordinate of the center of the tunnel on the screen. */
 uniform float g_tunnel_center_y;
 
+/** \brief The color of the border of the tunnel. */
 const vec4 g_border_color = vec4( 0.9, 0.95, 0.99, 1 );
+
+/** \brief The color of the edges of the border of the tunnel. */
 const vec4 g_border_edge_color = vec4( 1, 1, 1, 1 );
+
+/** \brief The width of the edges border of the tunnel. */
 const float g_border_edge_width = 0.04;
 
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Computes the brightness of a color.
+ * \param color The color of which we compute the brightness.
+ */
 float get_brightness( vec3 color )
 {
   return 0.71516 * color.r + 0.212671 * color.g + 0.072169 * color.b;
 } // get_brightness()
 
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Computes the intensity of the annulus outside the tunnel.
+ * \param v The relative position on the annulus. 0 means on the edge of the
+ *        tunnel, -1 means on the outter side.
+ */
 float curve_outside( float v )
 {
   return sin( v * 3.14159 / 2 );
-}
+} // curve_outside()
 
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Computes the intensity of the annulus inside the tunnel.
+ * \param v The relative position on the annulus. 0 means on the inner side, -1
+ *        means on the edge of the tunnel.
+ */
 float curve_inside( float v )
 {
   return sin( -v * 3.14159 / 2 );
 } // curve_inside()
 
+/*----------------------------------------------------------------------------*/
 /**
  * \brief Tells where a given coordinate is relatively to the tunnel.
  * \param f The coordinate to locate.
@@ -66,6 +89,13 @@ float locate_coordinate_in_tunnel( vec2 f )
     }
 } // locate_coordinate_in_tunnel()
 
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Adjusts a color to match the effect inside the tunnel.
+ * \param color The color to adjust.
+ * \param position_in_tunnel The position in the tunnel, as returned by
+ *        locate_coordinate_in_tunnel().
+ */
 vec4 get_color_inside( vec4 color, float position_in_tunnel )
 {
   if ( position_in_tunnel == 0 )
@@ -97,6 +127,13 @@ vec4 get_color_inside( vec4 color, float position_in_tunnel )
     }
 } // get_color_inside()
 
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Adjusts a color to match the effect outside the tunnel.
+ * \param color The color to adjust.
+ * \param position_outside_tunnel The position outside the tunnel, as returned
+ *        by locate_coordinate_in_tunnel().
+ */
 vec4 get_color_outside( vec4 color, float position_outside_tunnel )
 {
   if ( position_outside_tunnel == 0 )
