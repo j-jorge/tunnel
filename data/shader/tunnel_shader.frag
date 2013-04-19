@@ -17,21 +17,10 @@ uniform float g_tunnel_center_y;
 /** \brief The color of the border of the tunnel. */
 const vec4 g_border_color = vec4( 0.9, 0.95, 0.99, 1 );
 
-/** \brief The color of the edges of the border of the tunnel. */
-const vec4 g_border_edge_color = vec4( 1, 1, 1, 1 );
-
 /** \brief The width of the edges border of the tunnel. */
 const float g_border_edge_width = 0.04;
 
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Computes the brightness of a color.
- * \param color The color of which we compute the brightness.
- */
-float get_brightness( vec3 color )
-{
-  return 0.71516 * color.r + 0.212671 * color.g + 0.072169 * color.b;
-} // get_brightness()
+#pragma include "tunnel_inside_effect.frag"
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -101,21 +90,14 @@ vec4 get_color_inside( vec4 color, float position_in_tunnel )
   if ( position_in_tunnel == 0 )
     return g_border_color;
   else if ( position_in_tunnel >= -g_border_edge_width )
-    return g_border_edge_color;
+    return vec4( 0.75, 0.75, 0.75, 1 );
   else
     {
-      // we are clearly inside
-      float brightness = get_brightness( color.rgb );
-
-      const vec3 inside_color = vec3( 1, 0.984, 0.863 );
-      vec3 result =
-        clamp
-        ( inside_color * brightness + color.rgb * 0.3,
-          vec3(0, 0, 0), vec3(1, 1, 1) );
+      vec3 result = apply_inside_effect( color, 1 ).rgb;
 
       if ( position_in_tunnel >= -1 ) // we are on the annulus
         {
-          const vec3 inside_annulus_color = vec3(1, 1, 1);
+          const vec3 inside_annulus_color = vec3(0, 0, 0);
 
           result =
             mix
@@ -139,7 +121,7 @@ vec4 get_color_outside( vec4 color, float position_outside_tunnel )
   if ( position_outside_tunnel == 0 )
     return g_border_color;
   else if ( position_outside_tunnel <= g_border_edge_width )
-    return g_border_edge_color;
+    return vec4( 1, 1, 1, 1 );
   else
     {
       vec3 result = color.rgb;
