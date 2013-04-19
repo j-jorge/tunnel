@@ -321,6 +321,7 @@ void tunnel::player::pre_cache()
   get_level_globals().load_shader("shader/tunnel_origin.frag");
   get_level_globals().load_shader("shader/tunnel_target.frag");
   get_level_globals().load_shader("shader/tunnel_common.frag");
+  get_level_globals().load_shader("shader/player_in_tunnel.frag");
 } // player::pre_cache()
 
 /*----------------------------------------------------------------------------*/
