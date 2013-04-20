@@ -1683,7 +1683,7 @@ void tunnel::player::progress_teleport( bear::universe::time_type elapsed_time )
   if ( m_tunnel_aborted )
     {
       if ( m_teleport_time > elapsed_time )
-        m_teleport_time -= 2 * elapsed_time;
+        m_teleport_time -= 3 * elapsed_time;
       else
         finish_abort_tunnel();
     }
