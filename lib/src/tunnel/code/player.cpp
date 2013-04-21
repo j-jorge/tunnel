@@ -1055,6 +1055,7 @@ void tunnel::player::apply_open_tunnel()
   m_init_shaders =
     get_level().on_progress_done
     ( boost::bind( &player::on_init_shaders, this ) );
+  set_shader(get_level_globals().get_shader("shader/player_in_tunnel.frag"));
 
   for ( ; it != get_level().layer_end(); ++it )
     if ( it->get_tag() == m_tags[m_next_tag] )
@@ -2675,6 +2676,7 @@ void tunnel::player::teleport_in_new_layer()
         it->add_item(*this);
         start_action_model(m_state_before_teleport);
         set_physical_state(m_teleport_state_save);
+        clear_shader();
       }
 } // player::teleport_in_new_layer()
 
@@ -2686,7 +2688,8 @@ void tunnel::player::finish_abort_tunnel()
 {
   start_action_model(m_state_before_teleport);
   set_physical_state(m_teleport_state_save);
-
+  clear_shader();
+  
   bear::engine::level::layer_iterator it = get_level().layer_begin();
   for ( ; it != get_level().layer_end(); ++it )
     if ( it->get_tag() == m_tags[m_next_tag] )
