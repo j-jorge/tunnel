@@ -294,8 +294,8 @@ namespace tunnel
      /** \brief What Player is doing. */
     player_action::value_type m_current_action;
 
-    /** \brief Last saved position of the center of mass. */
-    bear::universe::position_type m_saved_position;
+    /** \brief A copy of initial physical item state. */
+    bear::universe::physical_item_state m_initial_state;
 
     /** \brief Last bottom_left_position. */
     bear::universe::position_type m_last_bottom_left;

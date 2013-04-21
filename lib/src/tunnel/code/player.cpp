@@ -358,14 +358,14 @@ void tunnel::player::on_enters_layer()
       m_has_main_hat = true;
       m_has_hat = true;
       
-      save_position(get_center_of_mass());
-      
       update_layer_visibility();
       update_layer_activity();
       
       m_origin_shader = glob.get_shader("shader/tunnel_origin.frag");
       m_target_shader = glob.get_shader("shader/tunnel_target.frag");
       m_common_shader = glob.get_shader("shader/tunnel_common.frag");
+
+      save_current_position();
     }
 } // player::on_enters_layer()
 
@@ -441,7 +441,7 @@ bool tunnel::player::is_valid() const
  */
 void tunnel::player::save_position( const bear::universe::position_type& p )
 {
-  m_saved_position = p;
+  //m_saved_position = p;
 } // player::save_position()
 
 /*----------------------------------------------------------------------------*/
@@ -450,7 +450,8 @@ void tunnel::player::save_position( const bear::universe::position_type& p )
  */
 void tunnel::player::save_current_position()
 {
-  save_position( get_center_of_mass() );
+  m_initial_state = *this;
+  //save_position( get_center_of_mass() );
 } // player::save_current_position()
 
 /*----------------------------------------------------------------------------*/
@@ -2096,7 +2097,7 @@ void tunnel::player::regenerate()
   update_layer_visibility();
   update_layer_activity();
 
-  set_center_of_mass( m_saved_position + bear::universe::position_type(0,50) );
+  m_teleport_state_save = m_initial_state;
   set_state(idle_state);
   choose_idle_state();
   stop();
