@@ -1035,11 +1035,11 @@ void tunnel::player::apply_slap()
  */
 void tunnel::player::apply_open_tunnel()
 {
-  stop();
   m_teleport_time = 0;
   m_tunnel_aborted = false;
   m_teleport_state_save = *this;
-
+  stop();
+  
   m_move_force = s_move_force_in_idle;
   set_state(player::teleport_state);
   m_progress = &player::progress_teleport;
