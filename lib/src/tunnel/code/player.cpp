@@ -1085,6 +1085,8 @@ void tunnel::player::apply_teleport()
         m_level_progress_done =
           get_level().on_progress_done
           ( boost::bind( &player::on_level_progress_done, this ) );
+      else
+        apply_abort_tunnel();
     }
   else
     apply_abort_tunnel();
@@ -1687,7 +1689,7 @@ void tunnel::player::progress_teleport( bear::universe::time_type elapsed_time )
   if ( m_tunnel_aborted )
     {
       if ( m_teleport_time > elapsed_time )
-        m_teleport_time -= 3 * elapsed_time;
+        m_teleport_time -= 4 * elapsed_time;
       else
         finish_abort_tunnel();
     }
@@ -2584,7 +2586,9 @@ bool tunnel::player::check_can_teleport() const
     {
       // TODO Ajouter test de collision
       if ( it->get_tag() == m_tags[m_next_tag] && it->has_world() )
-        result = true;
+        {
+          result = true;
+        }
     }
 
   return result;
