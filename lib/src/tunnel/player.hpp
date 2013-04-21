@@ -443,8 +443,8 @@ namespace tunnel
     /** \brief The shader for common layer. */
     bear::visual::shader_program m_common_shader;
 
-    /** \brief Indicates that the initial position is saved. */
-    bool m_do_saved_position;
+    /** \brief Indicates that the function on_enters_layer is done. */
+    bool m_enters_layer_done;
 
     /** \brief The minimum radius of teleportation circle. */
     static const bear::universe::coordinate_type s_min_teleportation_radius;

@@ -126,7 +126,7 @@ tunnel::player::player()
   m_hot_spot_minimum(0, 0), m_hot_spot_maximum(0, 0),
   m_hot_spot_balance_move(0, 0), m_initial_tag(0), m_current_tag(0),
   m_next_tag(0), m_teleport_time(0), m_tunnel_aborted(false),
-  m_do_saved_position(false)
+  m_enters_layer_done(false)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -153,7 +153,7 @@ tunnel::player::player( const player& p )
     m_hot_spot_balance_move(0, 0), m_initial_tag(p.m_initial_tag),
     m_current_tag(p.m_current_tag), m_next_tag(p.m_next_tag), m_tags(p.m_tags),
     m_teleport_time(p.m_teleport_time), m_tunnel_aborted(p.m_tunnel_aborted),
-    m_do_saved_position(false)
+    m_enters_layer_done(false)
 {
   init();
 } // player::player()
@@ -332,38 +332,41 @@ void tunnel::player::on_enters_layer()
 {
   super::on_enters_layer();
 
-  m_authorized_action.resize(player_action::max_value + 1);
-  for ( unsigned int i=0; i <= player_action::max_value; ++i)
-    m_authorized_action[i] = true;
-
-  m_wait_state_number = 0;
-  m_want_clung_jump = false;
-  bear::engine::level_globals& glob = get_level_globals();
-
-  m_halo_animation = new bear::visual::animation
-    ( glob.get_animation("animation/plee/halo.canim") );
-
-  m_halo_hand_animation = new bear::visual::animation
-    ( glob.get_animation("animation/plee/halo_hand.canim") );
-
-  get_level().add_interest_around(this);
-
-  set_model_actor( get_level_globals().get_model("model/player/plee.cm") );
-  start_action_model("idle");
-
-  m_wait_state_number = 3;
-  m_has_main_hat = true;
-  m_has_hat = true;
-
-  if ( ! m_do_saved_position ) 
-    save_position(get_center_of_mass());
-
-  update_layer_visibility();
-  update_layer_activity();
-
-  m_origin_shader = glob.get_shader("shader/tunnel_origin.frag");
-  m_target_shader = glob.get_shader("shader/tunnel_target.frag");
-  m_common_shader = glob.get_shader("shader/tunnel_common.frag");
+  if ( ! m_enters_layer_done )
+    {
+      m_enters_layer_done = true;
+      m_authorized_action.resize(player_action::max_value + 1);
+      for ( unsigned int i=0; i <= player_action::max_value; ++i)
+        m_authorized_action[i] = true;
+      
+      m_wait_state_number = 0;
+      m_want_clung_jump = false;
+      bear::engine::level_globals& glob = get_level_globals();
+      
+      m_halo_animation = new bear::visual::animation
+        ( glob.get_animation("animation/plee/halo.canim") );
+      
+      m_halo_hand_animation = new bear::visual::animation
+        ( glob.get_animation("animation/plee/halo_hand.canim") );
+      
+      get_level().add_interest_around(this);
+      
+      set_model_actor( get_level_globals().get_model("model/player/plee.cm") );
+      start_action_model("idle");
+      
+      m_wait_state_number = 3;
+      m_has_main_hat = true;
+      m_has_hat = true;
+      
+      save_position(get_center_of_mass());
+      
+      update_layer_visibility();
+      update_layer_activity();
+      
+      m_origin_shader = glob.get_shader("shader/tunnel_origin.frag");
+      m_target_shader = glob.get_shader("shader/tunnel_target.frag");
+      m_common_shader = glob.get_shader("shader/tunnel_common.frag");
+    }
 } // player::on_enters_layer()
 
 /*----------------------------------------------------------------------------*/
@@ -439,7 +442,6 @@ bool tunnel::player::is_valid() const
 void tunnel::player::save_position( const bear::universe::position_type& p )
 {
   m_saved_position = p;
-  m_do_saved_position = true;
 } // player::save_position()
 
 /*----------------------------------------------------------------------------*/
