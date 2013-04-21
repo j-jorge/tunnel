@@ -2584,10 +2584,16 @@ bool tunnel::player::check_can_teleport() const
   for ( it = get_level().layer_begin(); 
         it != get_level().layer_end() && ! result ; ++it )
     {
-      // TODO Ajouter test de collision
       if ( it->get_tag() == m_tags[m_next_tag] && it->has_world() )
         {
-          result = true;
+          bear::universe::item_picking_filter filter;
+          filter.set_can_move_items_value(true);
+          bear::universe::world::item_list items;
+          
+          it->get_world().pick_items_in_rectangle
+            (items, get_bounding_box(), filter);
+          
+          result = items.empty();
         }
     }
 
