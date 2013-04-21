@@ -1036,10 +1036,12 @@ void tunnel::player::apply_slap()
 void tunnel::player::apply_open_tunnel()
 {
   m_teleport_time = 0;
+  m_state_before_teleport = get_current_action_name();
   m_tunnel_aborted = false;
   m_teleport_state_save = *this;
   stop();
-  
+  start_action_model("teleport");
+
   m_move_force = s_move_force_in_idle;
   set_state(player::teleport_state);
   m_progress = &player::progress_teleport;
@@ -2659,7 +2661,7 @@ void tunnel::player::teleport_in_new_layer()
         
         get_layer().drop_item(*this);
         it->add_item(*this);
-        start_action_model("idle");
+        start_action_model(m_state_before_teleport);
         set_physical_state(m_teleport_state_save);
       }
 } // player::teleport_in_new_layer()
@@ -2670,7 +2672,7 @@ void tunnel::player::teleport_in_new_layer()
  */
 void tunnel::player::finish_abort_tunnel()
 {
-  start_action_model("idle");
+  start_action_model(m_state_before_teleport);
   set_physical_state(m_teleport_state_save);
 
   bear::engine::level::layer_iterator it = get_level().layer_begin();

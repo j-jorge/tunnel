@@ -96,7 +96,7 @@ void tunnel::state_player::do_stop_teleport()
  */
 void tunnel::state_player::do_teleport()
 {
-  m_player_instance.start_action_model("teleport");
+  m_player_instance.apply_open_tunnel();
 } // state_player::do_teleport()
 
 /*----------------------------------------------------------------------------*/

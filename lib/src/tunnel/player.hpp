@@ -419,6 +419,9 @@ namespace tunnel
     /** \brief Indicates that the tunnel is aborted. */
     bool m_tunnel_aborted;
 
+    /** \brief The state before the teleportation. */
+    std::string m_state_before_teleport;
+
     /** \brief The connection to the signal emitted by the end of the progress
         of the layer. */
     boost::signals::connection m_level_progress_done;    

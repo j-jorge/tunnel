@@ -1424,7 +1424,7 @@
 </mark>
 </marks>
 <snapshots>
-<snapshot date="0" function="apply_open_tunnel" width="40" height="110" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
+<snapshot date="0" width="40" height="110" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
 <mark_placements>
 <mark_placement label="hat" function="" x="21" y="110" width="0" height="0" z="1" angle="0.2" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
 <mark_placement label="mouth" function="" x="28" y="87" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
