@@ -60,7 +60,7 @@
 const bear::universe::coordinate_type 
 tunnel::player::s_min_teleportation_radius = 80;
 const bear::universe::coordinate_type 
-tunnel::player::s_max_teleportation_radius = 400;
+tunnel::player::s_max_teleportation_radius = 500;
 const bear::universe::coordinate_type 
 tunnel::player::s_time_before_teleportation = 1.5;
 
