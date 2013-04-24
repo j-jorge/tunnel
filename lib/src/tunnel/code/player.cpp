@@ -55,14 +55,16 @@
 
 #include "tunnel/util/player_util.hpp"
 
-#include <claw/tween/easing/easing_linear.hpp>
+#include <claw/tween/easing/easing_back.hpp>
 
 const bear::universe::coordinate_type 
-tunnel::player::s_min_teleportation_radius = 80;
+tunnel::player::s_min_teleportation_radius = 100;
 const bear::universe::coordinate_type 
 tunnel::player::s_max_teleportation_radius = 500;
 const bear::universe::coordinate_type 
 tunnel::player::s_time_before_teleportation = 1.5;
+const bear::universe::coordinate_type 
+tunnel::player::s_tunnel_expand_duration = 0.4;
 
 const bear::universe::size_type tunnel::player::s_max_halo_height = 64;
 const bear::universe::time_type tunnel::player::s_time_to_crouch = 0.5;
@@ -1044,7 +1046,8 @@ void tunnel::player::apply_open_tunnel()
   m_teleport_state_save = *this;
   stop();
   start_action_model("teleport");
-
+  m_teleportation_radius = s_min_teleportation_radius;
+        
   m_move_force = s_move_force_in_idle;
   set_state(player::teleport_state);
   m_progress = &player::progress_teleport;
@@ -1072,7 +1075,8 @@ void tunnel::player::apply_open_tunnel()
  */
 void tunnel::player::apply_abort_tunnel()
 {
-  m_tunnel_aborted = true;
+  if ( m_teleport_time < s_time_before_teleportation )
+    m_tunnel_aborted = true;
 } // player::apply_abort_tunnel()
 
 /*----------------------------------------------------------------------------*/
@@ -1081,17 +1085,27 @@ void tunnel::player::apply_abort_tunnel()
  */
 void tunnel::player::apply_teleport()
 {
+  std::cout << "apply_teleport" << std::endl;
+
   if ( ! m_tunnel_aborted )
     {
       if ( check_can_teleport() )
-        m_level_progress_done =
+        {
+          m_level_progress_done =
           get_level().on_progress_done
           ( boost::bind( &player::on_level_progress_done, this ) );
+        }
       else
-        apply_abort_tunnel();
+        {
+          std::cout << " call apply_abort_tunnel 1" << std::endl;
+          m_tunnel_aborted = true;
+        }
     }
   else
-    apply_abort_tunnel();
+    {
+      std::cout << " call apply_abort_tunnel 1" << std::endl;
+      m_tunnel_aborted = true;
+    }
 } // player::apply_end_teleport()
 
 /*----------------------------------------------------------------------------*/
@@ -1697,11 +1711,33 @@ void tunnel::player::progress_teleport( bear::universe::time_type elapsed_time )
     }
   else
     {
+      bool no_teleport = m_teleport_time < s_time_before_teleportation;
       m_teleport_time += elapsed_time;
 
       if ( m_teleport_time >= s_time_before_teleportation )
-        apply_teleport();
+        {
+          if ( no_teleport ) 
+            apply_teleport();
+          else
+            {
+              if ( m_teleport_time >= 
+                   s_time_before_teleportation + s_tunnel_expand_duration  )
+                finish_teleport();
+              else
+                m_radius_tweener.update(elapsed_time);
+            }
+        }
     }
+
+  if ( m_teleport_time <= s_time_before_teleportation )
+     {
+       m_teleportation_radius = s_min_teleportation_radius +
+         m_teleport_time / s_time_before_teleportation * 
+         ( s_max_teleportation_radius - s_min_teleportation_radius ); 
+       m_teleportation_radius = 
+         m_teleportation_radius /  get_level().get_camera_size().x * 
+         bear::engine::game::get_instance().get_window_size().x;
+     }
 } // player::progress_teleport()
 
 /*---------------------------------------------------------------------------*/
@@ -2608,9 +2644,7 @@ bool tunnel::player::check_can_teleport() const
  */
 void tunnel::player::init_shaders()
 {  
-  double radius = s_min_teleportation_radius +
-    m_teleport_time / s_time_before_teleportation * 
-    ( s_max_teleportation_radius - s_min_teleportation_radius ); 
+  double radius = m_teleportation_radius; 
   radius = radius /  get_level().get_camera_size().x * 
     bear::engine::game::get_instance().get_window_size().x;
   
@@ -2669,7 +2703,7 @@ void tunnel::player::teleport_in_new_layer()
   bear::engine::level::layer_iterator it = get_level().layer_begin();
 
   for ( it = get_level().layer_begin(); it != get_level().layer_end(); ++it )
-    if ( it->get_tag() == m_tags[m_current_tag] && it->has_world() )
+    if ( it->get_tag() == m_tags[m_next_tag] && it->has_world() )
       {
         bear::universe::item_handle item = get_level().get_camera();
         if ( item != bear::universe::item_handle(NULL) )
@@ -2683,11 +2717,27 @@ void tunnel::player::teleport_in_new_layer()
         
         get_layer().drop_item(*this);
         it->add_item(*this);
-        start_action_model(m_state_before_teleport);
-        set_physical_state(m_teleport_state_save);
-        clear_shader();
       }
 } // player::teleport_in_new_layer()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Function called when the teleportation is finished.
+ */
+void tunnel::player::finish_teleport()
+{
+  std::cout << "finish_teleport()" << std::endl;
+  m_current_tag = m_next_tag;
+
+  clear_shader();
+  start_action_model(m_state_before_teleport);
+  set_physical_state(m_teleport_state_save);
+        
+  update_layer_visibility();
+  update_layer_activity();     
+
+  m_teleport_time = 0;
+} // player::finish_teleport()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -2695,6 +2745,7 @@ void tunnel::player::teleport_in_new_layer()
  */
 void tunnel::player::finish_abort_tunnel()
 {
+  std::cout << "finish_abort_teleport()" << std::endl;
   start_action_model(m_state_before_teleport);
   set_physical_state(m_teleport_state_save);
   clear_shader();
@@ -2706,6 +2757,8 @@ void tunnel::player::finish_abort_tunnel()
         it->set_visible(false);
         it->set_active(false);
       }
+  
+  m_teleport_time = 0;
 } // player::finish_abort_tunnel()
 
 /*---------------------------------------------------------------------------*/
@@ -2735,13 +2788,15 @@ void tunnel::player::thwart_gravity()
  */
 void tunnel::player::on_level_progress_done()
 {
-  m_current_tag = m_next_tag;
-
-  update_layer_visibility();
-  update_layer_activity();
-      
   teleport_in_new_layer();
   
+  m_radius_tweener = 
+    claw::tween::single_tweener
+    ( m_teleportation_radius, 
+      bear::engine::game::get_instance().get_window_size().x, 
+      s_tunnel_expand_duration,
+      &claw::tween::easing_back::ease_in );
+
   m_level_progress_done.disconnect();
 } // player::on_level_progress_done()
 

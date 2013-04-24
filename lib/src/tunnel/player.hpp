@@ -21,6 +21,7 @@
 #include <list>
 
 #include <boost/signals/connection.hpp>
+#include <claw/tween/single_tweener.hpp>
 
 namespace tunnel
 {
@@ -269,6 +270,7 @@ namespace tunnel
     void init_shaders();
     void remove_shaders();
     void teleport_in_new_layer();
+    void finish_teleport();
     void finish_abort_tunnel();
     void thwart_gravity();
 
@@ -419,6 +421,9 @@ namespace tunnel
     /** \brief Indicates that the tunnel is aborted. */
     bool m_tunnel_aborted;
 
+    /** \brief The tweener for tunnel radius. */
+    claw::tween::single_tweener m_radius_tweener;
+
     /** \brief The state before the teleportation. */
     std::string m_state_before_teleport;
 
@@ -446,6 +451,9 @@ namespace tunnel
     /** \brief Indicates that the function on_enters_layer is done. */
     bool m_enters_layer_done;
 
+    /** \brief The radius of teleportation circle. */
+    bear::universe::coordinate_type m_teleportation_radius;
+
     /** \brief The minimum radius of teleportation circle. */
     static const bear::universe::coordinate_type s_min_teleportation_radius;
 
@@ -454,6 +462,9 @@ namespace tunnel
 
     /** \brief The time before a teleportation. */
     static const bear::universe::coordinate_type s_time_before_teleportation;
+
+    /** \brief The duration of the tunnel expand after the teleportation. */
+    static const bear::universe::coordinate_type s_tunnel_expand_duration;
 
     /** \brief The maximum halo height. */
     static const bear::universe::size_type s_max_halo_height;
