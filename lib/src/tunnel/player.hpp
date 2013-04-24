@@ -271,6 +271,7 @@ namespace tunnel
     void remove_shaders();
     void teleport_in_new_layer();
     void finish_teleport();
+    void end_fade_effect();
     void finish_abort_tunnel();
     void thwart_gravity();
 
@@ -416,13 +417,22 @@ namespace tunnel
 
     /** \brief The time last the last teleportation command 
         (open tunnel or abort). */
-    bear::universe::time_type  m_teleport_time;
+    bear::universe::time_type m_teleport_time;
 
     /** \brief Indicates that the tunnel is aborted. */
     bool m_tunnel_aborted;
 
     /** \brief The tweener for tunnel radius. */
     claw::tween::single_tweener m_radius_tweener;
+
+    /** \brief The tweener for fade effect on target layer. */
+    claw::tween::single_tweener m_fade_effect_tweener;
+
+    /** \brief The intensity of fade effect on target layer. */
+    double m_fade_effect_intensity;
+
+    /** \brief Indicates that the player is in a state where he can teleport. */
+    double m_can_teleport;
 
     /** \brief The state before the teleportation. */
     std::string m_state_before_teleport;
