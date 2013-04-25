@@ -2900,9 +2900,6 @@
 
     <item class_name='bear::decorative_item' fixed='true'>
 <fields>
-<field name='base_item.position.bottom'>
-<real value='0'/>
-</field>
 <field name='base_item.position.left'>
 <real value='1628'/>
 </field>
@@ -3461,10 +3458,10 @@
 <real value='-87'/>
 </field>
 <field name='base_item.size.height'>
-<real value='720'/>
+<real value='900'/>
 </field>
 <field name='base_item.size.width'>
-<real value='1280'/>
+<real value='1600'/>
 </field>
 <field name='camera.max_zoom_length'>
 <real value='500'/>
