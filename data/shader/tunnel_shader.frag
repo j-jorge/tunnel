@@ -14,6 +14,9 @@ uniform float g_tunnel_center_x;
 /** \brief The y-coordinate of the center of the tunnel on the screen. */
 uniform float g_tunnel_center_y;
 
+/** \brief The intenisty of the effect. */
+uniform float g_intensity;
+
 /** \brief The color of the border of the tunnel. */
 const vec4 g_border_color = vec4( 0.9, 0.95, 0.99, 1 );
 
@@ -93,7 +96,7 @@ vec4 get_color_inside( vec4 color, float position_in_tunnel )
     return vec4( 0.75, 0.75, 0.75, 1 );
   else
     {
-      vec3 result = apply_inside_effect( color, 1 ).rgb;
+      vec3 result = apply_inside_effect( color, g_intensity ).rgb;
 
       if ( position_in_tunnel >= -1 ) // we are on the annulus
         {
