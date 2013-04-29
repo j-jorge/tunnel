@@ -65,7 +65,7 @@ tunnel::player::s_max_teleportation_radius = 800;
 const bear::universe::coordinate_type 
 tunnel::player::s_time_before_teleportation = 1.5;
 const bear::universe::coordinate_type 
-tunnel::player::s_tunnel_expand_duration = 0.4;
+tunnel::player::s_tunnel_expand_duration = 0.2;
 
 const bear::universe::size_type tunnel::player::s_max_halo_height = 64;
 const bear::universe::time_type tunnel::player::s_time_to_crouch = 0.5;
@@ -2746,7 +2746,7 @@ void tunnel::player::finish_teleport()
 
   m_fade_effect_tweener = 
     claw::tween::single_tweener
-    ( m_fade_effect_intensity, 0, 1,
+    ( m_fade_effect_intensity, 0, 0.3,
       &claw::tween::easing_back::ease_in );
   m_fade_effect_tweener.on_finished
     (boost::bind( &tunnel::player::end_fade_effect, this ));
