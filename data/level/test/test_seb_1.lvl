@@ -38,6 +38,9 @@
 <field name='base_item.position.bottom'>
 <real value='438'/>
 </field>
+<field name='base_item.position.left'>
+<real value='0'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/forest/bk/far/bk_00.png' x='0' y='0' clip_width='1024' clip_height='512' spritepos='' auto_size='true' width='1024' height='512' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -2812,7 +2815,7 @@
     <item class_name='bear::slope' fixed='true'>
 <fields>
 <field name='item_with_friction.top_friction'>
-<real value='0.95'/>
+<real value='0.9'/>
 </field>
 <field name='item_with_z_shift.z_shift'>
 <integer value='-20'/>
@@ -2840,6 +2843,9 @@
 </field>
 <field name='slope.steepness'>
 <real value='-600'/>
+</field>
+<field name='slope.tangent_friction'>
+<real value='10'/>
 </field>
 </fields>
     </item><!-- bear::slope -->
@@ -7137,10 +7143,10 @@
 <real value='500'/>
 </field>
 <field name='camera.size.min_height'>
-<real value='1080'/>
+<real value='900'/>
 </field>
 <field name='camera.size.min_width'>
-<real value='1920'/>
+<real value='1600'/>
 </field>
 <field name='camera.valid_max.x'>
 <real value='24900'/>
@@ -7627,7 +7633,7 @@
 <bool value='1'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/forest-2.png' x='50' y='50' clip_width='100' clip_height='250' spritepos='' auto_size='false' width='100' height='250' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='0' blue_intensity='0'/>
+<sprite image='gfx/theme/forest/forest-2.png' x='50' y='50' clip_width='100' clip_height='250' spritepos='' auto_size='true' width='100' height='250' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='0' blue_intensity='0'/>
 </field>
 <field name='base_item.mass'>
 <real value='50'/>

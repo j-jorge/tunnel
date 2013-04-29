@@ -61,7 +61,7 @@
 const bear::universe::coordinate_type 
 tunnel::player::s_min_teleportation_radius = 100;
 const bear::universe::coordinate_type 
-tunnel::player::s_max_teleportation_radius = 800;
+tunnel::player::s_max_teleportation_radius = 900;
 const bear::universe::coordinate_type 
 tunnel::player::s_time_before_teleportation = 1.5;
 const bear::universe::coordinate_type 
@@ -2737,8 +2737,6 @@ void tunnel::player::teleport_in_new_layer()
  */
 void tunnel::player::finish_teleport()
 {
-  std::cout << "finish_teleport" << std::endl;
-  
   m_teleportation_radius = 
     bear::engine::game::get_instance().get_window_size().x * 2;
   start_action_model(m_state_before_teleport);
@@ -2758,7 +2756,6 @@ void tunnel::player::finish_teleport()
  */
 void tunnel::player::end_fade_effect()
 {
-  std::cout << "end_fade_effect" << std::endl;
   m_current_tag = m_next_tag;
   clear_shader();    
   update_layer_visibility();
