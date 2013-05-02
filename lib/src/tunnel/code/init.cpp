@@ -33,7 +33,6 @@
  */
 void init_tunnel()
 {
-  std::cout << "init tunnel" << std::endl;
   bindtextdomain( "tunnel", "/usr/share/locale" );
   bind_textdomain_codeset( "tunnel", "ISO-8859-15" );
   textdomain( "tunnel" );
