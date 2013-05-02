@@ -17,6 +17,7 @@ set( LIBTUNNEL_SOURCE_FILES
   code/controller_layout.cpp
   code/game_variables.cpp
   code/gui_command.cpp
+  code/init.cpp
   code/layer_border.cpp
   code/player.cpp
   code/player_action.cpp

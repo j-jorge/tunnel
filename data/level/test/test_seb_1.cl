@@ -244,9 +244,6 @@ bear::decorative_item
 42
 base_item.position.bottom
 438
-42
-base_item.position.left
-0
 45
 item_with_decoration.sprite
 gfx/theme/forest/bk/far/bk_00.png
@@ -4634,7 +4631,7 @@ base_item.position.left
 4453
 42
 base_item.size.height
-1925
+1020
 42
 base_item.size.width
 268
