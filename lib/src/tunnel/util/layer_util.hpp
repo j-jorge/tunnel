@@ -17,7 +17,7 @@ namespace tunnel
 {
   namespace util
   {
-    void move_tag_after_all_tags( level& lvl, std::string tag );
+    void move_tag_after_all_tags( bear::engine::level& lvl, std::string tag );
 
   } // namespace util
 } // namespace tunnel

@@ -27,7 +27,7 @@ void tunnel::util::move_tag_after_all_tags
       bear::engine::level::const_layer_iterator candidate( last_not_tagged );
       --candidate;
 
-      if ( !candidate.get_tag().empty() )
+      if ( !candidate->get_tag().empty() )
         stop = true;
       else
         last_not_tagged = candidate;

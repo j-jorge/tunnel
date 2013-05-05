@@ -59,6 +59,7 @@ set( LIBTUNNEL_SOURCE_FILES
   player_state/code/state_wait.cpp
   player_state/code/state_walk.cpp
 
+  util/code/layer_util.cpp
   util/code/player_util.cpp
 )
 

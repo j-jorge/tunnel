@@ -53,6 +53,7 @@
 #include "tunnel/player_state/state_float.hpp"
 #include "tunnel/player_state/state_paralyze.hpp"
 
+#include "tunnel/util/layer_util.hpp"
 #include "tunnel/util/player_util.hpp"
 
 #include <claw/tween/easing/easing_back.hpp>
@@ -1073,7 +1074,8 @@ void tunnel::player::apply_open_tunnel()
       m_init_shaders =
         get_level().on_progress_done
         ( boost::bind( &player::on_init_shaders, this ) );
-      set_shader(get_level_globals().get_shader("shader/player_in_tunnel.frag"));
+      set_shader
+        ( get_level_globals().get_shader("shader/player_in_tunnel.frag") );
       
       for ( ; it != get_level().layer_end(); ++it )
         if ( it->get_tag() == m_tags[m_next_tag] )
@@ -2135,8 +2137,8 @@ void tunnel::player::regenerate()
   m_current_tag = m_initial_tag;
   m_next_tag = m_initial_tag;
   m_level_progress_done =
-          get_level().on_progress_done
-          ( boost::bind( &player::on_level_progress_done, this ) );
+    get_level().on_progress_done
+    ( boost::bind( &player::on_level_progress_done, this ) );
   update_layer_visibility();
   update_layer_activity();
   
@@ -2819,9 +2821,13 @@ void tunnel::player::thwart_gravity()
  */
 void tunnel::player::on_level_progress_done()
 {
+  // move the target layer to the front
+  util::move_tag_after_all_tags( get_level(), m_tags[m_next_tag] );
+
+  // move the player in the layer of the new tag
   teleport_in_new_layer();
   
-  m_radius_tweener = 
+  m_radius_tweener =
     claw::tween::single_tweener
     ( m_teleportation_radius, 
       bear::engine::game::get_instance().get_window_size().x, 
