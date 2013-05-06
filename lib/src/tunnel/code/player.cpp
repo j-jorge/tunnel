@@ -2714,10 +2714,13 @@ void tunnel::player::remove_shaders()
 void tunnel::player::teleport_in_new_layer()
 {
   bear::engine::level::layer_iterator it = get_level().layer_begin();
+  bool doing = false;
 
   for ( it = get_level().layer_begin(); it != get_level().layer_end(); ++it )
-    if ( it->get_tag() == m_tags[m_next_tag] && it->has_world() )
+    if ( ! doing && it->get_tag() == m_tags[m_next_tag] && it->has_world() )
       {
+        doing = true;
+
         bear::universe::item_handle item = get_level().get_camera();
         if ( item != bear::universe::item_handle(NULL) )
           {
