@@ -255,9 +255,6 @@ namespace tunnel
     void get_visuals_without_invincibility
     ( std::list<bear::engine::scene_visual>& visuals ) const;
 
-    void take_new_hat();
-    void start_take_hat();
-    void take_out_hat();
     bear::universe::coordinate_type get_move_force_in_walk() const;
    
     void update_layer_visibility();
@@ -392,12 +389,6 @@ namespace tunnel
 
     /** \brief Maximum movement allowed when balancing the hot spot. */
     bear::universe::position_type m_hot_spot_balance_move;
-
-    /** \brief Indicates if Plee has his main hat. */
-    bool m_has_main_hat;
-
-    /** \brief Indicates if Plee has a hat. */
-    bool m_has_hat;
 
     /** \brief Indicates the current tag. */
     unsigned int m_initial_tag;    
