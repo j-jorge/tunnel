@@ -1,0 +1,43 @@
+sprite_sheet "placeholder-1" 1024 x 1024 margin 1 order "height"
+
+base_block "wall/base-block.xcf.bz2"
+
+"top-left" "top left" * 0.4 with base_block
+  "top left"
+  "edges"
+  ;
+
+"curved top-left" "curved top left" * 0.4 with base_block
+  "curved top left"
+  "edges"
+  ;
+
+"top" "top" * 0.4 with base_block
+  "top"
+  "edges"
+  ;
+
+"left" "left" * 0.4 with base_block
+  "left"
+  "edges"
+  ;
+
+"bottom-left" "bottom left" * 0.4 with base_block
+  "bottom left"
+  "edges"
+  ;
+
+"bottom" "bottom" * 0.4 with base_block
+  "bottom"
+  "edges"
+  ;
+
+"center 1" "center" * 0.4 with base_block
+  "center"
+  "edges"
+  ;
+
+"center 2" "center 2" * 0.4 with base_block
+  "center 2"
+  "edges"
+  ;
