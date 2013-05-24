@@ -62,7 +62,7 @@
 const bear::universe::coordinate_type 
 tunnel::player::s_min_teleportation_radius = 100;
 const bear::universe::coordinate_type 
-tunnel::player::s_max_teleportation_radius = 900;
+tunnel::player::s_max_teleportation_radius = 360;
 const bear::universe::coordinate_type 
 tunnel::player::s_time_before_teleportation = 1.5;
 const bear::universe::coordinate_type 
@@ -317,9 +317,6 @@ void tunnel::player::pre_cache()
   // halo for soul
   get_level_globals().load_image("gfx/plee/misc.png");
 
-  // Bath cap
-  get_level_globals().load_animation("animation/plee/bath-cap.canim");
-
   // halo for vertical jump
   get_level_globals().load_animation("animation/plee/halo.canim");
 
@@ -369,15 +366,10 @@ void tunnel::player::on_enters_layer()
       m_halo_animation = new bear::visual::animation
         ( glob.get_animation("animation/plee/halo.canim") );
       
-      m_halo_hand_animation = new bear::visual::animation
-        ( glob.get_animation("animation/plee/halo_hand.canim") );
-      
       set_model_actor( get_level_globals().get_model("model/player/plee.cm") );
       start_action_model("idle");
       
       m_wait_state_number = 3;
-      m_has_main_hat = true;
-      m_has_hat = true;
       
       if ( m_editor_player || ! game_variables::is_editor_running() )
         {
@@ -2440,109 +2432,6 @@ tunnel::player::get_visuals_without_invincibility
 
   render_halos(visuals);
 } // player::get_visuals_without_invincibility()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Player starts to take a new hat.
- */
-void tunnel::player::start_take_hat()
-{
-  if ( !m_has_hat )
-    {
-      if ( is_in_environment(bear::universe::water_environment) )
-        set_global_substitute
-          ("new_hat", new bear::visual::animation
-           (get_level_globals().get_animation
-            ("animation/plee/bath-cap.canim") ) );
-      else
-        set_global_substitute
-            ("new_hat", new bear::visual::animation
-             (get_level_globals().get_animation("animation/plee/cap.canim")) );
-    }
-  else if ( ( !m_has_main_hat ) &&
-            ( !is_in_environment(bear::universe::water_environment) ) )
-    set_global_substitute
-        ("new_hat", new bear::visual::animation
-         ( get_level_globals().get_animation("animation/plee/cap.canim") ) );
-  else
-    set_global_substitute("new_hat", new bear::visual::animation() );
-} // player::start_take_hat()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Player takes a new hat.
- */
-void tunnel::player::take_new_hat()
-{
-  if ( !m_has_hat )
-    {
-      m_has_hat = true;
-
-      if ( is_in_environment(bear::universe::water_environment) )
-        set_global_substitute
-          ("hat", new bear::visual::animation
-           (get_level_globals().get_animation
-            ("animation/plee/bath-cap.canim") ) );
-      else
-        {
-          m_has_main_hat = true;
-          set_global_substitute
-            ("hat", new bear::visual::animation
-             (get_level_globals().get_animation("animation/plee/cap.canim")) );
-        }
-    }
-  else if ( ( !m_has_main_hat ) &&
-            ( !is_in_environment(bear::universe::water_environment) ) )
-    {
-      m_has_main_hat = true;
-      m_has_hat = true;
-      set_global_substitute
-        ("hat", new bear::visual::animation
-         ( get_level_globals().get_animation("animation/plee/cap.canim") ) );
-    }
-} // player::take_new_hat()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Take out the hat.
- */
-void tunnel::player::take_out_hat()
-{
-  bear::engine::model_mark_placement m;
-
-  if ( get_mark_placement("hat", m) )
-    {
-      m_has_main_hat = false;
-      m_has_hat = false;
-
-      bear::universe::position_type pos( m.get_position() );
-      bear::decorative_item* item;
-      item = new bear::decorative_item();
-
-      bear::visual::sprite spr =
-        get_action(get_current_action_name())->get_mark
-        (m.get_mark_id()).get_main_animation()->get_sprite();
-
-      spr.combine( get_rendering_attributes() );
-      item->set_sprite(spr);
-
-      item->set_z_position(get_z_position() + m.get_depth_position());
-      item->set_phantom(false);
-      item->set_can_move_items(false);
-      item->set_artificial(true);
-      item->set_kill_when_leaving(true);
-      item->set_density(0.4);
-      item->set_mass(2);
-
-      new_item( *item );
-
-      item->set_center_of_mass(pos);
-
-      set_global_substitute
-        ("hat", new bear::visual::animation() );
-    }
-} // player::take_out_hat()
-
 /*---------------------------------------------------------------------------*/
 /**
  * \brief Get the right force in walk state.
@@ -2797,7 +2686,7 @@ void tunnel::player::create_camera()
   bear::universe::rectangle_type area
     (100,100,get_level().get_size().x-100,get_level().get_size().y-100);
   item->set_valid_area(area);
-  item->set_size(1600,900);
+  item->set_size(1280,720);
   item->set_center_of_mass( get_center_of_mass() );
   item->set_proxy_player(this);
   
@@ -2881,8 +2770,6 @@ void tunnel::player::on_init_shaders()
  */
 void tunnel::player::init_exported_methods()
 {
-  TEXT_INTERFACE_CONNECT_METHOD_0( player, take_new_hat, void );
-  TEXT_INTERFACE_CONNECT_METHOD_0( player, start_take_hat, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_roar, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_disappear, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_game_over, void );
