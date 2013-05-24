@@ -5,42 +5,42 @@ ground_corner "wall/right-corner.xcf.bz2"
 ceiling_corner "wall/right-corner-ceiling.xcf.bz2"
 bump_slope "slope/bump-slope.xcf.bz2"
 
-"top-left" "top left" * 0.4 with base_block
+"top-left" "top left" * 0.390625 with base_block
   "top left"
   "edges"
   ;
 
-"curved top-left" "curved top left" * 0.4 with base_block
+"curved top-left" "curved top left" * 0.390625 with base_block
   "curved top left"
   "edges"
   ;
 
-"top" "top" * 0.4 with base_block
+"top" "top" * 0.390625 with base_block
   "top"
   "edges"
   ;
 
-"left" "left" * 0.4 with base_block
+"left" "left" * 0.390625 with base_block
   "left"
   "edges"
   ;
 
-"bottom-left" "bottom left" * 0.4 with base_block
+"bottom-left" "bottom left" * 0.390625 with base_block
   "bottom left"
   "edges"
   ;
 
-"bottom" "bottom" * 0.4 with base_block
+"bottom" "bottom" * 0.390625 with base_block
   "bottom"
   "edges"
   ;
 
-"center 1" "center" * 0.4 with base_block
+"center 1" "center" * 0.390625 with base_block
   "center"
   "edges"
   ;
 
-"center 2" "center 2" * 0.4 with base_block
+"center 2" "center 2" * 0.390625 with base_block
   "center 2"
   "edges"
   ;
@@ -49,22 +49,22 @@ bump_slope "slope/bump-slope.xcf.bz2"
 /* -- Corners -- */
 /* ---------------------------------------------------------------------------*/
 
-"ground corner" "ground mask" * 0.4 with ground_corner
+"ground corner" "ground mask" * 0.390625 with ground_corner
   "ground"
   "wall"
   ;
 
-"ground corner wall" "wall mask" * 0.4 with ground_corner
+"ground corner wall" "wall mask" * 0.390625 with ground_corner
   "ground"
   "wall"
   ;
 
-"ceiling corner" "ceiling mask" * 0.4 with ceiling_corner
+"ceiling corner" "ceiling mask" * 0.390625 with ceiling_corner
   "ceiling"
   "wall"
   ;
 
-"ceiling corner wall" "wall mask" * 0.4 with ceiling_corner
+"ceiling corner wall" "wall mask" * 0.390625 with ceiling_corner
   "ceiling"
   "wall"
   ;
@@ -73,25 +73,25 @@ bump_slope "slope/bump-slope.xcf.bz2"
 /* -- Bump slope -- */
 /* ---------------------------------------------------------------------------*/
 
-"bump slope 1" "1" * 0.4 with bump_slope
+"bump slope 1" "1" * 0.390625 with bump_slope
   "ground"
   "fill"
   mask "1"
   ;
 
-"bump slope 2" "2" * 0.4 with bump_slope
+"bump slope 2" "2" * 0.390625 with bump_slope
   "ground"
   "fill"
   mask "2"
   ;
 
-"bump slope 3" "3" * 0.4 with bump_slope
+"bump slope 3" "3" * 0.390625 with bump_slope
   "ground"
   "fill"
   mask "3"
   ;
 
-"bump slope 4" "4" * 0.4 with bump_slope
+"bump slope 4" "4" * 0.390625 with bump_slope
   "ground"
   "fill"
   mask "4"
