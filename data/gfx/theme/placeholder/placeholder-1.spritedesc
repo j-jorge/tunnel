@@ -3,6 +3,7 @@ sprite_sheet "placeholder-1" 1024 x 1024 margin 1 order "height"
 base_block "wall/base-block.xcf.bz2"
 ground_corner "wall/right-corner.xcf.bz2"
 ceiling_corner "wall/right-corner-ceiling.xcf.bz2"
+bump_slope "slope/bump-slope.xcf.bz2"
 
 "top-left" "top left" * 0.4 with base_block
   "top left"
@@ -44,6 +45,10 @@ ceiling_corner "wall/right-corner-ceiling.xcf.bz2"
   "edges"
   ;
 
+/*----------------------------------------------------------------------------*/
+/* -- Corners -- */
+/* ---------------------------------------------------------------------------*/
+
 "ground corner" "ground mask" * 0.4 with ground_corner
   "ground"
   "wall"
@@ -62,4 +67,32 @@ ceiling_corner "wall/right-corner-ceiling.xcf.bz2"
 "ceiling corner wall" "wall mask" * 0.4 with ceiling_corner
   "ceiling"
   "wall"
+  ;
+
+/*----------------------------------------------------------------------------*/
+/* -- Bump slope -- */
+/* ---------------------------------------------------------------------------*/
+
+"bump slope 1" "1" * 0.4 with bump_slope
+  "ground"
+  "fill"
+  mask "1"
+  ;
+
+"bump slope 2" "2" * 0.4 with bump_slope
+  "ground"
+  "fill"
+  mask "2"
+  ;
+
+"bump slope 3" "3" * 0.4 with bump_slope
+  "ground"
+  "fill"
+  mask "3"
+  ;
+
+"bump slope 4" "4" * 0.4 with bump_slope
+  "ground"
+  "fill"
+  mask "4"
   ;
