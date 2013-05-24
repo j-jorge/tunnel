@@ -1680,8 +1680,11 @@ void tunnel::player::progress_slap( bear::universe::time_type elapsed_time )
  */
 void tunnel::player::progress_teleport( bear::universe::time_type elapsed_time )
 {
-  thwart_gravity();
-
+  if ( has_bottom_contact() )
+    brake();
+  else
+    thwart_gravity();
+  
   if ( m_tunnel_aborted )
     {
       if ( m_teleport_time > elapsed_time )
@@ -2551,13 +2554,6 @@ tunnel::player::get_move_force_in_walk() const
     std::min(m_run_time, s_time_to_run)*
     (s_move_force_max_in_walk - s_move_force_min_in_walk)
     / s_time_to_run;
-  
-  /*
-    return s_move_force_min_in_walk +
-    std::min(m_run_time, s_time_to_run)*
-    (s_move_force_max_in_walk - s_move_force_min_in_walk)
-    / s_time_to_run;
-  */
 } // player::get_move_force_in_walk()
 
 /*---------------------------------------------------------------------------*/
@@ -2801,7 +2797,7 @@ void tunnel::player::create_camera()
   bear::universe::rectangle_type area
     (100,100,get_level().get_size().x-100,get_level().get_size().y-100);
   item->set_valid_area(area);
-  item->set_size(1960,1080);
+  item->set_size(1600,900);
   item->set_center_of_mass( get_center_of_mass() );
   item->set_proxy_player(this);
   
