@@ -94,12 +94,7 @@ namespace tunnel
     void build();
     void on_enters_layer();
  
-    bool set_bool_field
-    ( const std::string& name, bool value );
-    bool set_string_list_field
-    ( const std::string& name, const std::vector<std::string>& value );
-    
-    bool is_valid() const;
+    bool set_bool_field( const std::string& name, bool value );
 
     void save_position( const bear::universe::position_type& p );
     void save_current_position();
@@ -279,6 +274,7 @@ namespace tunnel
     void create_camera();
 
     void on_level_progress_done();
+    void on_level_started();
     void on_init_shaders();
 
     static void init_exported_methods();
@@ -443,6 +439,9 @@ namespace tunnel
     /** \brief The connection to the signal emitted by the end of the progress
         of the layer. */
     boost::signals::connection m_level_progress_done;    
+
+    /** \brief The connection to the signal emitted when the level starts. */
+    boost::signals::connection m_level_started;  
 
     /** \brief The connection to the signal emitted by the end of the progress
         of the layer. */

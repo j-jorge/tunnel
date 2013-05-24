@@ -358,12 +358,6 @@ void tunnel::player::on_enters_layer()
     {
       m_enters_layer_done = true;
 
-      m_current_tag = m_tags.size();      
-      for ( unsigned int i = 0; i != m_tags.size(); ++i )
-        if ( m_tags[i] == get_layer().get_tag() )
-          m_current_tag = i;    
-      m_initial_tag = m_current_tag;
-
       m_authorized_action.resize(player_action::max_value + 1);
       for ( unsigned int i=0; i <= player_action::max_value; ++i)
         m_authorized_action[i] = true;
@@ -388,9 +382,9 @@ void tunnel::player::on_enters_layer()
       if ( m_editor_player || ! game_variables::is_editor_running() )
         {
           get_level().add_interest_around(this);
-          create_camera();
-          update_layer_visibility();
-          update_layer_activity();
+          m_level_started =
+            get_level().on_started
+            ( boost::bind( &player::on_level_started, this ) );
         }
 
       m_origin_shader = glob.get_shader("shader/tunnel_origin.frag");
@@ -422,43 +416,6 @@ bool tunnel::player::set_bool_field( const std::string& name, bool value )
 
 /*----------------------------------------------------------------------------*/
 /**
- * \brief Set a field of type list of <std::string>.
- * \param name The name of the field.
- * \param value The new value of the field.
- * \return false if the field "name" is unknow, true otherwise.
- */
-bool tunnel::player::set_string_list_field
-( const std::string& name, const std::vector<std::string>& value )
-{
-  bool result = false;
-
-  if ( name == "player.tags" )
-    {
-      m_tags.resize(value.size());
-
-      for (std::size_t i=0; i!=value.size(); ++i)
-        m_tags[i] = value[i].c_str();
-
-      result = true;
-    }
-  else
-    result = super::set_string_list_field( name, value );
-
-  return result;
-} // player::set_string_list_field()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Tell if the item is correctly initialized.
- */
-bool tunnel::player::is_valid() const
-{
-  return ! m_tags.empty() && ( m_current_tag < m_tags.size() ) 
-    && super::is_valid();
-} // player::is_valid()
-
-/*----------------------------------------------------------------------------*/
-/**
  * \brief Save the position of the player.
  * \param p The center of mass to remember.
  */
@@ -474,7 +431,6 @@ void tunnel::player::save_position( const bear::universe::position_type& p )
 void tunnel::player::save_current_position()
 {
   m_initial_state = *this;
-  //save_position( get_center_of_mass() );
 } // player::save_current_position()
 
 /*----------------------------------------------------------------------------*/
@@ -2840,17 +2796,14 @@ void tunnel::player::create_camera()
   tunnel::camera_on_player* item = new tunnel::camera_on_player();
   
   item->set_active_on_build();
-  item->set_real_field("camera.max_zoom_length",500);
-  item->set_real_field("camera.size.min_height",1960);
-  item->set_real_field("camera.size.min_width",1080);
-  item->set_real_field("camera.valid_max.x",get_level().get_size().x-100);
-  item->set_real_field("camera.valid_max.y",get_level().get_size().y-100);
-  item->set_real_field("camera.valid_min.x",100);
-  item->set_real_field("camera.valid_min.y",100);
-  item->set_proxy_player(this);
-
+    
+  item->set_max_zoom_length(500);
+  bear::universe::rectangle_type area
+    (100,100,get_level().get_size().x-100,get_level().get_size().y-100);
+  item->set_valid_area(area);
   item->set_size(1960,1080);
   item->set_center_of_mass( get_center_of_mass() );
+  item->set_proxy_player(this);
   
   new_item( *item );
 } // player::create_camera()
@@ -2876,6 +2829,40 @@ void tunnel::player::on_level_progress_done()
 
   m_level_progress_done.disconnect();
 } // player::on_level_progress_done()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief The level start.
+ */
+void tunnel::player::on_level_started()
+{
+  create_camera();
+  
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+
+  for ( ; it != get_level().layer_end(); ++it )
+    if ( ! it->get_tag().empty() )
+      {
+        bool ok = true;
+        std::vector< std::string >::const_iterator it_tag;
+        for ( it_tag = m_tags.begin(); ok && it_tag != m_tags.end(); ++it_tag)
+          ok = *it_tag != it->get_tag();
+        
+        if ( ok )
+          m_tags.push_back( it->get_tag() ); 
+      }
+  
+  m_current_tag = m_tags.size();      
+  for ( unsigned int i = 0; i != m_tags.size(); ++i )
+    if ( m_tags[i] == get_layer().get_tag() )
+      m_current_tag = i;    
+  m_initial_tag = m_current_tag;
+
+  update_layer_visibility();
+  update_layer_activity();
+
+  m_level_started.disconnect();
+} // player::on_level_started()
 
 /*----------------------------------------------------------------------------*/
 /**
