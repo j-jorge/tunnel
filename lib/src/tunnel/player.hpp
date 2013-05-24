@@ -94,12 +94,7 @@ namespace tunnel
     void build();
     void on_enters_layer();
  
-    bool set_bool_field
-    ( const std::string& name, bool value );
-    bool set_string_list_field
-    ( const std::string& name, const std::vector<std::string>& value );
-    
-    bool is_valid() const;
+    bool set_bool_field( const std::string& name, bool value );
 
     void save_position( const bear::universe::position_type& p );
     void save_current_position();

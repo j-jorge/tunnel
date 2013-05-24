@@ -6,9 +6,6 @@
     <class>tunnel::item_with_single_player_action_reader</class>
   </inherit>
   <fields>
-    <field type="string" name="player.tags" list="true" required="true">
-      <description>The list of tags.</description>
-    </field>
     <field type="boolean" name="player.editor_player">
       <description>Indicates if the player is created by editor.</description>
       <default_value>false</default_value>

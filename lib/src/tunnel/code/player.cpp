@@ -358,12 +358,6 @@ void tunnel::player::on_enters_layer()
     {
       m_enters_layer_done = true;
 
-      m_current_tag = m_tags.size();      
-      for ( unsigned int i = 0; i != m_tags.size(); ++i )
-        if ( m_tags[i] == get_layer().get_tag() )
-          m_current_tag = i;    
-      m_initial_tag = m_current_tag;
-
       m_authorized_action.resize(player_action::max_value + 1);
       for ( unsigned int i=0; i <= player_action::max_value; ++i)
         m_authorized_action[i] = true;
@@ -422,43 +416,6 @@ bool tunnel::player::set_bool_field( const std::string& name, bool value )
 
 /*----------------------------------------------------------------------------*/
 /**
- * \brief Set a field of type list of <std::string>.
- * \param name The name of the field.
- * \param value The new value of the field.
- * \return false if the field "name" is unknow, true otherwise.
- */
-bool tunnel::player::set_string_list_field
-( const std::string& name, const std::vector<std::string>& value )
-{
-  bool result = false;
-
-  if ( name == "player.tags" )
-    {
-      m_tags.resize(value.size());
-
-      for (std::size_t i=0; i!=value.size(); ++i)
-        m_tags[i] = value[i].c_str();
-
-      result = true;
-    }
-  else
-    result = super::set_string_list_field( name, value );
-
-  return result;
-} // player::set_string_list_field()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Tell if the item is correctly initialized.
- */
-bool tunnel::player::is_valid() const
-{
-  return ! m_tags.empty() && ( m_current_tag < m_tags.size() ) 
-    && super::is_valid();
-} // player::is_valid()
-
-/*----------------------------------------------------------------------------*/
-/**
  * \brief Save the position of the player.
  * \param p The center of mass to remember.
  */
@@ -474,7 +431,6 @@ void tunnel::player::save_position( const bear::universe::position_type& p )
 void tunnel::player::save_current_position()
 {
   m_initial_state = *this;
-  //save_position( get_center_of_mass() );
 } // player::save_current_position()
 
 /*----------------------------------------------------------------------------*/
@@ -2881,6 +2837,27 @@ void tunnel::player::on_level_progress_done()
 void tunnel::player::on_level_started()
 {
   create_camera();
+  
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
+
+  for ( ; it != get_level().layer_end(); ++it )
+    if ( ! it->get_tag().empty() )
+      {
+        bool ok = true;
+        std::vector< std::string >::const_iterator it_tag;
+        for ( it_tag = m_tags.begin(); ok && it_tag != m_tags.end(); ++it_tag)
+          ok = *it_tag != it->get_tag();
+        
+        if ( ok )
+          m_tags.push_back( it->get_tag() ); 
+      }
+  
+  m_current_tag = m_tags.size();      
+  for ( unsigned int i = 0; i != m_tags.size(); ++i )
+    if ( m_tags[i] == get_layer().get_tag() )
+      m_current_tag = i;    
+  m_initial_tag = m_current_tag;
+
   update_layer_visibility();
   update_layer_activity();
 

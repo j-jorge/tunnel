@@ -7330,10 +7330,6 @@
 <field name='base_item.position.left'>
 <real value='4861'/>
 </field>
-<field name='player.tags'>
-<string value='group 1'/>
-<string value='group 2'/>
-</field>
 </fields>
     </item><!-- tunnel::player -->
 
