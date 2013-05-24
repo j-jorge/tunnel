@@ -2841,9 +2841,6 @@
 <field name='slope.steepness'>
 <real value='-600'/>
 </field>
-<field name='slope.tangent_friction'>
-<real value='10'/>
-</field>
 </fields>
     </item><!-- bear::slope -->
 
