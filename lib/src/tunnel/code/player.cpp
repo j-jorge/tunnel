@@ -388,9 +388,9 @@ void tunnel::player::on_enters_layer()
       if ( m_editor_player || ! game_variables::is_editor_running() )
         {
           get_level().add_interest_around(this);
-          create_camera();
-          update_layer_visibility();
-          update_layer_activity();
+          m_level_started =
+            get_level().on_started
+            ( boost::bind( &player::on_level_started, this ) );
         }
 
       m_origin_shader = glob.get_shader("shader/tunnel_origin.frag");
@@ -2876,6 +2876,19 @@ void tunnel::player::on_level_progress_done()
 
   m_level_progress_done.disconnect();
 } // player::on_level_progress_done()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief The level start.
+ */
+void tunnel::player::on_level_started()
+{
+  create_camera();
+  update_layer_visibility();
+  update_layer_activity();
+
+  m_level_started.disconnect();
+} // player::on_level_started()
 
 /*----------------------------------------------------------------------------*/
 /**

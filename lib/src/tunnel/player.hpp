@@ -279,6 +279,7 @@ namespace tunnel
     void create_camera();
 
     void on_level_progress_done();
+    void on_level_started();
     void on_init_shaders();
 
     static void init_exported_methods();
@@ -443,6 +444,9 @@ namespace tunnel
     /** \brief The connection to the signal emitted by the end of the progress
         of the layer. */
     boost::signals::connection m_level_progress_done;    
+
+    /** \brief The connection to the signal emitted when the level starts. */
+    boost::signals::connection m_level_started;  
 
     /** \brief The connection to the signal emitted by the end of the progress
         of the layer. */
