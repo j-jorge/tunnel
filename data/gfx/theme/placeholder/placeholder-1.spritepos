@@ -1,8 +1,12 @@
 left: 0 0 102 204
 center 1: 103 0 204 204
 center 2: 308 0 204 204
-top-left: 513 0 102 102
-curved top-left: 616 0 102 102
-top: 719 0 204 102
-bottom-left: 0 205 102 102
-bottom: 103 205 204 102
+ceiling corner wall: 513 0 102 204
+top-left: 616 0 102 102
+curved top-left: 719 0 102 102
+top: 0 205 204 102
+bottom-left: 822 0 102 102
+bottom: 205 205 204 102
+ground corner: 410 205 204 102
+ground corner wall: 615 205 102 102
+ceiling corner: 718 205 204 102

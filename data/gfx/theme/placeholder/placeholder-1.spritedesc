@@ -1,6 +1,8 @@
 sprite_sheet "placeholder-1" 1024 x 1024 margin 1 order "height"
 
 base_block "wall/base-block.xcf.bz2"
+ground_corner "wall/right-corner.xcf.bz2"
+ceiling_corner "wall/right-corner-ceiling.xcf.bz2"
 
 "top-left" "top left" * 0.4 with base_block
   "top left"
@@ -40,4 +42,24 @@ base_block "wall/base-block.xcf.bz2"
 "center 2" "center 2" * 0.4 with base_block
   "center 2"
   "edges"
+  ;
+
+"ground corner" "ground mask" * 0.4 with ground_corner
+  "ground"
+  "wall"
+  ;
+
+"ground corner wall" "wall mask" * 0.4 with ground_corner
+  "ground"
+  "wall"
+  ;
+
+"ceiling corner" "ceiling mask" * 0.4 with ceiling_corner
+  "ceiling"
+  "wall"
+  ;
+
+"ceiling corner wall" "wall mask" * 0.4 with ceiling_corner
+  "ceiling"
+  "wall"
   ;
