@@ -2840,17 +2840,14 @@ void tunnel::player::create_camera()
   tunnel::camera_on_player* item = new tunnel::camera_on_player();
   
   item->set_active_on_build();
-  item->set_real_field("camera.max_zoom_length",500);
-  item->set_real_field("camera.size.min_height",1960);
-  item->set_real_field("camera.size.min_width",1080);
-  item->set_real_field("camera.valid_max.x",get_level().get_size().x-100);
-  item->set_real_field("camera.valid_max.y",get_level().get_size().y-100);
-  item->set_real_field("camera.valid_min.x",100);
-  item->set_real_field("camera.valid_min.y",100);
-  item->set_proxy_player(this);
-
+    
+  item->set_max_zoom_length(500);
+  bear::universe::rectangle_type area
+    (100,100,get_level().get_size().x-100,get_level().get_size().y-100);
+  item->set_valid_area(area);
   item->set_size(1960,1080);
   item->set_center_of_mass( get_center_of_mass() );
+  item->set_proxy_player(this);
   
   new_item( *item );
 } // player::create_camera()
