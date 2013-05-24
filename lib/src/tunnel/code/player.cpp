@@ -131,7 +131,7 @@ tunnel::player::player()
   m_hot_spot_balance_move(0, 0), m_initial_tag(0), m_current_tag(0),
   m_next_tag(0), m_teleport_time(0), m_tunnel_aborted(false), 
   m_fade_effect_intensity(1), m_can_teleport(true),
-  m_enters_layer_done(false)
+  m_enters_layer_done(false), m_editor_player(false)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -158,7 +158,8 @@ tunnel::player::player( const player& p )
     m_hot_spot_balance_move(0, 0), m_initial_tag(p.m_initial_tag),
     m_current_tag(p.m_current_tag), m_next_tag(p.m_next_tag), m_tags(p.m_tags),
     m_teleport_time(p.m_teleport_time), m_tunnel_aborted(p.m_tunnel_aborted),
-    m_fade_effect_intensity(1), m_can_teleport(true), m_enters_layer_done(false)
+    m_fade_effect_intensity(1), m_can_teleport(true), 
+    m_enters_layer_done(false), m_editor_player(false)
 {
   init();
 } // player::player()
@@ -170,7 +171,7 @@ tunnel::player::player( const player& p )
 void tunnel::player::init()
 {
   set_name( util::get_player_name(1) );
-  
+
   m_fade_effect_tweener = claw::tween::single_tweener
     ( m_fade_effect_intensity, 1.0, 1.0,
       &claw::tween::easing_back::ease_in );
@@ -335,6 +336,18 @@ void tunnel::player::pre_cache()
 
 /*----------------------------------------------------------------------------*/
 /**
+ * \brief Build the item. This method is called automatically by the owner.
+ */
+void tunnel::player::build()
+{
+  super::build();
+
+  if ( ! m_editor_player && game_variables::is_editor_running() )
+    kill();
+} // player::build()
+
+/*----------------------------------------------------------------------------*/
+/**
  * \brief Do post creation actions.
  */
 void tunnel::player::on_enters_layer()
@@ -344,6 +357,13 @@ void tunnel::player::on_enters_layer()
   if ( ! m_enters_layer_done )
     {
       m_enters_layer_done = true;
+
+      m_current_tag = m_tags.size();      
+      for ( unsigned int i = 0; i != m_tags.size(); ++i )
+        if ( m_tags[i] == get_layer().get_tag() )
+          m_current_tag = i;    
+      m_initial_tag = m_current_tag;
+
       m_authorized_action.resize(player_action::max_value + 1);
       for ( unsigned int i=0; i <= player_action::max_value; ++i)
         m_authorized_action[i] = true;
@@ -358,8 +378,6 @@ void tunnel::player::on_enters_layer()
       m_halo_hand_animation = new bear::visual::animation
         ( glob.get_animation("animation/plee/halo_hand.canim") );
       
-      get_level().add_interest_around(this);
-      
       set_model_actor( get_level_globals().get_model("model/player/plee.cm") );
       start_action_model("idle");
       
@@ -367,9 +385,14 @@ void tunnel::player::on_enters_layer()
       m_has_main_hat = true;
       m_has_hat = true;
       
-      update_layer_visibility();
-      update_layer_activity();
-      
+      if ( m_editor_player || ! game_variables::is_editor_running() )
+        {
+          get_level().add_interest_around(this);
+          create_camera();
+          update_layer_visibility();
+          update_layer_activity();
+        }
+
       m_origin_shader = glob.get_shader("shader/tunnel_origin.frag");
       m_target_shader = glob.get_shader("shader/tunnel_target.frag");
       m_common_shader = glob.get_shader("shader/tunnel_common.frag");
@@ -377,6 +400,25 @@ void tunnel::player::on_enters_layer()
       save_current_position();
     }
 } // player::on_enters_layer()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set a field of type bool.
+ * \param name The name of the field.
+ * \param value The new value of the field.
+ * \return false if the field "name" is unknow, true otherwise.
+ */
+bool tunnel::player::set_bool_field( const std::string& name, bool value )
+{
+  bool result = false;
+
+  if ( name == "player.editor_player" )
+    m_editor_player = value;
+  else
+    result = super::set_bool_field( name, value );
+
+  return result;
+} // player::set_bool_field()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -404,34 +446,6 @@ bool tunnel::player::set_string_list_field
 
   return result;
 } // player::set_string_list_field()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Set a field of type string.
- * \param name The name of the field.
- * \param value The new value of the field.
- * \return false if the field "name" is unknow, true otherwise.
- */
-bool tunnel::player::set_string_field
-( const std::string& name, const std::string& value )
-{
-  bool result = true;
-
-  if (name == "player.initial_tag")
-    {
-      m_current_tag = m_tags.size();
-      
-      for ( unsigned int i = 0; i != m_tags.size(); ++i )
-        if ( m_tags[i] == value )
-          m_current_tag = i;
-    
-      m_initial_tag = m_current_tag;
-    }
-  else
-    result = super::set_string_field(name, value);
-
-  return result;
-} // player::set_string_field()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -1074,6 +1088,7 @@ void tunnel::player::apply_open_tunnel()
       m_init_shaders =
         get_level().on_progress_done
         ( boost::bind( &player::on_init_shaders, this ) );
+      
       set_shader
         ( get_level_globals().get_shader("shader/player_in_tunnel.frag") );
       
@@ -2762,7 +2777,6 @@ void tunnel::player::finish_teleport()
 void tunnel::player::end_fade_effect()
 {
   m_current_tag = m_next_tag;
-  clear_shader();    
   update_layer_visibility();
   update_layer_activity();     
 
@@ -2784,8 +2798,7 @@ void tunnel::player::finish_abort_tunnel()
   m_can_teleport = true;
   start_action_model(m_state_before_teleport);
   set_physical_state(m_teleport_state_save);
-  clear_shader();
-  
+
   bear::engine::level::layer_iterator it = get_level().layer_begin();
   for ( ; it != get_level().layer_end(); ++it )
     if ( it->get_tag() == m_tags[m_next_tag] )
@@ -2817,6 +2830,30 @@ void tunnel::player::thwart_gravity()
       add_external_force(force);
     }
 } // player::thwart_gravity()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Create the camera.
+ */
+void tunnel::player::create_camera()
+{
+  tunnel::camera_on_player* item = new tunnel::camera_on_player();
+  
+  item->set_active_on_build();
+  item->set_real_field("camera.max_zoom_length",500);
+  item->set_real_field("camera.size.min_height",1960);
+  item->set_real_field("camera.size.min_width",1080);
+  item->set_real_field("camera.valid_max.x",get_level().get_size().x-100);
+  item->set_real_field("camera.valid_max.y",get_level().get_size().y-100);
+  item->set_real_field("camera.valid_min.x",100);
+  item->set_real_field("camera.valid_min.y",100);
+  item->set_proxy_player(this);
+
+  item->set_size(1960,1080);
+  item->set_center_of_mass( get_center_of_mass() );
+  
+  new_item( *item );
+} // player::create_camera()
 
 /*----------------------------------------------------------------------------*/
 /**

@@ -75,19 +75,15 @@ namespace tunnel
     camera_on_player();
     camera_on_player( const camera_on_player& c );
     
-    void build();
     void progress( bear::universe::time_type elapsed_time );
 
     void set_mode( placement_mode mode );
+    void set_proxy_player( player* p );
 
   private:
     void auto_position( bear::universe::time_type elapsed_time );
 
     void set_player( bear::universe::time_type elapsed_time );
-    void search_player();
-
-    void progress_no_player( bear::universe::time_type elapsed_time );
-    void progress_with_player( bear::universe::time_type elapsed_time );
 
   private:
     /** \brief Current placement mode. */
@@ -95,9 +91,6 @@ namespace tunnel
 
     /** \brief The first player. */
     player_proxy m_player;
-
-    /** \brief The current progress method. */
-    progress_type m_progress;
 
   }; // class camera_on_player
 } // namespace tunnel

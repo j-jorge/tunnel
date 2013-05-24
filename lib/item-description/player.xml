@@ -3,16 +3,15 @@
   <inherit>
     <class>bear::base_item</class>
     <class>bear::model</class>
-    <class>bear::messageable_item</class>
     <class>tunnel::item_with_single_player_action_reader</class>
   </inherit>
   <fields>
     <field type="string" name="player.tags" list="true" required="true">
       <description>The list of tags.</description>
     </field>
-    <field type="string" name="player.initial_tag" required="true">
-      <description>The initial tag.</description>
-      <after field="player.tags"/>
+    <field type="boolean" name="player.editor_player">
+      <description>Indicates if the player is created by editor.</description>
+      <default_value>false</default_value>
     </field>
   </fields>
 </item>

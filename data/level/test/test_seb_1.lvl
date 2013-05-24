@@ -7119,50 +7119,6 @@
 </fields>
     </item><!-- bear::straight_slope -->
 
-    <item class_name='tunnel::camera_on_player' fixed='false' id='camera'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='1836'/>
-</field>
-<field name='base_item.position.left'>
-<real value='3948'/>
-</field>
-<field name='base_item.size.height'>
-<real value='1080'/>
-</field>
-<field name='base_item.size.width'>
-<real value='1960'/>
-</field>
-<field name='camera.active'>
-<bool value='1'/>
-</field>
-<field name='camera.max_zoom_length'>
-<real value='500'/>
-</field>
-<field name='camera.size.min_height'>
-<real value='900'/>
-</field>
-<field name='camera.size.min_width'>
-<real value='1600'/>
-</field>
-<field name='camera.valid_max.x'>
-<real value='24900'/>
-</field>
-<field name='camera.valid_max.y'>
-<real value='4900'/>
-</field>
-<field name='camera.valid_min.x'>
-<real value='150'/>
-</field>
-<field name='camera.valid_min.y'>
-<real value='100'/>
-</field>
-<field name='messageable_item.name'>
-<string value='camera 1'/>
-</field>
-</fields>
-    </item><!-- tunnel::camera_on_player -->
-
     <item class_name='bear::decorative_item' fixed='true'>
 <fields>
 <field name='base_item.position.bottom'>
@@ -7356,12 +7312,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='4861'/>
-</field>
-<field name='messageable_item.name'>
-<string value='player_1'/>
-</field>
-<field name='player.initial_tag'>
-<string value='group 2'/>
 </field>
 <field name='player.tags'>
 <string value='group 1'/>

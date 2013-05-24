@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration program_path="/home/sebastien/programmation/stuffomatic/tunnel/tunnel">
+<arguments>
+<argument>--log-level=error</argument>
+<argument>--set-game-var-bool=editor_running=1</argument>
+</arguments>
+<items>
+    <item class_name='tunnel::player' fixed='false'>
+<fields>
+<field name='player.editor_player'>
+<bool value='1'/>
+</field>
+<field name='player.tags'>
+<string value='group 1'/>
+<string value='group 2'/>
+</field>
+</fields>
+    </item><!-- tunnel::player -->
+
+</items>
+</configuration>

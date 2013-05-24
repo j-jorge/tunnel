@@ -91,11 +91,13 @@ namespace tunnel
     void progress( bear::universe::time_type elapsed_time );
     void get_visual( std::list<bear::engine::scene_visual>& visuals ) const;
     void pre_cache();
+    void build();
     void on_enters_layer();
-
+ 
+    bool set_bool_field
+    ( const std::string& name, bool value );
     bool set_string_list_field
     ( const std::string& name, const std::vector<std::string>& value );
-    bool set_string_field( const std::string& name, const std::string& value );
     
     bool is_valid() const;
 
@@ -274,6 +276,7 @@ namespace tunnel
     void end_fade_effect();
     void finish_abort_tunnel();
     void thwart_gravity();
+    void create_camera();
 
     void on_level_progress_done();
     void on_init_shaders();
@@ -463,6 +466,9 @@ namespace tunnel
 
     /** \brief The radius of teleportation circle. */
     bear::universe::coordinate_type m_teleportation_radius;
+
+    /** \brief Indicates if the player has been created by editor. */
+    bool m_editor_player;
 
     /** \brief The minimum radius of teleportation circle. */
     static const bear::universe::coordinate_type s_min_teleportation_radius;

@@ -45,7 +45,7 @@ bool tunnel::camera_on_player::set_placement_message::apply_to( camera_on_player
  * \brief Constructor.
  */
 tunnel::camera_on_player::camera_on_player()
-  : m_placement(lock_player), m_progress(&camera_on_player::progress_no_player)
+  : m_placement(lock_player)
 {
   set_name("camera");
   set_active_on_build();
@@ -56,21 +56,11 @@ tunnel::camera_on_player::camera_on_player()
  * \brief Constructor.
  */
 tunnel::camera_on_player::camera_on_player( const camera_on_player& c )
-  : super(c), 
-    m_placement(lock_player), m_progress(&camera_on_player::progress_no_player)
+  : super(c), m_placement(lock_player)
 {
   set_name("camera");
   set_active_on_build();
 } // camera_on_player::camera_on_player()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Initialize the item.
- */
-void tunnel::camera_on_player::build()
-{
-  super::build();
-} // camera_on_player::build()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -80,7 +70,8 @@ void tunnel::camera_on_player::build()
 void tunnel::camera_on_player::progress
 ( bear::universe::time_type elapsed_time )
 {
-  (this->*m_progress)(elapsed_time);
+  progress_zoom(elapsed_time);
+  auto_position(elapsed_time);
 } // camera_on_player::progress()
 
 /*----------------------------------------------------------------------------*/
@@ -92,6 +83,17 @@ void tunnel::camera_on_player::set_mode( placement_mode mode )
 {
   m_placement = mode;
 } // camera_on_player::set_mode()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set the player.
+ * \param player The player.
+ */
+void tunnel::camera_on_player::set_proxy_player( player* p )
+{
+  m_player = player_proxy(p);
+  teleport( m_player.hot_spot() );
+} // camera_on_player::set_proxy_player()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -122,49 +124,3 @@ tunnel::camera_on_player::set_player( bear::universe::time_type elapsed_time )
     m_placement = do_nothing;
 } // camera_on_player::set_player()
 
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Search players.
- */
-void tunnel::camera_on_player::search_player()
-{
-  m_player = util::find_player( get_level_globals(), 1 );
-} // camera_on_player::search_player()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Search the players and update the position of the camera.
- * \param elapsed_time Elapsed time since the last call.
- */
-void tunnel::camera_on_player::progress_no_player
-( bear::universe::time_type elapsed_time )
-{
-  search_player();
-
-  if ( m_player != NULL )
-    {
-      m_progress = &camera_on_player::progress_with_player;
-      teleport( m_player.hot_spot() );
-    }
-  else
-    progress_zoom(elapsed_time);
-} // camera_on_player::progress_no_player()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Update the position of the camera.
- * \param elapsed_time Elapsed time since the last call.
- */
-void tunnel::camera_on_player::progress_with_player
-( bear::universe::time_type elapsed_time )
-{
-  search_player();
-
-  if ( m_player != NULL )
-    {
-      progress_zoom(elapsed_time);
-      auto_position(elapsed_time);
-    }
-  else
-    m_progress = &camera_on_player::progress_no_player;
-} // camera_on_player::progress_with_player()

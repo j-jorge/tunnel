@@ -67,7 +67,7 @@ bool tunnel::game_variables::is_local_player(unsigned int p)
     ( make_persistent_variable_name
       ( "network/" + make_player_specific_variable_name
         ( p, "local_player" ) ), true );
-} // game_variables::get_local_player_index()
+} // game_variables::is_local_player()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -83,6 +83,26 @@ void tunnel::game_variables::set_local_player(unsigned int p, bool value)
 	( "network/" + make_player_specific_variable_name
 	  ( p, "local_player" ) ), value ) );
 } // game_variables::set_local_player_index()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Tell if a the game is launched by editor.
+ */
+bool tunnel::game_variables::is_editor_running()
+{
+  return tunnel_game_variables_get_value( "editor_running", false );
+} // game_variables::is_editor_running()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set if the game has launched by editor.
+ * \param value The new value.
+ */
+void tunnel::game_variables::set_editor_running(bool value)
+{
+  bear::engine::game::get_instance().set_game_variable
+    ( bear::engine::variable<bool>( "editor_running" , value ) );
+} // game_variables::set_editor_running()
     
 /*----------------------------------------------------------------------------*/
 /**
