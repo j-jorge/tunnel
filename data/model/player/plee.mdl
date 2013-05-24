@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <model>
-<action name="captive" duration="1" auto_next="captive">
-<marks>
-<mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/captive.canim' auto_size='true' width='64' height='112' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</mark>
-<mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-</mark>
-</marks>
-<snapshots>
-<snapshot date="0" function="apply_captive" width="50" height="110" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
-<mark_placements>
-<mark_placement label="mouth" function="" x="28" y="86" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="25" y="57" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-</mark_placements>
-</snapshot></snapshots>
-</action>
 <action name="paralyze" duration="1" auto_next="paralyze">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/sleep.canim' auto_size='true' width='63' height='108' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -123,7 +106,7 @@
 <action name="float" duration="0.85" auto_next="float">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/float.canim' auto_size='true' width='61' height='125' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/float.canim' auto_size='true' width='19' height='95' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -246,7 +229,7 @@
 <action name="sink" duration="0.85" auto_next="">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/sink.canim' auto_size='true' width='61' height='125' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/sink.canim' auto_size='true' width='19' height='95' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -262,7 +245,7 @@
 <action name="slap" duration="0.6" auto_next="idle">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/slap.canim' auto_size='true' width='84' height='112' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/slap.canim' auto_size='true' width='20' height='96' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -322,7 +305,7 @@
 <action name="slap_and_walk" duration="0.6" auto_next="idle">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/slap_and_walk.canim' auto_size='true' width='89' height='112' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/slap_and_walk.canim' auto_size='true' width='20' height='96' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -382,7 +365,7 @@
 <action name="start_cling" duration="0.36" auto_next="idle">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/start_cling.canim' auto_size='true' width='71' height='125' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/start_cling.canim' auto_size='true' width='20' height='96' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -421,7 +404,7 @@
 <action name="cling" duration="0.09" auto_next="">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/cling.canim' auto_size='true' width='64' height='102' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/cling.canim' auto_size='true' width='19' height='95' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -440,7 +423,7 @@
 <action name="start_hang" duration="0.3" auto_next="idle">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/start_hang.canim' auto_size='true' width='64' height='112' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/start_hang.canim' auto_size='true' width='19' height='95' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -475,7 +458,7 @@
 <action name="swimming" duration="0.6" auto_next="sink">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/swimming.canim' auto_size='true' width='92' height='125' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/swimming.canim' auto_size='true' width='20' height='96' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -560,7 +543,7 @@
 <action name="wait1" duration="0.2" auto_next="wait1">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/wait1.canim' auto_size='true' width='64' height='112' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/wait1.canim' auto_size='true' width='19' height='95' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -576,7 +559,7 @@
 <action name="wait2" duration="0.4" auto_next="wait2">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/wait2.canim' auto_size='true' width='64' height='112' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/wait2.canim' auto_size='true' width='20' height='96' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -671,10 +654,8 @@
 </sound>
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/sleep.canim' auto_size='true' width='63' height='108' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="balloon" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/dream.canim' auto_size='true' width='83' height='52' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -748,7 +729,7 @@
 <action name="injured" duration="1" auto_next="">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/injured.canim' auto_size='true' width='68' height='101' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/injured.canim' auto_size='true' width='19' height='95' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -783,7 +764,7 @@
 <action name="float_and_swim" duration="0.6" auto_next="float">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/float_and_swim.canim' auto_size='true' width='92' height='125' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/float_and_swim.canim' auto_size='true' width='19' height='95' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
