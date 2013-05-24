@@ -1,0 +1,7 @@
+sprite_sheet "hero-1" 1024 x 1024 margin 1 order "height"
+
+idle "guy/idle.xcf.bz2"
+
+"idle 1" "idle" * 0.3 with idle
+  "idle"
+  ;
