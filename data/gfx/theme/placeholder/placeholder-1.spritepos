@@ -2,11 +2,15 @@ left: 0 0 102 204
 center 1: 103 0 204 204
 center 2: 308 0 204 204
 ceiling corner wall: 513 0 102 204
-top-left: 616 0 102 102
-curved top-left: 719 0 102 102
-top: 0 205 204 102
-bottom-left: 822 0 102 102
-bottom: 205 205 204 102
-ground corner: 410 205 204 102
-ground corner wall: 615 205 102 102
-ceiling corner: 718 205 204 102
+bump slope 2: 616 0 204 204
+bump slope 3: 0 205 204 204
+bump slope 4: 205 205 204 204
+top-left: 821 0 102 102
+curved top-left: 410 205 102 102
+top: 513 205 204 102
+bottom-left: 718 205 102 102
+bottom: 0 410 204 102
+ground corner: 205 410 204 102
+ground corner wall: 821 205 102 102
+ceiling corner: 410 410 204 102
+bump slope 1: 615 410 204 102
