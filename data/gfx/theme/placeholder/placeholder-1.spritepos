@@ -4,13 +4,20 @@ center 2: 302 0 200 200
 bump slope 2: 503 0 200 200
 bump slope 3: 704 0 200 200
 bump slope 4: 0 201 200 200
+gentle slope 3: 201 201 200 200
+gentle slope 4: 402 201 200 200
+gentle slope 6: 603 201 200 200
+gentle slope 7: 804 201 200 128
 top-left: 905 0 100 100
-curved top-left: 201 201 100 100
-top: 302 201 200 100
-bottom-left: 503 201 100 100
-bottom: 604 201 200 100
-ground corner: 805 201 200 100
-ground corner wall: 0 402 100 100
-ceiling corner: 101 402 200 100
-ceiling corner wall: 302 402 100 100
-bump slope 1: 403 402 200 100
+curved top-left: 0 402 100 100
+top: 101 402 200 100
+bottom-left: 302 402 100 100
+bottom: 403 402 200 100
+ground corner: 604 402 200 100
+ground corner wall: 805 402 100 100
+ceiling corner: 0 503 200 100
+ceiling corner wall: 906 402 100 100
+bump slope 1: 201 503 200 100
+gentle slope 1: 402 503 200 100
+gentle slope 5: 603 503 200 100
+gentle slope 2: 804 503 200 72

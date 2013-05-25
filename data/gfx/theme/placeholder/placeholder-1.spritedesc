@@ -4,6 +4,7 @@ base_block "wall/base-block.xcf.bz2"
 ground_corner "wall/right-corner.xcf.bz2"
 ceiling_corner "wall/right-corner-ceiling.xcf.bz2"
 bump_slope "slope/bump-slope.xcf.bz2"
+gentle_slope "slope/gentle-slope.xcf.bz2"
 
 "top-left" "top left" * 0.390625 with base_block
   "top left"
@@ -95,4 +96,50 @@ bump_slope "slope/bump-slope.xcf.bz2"
   "ground"
   "fill"
   mask "4"
+  ;
+
+/*----------------------------------------------------------------------------*/
+/* -- Gentle slope -- */
+/* ---------------------------------------------------------------------------*/
+
+"gentle slope 1" "1" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "1"
+  ;
+
+"gentle slope 2" "2" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "2"
+  ;
+
+"gentle slope 3" "3" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "3"
+  ;
+
+"gentle slope 4" "4" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "4"
+  ;
+
+"gentle slope 5" "5" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "5"
+  ;
+
+"gentle slope 6" "6" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "6"
+  ;
+
+"gentle slope 7" "7" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "7"
   ;
