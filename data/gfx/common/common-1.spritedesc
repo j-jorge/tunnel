@@ -1,0 +1,21 @@
+sprite_sheet "common-1" 1024 x 1024 margin 1 order "height"
+
+block "block.xcf.bz2"
+spring "spring.xcf.bz2"
+
+"block" image_size * 0.5 with block
+  glob "*"
+  ;
+
+"spring 1" image_size * 0.5 with spring
+  "1"
+  ;
+
+"spring 2" image_size * 0.5 with spring
+  "2"
+  ;
+
+"spring 3" image_size * 0.5 with spring
+  "3"
+  ;
+
