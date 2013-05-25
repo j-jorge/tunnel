@@ -1,23 +1,29 @@
-left: 0 0 100 200
-center 1: 101 0 200 200
-center 2: 302 0 200 200
-bump slope 2: 503 0 200 200
-bump slope 3: 704 0 200 200
-bump slope 4: 0 201 200 200
-gentle slope 3: 201 201 200 200
-gentle slope 4: 402 201 200 200
-gentle slope 6: 603 201 200 200
-gentle slope 7: 804 201 200 128
+sin slope 5: 0 0 200 300
+left: 201 0 100 200
+center 1: 302 0 200 200
+center 2: 503 0 200 200
+bump slope 2: 704 0 200 200
+bump slope 3: 0 301 200 200
+bump slope 4: 201 301 200 200
+gentle slope 3: 402 301 200 200
+gentle slope 4: 603 301 200 200
+gentle slope 6: 804 301 200 200
+sin slope 4: 0 502 200 200
+sin slope 6: 201 502 200 155
+sin slope 2: 402 502 200 144
+gentle slope 7: 603 502 200 128
 top-left: 905 0 100 100
-curved top-left: 0 402 100 100
-top: 101 402 200 100
-bottom-left: 302 402 100 100
-bottom: 403 402 200 100
-ground corner: 604 402 200 100
-ground corner wall: 805 402 100 100
-ceiling corner: 0 503 200 100
-ceiling corner wall: 906 402 100 100
-bump slope 1: 201 503 200 100
-gentle slope 1: 402 503 200 100
-gentle slope 5: 603 503 200 100
-gentle slope 2: 804 503 200 72
+curved top-left: 804 502 100 100
+top: 0 703 200 100
+bottom-left: 905 502 100 100
+bottom: 201 703 200 100
+ground corner: 402 703 200 100
+ground corner wall: 603 703 100 100
+ceiling corner: 704 703 200 100
+ceiling corner wall: 905 703 100 100
+bump slope 1: 0 804 200 100
+gentle slope 1: 201 804 200 100
+gentle slope 5: 402 804 200 100
+sin slope 1: 603 804 200 100
+sin slope 3: 804 804 200 100
+gentle slope 2: 201 201 200 72

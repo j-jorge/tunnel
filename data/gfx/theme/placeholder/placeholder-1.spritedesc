@@ -5,6 +5,7 @@ ground_corner "wall/right-corner.xcf.bz2"
 ceiling_corner "wall/right-corner-ceiling.xcf.bz2"
 bump_slope "slope/bump-slope.xcf.bz2"
 gentle_slope "slope/gentle-slope.xcf.bz2"
+sin_slope "slope/sin-slope.xcf.bz2"
 
 "top-left" "top left" * 0.390625 with base_block
   "top left"
@@ -142,4 +143,44 @@ gentle_slope "slope/gentle-slope.xcf.bz2"
   "ground"
   "fill"
   mask "7"
+  ;
+
+/*----------------------------------------------------------------------------*/
+/* -- Sin slope -- */
+/* ---------------------------------------------------------------------------*/
+
+"sin slope 1" "1" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "1"
+  ;
+
+"sin slope 2" "2" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "2"
+  ;
+
+"sin slope 3" "3" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "3"
+  ;
+
+"sin slope 4" "4" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "4"
+  ;
+
+"sin slope 5" "5" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "5"
+  ;
+
+"sin slope 6" "6" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "6"
   ;
