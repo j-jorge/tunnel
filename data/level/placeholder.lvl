@@ -114,8 +114,17 @@
 <field name='base_item.position.left'>
 <real value='248'/>
 </field>
+<field name='slope.control_point.left.y'>
+<real value='12'/>
+</field>
+<field name='slope.control_point.right.x'>
+<real value='-68'/>
+</field>
+<field name='slope.left_side_is_active'>
+<bool value='1'/>
+</field>
 <field name='slope.steepness'>
-<real value='26'/>
+<real value='25'/>
 </field>
 </fields>
     </item><!-- bear::slope -->
