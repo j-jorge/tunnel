@@ -1,5 +1,20 @@
 #!/bin/sh
 
+print_anchors_positions()
+{
+    while read PX PY IX IY OX OY
+    do
+        if [ -z "$IX" ]
+        then
+            echo "in" 0 0 "[ $PX $PY ]" "out" 0 0
+        else
+            echo "in" $(( $IX - $PX )) $(( $IY - $PY )) \
+                "[ $PX $PY ]" \
+                "out" $(( $OX - $PX )) $(( $OY - $PY ))
+        fi
+    done
+}
+
 generate_points_bump()
 {
     cat <<EOF
@@ -55,7 +70,12 @@ get_size_sin()
 EOF
 } # get_size_sin()
 
-if [ $# -le 1 ]
+if [ $# -ge 1 ]
+then
+    generate_points_$1 | print_anchors_positions
+fi
+
+if [ $# -ne 2 ]
 then
     echo "usage $0 [ bump | gentle | sin | steep ] image_to_bend.png"
     exit
