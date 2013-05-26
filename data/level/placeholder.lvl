@@ -36,6 +36,9 @@
 
     <item class_name='bear::block' fixed='true'>
 <fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -53,6 +56,9 @@
 
     <item class_name='bear::block' fixed='true'>
 <fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='905' y='0' clip_width='100' clip_height='100' spritepos='top-left' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -70,6 +76,9 @@
 
     <item class_name='bear::block' fixed='true'>
 <fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='905' y='502' clip_width='100' clip_height='100' spritepos='bottom-left' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -93,6 +102,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='804' y='502' clip_width='100' clip_height='100' spritepos='curved top-left' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -113,6 +125,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='703' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -130,6 +145,9 @@
 
     <item class_name='bear::block' fixed='true'>
 <fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='703' clip_width='200' clip_height='100' spritepos='bottom' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -149,6 +167,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='703' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -170,6 +191,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='703' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -187,6 +211,9 @@
 
     <item class_name='bear::block' fixed='true'>
 <fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='703' clip_width='200' clip_height='100' spritepos='bottom' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -207,6 +234,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='703' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -226,6 +256,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='402' y='703' clip_width='200' clip_height='100' spritepos='ground corner' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -244,6 +277,9 @@
 
     <item class_name='bear::block' fixed='true'>
 <fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='704' y='703' clip_width='200' clip_height='100' spritepos='ceiling corner' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -264,6 +300,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='703' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -281,6 +320,9 @@
 
     <item class_name='bear::block' fixed='true'>
 <fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='603' y='703' clip_width='100' clip_height='100' spritepos='ground corner wall' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -298,6 +340,9 @@
 
     <item class_name='bear::block' fixed='true'>
 <fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -315,6 +360,9 @@
 
     <item class_name='bear::block' fixed='true'>
 <fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='905' y='703' clip_width='100' clip_height='100' spritepos='ceiling corner wall' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -334,6 +382,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='804' clip_width='200' clip_height='100' spritepos='bump slope 1' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -355,6 +406,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='704' y='0' clip_width='200' clip_height='200' spritepos='bump slope 2' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -374,6 +428,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='301' clip_width='200' clip_height='200' spritepos='bump slope 4' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -395,6 +452,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='703' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -410,10 +470,51 @@
 </fields>
     </item><!-- bear::block -->
 
+    <item class_name='bear::block' fixed='false'>
+<fields>
+<field name='basic_renderable_item.use_system_angle_as_visual_angle'>
+<bool value='1'/>
+</field>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/common/common-1.png' x='0' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.mass'>
+<real value='200'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='19220'/>
+</field>
+<field name='base_item.position.left'>
+<real value='1719'/>
+</field>
+<field name='item_with_activable_sides.bottom_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='item_with_activable_sides.right_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
     <item class_name='bear::slope' fixed='true'>
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='804' clip_width='200' clip_height='100' spritepos='bump slope 1' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -435,6 +536,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='301' clip_width='200' clip_height='200' spritepos='bump slope 4' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -454,6 +558,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='804' clip_width='200' clip_height='100' spritepos='bump slope 1' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -475,6 +582,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='301' clip_width='200' clip_height='200' spritepos='bump slope 4' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -494,6 +604,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='703' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -515,6 +628,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='804' clip_width='200' clip_height='100' spritepos='gentle slope 1' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -534,6 +650,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='201' clip_width='200' clip_height='72' spritepos='gentle slope 2' auto_size='true' width='200' height='72' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -555,6 +674,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='603' y='301' clip_width='200' clip_height='200' spritepos='gentle slope 4' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -574,6 +696,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='402' y='804' clip_width='200' clip_height='100' spritepos='gentle slope 5' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -595,6 +720,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='804' y='301' clip_width='200' clip_height='200' spritepos='gentle slope 6' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -614,6 +742,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='603' y='502' clip_width='200' clip_height='128' spritepos='gentle slope 7' auto_size='true' width='200' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -635,6 +766,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='703' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -654,6 +788,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='804' clip_width='200' clip_height='100' spritepos='gentle slope 1' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -675,6 +812,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='201' clip_width='200' clip_height='72' spritepos='gentle slope 2' auto_size='true' width='200' height='72' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -694,6 +834,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='804' y='301' clip_width='200' clip_height='200' spritepos='gentle slope 6' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -715,6 +858,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='603' y='502' clip_width='200' clip_height='128' spritepos='gentle slope 7' auto_size='true' width='200' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -734,6 +880,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='804' clip_width='200' clip_height='100' spritepos='gentle slope 1' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -755,6 +904,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='201' clip_width='200' clip_height='72' spritepos='gentle slope 2' auto_size='true' width='200' height='72' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -774,6 +926,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='804' y='301' clip_width='200' clip_height='200' spritepos='gentle slope 6' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -795,6 +950,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='603' y='502' clip_width='200' clip_height='128' spritepos='gentle slope 7' auto_size='true' width='200' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -814,6 +972,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='703' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -835,6 +996,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='603' y='804' clip_width='200' clip_height='100' spritepos='sin slope 1' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -854,6 +1018,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='402' y='502' clip_width='200' clip_height='144' spritepos='sin slope 2' auto_size='true' width='200' height='144' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -875,6 +1042,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='502' clip_width='200' clip_height='200' spritepos='sin slope 4' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -894,6 +1064,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='0' clip_width='200' clip_height='300' spritepos='sin slope 5' auto_size='true' width='200' height='300' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -915,6 +1088,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='502' clip_width='200' clip_height='155' spritepos='sin slope 6' auto_size='true' width='200' height='155' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -934,6 +1110,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='703' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -955,6 +1134,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='603' y='804' clip_width='200' clip_height='100' spritepos='sin slope 1' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -974,6 +1156,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='402' y='502' clip_width='200' clip_height='144' spritepos='sin slope 2' auto_size='true' width='200' height='144' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -995,6 +1180,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='0' clip_width='200' clip_height='300' spritepos='sin slope 5' auto_size='true' width='200' height='300' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -1014,6 +1202,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='502' clip_width='200' clip_height='155' spritepos='sin slope 6' auto_size='true' width='200' height='155' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -1035,6 +1226,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='603' y='804' clip_width='200' clip_height='100' spritepos='sin slope 1' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -1054,6 +1248,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='402' y='502' clip_width='200' clip_height='144' spritepos='sin slope 2' auto_size='true' width='200' height='144' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -1075,6 +1272,9 @@
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='0' clip_width='200' clip_height='300' spritepos='sin slope 5' auto_size='true' width='200' height='300' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -1094,6 +1294,9 @@
 <fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='502' clip_width='200' clip_height='155' spritepos='sin slope 6' auto_size='true' width='200' height='155' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
