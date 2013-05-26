@@ -61,6 +61,17 @@ sin_slope "slope/sin-slope.xcf.bz2"
   "wall"
   ;
 
+"ground corner step" "wall mask" * 0.390625 with ground_corner
+  "corner"
+  "wall"
+  ;
+
+"ground corner curved step" "curved wall mask" * 0.390625 with ground_corner
+  "curved corner"
+  "wall"
+  mask "curved wall mask"
+  ;
+
 "ceiling corner" "ceiling mask" * 0.390625 with ceiling_corner
   "ceiling"
   "wall"

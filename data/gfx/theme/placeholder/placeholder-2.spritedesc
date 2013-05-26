@@ -1,0 +1,18 @@
+sprite_sheet "placeholder-2" 1024 x 1024 margin 1 order "height"
+
+step "wall/step.xcf.bz2"
+
+/*----------------------------------------------------------------------------*/
+/* -- Step -- */
+/* ---------------------------------------------------------------------------*/
+
+"step ground" image_size * 0.390625 with step
+  "top"
+  "fill"
+  ;
+
+"step ground corner" image_size * 0.390625 with step
+  "top corner"
+  "wall"
+  "fill"
+  ;

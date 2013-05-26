@@ -19,11 +19,13 @@ bottom-left: 905 502 100 100
 bottom: 201 703 200 100
 ground corner: 402 703 200 100
 ground corner wall: 603 703 100 100
-ceiling corner: 704 703 200 100
-ceiling corner wall: 905 703 100 100
-bump slope 1: 0 804 200 100
-gentle slope 1: 201 804 200 100
-gentle slope 5: 402 804 200 100
-sin slope 1: 603 804 200 100
-sin slope 3: 804 804 200 100
+ground corner step: 704 703 100 100
+ground corner curved step: 805 703 100 100
+ceiling corner: 0 804 200 100
+ceiling corner wall: 906 703 100 100
+bump slope 1: 201 804 200 100
+gentle slope 1: 402 804 200 100
+gentle slope 5: 603 804 200 100
+sin slope 1: 804 804 200 100
+sin slope 3: 0 905 200 100
 gentle slope 2: 201 201 200 72
