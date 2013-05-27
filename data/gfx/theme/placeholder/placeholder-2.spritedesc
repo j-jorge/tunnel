@@ -1,7 +1,8 @@
 sprite_sheet "placeholder-2" 1024 x 1024 margin 1 order "height"
 
 step "wall/step.xcf.bz2"
-ceiling_slope "ceiling/ceiling-slope.xcf.bz2"
+ceiling_slope_down "ceiling/ceiling-slope-down.xcf.bz2"
+ceiling_slope_up "ceiling/ceiling-slope-up.xcf.bz2"
 
 /*----------------------------------------------------------------------------*/
 /* -- Step -- */
@@ -22,20 +23,33 @@ ceiling_slope "ceiling/ceiling-slope.xcf.bz2"
 /* -- Ceiling -- */
 /* ---------------------------------------------------------------------------*/
 
-"ceiling slope corner" "corner" * 0.390625 with ceiling_slope
+"ceiling slope corner" "corner" * 0.390625 with ceiling_slope_down
   "lights"
   "corner"
   ;
 
-"ceiling slope 1" "left part mask" * 0.390625 with ceiling_slope
+"ceiling slope down 1" "left part mask" * 0.390625 with ceiling_slope_down
   "lights"
   "top end"
   "adjusted left"
   "fill"
   ;
 
-"ceiling slope 2" "right part mask" * 0.390625 with ceiling_slope
+"ceiling slope down 2" "right part mask" * 0.390625 with ceiling_slope_down
   "lights"
   "bottom end"
+  "fill"
+  ;
+
+"ceiling slope up 1" "left part mask" * 0.390625 with ceiling_slope_up
+  "lights"
+  "bottom end"
+  "fill"
+  ;
+
+"ceiling slope up 2" "right part mask" * 0.390625 with ceiling_slope_up
+  "lights"
+  "top end"
+  "adjusted right"
   "fill"
   ;
