@@ -1,6 +1,7 @@
 sprite_sheet "placeholder-2" 1024 x 1024 margin 1 order "height"
 
 step "wall/step.xcf.bz2"
+ceiling_slope "ceiling/ceiling-slope.xcf.bz2"
 
 /*----------------------------------------------------------------------------*/
 /* -- Step -- */
@@ -14,5 +15,27 @@ step "wall/step.xcf.bz2"
 "step ground corner" image_size * 0.390625 with step
   "top corner"
   "wall"
+  "fill"
+  ;
+
+/*----------------------------------------------------------------------------*/
+/* -- Ceiling -- */
+/* ---------------------------------------------------------------------------*/
+
+"ceiling slope corner" "corner" * 0.390625 with ceiling_slope
+  "lights"
+  "corner"
+  ;
+
+"ceiling slope 1" "left part mask" * 0.390625 with ceiling_slope
+  "lights"
+  "top end"
+  "adjusted left"
+  "fill"
+  ;
+
+"ceiling slope 2" "right part mask" * 0.390625 with ceiling_slope
+  "lights"
+  "bottom end"
   "fill"
   ;

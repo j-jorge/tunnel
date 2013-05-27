@@ -1,2 +1,5 @@
-step ground: 0 0 200 200
-step ground corner: 201 0 200 200
+ceiling slope 2: 0 0 200 300
+step ground: 201 0 200 200
+step ground corner: 402 0 200 200
+ceiling slope 1: 603 0 200 200
+ceiling slope corner: 804 0 100 100
