@@ -277,7 +277,7 @@ stars
 3
 0
 
-12
+30
 84
 align_left
 align_bottom
@@ -305,7 +305,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -324,7 +324,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -344,7 +344,7 @@ align_bottom
 
 0.2
 
-12
+30
 84
 align_left
 align_bottom
@@ -372,7 +372,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -391,7 +391,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -411,7 +411,7 @@ align_bottom
 
 0.4
 
-12
+30
 84
 align_left
 align_bottom
@@ -439,7 +439,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -458,7 +458,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -493,7 +493,7 @@ mouth
 2
 0
 apply_crouch
-12
+30
 84
 align_left
 align_bottom
@@ -502,7 +502,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -521,7 +521,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -541,7 +541,7 @@ align_bottom
 
 0.5
 apply_sniff
-12
+30
 84
 align_left
 align_bottom
@@ -550,7 +550,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -569,7 +569,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -604,7 +604,7 @@ mouth
 8
 0
 apply_fall
-12
+30
 84
 align_left
 align_bottom
@@ -613,7 +613,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -632,7 +632,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -652,7 +652,7 @@ align_bottom
 
 0.15
 
-12
+30
 84
 align_left
 align_bottom
@@ -661,7 +661,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -680,7 +680,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -700,7 +700,7 @@ align_bottom
 
 0.3
 
-12
+30
 84
 align_left
 align_bottom
@@ -709,7 +709,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -728,7 +728,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -748,7 +748,7 @@ align_bottom
 
 0.36
 
-12
+30
 84
 align_left
 align_bottom
@@ -757,7 +757,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -776,7 +776,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -796,7 +796,7 @@ align_bottom
 
 0.48
 
-12
+30
 84
 align_left
 align_bottom
@@ -805,7 +805,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -824,7 +824,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -844,7 +844,7 @@ align_bottom
 
 0.6
 
-12
+30
 84
 align_left
 align_bottom
@@ -853,7 +853,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -872,7 +872,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -892,7 +892,7 @@ align_bottom
 
 0.72
 
-12
+30
 84
 align_left
 align_bottom
@@ -901,7 +901,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -920,7 +920,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -940,7 +940,7 @@ align_bottom
 
 0.78
 
-12
+30
 84
 align_left
 align_bottom
@@ -949,7 +949,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -968,7 +968,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -1003,7 +1003,7 @@ mouth
 4
 0
 apply_float
-12
+30
 84
 align_left
 align_center
@@ -1012,7 +1012,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -1031,7 +1031,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -1051,7 +1051,7 @@ align_center
 
 0.25
 apply_swim_up_in_float
-12
+30
 84
 align_left
 align_center
@@ -1060,7 +1060,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -1079,7 +1079,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -1099,7 +1099,7 @@ align_center
 
 0.5
 apply_swim_up_in_float
-12
+30
 84
 align_left
 align_center
@@ -1108,7 +1108,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -1127,7 +1127,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -1147,7 +1147,7 @@ align_center
 
 0.7
 apply_swim_up_in_float
-12
+30
 84
 align_left
 align_center
@@ -1156,7 +1156,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -1175,7 +1175,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -1210,7 +1210,7 @@ mouth
 1
 0
 apply_idle
-12
+30
 84
 align_left
 align_bottom
@@ -1219,7 +1219,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -1238,7 +1238,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -1273,7 +1273,7 @@ mouth
 3
 0
 apply_jump
-12
+30
 84
 align_left
 align_bottom
@@ -1283,7 +1283,7 @@ align_bottom
 1
 sound/plee/jump.ogg
 1
-9
+18
 8
 1
 66
@@ -1302,7 +1302,7 @@ sound/plee/jump.ogg
 1
 
 0
-5
+15
 8
 1
 45
@@ -1322,7 +1322,7 @@ sound/plee/jump.ogg
 
 0.06
 
-12
+30
 84
 align_left
 align_bottom
@@ -1331,7 +1331,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -1350,7 +1350,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -1370,7 +1370,7 @@ align_bottom
 
 0.12
 
-12
+30
 84
 align_left
 align_bottom
@@ -1379,7 +1379,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -1398,7 +1398,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -1433,7 +1433,7 @@ mouth
 1
 0
 apply_look_upward
-12
+30
 84
 align_left
 align_bottom
@@ -1442,7 +1442,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -1461,7 +1461,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -1493,10 +1493,10 @@ mouth
 0
 0
 23
-4
+1
 0
 apply_run
-12
+30
 84
 align_left
 align_bottom
@@ -1505,7 +1505,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -1524,151 +1524,7 @@ align_bottom
 1
 
 0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.12
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.21
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.33
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
+15
 8
 1
 45
@@ -1703,7 +1559,7 @@ mouth
 1
 0
 apply_sink
-12
+30
 84
 align_left
 align_bottom
@@ -1712,7 +1568,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -1731,7 +1587,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -1774,7 +1630,7 @@ attack_point
 6
 0
 apply_slap
-12
+30
 84
 align_left
 align_bottom
@@ -1822,7 +1678,7 @@ sound/plee/slap.ogg
 1
 
 1
-9
+18
 8
 1
 66
@@ -1841,7 +1697,7 @@ sound/plee/slap.ogg
 1
 
 0
-5
+15
 8
 1
 45
@@ -1861,7 +1717,7 @@ sound/plee/slap.ogg
 
 0.1
 
-12
+30
 84
 align_left
 align_bottom
@@ -1908,7 +1764,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -1927,7 +1783,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -1947,7 +1803,7 @@ align_bottom
 
 0.2
 
-12
+30
 84
 align_left
 align_bottom
@@ -1994,7 +1850,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -2013,7 +1869,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -2033,7 +1889,7 @@ align_bottom
 
 0.301
 apply_attack
-12
+30
 84
 align_left
 align_bottom
@@ -2080,7 +1936,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -2099,7 +1955,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -2119,7 +1975,7 @@ align_bottom
 
 0.4
 
-12
+30
 84
 align_left
 align_bottom
@@ -2166,7 +2022,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -2185,7 +2041,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -2205,7 +2061,7 @@ align_bottom
 
 0.5
 
-12
+30
 84
 align_left
 align_bottom
@@ -2252,7 +2108,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -2271,7 +2127,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -2314,7 +2170,7 @@ attack_point
 6
 0
 apply_slap
-12
+30
 84
 align_left
 align_bottom
@@ -2362,7 +2218,7 @@ sound/plee/slap.ogg
 1
 
 1
-9
+18
 8
 1
 66
@@ -2381,7 +2237,7 @@ sound/plee/slap.ogg
 1
 
 0
-5
+15
 8
 1
 45
@@ -2401,7 +2257,7 @@ sound/plee/slap.ogg
 
 0.1
 
-12
+30
 84
 align_left
 align_bottom
@@ -2448,7 +2304,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -2467,7 +2323,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -2487,7 +2343,7 @@ align_bottom
 
 0.2
 
-12
+30
 84
 align_left
 align_bottom
@@ -2534,7 +2390,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -2553,7 +2409,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -2573,7 +2429,7 @@ align_bottom
 
 0.301
 apply_attack
-12
+30
 84
 align_left
 align_bottom
@@ -2620,7 +2476,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -2639,7 +2495,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -2659,7 +2515,7 @@ align_bottom
 
 0.4
 
-12
+30
 84
 align_left
 align_bottom
@@ -2706,7 +2562,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -2725,7 +2581,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -2745,7 +2601,7 @@ align_bottom
 
 0.5
 
-12
+30
 84
 align_left
 align_bottom
@@ -2792,7 +2648,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -2811,7 +2667,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -2854,7 +2710,7 @@ attack_point
 3
 0
 apply_start_cling
-12
+30
 84
 align_right
 align_bottom
@@ -2902,7 +2758,7 @@ sound/plee/start-cling.ogg
 1
 
 1
-9
+18
 8
 1
 66
@@ -2921,7 +2777,7 @@ sound/plee/start-cling.ogg
 1
 
 0
-5
+15
 8
 1
 45
@@ -2941,7 +2797,7 @@ sound/plee/start-cling.ogg
 
 0.09
 
-12
+30
 84
 align_left
 align_bottom
@@ -2988,7 +2844,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -3007,7 +2863,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3027,7 +2883,7 @@ align_bottom
 
 0.18
 
-12
+30
 84
 align_left
 align_bottom
@@ -3074,7 +2930,7 @@ align_bottom
 1
 
 1
-9
+18
 8
 1
 66
@@ -3093,7 +2949,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3128,7 +2984,7 @@ mouth
 1
 0
 apply_cling
-12
+30
 84
 align_right
 align_bottom
@@ -3138,7 +2994,7 @@ align_bottom
 1
 sound/plee/clung.ogg
 1
-9
+18
 8
 1
 66
@@ -3157,7 +3013,7 @@ sound/plee/clung.ogg
 1
 
 0
-5
+15
 8
 1
 45
@@ -3192,7 +3048,7 @@ mouth
 1
 0
 apply_start_hang
-12
+30
 84
 align_left
 align_bottom
@@ -3201,7 +3057,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3220,7 +3076,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3256,7 +3112,7 @@ mouth
 1
 0
 apply_start_jump
-12
+30
 84
 align_left
 align_bottom
@@ -3265,7 +3121,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3284,7 +3140,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3319,7 +3175,7 @@ mouth
 9
 0
 apply_swimming
-12
+30
 84
 align_left
 align_bottom
@@ -3328,7 +3184,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3347,7 +3203,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3367,7 +3223,7 @@ align_bottom
 
 0.3
 apply_swim_jump
-12
+30
 84
 align_left
 align_bottom
@@ -3376,7 +3232,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3395,7 +3251,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3415,7 +3271,7 @@ align_bottom
 
 0.339
 apply_swim_jump
-12
+30
 84
 align_left
 align_bottom
@@ -3424,7 +3280,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3443,7 +3299,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3463,7 +3319,7 @@ align_bottom
 
 0.378
 apply_swim_jump
-12
+30
 84
 align_left
 align_bottom
@@ -3472,7 +3328,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3491,7 +3347,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3511,7 +3367,7 @@ align_bottom
 
 0.414
 apply_swim_jump
-12
+30
 84
 align_left
 align_bottom
@@ -3520,7 +3376,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3539,7 +3395,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3559,7 +3415,7 @@ align_bottom
 
 0.45
 apply_swim_jump
-12
+30
 84
 align_left
 align_bottom
@@ -3568,7 +3424,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3587,7 +3443,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3607,7 +3463,7 @@ align_bottom
 
 0.497
 apply_swim_jump
-12
+30
 84
 align_left
 align_bottom
@@ -3616,7 +3472,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3635,7 +3491,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3655,7 +3511,7 @@ align_bottom
 
 0.533
 apply_swim_jump
-12
+30
 84
 align_left
 align_bottom
@@ -3664,7 +3520,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3683,7 +3539,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3703,7 +3559,7 @@ align_bottom
 
 0.572
 apply_swim_jump
-12
+30
 84
 align_left
 align_bottom
@@ -3712,7 +3568,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3731,7 +3587,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3766,7 +3622,7 @@ mouth
 3
 0
 apply_vertical_jump
-12
+30
 84
 align_left
 align_bottom
@@ -3776,7 +3632,7 @@ align_bottom
 1
 sound/plee/power-jump.ogg
 1
-9
+18
 8
 1
 66
@@ -3795,7 +3651,7 @@ sound/plee/power-jump.ogg
 1
 
 0
-5
+15
 8
 1
 45
@@ -3815,7 +3671,7 @@ sound/plee/power-jump.ogg
 
 0.09
 
-12
+30
 84
 align_left
 align_bottom
@@ -3824,7 +3680,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3843,7 +3699,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3863,7 +3719,7 @@ align_bottom
 
 0.18
 
-12
+30
 84
 align_left
 align_bottom
@@ -3872,7 +3728,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3891,7 +3747,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3926,7 +3782,7 @@ mouth
 1
 0
 apply_wait
-12
+30
 84
 align_left
 align_bottom
@@ -3935,7 +3791,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -3954,7 +3810,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -3989,7 +3845,7 @@ mouth
 1
 0
 apply_wait
-12
+30
 84
 align_left
 align_bottom
@@ -3998,7 +3854,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -4017,7 +3873,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -4049,10 +3905,10 @@ mouth
 0
 0
 23
-13
+1
 0
 apply_walk
-12
+30
 84
 align_left
 align_bottom
@@ -4061,7 +3917,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -4080,583 +3936,7 @@ align_bottom
 1
 
 0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.096
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.144
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.192
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.288
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.336
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.384
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.576
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.624
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.672
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.768
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.816
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
-8
-1
-45
-8
-1
-0
-8
-1
-0
-8
-1
-0
-0
-8
-1
-1
-
-0.864
-
-12
-84
-align_left
-align_bottom
-0
-0
-0
-0
-1
-9
-8
-1
-66
-8
-1
-0
-8
-1
-0
-8
-1
-1
-0
-8
-1
-1
-
-0
-5
+15
 8
 1
 45
@@ -4696,7 +3976,7 @@ mouth
 4
 0
 apply_wait
-12
+30
 84
 align_left
 align_bottom
@@ -4705,7 +3985,7 @@ align_bottom
 0
 0
 2
-9
+18
 8
 1
 66
@@ -4743,7 +4023,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -4763,7 +4043,7 @@ align_bottom
 
 0.2
 
-12
+30
 84
 align_left
 align_bottom
@@ -4772,7 +4052,7 @@ align_bottom
 0
 0
 2
-9
+18
 8
 1
 66
@@ -4810,7 +4090,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -4830,7 +4110,7 @@ align_bottom
 
 0.4
 
-12
+30
 84
 align_left
 align_bottom
@@ -4839,7 +4119,7 @@ align_bottom
 0
 0
 2
-9
+18
 8
 1
 66
@@ -4877,7 +4157,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -4897,7 +4177,7 @@ align_bottom
 
 1.4
 apply_wait
-12
+30
 84
 align_left
 align_bottom
@@ -4906,7 +4186,7 @@ align_bottom
 0
 0
 2
-9
+18
 8
 1
 66
@@ -4944,7 +4224,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -4979,7 +4259,7 @@ mouth
 5
 0
 apply_roar
-12
+30
 84
 align_left
 align_bottom
@@ -4988,7 +4268,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5007,7 +4287,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -5027,7 +4307,7 @@ align_bottom
 
 0.27
 
-12
+30
 84
 align_left
 align_bottom
@@ -5037,7 +4317,7 @@ align_bottom
 1
 sound/plee/grr.wav
 1
-9
+18
 8
 1
 66
@@ -5056,7 +4336,7 @@ sound/plee/grr.wav
 1
 
 0
-5
+15
 8
 1
 45
@@ -5076,7 +4356,7 @@ sound/plee/grr.wav
 
 0.36
 roar_shake
-12
+30
 84
 align_left
 align_bottom
@@ -5085,7 +4365,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5104,7 +4384,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -5124,7 +4404,7 @@ align_bottom
 
 1.17
 
-12
+30
 84
 align_left
 align_bottom
@@ -5133,7 +4413,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5152,7 +4432,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -5172,7 +4452,7 @@ align_bottom
 
 1.26
 
-12
+30
 84
 align_left
 align_bottom
@@ -5181,7 +4461,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5200,7 +4480,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -5235,7 +4515,7 @@ mouth
 1
 0
 apply_injured
-12
+30
 84
 align_left
 align_bottom
@@ -5245,7 +4525,7 @@ align_bottom
 1
 sound/plee/injured.ogg
 1
-9
+18
 8
 1
 66
@@ -5264,7 +4544,7 @@ sound/plee/injured.ogg
 1
 
 0
-5
+15
 8
 1
 45
@@ -5299,7 +4579,7 @@ mouth
 1
 0
 apply_game_over
-12
+30
 84
 align_left
 align_bottom
@@ -5308,7 +4588,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5327,7 +4607,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -5362,7 +4642,7 @@ mouth
 11
 0
 apply_float
-12
+30
 84
 align_left
 align_center
@@ -5371,7 +4651,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5390,7 +4670,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -5410,7 +4690,7 @@ align_center
 
 0.15
 apply_swim_up_in_float
-12
+30
 84
 align_left
 align_center
@@ -5419,7 +4699,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5438,7 +4718,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -5458,7 +4738,7 @@ align_center
 
 0.175
 apply_swim_up_in_float
-12
+30
 84
 align_left
 align_center
@@ -5467,7 +4747,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5486,7 +4766,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -5506,7 +4786,7 @@ align_center
 
 0.3
 apply_swim_and_float
-12
+30
 84
 align_left
 align_center
@@ -5515,7 +4795,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5534,7 +4814,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -5554,7 +4834,7 @@ align_center
 
 0.355
 apply_swim_and_float
-12
+30
 84
 align_left
 align_center
@@ -5563,7 +4843,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5582,7 +4862,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -5602,7 +4882,7 @@ align_center
 
 0.404
 apply_swim_and_float
-12
+30
 84
 align_left
 align_center
@@ -5611,7 +4891,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5630,7 +4910,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -5650,7 +4930,7 @@ align_center
 
 0.45
 apply_swim_in_float
-12
+30
 84
 align_left
 align_center
@@ -5659,7 +4939,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5678,7 +4958,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -5698,7 +4978,7 @@ align_center
 
 0.493
 apply_swim_in_float
-12
+30
 84
 align_left
 align_center
@@ -5707,7 +4987,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5726,7 +5006,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -5746,7 +5026,7 @@ align_center
 
 0.532
 apply_swim_in_float
-12
+30
 84
 align_left
 align_center
@@ -5755,7 +5035,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5774,7 +5054,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -5794,7 +5074,7 @@ align_center
 
 0.561
 apply_swim_in_float
-12
+30
 84
 align_left
 align_center
@@ -5803,7 +5083,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5822,7 +5102,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -5842,7 +5122,7 @@ align_center
 
 0.597
 apply_swim_in_float
-12
+30
 84
 align_left
 align_center
@@ -5851,7 +5131,7 @@ align_center
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5870,7 +5150,7 @@ align_center
 1
 
 0
-5
+15
 8
 1
 45
@@ -5897,7 +5177,7 @@ disappear
 1
 0
 apply_disappear
-12
+30
 84
 align_left
 align_bottom
@@ -5922,7 +5202,7 @@ mouth
 1
 0
 apply_idle
-12
+30
 84
 align_left
 align_bottom
@@ -5931,7 +5211,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -5950,7 +5230,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -5985,7 +5265,7 @@ mouth
 1
 0
 apply_idle
-12
+30
 84
 align_left
 align_bottom
@@ -5994,7 +5274,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -6013,7 +5293,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
@@ -6048,7 +5328,7 @@ mouth
 1
 0
 
-12
+30
 84
 align_left
 align_bottom
@@ -6057,7 +5337,7 @@ align_bottom
 0
 0
 1
-9
+18
 8
 1
 66
@@ -6076,7 +5356,7 @@ align_bottom
 1
 
 0
-5
+15
 8
 1
 45
