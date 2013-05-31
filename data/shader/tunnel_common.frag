@@ -11,7 +11,7 @@ uniform sampler2D texture;
  */
 void main(void)
 {
-  vec4 color = texture2D(texture, gl_TexCoord[0].st);
+  vec4 color = gl_Color * texture2D(texture, gl_TexCoord[0].st);
   float position = locate_coordinate_in_tunnel( gl_FragCoord.xy );
 
   if ( position <= 0 )

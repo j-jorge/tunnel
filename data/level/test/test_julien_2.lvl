@@ -109,6 +109,17 @@
 </fields>
     </item><!-- tunnel::layer_border -->
 
+    <item class_name='tunnel::player' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='1190'/>
+</field>
+<field name='base_item.position.left'>
+<real value='176'/>
+</field>
+</fields>
+    </item><!-- tunnel::player -->
+
     <item class_name='bear::block' fixed='true'>
 <fields>
 <field name='item_with_decoration.sprite'>
