@@ -149,7 +149,14 @@ bool tunnel::misc_layer::key_pressed( const bear::input::key_info& key )
 {
   bool result = true;
 
-  if ( key.get_code() == m_fps_key )
+  if ( key.get_code() == bear::input::keyboard::kc_escape )
+    {
+      if ( get_level().is_paused() )
+        get_level().unset_pause();
+      else
+        get_level().set_pause();
+    }
+  else if ( key.get_code() == m_fps_key )
     m_show_fps = !m_show_fps;
   else if ( key.get_code() == m_screenshot_key )
     screenshot();
