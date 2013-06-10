@@ -244,6 +244,9 @@ tunnel::player::~player()
 void tunnel::player::progress( bear::universe::time_type elapsed_time )
 {
   // THIS CONDITION MUST BE CHECKED FIRST
+  m_move_right = false;
+  m_move_left = false;
+  
   if ( !is_a_marionette() )
     progress_input_actions(elapsed_time);
   else
@@ -2158,9 +2161,9 @@ void tunnel::player::update_orientation()
 {
   if ( get_current_action_name() != "captive" )
     {
-      if ( get_speed().x < 0 )
+      if ( get_speed().x < -70 || m_move_left )
         get_rendering_attributes().mirror(true);
-      else if ( get_speed().x > 0 )
+      else if ( get_speed().x > 70 || m_move_right )
         get_rendering_attributes().mirror(false);
     }
 } // player::update_orientation()
@@ -2358,8 +2361,6 @@ void tunnel::player::brake()
       speed.x *= 0.9;
       set_speed(speed);
     }
-  m_move_right = false;
-  m_move_left = false;
 } // player::brake()
 
 /*----------------------------------------------------------------------------*/
