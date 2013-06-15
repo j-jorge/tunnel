@@ -24,6 +24,7 @@
 
 #include "tunnel/camera_on_player.hpp"
 #include "tunnel/defines.hpp"
+#include "tunnel/item_picking_filter.hpp"
 #include "tunnel/player_action.hpp"
 
 #include "tunnel/player_state/state_player.hpp"
@@ -2491,7 +2492,7 @@ bool tunnel::player::check_can_teleport() const
     {
       if ( it->get_tag() == m_tags[m_next_tag] && it->has_world() )
         {
-          bear::universe::item_picking_filter filter;
+          item_picking_filter filter( get_shape().clone_impl() );
           filter.set_can_move_items_value(true);
           bear::universe::world::item_list items;
           

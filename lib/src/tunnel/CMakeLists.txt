@@ -18,6 +18,7 @@ set( LIBTUNNEL_SOURCE_FILES
   code/game_variables.cpp
   code/gui_command.cpp
   code/init.cpp
+  code/item_picking_filter.cpp
   code/layer_border.cpp
   code/player.cpp
   code/player_action.cpp
