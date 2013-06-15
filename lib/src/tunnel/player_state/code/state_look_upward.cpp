@@ -55,8 +55,11 @@ void tunnel::state_look_upward::do_move_right()
  */
 void tunnel::state_look_upward::do_jump()
 {
-  if ( m_player_instance.has_bottom_contact() )
-    m_player_instance.start_action_model("start_jump");
+  // In tunnel, the player has not vertical jump 
+  super::do_jump();
+
+  //if ( m_player_instance.has_bottom_contact() )
+  //  m_player_instance.start_action_model("start_jump");
 } // state_look_upward::do_jump()
 
 /*----------------------------------------------------------------------------*/
