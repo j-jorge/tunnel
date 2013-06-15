@@ -2492,7 +2492,7 @@ bool tunnel::player::check_can_teleport() const
     {
       if ( it->get_tag() == m_tags[m_next_tag] && it->has_world() )
         {
-          item_picking_filter filter( get_shape().clone_impl() );
+          item_picking_filter filter( get_shape() );
           filter.set_can_move_items_value(true);
           bear::universe::world::item_list items;
           

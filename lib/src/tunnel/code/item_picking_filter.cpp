@@ -9,9 +9,9 @@
  * \author Sebastien Angibaud
  */
 #include "tunnel/item_picking_filter.hpp"
+
 #include "universe/shape/curved_box.hpp"
 #include "universe/physical_item.hpp"
-#include "generic_items/slope.hpp"
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -19,20 +19,11 @@
  * \param s The shape of the item.
  */
 tunnel::item_picking_filter::item_picking_filter
-(const bear::universe::shape_base * s)
+( const bear::universe::shape& s )
   : m_shape(s)
 {
 
 } // item_picking_filter::item_picking_filter()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Destructor.
- */
-tunnel::item_picking_filter::~item_picking_filter()
-{
-
-} // item_picking_filter::~item_picking_filter()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -42,18 +33,25 @@ tunnel::item_picking_filter::~item_picking_filter()
 bool tunnel::item_picking_filter::do_satisfies_condition
 ( const bear::universe::physical_item& item ) const
 {
-  const bear::slope* const s( dynamic_cast<const bear::slope*>( &item ) );
+  bool result = false;
 
-  if ( s && m_shape )
+  if ( super::do_satisfies_condition( item ) )
     {
-      const bear::universe::curved_box* const c( s->get_curved_box() );
-      
-      if ( c == NULL )
-        return true;
-      else
-        c->intersects_strict(*m_shape);
+      bear::universe::shape_base* const item_shape
+        ( item.get_shape().clone_impl() );
+      bear::universe::curved_box* const curve
+        ( dynamic_cast<bear::universe::curved_box*>( item_shape ) );
+
+      if ( curve != NULL )
+        {
+          bear::universe::shape_base* const local_shape( m_shape.clone_impl() );
+          result = curve->intersects_strict( *local_shape );
+          delete local_shape;
+        }
+
+      delete item_shape;
     }
-  else
-    return true;
+
+  return result;
 } // item_picking_filter::do_satisfies_condition()
 

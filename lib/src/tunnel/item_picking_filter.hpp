@@ -22,23 +22,24 @@ namespace tunnel
    *        interesting items.
    * \author Sébastien Angibaud
    */
-  class item_picking_filter : public bear::universe::item_picking_filter
+  class item_picking_filter:
+    public bear::universe::item_picking_filter
   {
   public:
     /** \brief The type of the parent class. */
-    typedef item_picking_filter super;
+    typedef bear::universe::item_picking_filter super;
 
   public:
-    item_picking_filter(const bear::universe::shape_base * s);
-    virtual ~item_picking_filter();
+    item_picking_filter( const bear::universe::shape& s );
     
   protected:
     virtual bool do_satisfies_condition
     ( const bear::universe::physical_item& item ) const;
 
   private:
-    /** \brief Tell if the "artificial" flag must be checked. */
-    const bear::universe::shape_base* m_shape;
+    /** \brief The shape againts with the items are checked for intersection. */
+    const bear::universe::shape m_shape;
+
   }; // class item_picking_filter
 
 } // namespace tunnel
