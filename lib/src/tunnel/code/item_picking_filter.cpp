@@ -42,7 +42,9 @@ bool tunnel::item_picking_filter::do_satisfies_condition
       bear::universe::curved_box* const curve
         ( dynamic_cast<bear::universe::curved_box*>( item_shape ) );
 
-      if ( curve != NULL )
+      if ( curve == NULL )
+        result = true;
+      else
         {
           bear::universe::shape_base* const local_shape( m_shape.clone_impl() );
           result = curve->intersects_strict( *local_shape );
