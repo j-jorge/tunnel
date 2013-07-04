@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 2.6)
 
 install(
   DIRECTORY "animation" "font" "gfx" "level" "model"
-  "music" "script" "sound"
+  #"music" "script"
+  "sound"
   DESTINATION ${TUNNEL_INSTALL_DATA_DIR}
   FILE_PERMISSIONS OWNER_READ OWNER_WRITE
   GROUP_READ

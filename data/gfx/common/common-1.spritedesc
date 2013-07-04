@@ -1,6 +1,7 @@
 sprite_sheet "common-1" 1024 x 1024 margin 1 order "height"
 
 block "block.xcf.bz2"
+door "door.xcf.bz2"
 spring "spring.xcf.bz2"
 
 "block" image_size * 0.5 with block
@@ -19,3 +20,6 @@ spring "spring.xcf.bz2"
   "3"
   ;
 
+"door" image_size * 0.5 with door
+  glob "*"
+  ;
