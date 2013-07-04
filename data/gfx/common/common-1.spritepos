@@ -3,6 +3,6 @@ block: 51 0 100 100
 spring 1: 152 0 60 45
 spring 2: 213 0 60 45
 spring 3: 274 0 60 45
-switch button 1: 335 0 60 45
-switch button 2: 396 0 60 45
-switch base: 457 0 200 32
+switch button 1: 335 0 60 22
+switch button 2: 396 0 60 22
+switch base: 457 0 200 16
