@@ -12,6 +12,11 @@
  * \author Sebastien Angibaud
  */
 #include "tunnel/door_switch.hpp"
+#include "tunnel/door.hpp"
+
+#include "universe/collision_info.hpp"
+#include "engine/world.hpp"
+#include "engine/level.hpp"
 
 BASE_ITEM_EXPORT( door_switch, tunnel )
 
@@ -77,3 +82,105 @@ bool tunnel::door_switch::set_string_field
   return result;
 } // door_switch::set_string_field()
 
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Process a collision with the base.
+ * \param mark The mark on which the collision occurred.
+ * \param that The other item of the collision.
+ * \param info Some informations about the collision.
+ */
+void tunnel::door_switch::on_base_collision
+( bear::engine::base_item& mark, bear::engine::base_item& that,
+  bear::universe::collision_info& info )
+{
+  mark.default_collision(info);
+} // door_switch::on_base_collision()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Process a collision with the button 1.
+ * \param mark The mark on which the collision occurred.
+ * \param that The other item of the collision.
+ * \param info Some informations about the collision.
+ */
+void tunnel::door_switch::on_button_1_collision
+( bear::engine::base_item& mark, bear::engine::base_item& that,
+  bear::universe::collision_info& info )
+{
+  if ( info.get_collision_side() == bear::universe::zone::top_zone )
+    {
+      if ( get_current_action_name() == "state_1" )
+        {
+          start_model_action("state_2");
+          switch_door();
+        }
+
+      mark.default_collision(info);
+    }
+} // door_switch::on_button_1_collision()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Process a collision with the button 2.
+ * \param mark The mark on which the collision occurred.
+ * \param that The other item of the collision.
+ * \param info Some informations about the collision.
+ */
+void tunnel::door_switch::on_button_2_collision
+( bear::engine::base_item& mark, bear::engine::base_item& that,
+  bear::universe::collision_info& info )
+{
+  if ( info.get_collision_side() == bear::universe::zone::top_zone ) 
+    {
+      if ( get_current_action_name() == "state_2" )
+        {
+          start_model_action("state_1");
+          switch_door();
+        }
+
+      mark.default_collision(info);
+    }
+} // door_switch::on_button_2_collision()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Switch the door.
+ */
+void tunnel::door_switch::switch_door()
+{
+  bear::engine::world::item_list::iterator it;
+  bear::engine::world::item_list items;
+  bear::universe::rectangle_type r
+    ( get_level().get_camera()->get_bounding_box() );
+
+  get_world().pick_items_in_rectangle(items, r);
+
+  for ( it = items.begin(); it != items.end(); ++it )
+    {
+      door* d = dynamic_cast<door*>(*it);
+      
+      if ( d != NULL )
+        if ( d->get_tag() == m_tag )
+          d->switch_door();
+    }
+} // door_switch::switch_door()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Export the methods of the class.
+ */
+void tunnel::door_switch::init_exported_methods()
+{
+  TEXT_INTERFACE_CONNECT_METHOD_3
+    ( door_switch, on_base_collision, void, bear::engine::base_item&,
+      bear::engine::base_item&, bear::universe::collision_info& );  
+  TEXT_INTERFACE_CONNECT_METHOD_3
+    ( door_switch, on_button_1_collision, void, bear::engine::base_item&,
+      bear::engine::base_item&, bear::universe::collision_info& );  
+  TEXT_INTERFACE_CONNECT_METHOD_3
+    ( door_switch, on_button_2_collision, void, bear::engine::base_item&,
+      bear::engine::base_item&, bear::universe::collision_info& );
+} // door::init_exported_methods()
+
+/*----------------------------------------------------------------------------*/
+TEXT_INTERFACE_IMPLEMENT_METHOD_LIST( tunnel::door_switch )

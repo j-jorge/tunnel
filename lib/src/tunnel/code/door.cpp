@@ -110,3 +110,44 @@ std::string tunnel::door::get_tag() const
 {
   return m_tag;
 } // door::get_tag()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Switch the door.
+ */
+void tunnel::door::switch_door()
+{
+  if ( get_current_action_name() == "closed" ||
+       get_current_action_name() == "close" )
+    start_model_action("open");
+  else
+    start_model_action("close");
+} // door::switch_door()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Process a collision with the door.
+ * \param mark The mark on which the collision occurred.
+ * \param that The other item of the collision.
+ * \param info Some informations about the collision.
+ */
+void tunnel::door::on_door_collision
+( bear::engine::base_item& mark, bear::engine::base_item& that,
+  bear::universe::collision_info& info )
+{
+  default_collision(info);
+} // door::on_door_collision()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Export the methods of the class.
+ */
+void tunnel::door::init_exported_methods()
+{
+  TEXT_INTERFACE_CONNECT_METHOD_3
+    ( door, on_door_collision, void, bear::engine::base_item&,
+      bear::engine::base_item&, bear::universe::collision_info& );
+} // door::init_exported_methods()
+
+/*----------------------------------------------------------------------------*/
+TEXT_INTERFACE_IMPLEMENT_METHOD_LIST( tunnel::door )

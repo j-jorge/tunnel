@@ -39,6 +39,8 @@ namespace tunnel
     /** \brief The type of the parent class. */
     typedef bear::engine::model< bear::engine::base_item > super;
 
+    TEXT_INTERFACE_DECLARE_METHOD_LIST(super, init_exported_methods);
+
   public:
     door_switch();
 
@@ -48,6 +50,21 @@ namespace tunnel
 
     bool set_string_field( const std::string& name, const std::string& value );
 
+  private:
+    void on_base_collision
+    ( bear::engine::base_item& mark, bear::engine::base_item& that,
+      bear::universe::collision_info& info );
+    void on_button_1_collision
+    ( bear::engine::base_item& mark, bear::engine::base_item& that,
+      bear::universe::collision_info& info );
+    void on_button_2_collision
+    ( bear::engine::base_item& mark, bear::engine::base_item& that,
+      bear::universe::collision_info& info );
+    void switch_door();
+
+  private:
+    static void init_exported_methods();
+  
   private:
     /* \brief The tag of the switch. */
     std::string m_tag;
