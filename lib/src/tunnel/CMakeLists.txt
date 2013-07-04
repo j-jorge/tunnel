@@ -26,6 +26,7 @@ set( LIBTUNNEL_SOURCE_FILES
   code/player_pending_action.cpp
   code/player_proxy.cpp
   code/player_stop_block.cpp
+  code/spring.cpp
 
   layer/code/misc_layer.cpp
 
