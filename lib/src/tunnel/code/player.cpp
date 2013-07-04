@@ -28,6 +28,7 @@
 #include "tunnel/camera_on_player.hpp"
 #include "tunnel/defines.hpp"
 #include "tunnel/item_picking_filter.hpp"
+#include "tunnel/item_brick/transportable.hpp"
 #include "tunnel/player_action.hpp"
 
 #include "tunnel/player_state/state_player.hpp"
@@ -182,6 +183,7 @@ void tunnel::player::init()
   set_z_fixed(false);
   set_weak_collisions(false);
   m_offensive_phase = false;
+  m_can_transport = false;
 
   set_spot_minimum(-200, -250);
   set_spot_maximum(200, 220);
@@ -263,7 +265,7 @@ void tunnel::player::progress( bear::universe::time_type elapsed_time )
   m_run_time += elapsed_time;
   m_jump_time += elapsed_time;
 
-  m_jump_force = get_mass() * 7500 *
+  m_jump_force = get_mass() * 6000 * //7500 *
     (1 - (m_jump_time / s_max_time_continue_jump)
      * (m_jump_time / s_max_time_continue_jump) );
 
@@ -407,6 +409,8 @@ bool tunnel::player::set_bool_field( const std::string& name, bool value )
 
   if ( name == "player.editor_player" )
     m_editor_player = value;
+  else if ( name == "player.can_transport" )
+    m_can_transport = value;
   else
     result = super::set_bool_field( name, value );
 
@@ -1044,6 +1048,18 @@ void tunnel::player::apply_open_tunnel()
         get_level().on_progress_done
         ( boost::bind( &player::on_init_shaders, this ) );
       
+      if ( m_can_transport )
+          {
+            std::list<physical_item*> transportables;
+            search_transportable(transportables);
+            std::list<physical_item*>::iterator it_transportable;
+            for ( it_transportable = transportables.begin(); 
+                  it_transportable != transportables.end(); ++it_transportable)
+              (*static_cast<base_item*>(*it_transportable)).set_shader
+                ( get_level_globals().get_shader
+                  ("shader/player_in_tunnel.frag") );
+          }
+
       set_shader
         ( get_level_globals().get_shader("shader/player_in_tunnel.frag") );
       
@@ -2482,14 +2498,38 @@ void tunnel::player::update_layer_activity()
 
 /*----------------------------------------------------------------------------*/
 /**
+ * \brief Search transportable in the tunnel.
+ * \param transportable The transportable in the tunnel.
+ */
+void tunnel::player::search_transportable
+(std::list<physical_item*>& transportables) const
+{
+  bear::universe::world::item_list items;
+  if ( get_layer().has_world() )
+    get_layer().get_world().pick_items_in_circle
+      (items, get_center_of_mass(), s_max_teleportation_radius);
+
+  bear::universe::world::item_list::const_iterator const_it;
+  for ( const_it=items.begin(); (const_it!=items.end()); ++const_it)
+    {
+      transportable* m = dynamic_cast<transportable*>(*const_it);
+      if ( m != NULL )
+        transportables.push_back(*const_it);
+    }
+} // player::search_tansportable()
+
+/*----------------------------------------------------------------------------*/
+/**
  * \brief Test if the player can teleport in the next tag.
  */
 bool tunnel::player::check_can_teleport() const
 {
   bool result = false;
   
-  bear::engine::level::layer_iterator it = get_level().layer_begin();
+  std::list<physical_item*> transportables;
+  search_transportable(transportables);
   
+  bear::engine::level::layer_iterator it = get_level().layer_begin();
   for ( it = get_level().layer_begin(); 
         it != get_level().layer_end() && ! result ; ++it )
     {
@@ -2499,9 +2539,15 @@ bool tunnel::player::check_can_teleport() const
           filter.set_can_move_items_value(true);
           bear::universe::world::item_list items;
           
+          std::list<physical_item*>::const_iterator it_transportable;
+          for ( it_transportable = transportables.begin(); 
+                it_transportable != transportables.end(); ++it_transportable)
+            it->get_world().pick_items_in_rectangle
+              (items, (*it_transportable)->get_bounding_box(), filter);
+
           it->get_world().pick_items_in_rectangle
-            (items, get_bounding_box(), filter);
-          
+              (items, get_bounding_box(), filter);
+
           result = items.empty();
         }
     }
@@ -2591,7 +2637,21 @@ void tunnel::player::teleport_in_new_layer()
             it->add_item(*obj);
             get_level().set_camera(*obj);
           }
-        
+
+        if ( m_can_transport )
+          {
+            std::list<physical_item*> transportables;
+            search_transportable(transportables);
+            std::list<physical_item*>::iterator it_transportable;
+            for ( it_transportable = transportables.begin(); 
+                  it_transportable != transportables.end(); ++it_transportable)
+              {
+                get_layer().drop_item
+                  (*static_cast<base_item*>(*it_transportable));
+                it->add_item(*static_cast<base_item*>(*it_transportable));
+              }
+          }
+
         get_layer().drop_item(*this);
         it->add_item(*this);
       }

@@ -10,5 +10,9 @@
       <description>Indicates if the player is created by editor.</description>
       <default_value>false</default_value>
     </field>
+    <field type="boolean" name="player.can_transport">
+      <description>Indicates if the player can transport objects.</description>
+      <default_value>false</default_value>
+    </field>
   </fields>
 </item>

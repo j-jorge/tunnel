@@ -262,7 +262,7 @@ namespace tunnel
    
     void update_layer_visibility();
     void update_layer_activity();
-
+    void search_transportable(std::list<physical_item*>& transportables) const;
     bool check_can_teleport() const;
     void init_shaders();
     void remove_shaders();
@@ -462,6 +462,9 @@ namespace tunnel
 
     /** \brief Indicates if the player has been created by editor. */
     bool m_editor_player;
+
+    /** \brief Indicates if the player can transport objects. */
+    bool m_can_transport;
 
     /** \brief The minimum radius of teleportation circle. */
     static const bear::universe::coordinate_type s_min_teleportation_radius;
