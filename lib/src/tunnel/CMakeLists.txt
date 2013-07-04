@@ -17,6 +17,8 @@ set( LIBTUNNEL_SOURCE_FILES
   code/controller_config.cpp
   code/controller_layout.cpp
   code/crystal.cpp
+  code/door.cpp
+  code/door_switch.cpp
   code/game_variables.cpp
   code/gui_command.cpp
   code/init.cpp
