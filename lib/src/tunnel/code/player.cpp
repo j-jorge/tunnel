@@ -2539,11 +2539,15 @@ bool tunnel::player::check_can_teleport() const
           filter.set_can_move_items_value(true);
           bear::universe::world::item_list items;
           
-          std::list<physical_item*>::const_iterator it_transportable;
-          for ( it_transportable = transportables.begin(); 
-                it_transportable != transportables.end(); ++it_transportable)
-            it->get_world().pick_items_in_rectangle
-              (items, (*it_transportable)->get_bounding_box(), filter);
+          if ( m_can_transport )
+            {
+              std::list<physical_item*>::const_iterator it_transportable;
+              for ( it_transportable = transportables.begin(); 
+                    it_transportable != transportables.end(); 
+                    ++it_transportable)
+                it->get_world().pick_items_in_rectangle
+                  (items, (*it_transportable)->get_bounding_box(), filter);
+            }
 
           it->get_world().pick_items_in_rectangle
               (items, get_bounding_box(), filter);
