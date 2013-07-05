@@ -72,7 +72,7 @@ bool tunnel::door_switch::is_valid() const
 bool tunnel::door_switch::set_string_field
 ( const std::string& name, const std::string& value )
 {
-  bool result = false;
+  bool result = true;
 
   if ( name == "door_switch.tag" )
     m_tag = value;

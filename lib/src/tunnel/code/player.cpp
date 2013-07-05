@@ -405,7 +405,7 @@ void tunnel::player::on_enters_layer()
  */
 bool tunnel::player::set_bool_field( const std::string& name, bool value )
 {
-  bool result = false;
+  bool result = true;
 
   if ( name == "player.editor_player" )
     m_editor_player = value;

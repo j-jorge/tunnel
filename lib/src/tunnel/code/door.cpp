@@ -72,7 +72,7 @@ bool tunnel::door::is_valid() const
  */
 bool tunnel::door::set_bool_field( const std::string& name, bool value )
 {
-  bool result = false;
+  bool result = true;
 
   if ( name == "door.opened" )
     m_opened = value;
@@ -92,7 +92,7 @@ bool tunnel::door::set_bool_field( const std::string& name, bool value )
 bool tunnel::door::set_string_field
 ( const std::string& name, const std::string& value )
 {
-  bool result = false;
+  bool result = true;
 
   if ( name == "door.tag" )
     m_tag = value;
