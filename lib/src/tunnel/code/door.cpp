@@ -13,8 +13,9 @@
  */
 #include "tunnel/door.hpp"
 
-BASE_ITEM_EXPORT( door, tunnel )
+#include "universe/collision_info.hpp"
 
+BASE_ITEM_EXPORT( door, tunnel )
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -23,7 +24,6 @@ BASE_ITEM_EXPORT( door, tunnel )
 tunnel::door::door()
 : m_opened(false)
 {
-
 } // door::door()
 
 /*----------------------------------------------------------------------------*/
@@ -135,7 +135,9 @@ void tunnel::door::on_door_collision
 ( bear::engine::base_item& mark, bear::engine::base_item& that,
   bear::universe::collision_info& info )
 {
-  default_collision(info);
+  if ( info.get_collision_side() == bear::universe::zone::middle_right_zone ||
+       info.get_collision_side() == bear::universe::zone::middle_left_zone )
+    default_collision(info);
 } // door::on_door_collision()
 
 /*----------------------------------------------------------------------------*/

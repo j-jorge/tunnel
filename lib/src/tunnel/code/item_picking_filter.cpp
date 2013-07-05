@@ -38,7 +38,8 @@ bool tunnel::item_picking_filter::do_satisfies_condition
 {
   bool result = false;
 
-  if ( super::do_satisfies_condition( item ) )
+  if ( super::do_satisfies_condition( item ) && 
+       item.get_height() != 0 && item.get_width() != 0 )
     {
       bear::universe::shape_base* const item_shape
         ( item.get_shape().clone_impl() );
