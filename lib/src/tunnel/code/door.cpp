@@ -61,7 +61,7 @@ void tunnel::door::on_enters_layer()
  */
 bool tunnel::door::is_valid() const
 {
-  return ! m_tag.empty();
+  return ! m_tags.empty();
 } // door::is_valid()
 
 
@@ -86,32 +86,35 @@ bool tunnel::door::set_bool_field( const std::string& name, bool value )
 
 /*----------------------------------------------------------------------------*/
 /**
- * \brief Set a field of type string.
+ * \brief Set a field of type \c list of string.
  * \param name The name of the field.
  * \param value The new value of the field.
  * \return false if the field "name" is unknow, true otherwise.
  */
-bool tunnel::door::set_string_field
-( const std::string& name, const std::string& value )
+bool tunnel::door::set_string_list_field
+( const std::string& name, const std::vector<std::string>& value )
 {
   bool result = true;
 
-  if ( name == "door.tag" )
-    m_tag = value;
+  if ( name == "door.tags" )
+    {
+      for (std::size_t i=0; i!=value.size(); ++i)
+        m_tags.insert(value[i]);
+    }
   else
-    result = super::set_string_field( name, value );
+    result = super::set_string_list_field( name, value );
 
   return result;
-} // door::set_string_field()
+} // door::set_string_list_field()
 
 /*----------------------------------------------------------------------------*/
 /**
- * \brief Return the tag of the door.
+ * \brief Return if the door has a given tag.
  */
-std::string tunnel::door::get_tag() const
+bool tunnel::door::has_tag(const std::string& tag) const
 {
-  return m_tag;
-} // door::get_tag()
+  return m_tags.find(tag) != m_tags.end();
+} // door::has_tag()
 
 /*----------------------------------------------------------------------------*/
 /**

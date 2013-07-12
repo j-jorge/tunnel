@@ -5,8 +5,8 @@
     <class>bear::model</class>
   </inherit>
   <fields>
-    <field type="string" name="door.tag" required="true">
-      <description>The tag of the door.</description>
+    <field type="string" name="door.tags" required="true" list="true">
+      <description>The tags of the door.</description>
     </field>
     <field type="boolean" name="door.opened">
       <description>Indicates if the door is opened.</description>

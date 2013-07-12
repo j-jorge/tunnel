@@ -18,6 +18,8 @@
 #include "engine/model.hpp"
 #include "engine/export.hpp"
 
+#include <set>
+
 namespace tunnel
 {
   /**
@@ -46,9 +48,10 @@ namespace tunnel
     bool is_valid() const;
 
     bool set_bool_field( const std::string& name, bool value );
-    bool set_string_field( const std::string& name, const std::string& value );
+    bool set_string_list_field
+    ( const std::string& name, const std::vector<std::string>& value );
 
-    std::string get_tag() const;
+    bool has_tag( const std::string& tag ) const;
     void switch_door();
 
   private:
@@ -60,8 +63,8 @@ namespace tunnel
     static void init_exported_methods();
     
   private:
-    /* \brief The tag of the door. */
-    std::string m_tag;
+    /* \brief The tags of the door. */
+    std::set< std::string > m_tags;
 
     /* \brief Indicates if the door is opened. */
     bool m_opened;

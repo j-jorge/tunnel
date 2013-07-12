@@ -160,7 +160,7 @@ void tunnel::door_switch::switch_door()
       door* d = dynamic_cast<door*>(*it);
       
       if ( d != NULL )
-        if ( d->get_tag() == m_tag )
+        if ( d->has_tag(m_tag) )
           d->switch_door();
     }
 } // door_switch::switch_door()
