@@ -1,12 +1,36 @@
-leaves 4: 0 0 436 298
-trunk: 437 0 180 256
-trunk 2: 618 0 180 256
-leaves 5: 0 299 362 250
-leaves 5 alt: 363 299 362 250
-roots: 0 550 485 207
-leaves 3: 486 550 303 197
-leaves 2: 726 299 288 178
-leaves 1: 0 758 264 160
-top: 265 758 497 140
-right branch: 763 758 235 138
-middle branch: 790 550 212 126
+bump slope 4: 0 0 200 212
+bump slope 2: 201 0 200 210
+gentle slope 4: 402 0 200 208
+gentle slope 6: 603 0 200 208
+left: 804 0 100 200
+center 1: 0 213 200 200
+center 2: 201 213 200 200
+bump slope 3: 402 213 200 200
+gentle slope 3: 603 213 200 200
+blue flower 2: 905 0 102 185
+blue flower 1: 804 213 113 164
+roots: 0 414 379 162
+gentle slope 7: 380 414 200 136
+grass 1: 581 414 193 126
+grass 2: 775 414 141 125
+grass 3: 0 577 193 117
+ground corner: 194 577 200 114
+ground corner curved step: 395 577 107 114
+top-left: 503 577 107 109
+curved top-left: 611 577 107 109
+top: 719 577 200 109
+ground corner wall: 0 695 108 109
+ground corner step: 109 695 108 109
+bump slope 1: 218 695 200 109
+gentle slope 1: 419 695 200 109
+tree top: 620 695 388 109
+gentle slope 5: 0 805 200 106
+bottom-left: 920 577 100 100
+bottom: 201 805 200 100
+ceiling corner: 402 805 200 100
+ceiling corner wall: 917 414 100 100
+left branch: 603 805 190 96
+gentle slope 2: 794 805 200 77
+grass 4: 0 912 133 73
+leaves 6: 134 912 280 73
+grass 5: 415 912 255 58

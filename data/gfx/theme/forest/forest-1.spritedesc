@@ -1,58 +1,234 @@
 sprite_sheet "forest-1" 1024 x 1024 margin 1 order "height"
 
+base_block "wall/base-block.xcf.bz2"
+ground_corner "wall/right-corner.xcf.bz2"
+ceiling_corner "wall/right-corner-ceiling.xcf.bz2"
+bump_slope "slope/bump-slope.xcf.bz2"
+gentle_slope "slope/gentle-slope.xcf.bz2"
+
+flower "flower/flower.xcf.bz2"
 tree "tree/tree.xcf.bz2"
+ground "ground/ground-grass.xcf.bz2"
 
-"trunk" autosize * 0.5 with tree
-  "trunk"
+"top-left" "corner mask" * 0.390625 with base_block
+  "curved top left"
+  [ hollow ] "cover corner"
   ;
 
-"trunk 2" autosize * 0.5 with tree
-  "trunk 2"
+"curved top-left" "corner mask" * 0.390625 with base_block
+  "curved top left"
+  [ hollow ] "cover curve"
   ;
 
-"roots" autosize * 0.5 with tree
+"top" "top mask" * 0.390625 with base_block
+  "top"
+  [ hollow ] "cover top"
+  ;
+
+"left" "left" * 0.390625 with base_block
+  "left"
+  ;
+
+"bottom-left" "bottom left" * 0.390625 with base_block
+  "bottom left"
+  ;
+
+"bottom" "bottom" * 0.390625 with base_block
+  "bottom"
+  ;
+
+"center 1" "center" * 0.390625 with base_block
+  "center"
+  ;
+
+"center 2" "center 2" * 0.390625 with base_block
+  "center 2"
+  ;
+
+/*----------------------------------------------------------------------------*/
+/* -- Corners -- */
+/* ---------------------------------------------------------------------------*/
+
+"ground corner" "ground mask" * 0.390625 with ground_corner
+  "ground"
+  "wall"
+  [ hollow ] "common grass"
+  ;
+
+"ground corner wall" "wall mask" * 0.390625 with ground_corner
+  "ground"
+  "wall"
+  [ hollow ] "common grass"
+  ;
+
+"ground corner step" "wall mask" * 0.390625 with ground_corner
+  "step corner"
+  "wall"
+  [ hollow ] "step grass"
+  [ hollow ] "common grass"
+  ;
+
+"ground corner curved step" "curved wall mask" * 0.390625 with ground_corner
+  "curved step corner"
+  "wall"
+  [ hollow ] "curved grass"
+  [ hollow ] "common grass"
+  mask "curved wall mask"
+  ;
+
+"ceiling corner" "ceiling mask" * 0.390625 with ceiling_corner
+  "ceiling"
+  "wall"
+  ;
+
+"ceiling corner wall" "wall mask" * 0.390625 with ceiling_corner
+  "ceiling"
+  "wall"
+  ;
+
+/*----------------------------------------------------------------------------*/
+/* -- Bump slope -- */
+/* ---------------------------------------------------------------------------*/
+
+"bump slope 1" "1" * 0.390625 with bump_slope
+  "ground"
+  "fill"
+  mask "1"
+  ;
+
+"bump slope 2" "2" * 0.390625 with bump_slope
+  "ground"
+  "fill"
+  mask "2"
+  ;
+
+"bump slope 3" "3" * 0.390625 with bump_slope
+  "ground"
+  "fill"
+  mask "3"
+  ;
+
+"bump slope 4" "4" * 0.390625 with bump_slope
+  "ground"
+  "fill"
+  mask "4"
+  ;
+
+/*----------------------------------------------------------------------------*/
+/* -- Gentle slope -- */
+/* ---------------------------------------------------------------------------*/
+
+"gentle slope 1" "1" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "1"
+  ;
+
+"gentle slope 2" "2" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "2"
+  ;
+
+"gentle slope 3" "3" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "3"
+  ;
+
+"gentle slope 4" "4" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "4"
+  ;
+
+"gentle slope 5" "5" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "5"
+  ;
+
+"gentle slope 6" "6" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "6"
+  ;
+
+"gentle slope 7" "7" * 0.390625 with gentle_slope
+  "ground"
+  "fill"
+  mask "7"
+  ;
+
+/*----------------------------------------------------------------------------*/
+/* -- Flowers -- */
+/* ---------------------------------------------------------------------------*/
+
+"blue flower 1" autosize * 0.390625 with flower
+  "flower head 1"
+  "flower bottom"
+  "1-1"
+;
+ 
+"blue flower 2" autosize * 0.390625 with flower
+  "flower head 2"
+  "flower bottom"
+  "1-2"
+;
+
+/*----------------------------------------------------------------------------*/
+/* -- Tree -- */
+/* ---------------------------------------------------------------------------*/
+
+"left branch" autosize * 0.390625 with tree
+  "left"
+  ;
+
+
+"roots" autosize * 0.390625 with tree
   "roots"
   ;
 
-"top" autosize * 0.5 with tree
+"tree top" autosize * 0.390625 with tree
   "top"
   ;
 
-"right branch" autosize * 0.5 with tree
-  "right"
-  ;
+/*----------------------------------------------------------------------------*/
+/* -- Grass -- */
+/* ---------------------------------------------------------------------------*/
 
-"middle branch" autosize * 0.5 with tree
-  "middle"
-  ;
+"grass 1" autosize * 0.390625 with ground
+  [ hollow ] "top grass alt color"
+  [ hollow ] "hard lights 1"
+  [] "1-1"
+  "1-2"
+  "1-3"
+;
+ 
+"grass 2" autosize * 0.390625 with ground
+  [ hollow ] "top grass alt color"
+  [ hollow ] "hard lights 1"
+  "1-1"
+  "1-2"
+;
+ 
+"grass 3" autosize * 0.390625 with ground
+  [ hollow ] "top grass alt color"
+  [ hollow ] "hard lights 1"
+  "1-1"
+  "1-3"
+;
+ 
+"grass 4" autosize * 0.390625 with ground
+  [ hollow ] "top grass alt color"
+  [ hollow ] "hard lights 1"
+  "1-1"
+;
+ 
+"grass 5" "2" * 0.390625 with ground
+  "2"
+;
 
-"leaves 1" "leaves 1" * 0.5 with tree
-  "global light"
-  "leaves 1"
-  ;
-
-"leaves 2" "leaves 2" * 0.5 with tree
-  "global light"
-  "leaves 2"
-  ;
-
-"leaves 3" "leaves 3" * 0.5 with tree
-  "global light"
-  "leaves 3"
-  ;
-
-"leaves 4" "leaves 4" * 0.5 with tree
-  "global light"
-  "leaves 4"
-  ;
-
-"leaves 5" "leaves 5" * 0.5 with tree
-  "global light"
-  "leaves 5"
-  ;
-
-"leaves 5 alt" "leaves 5" * 0.5 with tree
-  "global light"
-  "leaves 5"
-  mask "mask leaves 5"
-  ;
+"leaves 6" "4" * 0.390625 with ground
+  "4"
+;

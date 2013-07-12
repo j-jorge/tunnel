@@ -1,88 +1,139 @@
 sprite_sheet "forest-2" 1024 x 1024 margin 1 order "height"
 
+step "wall/step.xcf.bz2"
+ceiling_slope_down "ceiling/ceiling-slope-down.xcf.bz2"
+ceiling_slope_up "ceiling/ceiling-slope-up.xcf.bz2"
+sin_slope "slope/sin-slope.xcf.bz2"
+
 tree "tree/tree.xcf.bz2"
-ground "ground/ground-grass.xcf.bz2"
-wall "wall/base-block.xcf.bz2"
-flower "flower/flower.xcf.bz2"
 
-"left branch" autosize * 0.5 with tree
-  "left"
+/*----------------------------------------------------------------------------*/
+/* -- Step -- */
+/* ---------------------------------------------------------------------------*/
+
+"step ground" image_size * 0.390625 with step
+  "top"
+  "fill"
   ;
 
-"grass 1" autosize * 0.5 with ground
-  [ hollow ] "top grass alt color"
-  [ hollow ] "hard lights 1"
-  [] "1-1"
-  "1-2"
-  "1-3"
+"step ground corner" image_size * 0.390625 with step
+  "top corner"
+  "wall"
+  "fill"
   ;
 
-"grass 2" autosize * 0.5 with ground
-  [ hollow ] "top grass alt color"
-  [ hollow ] "hard lights 1"
-  "1-1"
-  "1-2"
+
+/*----------------------------------------------------------------------------*/
+/* -- Sin slope -- */
+/* ---------------------------------------------------------------------------*/
+
+"sin slope 1" "1" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "1"
   ;
 
-"grass 3" autosize * 0.5 with ground
-  [ hollow ] "top grass alt color"
-  [ hollow ] "hard lights 1"
-  "1-1"
-  "1-3"
+"sin slope 2" "2" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "2"
   ;
 
-"grass 4" autosize * 0.5 with ground
-  [ hollow ] "top grass alt color"
-  [ hollow ] "hard lights 1"
-  "1-1"
+"sin slope 3" "3" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "3"
   ;
 
-"grass 5" "2" * 0.5 with ground
-  "2"
+"sin slope 4" "4" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "4"
   ;
 
-"leaves 6" "4" * 0.5 with ground
-  "4"
+"sin slope 5" "5" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "5"
   ;
 
-"wall fill left" "left mask" * 0.5 with wall
-  "common"
-  "center"
-  mask "left mask"
+"sin slope 6" "6" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "6"
   ;
 
-"wall fill bottom left" "bottom left mask" * 0.5 with wall
-  "common"
-  "center"
-  mask "bottom left mask"
+/*----------------------------------------------------------------------------*/
+/* -- Ceiling -- */
+/* ---------------------------------------------------------------------------*/
+
+"ceiling slope corner" "corner" * 0.390625 with ceiling_slope_down
+  "corner"
   ;
 
-"wall fill bottom" "bottom mask" * 0.5 with wall
-  "common"
-  "center"
-  mask "bottom mask"
+"ceiling slope down 1" "left part mask" * 0.390625 with ceiling_slope_down
+  "fill"
   ;
 
-"wall fill middle" "middle mask" * 0.5 with wall
-  "common"
-  "center"
-  mask "middle mask"
+"ceiling slope down 2" "right part mask" * 0.390625 with ceiling_slope_down
+  "fill"
   ;
 
-"wall fill middle 2" "middle mask" * 0.5 with wall
-  "common"
-  "center 2"
-  mask "middle mask"
+"ceiling slope up 1" "left part mask" * 0.390625 with ceiling_slope_up
+  "fill"
   ;
 
-"blue flower 1" autosize * 0.5 with flower
-  "flower head 1"
-  "flower bottom"
-  "1-1"
+"ceiling slope up 2" "right part mask" * 0.390625 with ceiling_slope_up
+  "fill"
   ;
 
-"blue flower 2" autosize * 0.5 with flower
-  "flower head 2"
-  "flower bottom"
-  "1-2"
+/*----------------------------------------------------------------------------*/
+/* -- Tree -- */
+/* ---------------------------------------------------------------------------*/
+
+"trunk" autosize * 0.390625 with tree
+  "trunk"
+  ;
+
+"trunk 2" autosize * 0.390625 with tree
+  "trunk 2"
+  ;
+
+"right branch" autosize * 0.390625 with tree
+  "right"
+  ;
+
+"middle branch" autosize * 0.390625 with tree
+  "middle"
+  ;
+
+"leaves 1" "leaves 1" * 0.390625 with tree
+  "global light"
+  "leaves 1"
+  ;
+
+"leaves 2" "leaves 2" * 0.390625 with tree
+  "global light"
+  "leaves 2"
+  ;
+
+"leaves 3" "leaves 3" * 0.390625 with tree
+  "global light"
+  "leaves 3"
+  ;
+
+"leaves 4" "leaves 4" * 0.390625 with tree
+  "global light"
+  "leaves 4"
+  ;
+
+"leaves 5" "leaves 5" * 0.390625 with tree
+  "global light"
+  "leaves 5"
+  ;
+
+"leaves 5 alt" "leaves 5" * 0.390625 with tree
+  "global light"
+  "leaves 5"
+  mask "mask leaves 5"
   ;
