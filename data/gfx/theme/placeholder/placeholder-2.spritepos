@@ -1,7 +1,13 @@
-ceiling slope down 2: 0 0 200 300
-ceiling slope up 1: 201 0 200 300
-step ground: 402 0 200 200
-step ground corner: 603 0 200 200
-ceiling slope down 1: 804 0 200 200
-ceiling slope up 2: 0 301 200 200
-ceiling slope corner: 201 301 100 100
+sin slope 5: 0 0 200 300
+ceiling slope down 2: 201 0 200 300
+ceiling slope up 1: 402 0 200 300
+step ground: 603 0 200 200
+step ground corner: 804 0 200 200
+sin slope 4: 0 301 200 200
+ceiling slope down 1: 201 301 200 200
+ceiling slope up 2: 402 301 200 200
+sin slope 6: 603 301 200 155
+sin slope 2: 804 301 200 144
+sin slope 1: 0 502 200 100
+sin slope 3: 201 502 200 100
+ceiling slope corner: 402 502 100 100

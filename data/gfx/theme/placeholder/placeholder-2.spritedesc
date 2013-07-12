@@ -3,6 +3,7 @@ sprite_sheet "placeholder-2" 1024 x 1024 margin 1 order "height"
 step "wall/step.xcf.bz2"
 ceiling_slope_down "ceiling/ceiling-slope-down.xcf.bz2"
 ceiling_slope_up "ceiling/ceiling-slope-up.xcf.bz2"
+sin_slope "slope/sin-slope.xcf.bz2"
 
 /*----------------------------------------------------------------------------*/
 /* -- Step -- */
@@ -17,6 +18,46 @@ ceiling_slope_up "ceiling/ceiling-slope-up.xcf.bz2"
   "top corner"
   "wall"
   "fill"
+  ;
+
+/*----------------------------------------------------------------------------*/
+/* -- Sin slope -- */
+/* ---------------------------------------------------------------------------*/
+
+"sin slope 1" "1" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "1"
+  ;
+
+"sin slope 2" "2" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "2"
+  ;
+
+"sin slope 3" "3" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "3"
+  ;
+
+"sin slope 4" "4" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "4"
+  ;
+
+"sin slope 5" "5" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "5"
+  ;
+
+"sin slope 6" "6" * 0.390625 with sin_slope
+  "ground"
+  "fill"
+  mask "6"
   ;
 
 /*----------------------------------------------------------------------------*/
