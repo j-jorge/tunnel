@@ -93,16 +93,16 @@ const bear::universe::coordinate_type
 tunnel::player::s_move_force_in_vertical_jump = 50000;
 
 const bear::universe::coordinate_type
-tunnel::player::s_move_force_in_run = 350000; // 450000;
+tunnel::player::s_move_force_in_run = 350000; 
 
 const bear::universe::coordinate_type
 tunnel::player::s_move_force_in_swimming = 80000;
 
 const bear::universe::coordinate_type
-tunnel::player::s_move_force_min_in_walk = 50000; // 50000 
+tunnel::player::s_move_force_min_in_walk = 50000; 
 
 const bear::universe::coordinate_type
-tunnel::player::s_move_force_max_in_walk = 300000; // 300000
+tunnel::player::s_move_force_max_in_walk = 300000; 
 
 const bear::universe::coordinate_type tunnel::player::s_jump_force = 2600000;
 
@@ -112,7 +112,7 @@ tunnel::player::s_jump_force_in_float = 11500000;
 const bear::universe::coordinate_type
 tunnel::player::s_vertical_jump_force = 8500000;
 
-const bear::universe::coordinate_type tunnel::player::s_speed_to_run = 580; // 580 
+const bear::universe::coordinate_type tunnel::player::s_speed_to_run = 580; 
 
 const double tunnel::player::s_mass = 100;
 const double tunnel::player::s_density = 1.5;
@@ -1067,7 +1067,7 @@ void tunnel::player::apply_open_tunnel()
         if ( it->get_tag() == m_tags[m_next_tag] )
           {
             it->set_visible(true);
-            it->set_active(true);
+            //it->set_active(true);
           }
     }
 } // player::apply_open_tunnel()
@@ -2129,7 +2129,7 @@ void tunnel::player::regenerate()
     get_level().on_progress_done
     ( boost::bind( &player::on_level_progress_done, this ) );
   update_layer_visibility();
-  update_layer_activity();
+  //update_layer_activity();
   
   m_can_teleport = true;
   m_teleport_state_save = m_initial_state;
@@ -2670,7 +2670,10 @@ void tunnel::player::finish_teleport()
   m_teleportation_radius = 
     bear::engine::game::get_instance().get_window_size().x * 2;
   start_action_model(m_state_before_teleport);
+
+  bear::universe::position_type center( get_center_of_mass()) ;
   set_physical_state(m_teleport_state_save);
+  set_center_of_mass( center );
 
   m_fade_effect_tweener = 
     claw::tween::single_tweener
@@ -2688,7 +2691,7 @@ void tunnel::player::end_fade_effect()
 {
   m_current_tag = m_next_tag;
   update_layer_visibility();
-  update_layer_activity();     
+  //update_layer_activity();     
 
   m_can_teleport = true;
   m_teleport_time = 0;
@@ -2707,14 +2710,17 @@ void tunnel::player::finish_abort_tunnel()
 {
   m_can_teleport = true;
   start_action_model(m_state_before_teleport);
+  
+  bear::universe::position_type center( get_center_of_mass()) ;
   set_physical_state(m_teleport_state_save);
+  set_center_of_mass( center );
 
   bear::engine::level::layer_iterator it = get_level().layer_begin();
   for ( ; it != get_level().layer_end(); ++it )
     if ( it->get_tag() == m_tags[m_next_tag] )
       {
         it->set_visible(false);
-        it->set_active(false);
+        //it->set_active(false);
       }
   
   m_teleport_time = 0;
@@ -2813,7 +2819,7 @@ void tunnel::player::on_level_started()
   m_initial_tag = m_current_tag;
 
   update_layer_visibility();
-  update_layer_activity();
+  //update_layer_activity();
 
   m_level_started.disconnect();
 } // player::on_level_started()
