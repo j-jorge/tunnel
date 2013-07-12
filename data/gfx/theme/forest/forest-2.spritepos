@@ -1,14 +1,23 @@
-wall fill middle: 0 0 330 372
-wall fill middle 2: 331 0 330 372
-wall fill left: 662 0 132 311
-blue flower 2: 795 0 131 237
-blue flower 1: 0 373 145 210
-wall fill bottom left: 146 373 208 194
-grass 1: 355 373 247 162
-grass 2: 603 373 181 160
-grass 3: 0 584 247 150
-wall fill bottom: 248 584 375 133
-left branch: 624 584 244 123
-leaves 6: 0 735 359 94
-grass 4: 785 373 171 93
-grass 5: 360 735 327 75
+sin slope 5: 0 0 200 307
+ceiling slope down 2: 201 0 200 300
+ceiling slope up 2: 402 0 200 300
+leaves 4: 603 0 341 233
+step ground: 0 308 200 213
+step ground corner: 201 308 200 213
+sin slope 4: 402 308 200 211
+ceiling slope down 1: 603 308 200 200
+ceiling slope up 1: 804 308 200 200
+trunk: 0 522 140 200
+trunk 2: 141 522 140 200
+leaves 5: 282 522 282 195
+leaves 5 alt: 565 522 282 195
+sin slope 6: 0 723 200 169
+leaves 3: 201 723 237 153
+sin slope 2: 439 723 200 151
+leaves 2: 640 723 225 139
+leaves 1: 0 893 206 125
+sin slope 1: 207 893 200 113
+right branch: 408 893 183 107
+sin slope 3: 592 893 200 100
+ceiling slope corner: 866 723 100 100
+middle branch: 793 893 166 98
