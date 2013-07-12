@@ -47,6 +47,8 @@ void tunnel::door::on_enters_layer()
 
   set_model_actor( get_level_globals().get_model("model/door.cm") );
   
+  set_can_move_items(! m_opened);
+      
   if ( m_opened )
     start_model_action("opened");
   else
@@ -122,6 +124,9 @@ void tunnel::door::switch_door()
     start_model_action("open");
   else
     start_model_action("close");
+
+  m_opened = !m_opened; 
+  set_can_move_items(! m_opened);
 } // door::switch_door()
 
 /*----------------------------------------------------------------------------*/

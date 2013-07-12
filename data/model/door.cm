@@ -50,8 +50,8 @@ door
 1
 0
 
-0
-0
+50
+200
 align_left
 align_bottom
 0
@@ -59,7 +59,7 @@ align_bottom
 0
 0
 0
-0
+25
 8
 1
 -100
@@ -90,8 +90,8 @@ door
 1
 0
 
-0
-0
+50
+200
 align_left
 align_bottom
 0
@@ -99,7 +99,7 @@ align_bottom
 0
 0
 0
-0
+25
 8
 1
 100
@@ -130,8 +130,8 @@ door
 2
 0
 
-0
-0
+50
+200
 align_left
 align_bottom
 0
@@ -139,12 +139,12 @@ align_bottom
 0
 0
 0
-0
+25
 8
 1
 -100
+4
 3
-2
 50
 8
 1
@@ -159,8 +159,8 @@ align_bottom
 on_door_collision
 0.45
 
-0
-0
+50
+200
 align_left
 align_bottom
 0
@@ -168,7 +168,7 @@ align_bottom
 0
 0
 0
-0
+25
 8
 1
 100
@@ -199,8 +199,8 @@ door
 2
 0
 
-0
-0
+50
+200
 align_left
 align_bottom
 0
@@ -208,12 +208,12 @@ align_bottom
 0
 0
 0
-0
+25
 8
 1
 100
+4
 3
-2
 50
 8
 1
@@ -228,8 +228,8 @@ align_bottom
 on_door_collision
 0.45
 
-0
-0
+50
+200
 align_left
 align_bottom
 0
@@ -237,7 +237,7 @@ align_bottom
 0
 0
 0
-0
+25
 8
 1
 -100
