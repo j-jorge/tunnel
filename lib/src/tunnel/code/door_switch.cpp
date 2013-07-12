@@ -93,7 +93,8 @@ void tunnel::door_switch::on_base_collision
 ( bear::engine::base_item& mark, bear::engine::base_item& that,
   bear::universe::collision_info& info )
 {
-  mark.default_collision(info);
+  if ( info.get_collision_side() == bear::universe::zone::top_zone )
+    mark.default_collision(info);
 } // door_switch::on_base_collision()
 
 /*----------------------------------------------------------------------------*/
