@@ -26,6 +26,7 @@ BASE_ITEM_EXPORT( clingable, tunnel )
 tunnel::clingable::clingable()
 {
   set_phantom(true);
+  set_can_move_items(false);
   set_weak_collisions(true);
 } // clingable::clingable()
 
