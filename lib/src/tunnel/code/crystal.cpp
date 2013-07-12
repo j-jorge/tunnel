@@ -14,3 +14,12 @@
 #include "tunnel/crystal.hpp"
 
 BASE_ITEM_EXPORT( crystal, tunnel )
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Constructor.
+ */
+tunnel::crystal::crystal()
+{
+  set_can_move_items(false);
+} // door::door()

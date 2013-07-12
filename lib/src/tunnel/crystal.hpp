@@ -40,6 +40,9 @@ namespace tunnel
     /** \brief The type of the parent class. */
     typedef bear::engine::item_with_decoration
     < bear::engine::basic_renderable_item< bear::engine::base_item> > super;
+
+  public:
+    crystal();
   }; // class crystal
 } // namespace tunnel
 
