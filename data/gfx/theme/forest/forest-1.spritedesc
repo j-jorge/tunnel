@@ -37,12 +37,12 @@ ground "ground/ground-grass.xcf.bz2"
   "bottom"
   ;
 
-"center 1" "center" * 0.390625 with base_block
-  "center"
+"center 1" "center 2" * 0.390625 with base_block
+  "center 2"
   ;
 
-"center 2" "center 2" * 0.390625 with base_block
-  "center 2"
+"center 2" "center" * 0.390625 with base_block
+  "center"
   ;
 
 /*----------------------------------------------------------------------------*/
@@ -61,19 +61,19 @@ ground "ground/ground-grass.xcf.bz2"
   [ hollow ] "common grass"
   ;
 
-"ground corner step" "wall mask" * 0.390625 with ground_corner
+"ground corner step" "step mask" * 0.390625 with ground_corner
   "step corner"
   "wall"
   [ hollow ] "step grass"
   [ hollow ] "common grass"
   ;
 
-"ground corner curved step" "curved wall mask" * 0.390625 with ground_corner
+"ground corner curved step" "curved step mask" * 0.390625 with ground_corner
   "curved step corner"
   "wall"
   [ hollow ] "curved grass"
   [ hollow ] "common grass"
-  mask "curved wall mask"
+  mask "curved step mask"
   ;
 
 "ceiling corner" "ceiling mask" * 0.390625 with ceiling_corner
