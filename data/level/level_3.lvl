@@ -10797,6 +10797,9 @@
 <field name='base_item.position.left'>
 <real value='13312'/>
 </field>
+<field name='straight_slope.top_side_is_active'>
+<bool value='1'/>
+</field>
 </fields>
     </item><!-- bear::straight_slope -->
 
@@ -13471,6 +13474,9 @@
 <field name='base_item.position.bottom'>
 <real value='10264'/>
 </field>
+<field name='base_item.position.depth'>
+<integer value='2'/>
+</field>
 <field name='base_item.position.left'>
 <real value='16312'/>
 </field>
@@ -13523,6 +13529,89 @@
 </fields>
     </item><!-- bear::block -->
 
+    <item class_name='bear::straight_slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='604' y='402' clip_width='200' clip_height='100' spritepos='ground corner' auto_size='true' width='200' height='100' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='straight_slope.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::straight_slope -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='805' y='402' clip_width='100' clip_height='100' spritepos='ground corner wall' auto_size='true' width='100' height='100' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9764'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_activable_sides.right_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_activable_sides.right_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_activable_sides.right_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
     <item class_name='bear::block' fixed='true'>
 <fields>
 <field name='item_with_friction.top_friction'>
@@ -13533,6 +13622,9 @@
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='905' y='0' clip_width='100' clip_height='100' spritepos='top-left' auto_size='true' width='100' height='100' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='item_with_restricted_z_collision.max_z_for_collision'>
+<integer value='0'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='10264'/>
@@ -13594,6 +13686,131 @@
 </field>
 </fields>
     </item><!-- bear::block -->
+
+    <item class_name='tunnel::clingable' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9832'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16562'/>
+</field>
+<field name='base_item.size.height'>
+<real value='499'/>
+</field>
+<field name='base_item.size.width'>
+<real value='64'/>
+</field>
+</fields>
+    </item><!-- tunnel::clingable -->
+
+    <item class_name='bear::train' fixed='false' id='train'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.extend_on_bounding_box'>
+<bool value='1'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.global'>
+<bool value='1'/>
+</field>
+<field name='base_item.mass'>
+<real value='100'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10545'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='1'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16588'/>
+</field>
+<field name='base_item.size.height'>
+<real value='50'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='base_ground.top_left_contact_mode'>
+<string value='range_contact'/>
+</field>
+<field name='base_ground.top_right_contact_mode'>
+<string value='range_contact'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::train -->
+
+    <item class_name='tunnel::spring' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9764'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='-10'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16628'/>
+</field>
+<field name='base_item.size.height'>
+<real value='45'/>
+</field>
+<field name='base_item.size.width'>
+<real value='60'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/common/common-1.png' x='274' y='0' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='spring.applied_force.y'>
+<real value='200000'/>
+</field>
+</fields>
+    </item><!-- tunnel::spring -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='403' y='503' clip_width='200' clip_height='100' spritepos='bump slope 1' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='slope.control_point.left.x'>
+<real value='100'/>
+</field>
+<field name='slope.control_point.right.x'>
+<real value='-50'/>
+</field>
+<field name='slope.control_point.right.y'>
+<real value='50'/>
+</field>
+<field name='slope.steepness'>
+<real value='-100'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
 
     <item class_name='bear::descending_ceiling' fixed='true'>
 <fields>
@@ -13850,6 +14067,650 @@
 </field>
 </fields>
     </item><!-- tunnel::clingable -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='503' y='0' clip_width='200' clip_height='200' spritepos='bump slope 2' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+<field name='slope.steepness'>
+<real value='-200'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='201' clip_width='200' clip_height='200' spritepos='bump slope 4' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17112'/>
+</field>
+<field name='slope.control_point.left.x'>
+<real value='94'/>
+</field>
+<field name='slope.control_point.left.y'>
+<real value='-100'/>
+</field>
+<field name='slope.control_point.right.x'>
+<real value='-46'/>
+</field>
+<field name='slope.steepness'>
+<real value='-100'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::straight_slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17312'/>
+</field>
+<field name='straight_slope.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::straight_slope -->
+
+    <item class_name='bear::straight_slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='604' y='402' clip_width='200' clip_height='100' spritepos='ground corner' auto_size='true' width='200' height='100' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17512'/>
+</field>
+<field name='straight_slope.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::straight_slope -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='805' y='402' clip_width='100' clip_height='100' spritepos='ground corner wall' auto_size='true' width='100' height='100' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9164'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17512'/>
+</field>
+<field name='item_with_activable_sides.right_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='402' clip_width='100' clip_height='100' spritepos='curved top-left' auto_size='true' width='100' height='100' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='10'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17512'/>
+</field>
+<field name='slope.control_point.left.x'>
+<real value='68'/>
+</field>
+<field name='slope.control_point.right.y'>
+<real value='12'/>
+</field>
+<field name='slope.right_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='slope.steepness'>
+<real value='-25'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17712'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17912'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18112'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='604' y='402' clip_width='200' clip_height='100' spritepos='ground corner' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18312'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='tunnel::clingable' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9238'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18400'/>
+</field>
+<field name='base_item.size.height'>
+<real value='1043'/>
+</field>
+<field name='base_item.size.width'>
+<real value='64'/>
+</field>
+</fields>
+    </item><!-- tunnel::clingable -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='805' y='402' clip_width='100' clip_height='100' spritepos='ground corner wall' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9164'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='905' y='0' clip_width='100' clip_height='100' spritepos='top-left' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='item_with_restricted_z_collision.max_z_for_collision'>
+<integer value='0'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10264'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='1'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::linear_movement_sequence_loop' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10314'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='base_item.size.height'>
+<real value='50'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='linear_movement_sequence_loop.duration'>
+<real value='9'/>
+</field>
+<field name='linear_movement_sequence_loop.item'>
+<item_reference value='train'/>
+</field>
+<field name='linear_movement_sequence_loop.length.x'>
+<real value='-2000'/>
+</field>
+<field name='linear_movement_sequence_loop.positions'>
+<real value='0'/>
+<real value='3'/>
+</field>
+</fields>
+    </item><!-- bear::linear_movement_sequence_loop -->
+
+    <item class_name='bear::straight_slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='item_with_restricted_z_collision.max_z_for_collision'>
+<integer value='0'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10264'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='1'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='straight_slope.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::straight_slope -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='804' y='201' clip_width='200' clip_height='128' spritepos='gentle slope 7' auto_size='true' width='200' height='128' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='slope.control_point.left.x'>
+<real value='70'/>
+</field>
+<field name='slope.control_point.right.x'>
+<real value='-61'/>
+</field>
+<field name='slope.control_point.right.y'>
+<real value='-16'/>
+</field>
+<field name='slope.steepness'>
+<real value='28'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='603' y='201' clip_width='200' clip_height='200' spritepos='gentle slope 6' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='slope.control_point.left.x'>
+<real value='115'/>
+</field>
+<field name='slope.control_point.left.y'>
+<real value='30'/>
+</field>
+<field name='slope.steepness'>
+<real value='72'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='0' y='604' clip_width='200' clip_height='72' spritepos='gentle slope 2' auto_size='true' width='200' height='72' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='slope.control_point.right.x'>
+<real value='-115'/>
+</field>
+<field name='slope.control_point.right.y'>
+<real value='-29'/>
+</field>
+<field name='slope.steepness'>
+<real value='72'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='604' y='503' clip_width='200' clip_height='100' spritepos='gentle slope 1' auto_size='true' width='200' height='100' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19312'/>
+</field>
+<field name='slope.control_point.left.x'>
+<real value='62'/>
+</field>
+<field name='slope.control_point.left.y'>
+<real value='16'/>
+</field>
+<field name='slope.control_point.right.x'>
+<real value='-66'/>
+</field>
+<field name='slope.steepness'>
+<real value='28'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::straight_slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19512'/>
+</field>
+<field name='straight_slope.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::straight_slope -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19712'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
 
 </items>
 
@@ -25036,6 +25897,34 @@
     <item class_name='bear::decorative_item' fixed='true'>
 <fields>
 <field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
 <real value='8864'/>
 </field>
 <field name='base_item.position.left'>
@@ -25246,6 +26135,90 @@
     <item class_name='bear::decorative_item' fixed='true'>
 <fields>
 <field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
 <real value='11064'/>
 </field>
 <field name='base_item.position.left'>
@@ -25351,6 +26324,1056 @@
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10450'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17044'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10449'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17479'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10444'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17872'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10443'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18229'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='201' y='201' clip_width='200' clip_height='200' spritepos='gentle slope 3' auto_size='true' width='200' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -36404,18 +38427,6 @@
 <field name='base_item.position.left'>
 <real value='8952'/>
 </field>
-<field name='item_with_activable_sides.bottom_side_is_active'>
-<bool value='1'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='1'/>
-</field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='1'/>
-</field>
-<field name='item_with_activable_sides.top_side_is_active'>
-<bool value='1'/>
-</field>
 </fields>
     </item><!-- bear::block -->
 
@@ -36836,18 +38847,6 @@
 <field name='base_item.position.left'>
 <real value='9552'/>
 </field>
-<field name='item_with_activable_sides.bottom_side_is_active'>
-<bool value='1'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='1'/>
-</field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='1'/>
-</field>
-<field name='item_with_activable_sides.top_side_is_active'>
-<bool value='1'/>
-</field>
 </fields>
     </item><!-- bear::block -->
 
@@ -36962,18 +38961,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='9752'/>
-</field>
-<field name='item_with_activable_sides.bottom_side_is_active'>
-<bool value='1'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='1'/>
-</field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='1'/>
-</field>
-<field name='item_with_activable_sides.top_side_is_active'>
-<bool value='1'/>
 </field>
 </fields>
     </item><!-- bear::block -->
@@ -46022,6 +48009,110 @@
 </fields>
     </item><!-- bear::block -->
 
+    <item class_name='bear::straight_slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='194' y='577' clip_width='200' clip_height='114' spritepos='ground corner' auto_size='true' width='200' height='114' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='base_item.size.height'>
+<real value='100'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='straight_slope.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::straight_slope -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='917' y='414' clip_width='100' clip_height='100' spritepos='ground corner wall' auto_size='true' width='100' height='100' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9764'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='base_item.size.height'>
+<real value='100'/>
+</field>
+<field name='base_item.size.width'>
+<real value='100'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='0'/>
+</field>
+<field name='item_with_activable_sides.right_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='804' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='0'/>
+</field>
+<field name='item_with_activable_sides.right_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='804' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='0'/>
+</field>
+<field name='item_with_activable_sides.right_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
     <item class_name='bear::block' fixed='true'>
 <fields>
 <field name='item_with_friction.top_friction'>
@@ -46105,6 +48196,87 @@
 </field>
 </fields>
     </item><!-- bear::block -->
+
+    <item class_name='tunnel::spring' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9764'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='-10'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16632'/>
+</field>
+<field name='base_item.size.height'>
+<real value='45'/>
+</field>
+<field name='base_item.size.width'>
+<real value='60'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/common/common-1.png' x='274' y='0' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='spring.applied_force.y'>
+<real value='300000'/>
+</field>
+</fields>
+    </item><!-- tunnel::spring -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='402' y='213' clip_width='200' clip_height='200' spritepos='bump slope 3' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='109' y='695' clip_width='200' clip_height='109' spritepos='bump slope 1' auto_size='true' width='200' height='109' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='base_item.size.height'>
+<real value='100'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='slope.control_point.left.x'>
+<real value='100'/>
+</field>
+<field name='slope.control_point.right.x'>
+<real value='-50'/>
+</field>
+<field name='slope.control_point.right.y'>
+<real value='50'/>
+</field>
+<field name='slope.steepness'>
+<real value='-100'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
 
     <item class_name='bear::descending_ceiling' fixed='true'>
 <fields>
@@ -46367,6 +48539,538 @@
 </field>
 </fields>
     </item><!-- tunnel::clingable -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='402' y='213' clip_width='200' clip_height='200' spritepos='bump slope 3' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='201' y='0' clip_width='200' clip_height='210' spritepos='bump slope 2' auto_size='true' width='200' height='210' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+<field name='base_item.size.height'>
+<real value='200'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='slope.steepness'>
+<real value='-200'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='0' clip_width='200' clip_height='212' spritepos='bump slope 4' auto_size='true' width='200' height='212' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17112'/>
+</field>
+<field name='base_item.size.height'>
+<real value='200'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='slope.control_point.left.x'>
+<real value='94'/>
+</field>
+<field name='slope.control_point.left.y'>
+<real value='-100'/>
+</field>
+<field name='slope.control_point.right.x'>
+<real value='-46'/>
+</field>
+<field name='slope.steepness'>
+<real value='-100'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::straight_slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='719' y='577' clip_width='200' clip_height='109' spritepos='top' auto_size='true' width='200' height='109' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17312'/>
+</field>
+<field name='base_item.size.height'>
+<real value='100'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='straight_slope.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::straight_slope -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17512'/>
+</field>
+<field name='item_with_activable_sides.bottom_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='item_with_activable_sides.right_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='310' y='695' clip_width='200' clip_height='109' spritepos='gentle slope 1' auto_size='true' width='200' height='109' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17512'/>
+</field>
+<field name='base_item.size.height'>
+<real value='100'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='slope.control_point.left.x'>
+<real value='66'/>
+</field>
+<field name='slope.control_point.right.x'>
+<real value='-62'/>
+</field>
+<field name='slope.control_point.right.y'>
+<real value='16'/>
+</field>
+<field name='slope.steepness'>
+<real value='-28'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='603' y='213' clip_width='200' clip_height='200' spritepos='gentle slope 3' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17712'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='794' y='805' clip_width='200' clip_height='77' spritepos='gentle slope 2' auto_size='true' width='200' height='77' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17712'/>
+</field>
+<field name='base_item.size.height'>
+<real value='72'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='slope.control_point.left.x'>
+<real value='115'/>
+</field>
+<field name='slope.control_point.left.y'>
+<real value='-29'/>
+</field>
+<field name='slope.steepness'>
+<real value='-72'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='603' y='0' clip_width='200' clip_height='208' spritepos='gentle slope 6' auto_size='true' width='200' height='208' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17912'/>
+</field>
+<field name='base_item.size.height'>
+<real value='200'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='slope.control_point.right.x'>
+<real value='-115'/>
+</field>
+<field name='slope.control_point.right.y'>
+<real value='30'/>
+</field>
+<field name='slope.steepness'>
+<real value='-72'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::slope' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='380' y='414' clip_width='200' clip_height='136' spritepos='gentle slope 7' auto_size='true' width='200' height='136' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18112'/>
+</field>
+<field name='base_item.size.height'>
+<real value='128'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='slope.control_point.left.x'>
+<real value='61'/>
+</field>
+<field name='slope.control_point.left.y'>
+<real value='-16'/>
+</field>
+<field name='slope.control_point.right.x'>
+<real value='-70'/>
+</field>
+<field name='slope.steepness'>
+<real value='-28'/>
+</field>
+</fields>
+    </item><!-- bear::slope -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='194' y='577' clip_width='200' clip_height='114' spritepos='ground corner' auto_size='true' width='200' height='114' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18312'/>
+</field>
+<field name='base_item.size.height'>
+<real value='100'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='tunnel::clingable' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9250'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18400'/>
+</field>
+<field name='base_item.size.height'>
+<real value='1043'/>
+</field>
+<field name='base_item.size.width'>
+<real value='64'/>
+</field>
+</fields>
+    </item><!-- tunnel::clingable -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='917' y='414' clip_width='100' clip_height='100' spritepos='ground corner wall' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9164'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='base_item.size.height'>
+<real value='100'/>
+</field>
+<field name='base_item.size.width'>
+<real value='100'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='804' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='804' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='804' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='804' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='9864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='804' y='0' clip_width='100' clip_height='200' spritepos='left' auto_size='true' width='100' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='basic_renderable_item.gap.x'>
+<integer value='-7'/>
+</field>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='503' y='577' clip_width='107' clip_height='109' spritepos='top-left' auto_size='true' width='107' height='109' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18412'/>
+</field>
+<field name='base_item.size.height'>
+<real value='100'/>
+</field>
+<field name='base_item.size.width'>
+<real value='100'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='719' y='577' clip_width='200' clip_height='109' spritepos='top' auto_size='true' width='200' height='109' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='base_item.size.height'>
+<real value='100'/>
+</field>
+<field name='base_item.size.width'>
+<real value='200'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
 
 </items>
 
@@ -55621,6 +58325,104 @@
     <item class_name='bear::decorative_item' fixed='true'>
 <fields>
 <field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
 <real value='11064'/>
 </field>
 <field name='base_item.position.left'>
@@ -55723,6 +58525,1084 @@
 </field>
 <field name='base_item.position.left'>
 <real value='16512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='16912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='17912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18312'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18512'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18712'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='18912'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='8864'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9064'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9464'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::decorative_item' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9664'/>
+</field>
+<field name='base_item.position.left'>
+<real value='19112'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
