@@ -540,7 +540,7 @@ base_item.position.bottom
 10264
 40
 base_item.position.depth
-1
+2
 42
 base_item.position.left
 18512
@@ -1225,7 +1225,7 @@ base_item.position.bottom
 10264
 40
 base_item.position.depth
-1
+2
 42
 base_item.position.left
 18412
@@ -1720,7 +1720,7 @@ base_item.position.bottom
 10264
 40
 base_item.position.depth
-10
+2
 42
 base_item.position.left
 16512

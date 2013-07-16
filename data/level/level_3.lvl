@@ -13630,7 +13630,7 @@
 <real value='10264'/>
 </field>
 <field name='base_item.position.depth'>
-<integer value='10'/>
+<integer value='2'/>
 </field>
 <field name='base_item.position.left'>
 <real value='16512'/>
@@ -14471,7 +14471,7 @@
 <real value='10264'/>
 </field>
 <field name='base_item.position.depth'>
-<integer value='1'/>
+<integer value='2'/>
 </field>
 <field name='base_item.position.left'>
 <real value='18412'/>
@@ -14533,7 +14533,7 @@
 <real value='10264'/>
 </field>
 <field name='base_item.position.depth'>
-<integer value='1'/>
+<integer value='2'/>
 </field>
 <field name='base_item.position.left'>
 <real value='18512'/>
