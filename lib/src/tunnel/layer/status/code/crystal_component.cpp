@@ -161,9 +161,15 @@ void tunnel::crystal_component::on_crystal_changed(unsigned int number)
   oss << game_variables::get_founded_crystal_count();
   m_crystal.create(m_font, oss.str());
 
-  if ( number >= game_variables::get_crystal_count() )
+  if ( game_variables::get_founded_crystal_count()
+       >= game_variables::get_crystal_count() )
     m_crystal->set_intensity(0, 1, 0);
   else
     m_crystal->set_intensity(1, 0, 0);
+
+  std::ostringstream oss2;
+  oss2 << "/" << game_variables::get_crystal_count();
+  m_required_crystal.create(m_font, oss2.str());
+  m_required_crystal->set_intensity(0, 1, 0);
 } // crystal_component::on_crystal_changed()
 

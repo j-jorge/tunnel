@@ -15,10 +15,13 @@
 #define __TUNNEL_CRYSTAL_HPP__
 
 #include "tunnel/item_brick/transportable.hpp"
+
 #include "engine/base_item.hpp"
 #include "engine/item_brick/basic_renderable_item.hpp"
 #include "engine/item_brick/item_with_decoration.hpp"
 #include "engine/export.hpp"
+
+#include <boost/signals/connection.hpp>
 
 namespace tunnel
 {
@@ -47,10 +50,16 @@ namespace tunnel
     void build();
     void collision
     ( bear::engine::base_item& that, bear::universe::collision_info& info );
-    
+
+  private:
+    void on_level_started();
+
   private:
     /* \brief Indicates if the crystal has been given. */
     bool m_given;
+
+    /** \brief The connection to the signal emitted when the level starts. */
+    boost::signals::connection m_level_started;  
   }; // class crystal
 } // namespace tunnel
 

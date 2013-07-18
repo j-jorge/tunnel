@@ -36,7 +36,9 @@ void tunnel::crystal::build()
 {
   super::build();
   
-  game_variables::set_crystal_count( game_variables::get_crystal_count() + 1 );
+  m_level_started =
+    get_level().on_started
+    ( boost::bind( &crystal::on_level_started, this ) );
 } // crystal::build()
 
 /*----------------------------------------------------------------------------*/
@@ -62,3 +64,14 @@ void tunnel::crystal::collision
         }
     }
 } // crystal::collision()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief The level start.
+ */
+void tunnel::crystal::on_level_started()
+{
+  game_variables::set_crystal_count( game_variables::get_crystal_count() + 1 );
+
+  m_level_started.disconnect();
+} // crystal::on_level_started()
