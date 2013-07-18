@@ -35,7 +35,6 @@ namespace tunnel
 
     virtual void do_finish_injured();
     virtual void do_slap();
-    virtual void do_start_throw();
   }; // class state_injured
 } // namespace tunnel
 

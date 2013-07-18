@@ -246,6 +246,7 @@ void tunnel::status_component::on_y_position_update(double y)
  */
 void tunnel::status_component::init_signals()
 {
+  
 } // status_component::init_signals()
 
 /*----------------------------------------------------------------------------*/

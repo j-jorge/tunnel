@@ -96,21 +96,17 @@ void tunnel::status_layer::render( scene_element_list& e ) const
 void tunnel::status_layer::create_components()
 {
   // ############## BOTTOM RIGHT #########################
-  bear::visual::position_type pos_bottom
-    ( get_size().x - m_score_background.get_size().x, 0 );
+  bear::visual::position_type pos_top( s_margin, get_size().y - s_margin );
 
-  // score
-  pos_bottom.x += s_margin;
-  pos_bottom.y += s_margin;
-  
+  // score  
   energy_component* e = new energy_component
-    (get_level_globals(), pos_bottom, bear::universe::zone::bottom_zone, 
+    (get_level_globals(), pos_top, bear::universe::zone::top_zone, 
      status_component::left_placement,
-     status_component::bottom_placement,get_size(),
-     m_score_background.get_size().y, false); 
+     status_component::top_placement,get_size(),
+     200, false); 
   e->build();
   m_components.push_back(e);
-  pos_bottom.y += e->height() + s_margin;
+  pos_top.y += - e->height() - s_margin;
 
   // lives
   /*

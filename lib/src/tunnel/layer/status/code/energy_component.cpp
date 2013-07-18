@@ -55,7 +55,7 @@ tunnel::energy_component::energy_component
 void tunnel::energy_component::build()
 {
   m_sprite =
-    get_level_globals().auto_sprite( "gfx/status/status.png", "hearth" );
+    get_level_globals().auto_sprite( "gfx/status/status.png", "heart" );
 
   super::build();
 } // energy_component::build()
@@ -68,26 +68,14 @@ void tunnel::energy_component::build()
 void tunnel::energy_component::render( scene_element_list& e ) const
 {
   unsigned int nb = game_variables::get_energy();
-  
-  bear::visual::scene_sprite s1
-    ( get_render_position().x + 2, get_render_position().y, m_sprite);
-  if ( nb == 0 )
-    s1.get_rendering_attributes().set_intensity(0,0,0);
-  e.push_back( s1 ); 
-  
-  bear::visual::scene_sprite s2
-    ( get_render_position().x + m_sprite.width() + 8, 
-      get_render_position().y, m_sprite);
-  if ( nb <= 1 )
-    s2.get_rendering_attributes().set_intensity(0,0,0);
-  e.push_back( s2 ); 
-  
-  bear::visual::scene_sprite s3
-    ( get_render_position().x + m_sprite.width()/2 + 5, 
-      get_render_position().y + m_sprite.height() + 4, m_sprite);
-  if ( nb <= 2 )
-    s3.get_rendering_attributes().set_intensity(0,0,0);
-  e.push_back( s3 ); 
+
+  for ( unsigned int i = 0; i < nb; ++i )
+    {
+      bear::visual::scene_sprite s
+        ( get_render_position().x + 2 + i * (m_sprite.width() + s_margin ),
+          get_render_position().y, m_sprite);
+      e.push_back( s ); 
+    } 
 } // energy_component::render()
 
 /*----------------------------------------------------------------------------*/
@@ -96,7 +84,8 @@ void tunnel::energy_component::render( scene_element_list& e ) const
  */
 unsigned int tunnel::energy_component::width() const
 {
-  return m_sprite.width() * 2 + 6;
+  return game_variables::get_energy() * ( m_sprite.width() + s_margin ) 
+    - s_margin ;
 } // energy_component::width()
 
 /*----------------------------------------------------------------------------*/
@@ -105,7 +94,7 @@ unsigned int tunnel::energy_component::width() const
  */
 unsigned int tunnel::energy_component::height() const
 {
-  return m_sprite.height() * 2 + 4;
+  return m_sprite.height();
 } // energy_component::height()
 
 /*----------------------------------------------------------------------------*/
