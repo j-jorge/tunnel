@@ -48,6 +48,7 @@ set( LIBTUNNEL_SOURCE_FILES
   player_state/code/state_hang.cpp
   player_state/code/state_game_over.cpp
   player_state/code/state_idle.cpp
+  player_state/code/state_injured.cpp
   player_state/code/state_jump.cpp
   player_state/code/state_look_upward.cpp
   player_state/code/state_paralyze.cpp

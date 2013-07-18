@@ -60,6 +60,7 @@ namespace tunnel
         fall_state,
         dead_state,
         game_over_state,
+        injured_state,
         roar_state,
         run_state,
         slap_state,
@@ -70,7 +71,6 @@ namespace tunnel
         crouch_state,
         captive_state,
         wait_state,
-        injured_state,
         start_cling_state,
         cling_state,
         clung_jump_state,
@@ -502,48 +502,51 @@ namespace tunnel
     /** \brief How long do we allow to add a force when jumping */
     static const bear::universe::time_type s_max_time_continue_jump;
 
-    /** \brief The right force of Plee in idle state. */
+    /** \brief The right force of Player in idle state. */
     static const bear::universe::coordinate_type s_move_force_in_idle;
 
-    /** \brief The right force of Plee in jump state. */
+    /** \brief The right force of Player in jump state. */
     static const bear::universe::coordinate_type s_move_force_in_jump;
 
-    /** \brief The right force of Plee in vertical jump state. */
+    /** \brief The right force of Player in vertical jump state. */
     static const bear::universe::coordinate_type
     s_move_force_in_vertical_jump;
 
-    /** \brief The right force of Plee in run state. */
+    /** \brief The right force of Player in run state. */
     static const bear::universe::coordinate_type s_move_force_in_run;
 
-    /** \brief The right force of Plee in swim state. */
+    /** \brief The right force of Player in swim state. */
     static const bear::universe::coordinate_type
     s_move_force_in_swimming;
 
-    /** \brief The minimum right force of Plee in walk state. */
+    /** \brief The minimum right force of Player in walk state. */
     static const bear::universe::coordinate_type
     s_move_force_min_in_walk;
 
-    /** \brief The maximum right force of Plee in walk state. */
+    /** \brief The maximum right force of Player in walk state. */
     static const bear::universe::coordinate_type
     s_move_force_max_in_walk;
 
-    /** \brief The impulse force given when Plee jumps. */
+    /** \brief The impulse force given when Player jumps. */
     static const bear::universe::coordinate_type s_jump_force;
 
-    /** \brief The impulse force given when Plee jumps in float state. */
+    /** \brief The impulse force given when Player jumps in float state. */
     static const bear::universe::coordinate_type s_jump_force_in_float;
 
     /** \brief The impulse force given for vertical jumps. */
     static const bear::universe::coordinate_type s_vertical_jump_force;
 
-    /** \brief The speed over which Plee is running. */
+    /** \brief The speed over which Player is running. */
     static const bear::universe::coordinate_type s_speed_to_run;
 
-    /** \brief The mass of Plee. */
+    /** \brief The mass of Player. */
     static const double s_mass;
 
-    /** \brief The density of Plee. */
+    /** \brief The density of Player. */
     static const double s_density;
+
+    /** \brief The energy of Player. */
+    static const double s_energy;
   }; // class player
 } // namespace tunnel
 

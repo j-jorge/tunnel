@@ -39,6 +39,7 @@
 #include "tunnel/player_state/state_fall.hpp"
 #include "tunnel/player_state/state_dead.hpp"
 #include "tunnel/player_state/state_game_over.hpp"
+#include "tunnel/player_state/state_injured.hpp"
 #include "tunnel/player_state/state_run.hpp"
 #include "tunnel/player_state/state_slap.hpp"
 #include "tunnel/player_state/state_teleport.hpp"
@@ -116,6 +117,7 @@ const bear::universe::coordinate_type tunnel::player::s_speed_to_run = 580;
 
 const double tunnel::player::s_mass = 100;
 const double tunnel::player::s_density = 1.5;
+const double tunnel::player::s_energy = 100;
 
 BASE_ITEM_EXPORT( player, tunnel )
 
@@ -192,13 +194,14 @@ void tunnel::player::init()
   m_last_bottom_left = bear::universe::position_type(0, 0);
   m_run_time = 0;
 
-  m_states.resize(28);
+  m_states.resize(29);
   m_states[walk_state] = new state_walk(this);
   m_states[idle_state] = new state_idle(this);
   m_states[jump_state] = new state_jump(this);
   m_states[fall_state] = new state_fall(this);
   m_states[dead_state] = new state_dead(this);
-  m_states[game_over_state] = new state_game_over(this);
+  m_states[game_over_state] = new state_game_over(this); 
+  m_states[injured_state] = new state_injured(this);
   m_states[roar_state] = new state_roar(this);
   m_states[run_state] = new state_run(this);
   m_states[slap_state] = new state_slap(this);
@@ -364,6 +367,7 @@ void tunnel::player::on_enters_layer()
     {
       m_enters_layer_done = true;
 
+      game_variables::set_energy(s_energy);
       m_authorized_action.resize(player_action::max_value + 1);
       for ( unsigned int i=0; i <= player_action::max_value; ++i)
         m_authorized_action[i] = true;
@@ -2124,6 +2128,7 @@ bool tunnel::player::is_crushed() const
  */
 void tunnel::player::regenerate()
 {
+  game_variables::set_energy(s_energy);
   m_current_tag = m_initial_tag;
   m_next_tag = m_initial_tag;
   m_level_progress_done =
