@@ -24,6 +24,7 @@ set( LIBTUNNEL_SOURCE_FILES
   code/init.cpp
   code/item_picking_filter.cpp
   code/layer_border.cpp
+  code/passive_enemy.cpp
   code/player.cpp
   code/player_action.cpp
   code/player_killer.cpp
@@ -33,6 +34,9 @@ set( LIBTUNNEL_SOURCE_FILES
   code/spring.cpp
 
   layer/code/misc_layer.cpp
+  layer/code/status_layer.cpp
+  layer/status/code/status_component.cpp
+  layer/status/code/energy_component.cpp
 
   message/code/get_player_instance.cpp
 
@@ -48,6 +52,7 @@ set( LIBTUNNEL_SOURCE_FILES
   player_state/code/state_hang.cpp
   player_state/code/state_game_over.cpp
   player_state/code/state_idle.cpp
+  player_state/code/state_injured.cpp
   player_state/code/state_jump.cpp
   player_state/code/state_look_upward.cpp
   player_state/code/state_paralyze.cpp

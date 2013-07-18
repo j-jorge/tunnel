@@ -24,6 +24,7 @@
 #include "engine/world.hpp"
 
 #include "tunnel/layer/misc_layer.hpp"
+#include "tunnel/layer/status_layer.hpp"
 
 #ifndef NDEBUG
 #include "generic_items/layer/physics_layer.hpp"
@@ -55,7 +56,8 @@ void tunnel::add_ingame_layers::build()
       (TUNNEL_TRANSITION_EFFECT_DEFAULT_TARGET_NAME) );
   
   get_level().push_layer( transition );
-  get_level().push_layer( new misc_layer() );  
+  get_level().push_layer( new misc_layer() );   
+  get_level().push_layer( new status_layer() );  
   
 #ifndef NDEBUG
   get_level().push_layer( new bear::link_layer );

@@ -60,6 +60,7 @@ namespace tunnel
         fall_state,
         dead_state,
         game_over_state,
+        injured_state,
         roar_state,
         run_state,
         slap_state,
@@ -70,7 +71,6 @@ namespace tunnel
         crouch_state,
         captive_state,
         wait_state,
-        injured_state,
         start_cling_state,
         cling_state,
         clung_jump_state,
@@ -147,6 +147,8 @@ namespace tunnel
     void balance_spot( bool x, bool y );
     void stop();
 
+    bool receive_an_attack(const bear::engine::base_item& attacker);
+
   public:
     void apply_move_right();
     void apply_move_left();
@@ -218,8 +220,6 @@ namespace tunnel
     void progress_crouch( bear::universe::time_type elapsed_time );
     void progress_look_upward( bear::universe::time_type elapsed_time );
     void progress_captive( bear::universe::time_type elapsed_time );
-    void progress_throw( bear::universe::time_type elapsed_time );
-    void progress_maintain( bear::universe::time_type elapsed_time );
     void progress_wait( bear::universe::time_type elapsed_time );
     void progress_start_cling( bear::universe::time_type elapsed_time );
     void progress_cling( bear::universe::time_type elapsed_time );
@@ -230,6 +230,7 @@ namespace tunnel
     void progress_sink( bear::universe::time_type elapsed_time );
     void progress_float( bear::universe::time_type elapsed_time );
     void progress_injured( bear::universe::time_type elapsed_time );
+    void progress_injure_state( bear::universe::time_type elapsed_time );
     void progress_paralyze( bear::universe::time_type elapsed_time );
 
     void set_state(player_state_name state);
@@ -272,6 +273,8 @@ namespace tunnel
     void finish_abort_tunnel();
     void thwart_gravity();
     void create_camera();
+    void injure( const bear::engine::base_item& attacker );
+    void finish_injure();
 
     void on_level_progress_done();
     void on_level_started();
@@ -464,7 +467,19 @@ namespace tunnel
     bool m_editor_player;
 
     /** \brief Indicates if the player can transport objects. */
-    bool m_can_transport;
+    bool m_can_transport; 
+
+    /** \brief Indicates if the monster is injured. */
+    bool m_is_injured;
+
+    /** \brief Indicates the time of the attack. */
+    bear::universe::time_type m_injured_time;
+
+    /** \brief Transparency of injured frame. */
+    double m_opacity_injured;
+
+    /** \brief Increment for the transparency when injured. */
+    double m_opacity_inc;
 
     /** \brief The minimum radius of teleportation circle. */
     static const bear::universe::coordinate_type s_min_teleportation_radius;
@@ -502,48 +517,54 @@ namespace tunnel
     /** \brief How long do we allow to add a force when jumping */
     static const bear::universe::time_type s_max_time_continue_jump;
 
-    /** \brief The right force of Plee in idle state. */
+    /** \brief The right force of Player in idle state. */
     static const bear::universe::coordinate_type s_move_force_in_idle;
 
-    /** \brief The right force of Plee in jump state. */
+    /** \brief The right force of Player in jump state. */
     static const bear::universe::coordinate_type s_move_force_in_jump;
 
-    /** \brief The right force of Plee in vertical jump state. */
+    /** \brief The right force of Player in vertical jump state. */
     static const bear::universe::coordinate_type
     s_move_force_in_vertical_jump;
 
-    /** \brief The right force of Plee in run state. */
+    /** \brief The right force of Player in run state. */
     static const bear::universe::coordinate_type s_move_force_in_run;
 
-    /** \brief The right force of Plee in swim state. */
+    /** \brief The right force of Player in swim state. */
     static const bear::universe::coordinate_type
     s_move_force_in_swimming;
 
-    /** \brief The minimum right force of Plee in walk state. */
+    /** \brief The minimum right force of Player in walk state. */
     static const bear::universe::coordinate_type
     s_move_force_min_in_walk;
 
-    /** \brief The maximum right force of Plee in walk state. */
+    /** \brief The maximum right force of Player in walk state. */
     static const bear::universe::coordinate_type
     s_move_force_max_in_walk;
 
-    /** \brief The impulse force given when Plee jumps. */
+    /** \brief The impulse force given when Player jumps. */
     static const bear::universe::coordinate_type s_jump_force;
 
-    /** \brief The impulse force given when Plee jumps in float state. */
+    /** \brief The impulse force given when Player jumps in float state. */
     static const bear::universe::coordinate_type s_jump_force_in_float;
 
     /** \brief The impulse force given for vertical jumps. */
     static const bear::universe::coordinate_type s_vertical_jump_force;
 
-    /** \brief The speed over which Plee is running. */
+    /** \brief The speed over which Player is running. */
     static const bear::universe::coordinate_type s_speed_to_run;
 
-    /** \brief The mass of Plee. */
+    /** \brief The mass of Player. */
     static const double s_mass;
 
-    /** \brief The density of Plee. */
+    /** \brief The density of Player. */
     static const double s_density;
+
+    /** \brief The energy of Player. */
+    static const unsigned int s_energy; 
+
+    /** \brief Duration of injured state. */
+    static const double s_injured_duration;
   }; // class player
 } // namespace tunnel
 

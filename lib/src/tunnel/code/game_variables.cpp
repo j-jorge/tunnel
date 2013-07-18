@@ -299,6 +299,38 @@ void tunnel::game_variables::set_persistent_lives_count
       ( make_persistent_variable_name(get_lives_count_variable_name()), c ) );
 } // game_variables::set_persistent_lives_count()
 
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Get the variable of energy.
+ */
+std::string tunnel::game_variables::get_energy_variable_name()
+{
+  return "energy" ;
+} // game_variables::get_energy_variable_name()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Get the energy.
+ */
+unsigned int tunnel::game_variables::get_energy()
+{
+  return tunnel_game_variables_get_value
+    ( get_energy_variable_name(), (unsigned int)5 );
+} // game_variables::get_energy()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set the energy.
+ * \param e The energy.
+ */
+void tunnel::game_variables::set_energy( unsigned int e )
+{
+  bear::engine::game::get_instance().set_game_variable
+    ( bear::engine::variable<unsigned int>
+      ( get_energy_variable_name(), e ) );
+} // game_variables::set_energy()
+
 /*----------------------------------------------------------------------------*/
 /**
  * \brief Get the variable name for score of a given player.
