@@ -24,6 +24,7 @@ set( LIBTUNNEL_SOURCE_FILES
   code/init.cpp
   code/item_picking_filter.cpp
   code/layer_border.cpp
+  code/passive_enemy.cpp
   code/player.cpp
   code/player_action.cpp
   code/player_killer.cpp

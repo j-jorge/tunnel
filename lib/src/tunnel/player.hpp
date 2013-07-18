@@ -147,6 +147,8 @@ namespace tunnel
     void balance_spot( bool x, bool y );
     void stop();
 
+    bool receive_an_attack(const bear::engine::base_item& attacker);
+
   public:
     void apply_move_right();
     void apply_move_left();
@@ -218,8 +220,6 @@ namespace tunnel
     void progress_crouch( bear::universe::time_type elapsed_time );
     void progress_look_upward( bear::universe::time_type elapsed_time );
     void progress_captive( bear::universe::time_type elapsed_time );
-    void progress_throw( bear::universe::time_type elapsed_time );
-    void progress_maintain( bear::universe::time_type elapsed_time );
     void progress_wait( bear::universe::time_type elapsed_time );
     void progress_start_cling( bear::universe::time_type elapsed_time );
     void progress_cling( bear::universe::time_type elapsed_time );
@@ -230,6 +230,7 @@ namespace tunnel
     void progress_sink( bear::universe::time_type elapsed_time );
     void progress_float( bear::universe::time_type elapsed_time );
     void progress_injured( bear::universe::time_type elapsed_time );
+    void progress_injure_state( bear::universe::time_type elapsed_time );
     void progress_paralyze( bear::universe::time_type elapsed_time );
 
     void set_state(player_state_name state);
@@ -272,6 +273,8 @@ namespace tunnel
     void finish_abort_tunnel();
     void thwart_gravity();
     void create_camera();
+    void injure( const bear::engine::base_item& attacker );
+    void finish_injure();
 
     void on_level_progress_done();
     void on_level_started();
@@ -464,7 +467,19 @@ namespace tunnel
     bool m_editor_player;
 
     /** \brief Indicates if the player can transport objects. */
-    bool m_can_transport;
+    bool m_can_transport; 
+
+    /** \brief Indicates if the monster is injured. */
+    bool m_is_injured;
+
+    /** \brief Indicates the time of the attack. */
+    bear::universe::time_type m_injured_time;
+
+    /** \brief Transparency of injured frame. */
+    double m_opacity_injured;
+
+    /** \brief Increment for the transparency when injured. */
+    double m_opacity_inc;
 
     /** \brief The minimum radius of teleportation circle. */
     static const bear::universe::coordinate_type s_min_teleportation_radius;
@@ -546,7 +561,10 @@ namespace tunnel
     static const double s_density;
 
     /** \brief The energy of Player. */
-    static const unsigned int s_energy;
+    static const unsigned int s_energy; 
+
+    /** \brief Duration of injured state. */
+    static const double s_injured_duration;
   }; // class player
 } // namespace tunnel
 

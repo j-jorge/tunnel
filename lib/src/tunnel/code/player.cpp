@@ -118,6 +118,7 @@ const bear::universe::coordinate_type tunnel::player::s_speed_to_run = 580;
 const double tunnel::player::s_mass = 100;
 const double tunnel::player::s_density = 1.5;
 const unsigned int tunnel::player::s_energy = 5;
+const double tunnel::player::s_injured_duration = 2;
 
 BASE_ITEM_EXPORT( player, tunnel )
 
@@ -138,7 +139,8 @@ tunnel::player::player()
   m_hot_spot_balance_move(0, 0), m_initial_tag(0), m_current_tag(0),
   m_next_tag(0), m_teleport_time(0), m_tunnel_aborted(false), 
   m_fade_effect_intensity(1), m_can_teleport(true),
-  m_enters_layer_done(false), m_editor_player(false)
+  m_enters_layer_done(false), m_editor_player(false),
+  m_opacity_injured(1), m_opacity_inc(-0.02)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -166,7 +168,8 @@ tunnel::player::player( const player& p )
     m_current_tag(p.m_current_tag), m_next_tag(p.m_next_tag), m_tags(p.m_tags),
     m_teleport_time(p.m_teleport_time), m_tunnel_aborted(p.m_tunnel_aborted),
     m_fade_effect_intensity(1), m_can_teleport(true), 
-    m_enters_layer_done(false), m_editor_player(false)
+    m_enters_layer_done(false), m_editor_player(false),
+    m_opacity_injured(1), m_opacity_inc(-0.02)
 {
   init();
 } // player::player()
@@ -223,6 +226,7 @@ void tunnel::player::init()
   m_states[paralyze_state] = new state_paralyze(this);
 
   m_progress = &player::progress_roar;
+  m_is_injured = false;
 } // player::init()
 
 /*----------------------------------------------------------------------------*/
@@ -290,6 +294,7 @@ void tunnel::player::progress( bear::universe::time_type elapsed_time )
       m_can_cling = false;
     }
 
+  progress_injure_state(elapsed_time);
   m_last_bottom_left = get_bottom_left();
 } // player::progress()
 
@@ -971,6 +976,18 @@ void tunnel::player::apply_fall()
   set_state(player::fall_state);
   m_progress = &player::progress_fall;
 } // player::apply_fall()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Apply the action injured.
+ */
+void tunnel::player::apply_injured()
+{
+  m_move_force = 0;
+  m_nb_bottom_contact = 0;
+  set_state(player::injured_state);
+  m_progress = &player::progress_injured;
+} // player::apply_injured()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -1823,82 +1840,6 @@ void tunnel::player::progress_paralyze( bear::universe::time_type elapsed_time )
  * \brief Do one iteration in the state .
  * \param elapsed_time Elapsed time since the last call.
  */
-void tunnel::player::progress_throw( bear::universe::time_type elapsed_time )
-{
-  brake();
-
-  bear::universe::speed_type speed(get_speed());
-  bear::universe::coordinate_type speed_x = speed.dot_product(get_x_axis());
-
-  if ( get_current_action_name() == "throw" )
-    {
-      if ( !has_bottom_contact() )
-        switch_to_model_action("throw_and_fall");
-      else if( std::abs(speed_x) != 0 )
-        switch_to_model_action("throw_and_walk");
-    }
-  else if ( get_current_action_name() == "throw_and_walk")
-    {
-      if ( !has_bottom_contact() )
-        switch_to_model_action("throw_and_fall");
-      else if( std::abs(speed_x) == 0 )
-        switch_to_model_action("throw");
-    }
-  else if ( get_current_action_name() == "throw_and_fall")
-    {
-      if ( has_bottom_contact() )
-        {
-          if( std::abs(speed_x) == 0 )
-            switch_to_model_action("throw");
-          else
-            switch_to_model_action("throw_and_walk");
-        }
-    }
-} // player::progress_throw()
-
-/*---------------------------------------------------------------------------*/
-/**
- * \brief Do one iteration in the state .
- * \param elapsed_time Elapsed time since the last call.
- */
-void tunnel::player::progress_maintain( bear::universe::time_type elapsed_time )
-{
-  brake();
-
-  bear::universe::speed_type speed(get_speed());
-  bear::universe::coordinate_type speed_x = speed.dot_product(get_x_axis());
-
-  if ( get_current_action_name() == "maintain" )
-    {
-      if ( !has_bottom_contact() )
-        switch_to_model_action("maintain_and_fall");
-      else if( std::abs(speed_x) != 0 )
-        switch_to_model_action("maintain_and_walk");
-    }
-  else if ( get_current_action_name() == "maintain_and_walk" )
-    {
-      if ( !has_bottom_contact() )
-        switch_to_model_action("maintain_and_fall");
-      else if( std::abs(speed_x) == 0 )
-        switch_to_model_action("maintain");
-    }
-  else if ( get_current_action_name() == "maintain_and_fall" )
-    {
-      if ( has_bottom_contact() )
-        {
-          if( std::abs(speed_x) == 0 )
-            switch_to_model_action("maintain");
-          else
-            switch_to_model_action("maintain_and_walk");
-        }
-    }
-} // player::progress_maintain()
-
-/*---------------------------------------------------------------------------*/
-/**
- * \brief Do one iteration in the state .
- * \param elapsed_time Elapsed time since the last call.
- */
 void tunnel::player::progress_wait( bear::universe::time_type elapsed_time )
 {
   brake();
@@ -2095,6 +2036,72 @@ void tunnel::player::progress_float( bear::universe::time_type elapsed_time )
     }
 } // player::progress_float()
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Do one iteration in the state .
+ * \param elapsed_time Elapsed time since the last call.
+ */
+void tunnel::player::progress_injured( bear::universe::time_type elapsed_time )
+{
+  brake();
+
+  if ( has_bottom_contact() )
+    {
+      ++m_nb_bottom_contact;
+
+      if ( m_nb_bottom_contact > 2 )
+        {
+          if ( m_last_bottom_left == get_bottom_left() )
+            choose_idle_state();
+          else
+            {
+              bear::universe::speed_type speed( get_speed() );
+              // calculate the speed in the intern axis
+              bear::universe::coordinate_type speed_x =
+                speed.dot_product(get_x_axis());
+
+              if( std::abs(speed_x) >= s_speed_to_run )
+                start_action_model("run");
+              else if ( speed_x == 0 )
+                choose_idle_state();
+              else
+                choose_walk_state();
+            }
+        }
+    }
+} // player::progress_injured()
+
+
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Update injured state.
+ * \param elapsed_time Elapsed time since the last call.
+ */
+void tunnel::player::progress_injure_state
+( bear::universe::time_type elapsed_time )
+{
+  if ( m_is_injured )
+    {
+      m_injured_time += elapsed_time;
+      if ( m_injured_time >= s_injured_duration )
+        finish_injure();
+      else
+        {
+          m_opacity_injured += m_opacity_inc;
+
+          if ( m_opacity_injured <= 0.3 )
+            m_opacity_inc = 0.02;
+          else if ( m_opacity_injured >= 1 )
+            {
+              m_opacity_inc = -0.02;
+              m_opacity_injured = 1;
+            }
+
+          this->get_rendering_attributes().set_opacity(m_opacity_injured);
+        }
+    }
+} // player::progress_injure()
+
 /*----------------------------------------------------------------------------*/
 /**
  * \brief Set the state of Player.
@@ -2155,6 +2162,11 @@ void tunnel::player::regenerate()
   get_rendering_attributes().mirror(false);
 
   remove_all_links();
+  
+  m_is_injured = false;
+  m_injured_time = 0;
+  m_opacity_injured = 1;
+  m_opacity_inc = -0.02;  
 } // player::regenerate()
 
 /*----------------------------------------------------------------------------*/
@@ -2284,6 +2296,26 @@ void tunnel::player::stop()
   set_internal_force(bear::universe::force_type(0, 0));
   set_external_force(bear::universe::force_type(0, 0));
 } // player::stop()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief The item receive an attack.
+ * \param attacker The attacker.
+ */
+bool tunnel::player::receive_an_attack(const bear::engine::base_item& attacker)
+{
+  bool result = false;
+  unsigned int energy = game_variables::get_energy();
+
+  if( ! m_is_injured && energy != 0 )
+    {
+      result = true;
+      injure( attacker );      
+      game_variables::set_energy( energy - 1 );
+    }
+
+  return result;
+} // tunnel::receive_an_attack()
 
 /*---------------------------------------------------------------------------*/
 /**
@@ -2610,6 +2642,9 @@ void tunnel::player::init_shaders()
       it->set_shader( m_origin_shader );
     else
       it->set_shader( m_common_shader );
+
+  m_is_injured = false;
+  m_injured_time = 0;
 } // player::init_shaders()
 
 /*----------------------------------------------------------------------------*/
@@ -2773,6 +2808,45 @@ void tunnel::player::create_camera()
   
   new_item( *item );
 } // player::create_camera()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief The monster is injured.
+ * \param attacker The monster attacking me.
+ */
+void tunnel::player::injure( const bear::engine::base_item& attacker )
+{
+  m_is_injured = true;
+  m_injured_time = 0;
+  
+  if ( get_current_action_name() != "game_over" )
+    {
+      double orientation = -1;
+
+      if ( get_center_of_mass().x > attacker.get_center_of_mass().x)
+          orientation = 1;
+
+      set_speed(bear::universe::speed_type(0, 0));
+      add_external_force
+        ( bear::universe::force_type(orientation * 40000 * get_mass(),
+          55000 * get_mass()) );
+      set_bottom_contact(false);
+
+      m_states[m_current_state]->do_injured();
+      //m_injured_orientation = false;
+    }
+} // player::injure()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief The monster isn't injure any more.
+ */
+void tunnel::player::finish_injure()
+{
+  this->get_rendering_attributes().set_opacity(1);
+  m_is_injured = false;
+  m_states[m_current_state]->do_finish_injured();
+} // player::finish_injure()
 
 /*----------------------------------------------------------------------------*/
 /**
