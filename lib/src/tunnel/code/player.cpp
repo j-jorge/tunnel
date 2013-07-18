@@ -346,6 +346,7 @@ void tunnel::player::pre_cache()
   get_level_globals().load_shader("shader/tunnel_target.frag");
   get_level_globals().load_shader("shader/tunnel_common.frag");
   get_level_globals().load_shader("shader/player_in_tunnel.frag");
+  get_level_globals().load_shader("shader/object_in_tunnel.frag");
 } // player::pre_cache()
 
 /*----------------------------------------------------------------------------*/
@@ -1081,7 +1082,7 @@ void tunnel::player::apply_open_tunnel()
                   it_transportable != transportables.end(); ++it_transportable)
               (*static_cast<base_item*>(*it_transportable)).set_shader
                 ( get_level_globals().get_shader
-                  ("shader/player_in_tunnel.frag") );
+                  ("shader/object_in_tunnel.frag") );
           }
       
       for ( ; it != get_level().layer_end(); ++it )
