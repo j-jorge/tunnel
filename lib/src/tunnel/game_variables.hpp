@@ -62,6 +62,14 @@ namespace tunnel
     static unsigned int get_energy();
     static void set_energy( unsigned int e );
 
+    static std::string get_crystal_count_variable_name();
+    static unsigned int get_crystal_count();
+    static void set_crystal_count( unsigned int nb );
+
+    static std::string get_founded_crystal_count_variable_name();
+    static unsigned int get_founded_crystal_count();
+    static void set_founded_crystal_count( unsigned int nb );
+
     static std::string get_score_variable_name();
     static unsigned int get_score();
     static unsigned int get_persistent_score();

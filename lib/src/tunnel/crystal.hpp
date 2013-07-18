@@ -43,6 +43,14 @@ namespace tunnel
 
   public:
     crystal();
+    
+    void build();
+    void collision
+    ( bear::engine::base_item& that, bear::universe::collision_info& info );
+    
+  private:
+    /* \brief Indicates if the crystal has been given. */
+    bool m_given;
   }; // class crystal
 } // namespace tunnel
 

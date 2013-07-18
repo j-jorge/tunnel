@@ -299,7 +299,6 @@ void tunnel::game_variables::set_persistent_lives_count
       ( make_persistent_variable_name(get_lives_count_variable_name()), c ) );
 } // game_variables::set_persistent_lives_count()
 
-
 /*----------------------------------------------------------------------------*/
 /**
  * \brief Get the variable of energy.
@@ -330,6 +329,68 @@ void tunnel::game_variables::set_energy( unsigned int e )
     ( bear::engine::variable<unsigned int>
       ( get_energy_variable_name(), e ) );
 } // game_variables::set_energy()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Get the variable of crystal_count.
+ */
+std::string tunnel::game_variables::get_crystal_count_variable_name()
+{
+  return "crystal_count" ;
+} // game_variables::get_crystal_count_variable_name()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Get the crystal_count.
+ */
+unsigned int tunnel::game_variables::get_crystal_count()
+{
+  return tunnel_game_variables_get_value
+    ( get_crystal_count_variable_name(), (unsigned int)0 );
+} // game_variables::get_crystal_count()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set the crystal_count.
+ * \param nb The crystal_count.
+ */
+void tunnel::game_variables::set_crystal_count( unsigned int nb )
+{
+  bear::engine::game::get_instance().set_game_variable
+    ( bear::engine::variable<unsigned int>
+      ( get_crystal_count_variable_name(), nb ) );
+} // game_variables::set_crystal_count()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Get the variable of founded_crystal_count.
+ */
+std::string tunnel::game_variables::get_founded_crystal_count_variable_name()
+{
+  return "founded_crystal_count" ;
+} // game_variables::get_founded_crystal_count_variable_name()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Get the founded_crystal_count.
+ */
+unsigned int tunnel::game_variables::get_founded_crystal_count()
+{
+  return tunnel_game_variables_get_value
+    ( get_founded_crystal_count_variable_name(), (unsigned int)0 );
+} // game_variables::get_founded_crystal_count()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set the founded_crystal_count.
+ * \param nb The founded_crystal_count.
+ */
+void tunnel::game_variables::set_founded_crystal_count( unsigned int nb )
+{
+  bear::engine::game::get_instance().set_game_variable
+    ( bear::engine::variable<unsigned int>
+      ( get_founded_crystal_count_variable_name(), nb ) );
+} // game_variables::set_founded_crystal_count()
 
 /*----------------------------------------------------------------------------*/
 /**

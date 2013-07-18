@@ -13,6 +13,7 @@
  */
 #include "tunnel/layer/status_layer.hpp"
 
+#include "tunnel/layer/status/crystal_component.hpp"
 #include "tunnel/layer/status/energy_component.hpp"
 #include "tunnel/layer/status/status_component.hpp"
 
@@ -106,7 +107,17 @@ void tunnel::status_layer::create_components()
      200, false); 
   e->build();
   m_components.push_back(e);
-  pos_top.y += - e->height() - s_margin;
+  pos_top.y = pos_top.y - e->height() - s_margin;
+  
+  // crystal  
+  crystal_component* c = new crystal_component
+    (get_level_globals(), pos_top, bear::universe::zone::top_zone, 
+     status_component::left_placement,
+     status_component::top_placement,get_size(),
+     200, false); 
+  c->build();
+  m_components.push_back(c);
+  pos_top.y = pos_top.y - c->height() - s_margin;
 
   // lives
   /*
