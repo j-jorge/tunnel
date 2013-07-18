@@ -452,7 +452,8 @@ void tunnel::player::start_action( player_action::value_type a )
       case player_action::jump :
         m_states[m_current_state]->do_jump(); break;
       case player_action::slap :
-        m_states[m_current_state]->do_slap(); break;
+        //m_states[m_current_state]->do_slap(); 
+        break;
       case player_action::teleport :
         m_states[m_current_state]->do_teleport(); break;
       case player_action::look_upward : do_start_look_upward(); break;

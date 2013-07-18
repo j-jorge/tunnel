@@ -15137,6 +15137,41 @@
 </fields>
     </item><!-- tunnel::clingable -->
 
+    <item class_name='tunnel::spring' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9558'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='-10'/>
+</field>
+<field name='base_item.position.left'>
+<real value='20029'/>
+</field>
+<field name='base_item.size.height'>
+<real value='45'/>
+</field>
+<field name='base_item.size.width'>
+<real value='60'/>
+</field>
+<field name='basic_renderable_item.angle'>
+<real value='-0.2'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/common/common-1.png' x='274' y='0' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='spring.applied_force.x'>
+<real value='70000'/>
+</field>
+<field name='spring.applied_force.y'>
+<real value='280000'/>
+</field>
+</fields>
+    </item><!-- tunnel::spring -->
+
     <item class_name='bear::block' fixed='true'>
 <fields>
 <field name='item_with_friction.top_friction'>
@@ -16018,7 +16053,7 @@
 <integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='503' clip_width='200' clip_height='100' spritepos='ceiling corner' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='403' y='402' clip_width='200' clip_height='100' spritepos='bottom' auto_size='true' width='200' height='100' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='10364'/>
@@ -16068,63 +16103,6 @@
 </field>
 </fields>
     </item><!-- tunnel::door_switch -->
-
-    <item class_name='tunnel::clingable' fixed='true'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='10201'/>
-</field>
-<field name='base_item.position.left'>
-<real value='20999'/>
-</field>
-<field name='base_item.size.height'>
-<real value='140'/>
-</field>
-<field name='base_item.size.width'>
-<real value='64'/>
-</field>
-</fields>
-    </item><!-- tunnel::clingable -->
-
-    <item class_name='bear::block' fixed='true'>
-<fields>
-<field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/placeholder/placeholder-1.png' x='302' y='402' clip_width='100' clip_height='100' spritepos='bottom-left' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</field>
-<field name='base_item.position.bottom'>
-<real value='10164'/>
-</field>
-<field name='base_item.position.left'>
-<real value='21012'/>
-</field>
-<field name='item_with_activable_sides.bottom_side_is_active'>
-<bool value='1'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='1'/>
-</field>
-</fields>
-    </item><!-- bear::block -->
-
-    <item class_name='bear::block' fixed='true'>
-<fields>
-<field name='item_with_z_shift.z_shift'>
-<integer value='-10'/>
-</field>
-<field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/placeholder/placeholder-1.png' x='302' y='503' clip_width='100' clip_height='100' spritepos='ceiling corner wall' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</field>
-<field name='base_item.position.bottom'>
-<real value='10264'/>
-</field>
-<field name='base_item.position.left'>
-<real value='21012'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='1'/>
-</field>
-</fields>
-    </item><!-- bear::block -->
 
     <item class_name='bear::block' fixed='true'>
 <fields>
@@ -16192,33 +16170,16 @@
 </fields>
     </item><!-- bear::block -->
 
-    <item class_name='tunnel::door' fixed='false'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='9964'/>
-</field>
-<field name='base_item.position.depth'>
-<integer value='-100'/>
-</field>
-<field name='base_item.position.left'>
-<real value='21112'/>
-</field>
-<field name='door.tags'>
-<string value='door_2'/>
-</field>
-</fields>
-    </item><!-- tunnel::door -->
-
     <item class_name='bear::block' fixed='true'>
 <fields>
 <field name='item_with_z_shift.z_shift'>
 <integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/placeholder/placeholder-1.png' x='403' y='402' clip_width='200' clip_height='100' spritepos='bottom' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='503' clip_width='200' clip_height='100' spritepos='ceiling corner' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
-<real value='10164'/>
+<real value='10364'/>
 </field>
 <field name='base_item.position.left'>
 <real value='21112'/>
@@ -16269,22 +16230,22 @@
 </fields>
     </item><!-- tunnel::clingable -->
 
-    <item class_name='tunnel::door' fixed='false'>
+    <item class_name='tunnel::clingable' fixed='true'>
 <fields>
 <field name='base_item.position.bottom'>
-<real value='9964'/>
-</field>
-<field name='base_item.position.depth'>
-<integer value='-100'/>
+<real value='10201'/>
 </field>
 <field name='base_item.position.left'>
-<real value='21196'/>
+<real value='21199'/>
 </field>
-<field name='door.tags'>
-<string value='door_1'/>
+<field name='base_item.size.height'>
+<real value='140'/>
+</field>
+<field name='base_item.size.width'>
+<real value='64'/>
 </field>
 </fields>
-    </item><!-- tunnel::door -->
+    </item><!-- tunnel::clingable -->
 
     <item class_name='bear::block' fixed='true'>
 <fields>
@@ -16328,6 +16289,63 @@
 
     <item class_name='bear::block' fixed='true'>
 <fields>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='302' y='402' clip_width='100' clip_height='100' spritepos='bottom-left' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10164'/>
+</field>
+<field name='base_item.position.left'>
+<real value='21212'/>
+</field>
+<field name='item_with_activable_sides.bottom_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='302' y='503' clip_width='100' clip_height='100' spritepos='ceiling corner wall' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='21212'/>
+</field>
+<field name='item_with_activable_sides.left_side_is_active'>
+<bool value='1'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='tunnel::door' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9964'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='-100'/>
+</field>
+<field name='base_item.position.left'>
+<real value='21231'/>
+</field>
+<field name='door.tags'>
+<string value='door_2'/>
+</field>
+</fields>
+    </item><!-- tunnel::door -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
@@ -16349,31 +16367,25 @@
 </fields>
     </item><!-- bear::block -->
 
-    <item class_name='bear::descending_ceiling' fixed='true'>
+    <item class_name='bear::block' fixed='true'>
 <fields>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/placeholder/placeholder-1.png' x='302' y='402' clip_width='100' clip_height='100' spritepos='bottom-left' auto_size='true' width='100' height='100' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
 <field name='base_item.position.bottom'>
 <real value='10164'/>
 </field>
 <field name='base_item.position.left'>
 <real value='21312'/>
 </field>
-<field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/placeholder/placeholder-2.png' x='402' y='502' clip_width='100' clip_height='100' spritepos='ceiling slope corner' auto_size='true' width='100' height='100' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</field>
-<field name='descending_ceiling.apply_angle'>
-<bool value='0'/>
-</field>
-<field name='descending_ceiling.left_side_is_active'>
-<bool value='0'/>
-</field>
-<field name='descending_ceiling.right_side_is_active'>
+<field name='item_with_activable_sides.bottom_side_is_active'>
 <bool value='1'/>
 </field>
-<field name='descending_ceiling.steepness'>
-<real value='100'/>
+<field name='item_with_activable_sides.right_side_is_active'>
+<bool value='1'/>
 </field>
 </fields>
-    </item><!-- bear::descending_ceiling -->
+    </item><!-- bear::block -->
 
     <item class_name='bear::block' fixed='true'>
 <fields>
@@ -16541,6 +16553,23 @@
 </field>
 </fields>
     </item><!-- bear::block -->
+
+    <item class_name='tunnel::door' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='9964'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='-100'/>
+</field>
+<field name='base_item.position.left'>
+<real value='21350'/>
+</field>
+<field name='door.tags'>
+<string value='door_1'/>
+</field>
+</fields>
+    </item><!-- tunnel::door -->
 
     <item class_name='tunnel::clingable' fixed='true'>
 <fields>
@@ -29978,20 +30007,6 @@
 <fields>
 <field name='base_item.position.bottom'>
 <real value='9264'/>
-</field>
-<field name='base_item.position.left'>
-<real value='21112'/>
-</field>
-<field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='0' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</field>
-</fields>
-    </item><!-- bear::decorative_item -->
-
-    <item class_name='bear::decorative_item' fixed='true'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='10264'/>
 </field>
 <field name='base_item.position.left'>
 <real value='21112'/>
@@ -54987,6 +55002,20 @@
 
     <item class_name='bear::block' fixed='true'>
 <fields>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='10264'/>
+</field>
+<field name='base_item.position.left'>
+<real value='21112'/>
+</field>
+</fields>
+    </item><!-- bear::block -->
+
+    <item class_name='bear::block' fixed='true'>
+<fields>
 <field name='item_with_friction.top_friction'>
 <real value='0.95'/>
 </field>
@@ -66818,20 +66847,6 @@
 <fields>
 <field name='base_item.position.bottom'>
 <real value='9264'/>
-</field>
-<field name='base_item.position.left'>
-<real value='21112'/>
-</field>
-<field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/forest-1.png' x='0' y='213' clip_width='200' clip_height='200' spritepos='center 1' auto_size='true' width='200' height='200' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</field>
-</fields>
-    </item><!-- bear::decorative_item -->
-
-    <item class_name='bear::decorative_item' fixed='true'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='10264'/>
 </field>
 <field name='base_item.position.left'>
 <real value='21112'/>
