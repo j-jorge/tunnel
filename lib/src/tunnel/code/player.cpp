@@ -1627,9 +1627,8 @@ void tunnel::player::progress_fall( bear::universe::time_type elapsed_time )
  */
 void tunnel::player::progress_dead( bear::universe::time_type elapsed_time )
 {
-  regenerate();
-
-  start_action_model("roar");
+  bear::engine::game::get_instance().set_waiting_level
+    ( get_level().get_filename() );
 } // player::progress_dead()
 
 /*---------------------------------------------------------------------------*/
@@ -2312,6 +2311,9 @@ bool tunnel::player::receive_an_attack(const bear::engine::base_item& attacker)
       result = true;
       injure( attacker );      
       game_variables::set_energy( energy - 1 );
+
+      if ( game_variables::get_energy() == 0 )
+        apply_die();
     }
 
   return result;
