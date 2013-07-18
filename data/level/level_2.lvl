@@ -26356,6 +26356,38 @@
 </fields>
     </item><!-- bear::block -->
 
+    <item class_name='tunnel::level_exit' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='3254'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='-1000'/>
+</field>
+<field name='base_item.position.left'>
+<real value='1302'/>
+</field>
+<field name='base_item.size.height'>
+<real value='100'/>
+</field>
+<field name='base_item.size.width'>
+<real value='100'/>
+</field>
+<field name='basic_renderable_item.color'>
+<color opacity='1' red_intensity='0.0745098' green_intensity='0.843137' blue_intensity='0.0901961'/>
+</field>
+<field name='item_with_decoration.extend_on_bounding_box'>
+<bool value='1'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='level_exit.next_level'>
+<string value='level/level_3.cl'/>
+</field>
+</fields>
+    </item><!-- tunnel::level_exit -->
+
     <item class_name='bear::block' fixed='true'>
 <fields>
 <field name='item_with_friction.top_friction'>
@@ -26378,29 +26410,6 @@
 </field>
 </fields>
     </item><!-- bear::block -->
-
-    <item class_name='tunnel::level_exit' fixed='false'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='3278'/>
-</field>
-<field name='base_item.position.left'>
-<real value='1352'/>
-</field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0745098' green_intensity='0.843137' blue_intensity='0.0901961'/>
-</field>
-<field name='item_with_decoration.extend_on_bounding_box'>
-<bool value='1'/>
-</field>
-<field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</field>
-<field name='level_exit.next_level'>
-<string value='level/level_3.cl'/>
-</field>
-</fields>
-    </item><!-- tunnel::level_exit -->
 
     <item class_name='bear::block' fixed='true'>
 <fields>
