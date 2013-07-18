@@ -46,8 +46,6 @@ namespace tunnel
 
     void pre_cache();
     void build();
-
-    void set_level_timer(const bear::timer* level_timer);
   }; // class add_ingame_layers
 } // namespace tunnel
 
