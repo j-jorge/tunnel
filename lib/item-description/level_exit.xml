@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item xmlns="http://www.gamned.org/bear/schema/0.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gamned.org/bear/schema/0.5 http://www.gamned.org/bear/schema/0.5/item-description.xsd" class="tunnel::level_exit" category="entity" fixable="false" url="http://www.gamned.org/wiki/index.php/level_exit">
+  <inherit>
+    <class>tunnel::transportable</class>
+    <class>bear::base_item</class>
+    <class>bear::basic_renderable_item</class>
+    <class>bear::item_with_decoration</class>
+  </inherit>
+  <fields>
+    <field type="string" name="level_exit.next_level" required="true">
+      <description>The filename of the next level.</description>
+    </field>
+  </fields>
+  <new_default_value name="base_item.size.width">50</new_default_value>
+  <new_default_value name="base_item.size.height">50</new_default_value>
+</item>
