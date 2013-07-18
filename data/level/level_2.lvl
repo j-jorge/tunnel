@@ -26822,7 +26822,7 @@
     <item class_name='tunnel::crystal' fixed='false'>
 <fields>
 <field name='base_item.position.bottom'>
-<real value='4520'/>
+<real value='4519'/>
 </field>
 <field name='base_item.position.left'>
 <real value='3952'/>
@@ -26834,7 +26834,7 @@
 <real value='50'/>
 </field>
 <field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.843137' green_intensity='0.0745098' blue_intensity='0.670588'/>
+<color opacity='1' red_intensity='1' green_intensity='0.996078' blue_intensity='0'/>
 </field>
 <field name='item_with_decoration.extend_on_bounding_box'>
 <bool value='1'/>
