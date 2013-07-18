@@ -1,7 +1,108 @@
 sprite_sheet "hero-1" 1024 x 1024 margin 1 order "height"
 
 idle "guy/idle.xcf.bz2"
+walk "guy/walk.xcf.bz2"
 
 "idle 1" "idle" * 0.3 with idle
   "idle"
   ;
+
+"walk 1" "borders" * 0.3 with walk
+  "hip"
+
+  "border 0"
+
+  "body 1"
+  "right arm 0"
+  "right leg middle"
+;
+
+"walk 2" "borders" * 0.3 with walk
+  "hip"
+
+  "border 1"
+
+  "body 1"
+  "right arm back 1"
+  "right leg back 1"
+;
+
+"walk 3" "borders" * 0.3 with walk
+  "hip"
+
+  "border 2"
+
+  "body 1"
+  "right arm back 2"
+  "right leg back 2"
+;
+
+"walk 4" "borders" * 0.3 with walk
+  "hip"
+
+  "border 3"
+
+  "body 2"
+  "right arm back 3"
+  "right leg back 3"
+;
+
+"walk 5" "borders" * 0.3 with walk
+  "hip"
+
+  "border 4"
+
+  "body 3"
+  "right arm back 4"
+  "right leg back 4"
+;
+
+"walk 6" "borders" * 0.3 with walk
+  "hip"
+
+  "border 5"
+
+  "body 4"
+  "right arm back 5"
+  "right leg back 5"
+;
+
+"walk 7" "borders" * 0.3 with walk
+  "hip"
+
+  "border 6"
+
+  "body 4"
+  "right arm back 5"
+  "right leg back 6"
+;
+
+"walk 8" "borders" * 0.3 with walk
+  "hip"
+
+  "border 7"
+
+  "body 3"
+  "right arm back 4"
+  "right leg back 6"
+;
+
+"walk 9" "borders" * 0.3 with walk
+  "hip"
+
+  "border 8"
+
+  "body 2"
+  "right arm back 3"
+  "right leg back 5"
+;
+
+"walk 10" "borders" * 0.3 with walk
+  "hip"
+
+  "border 9"
+
+  "body 1"
+  "right arm back 2"
+  "right leg back 4"
+;
