@@ -92,11 +92,11 @@ void tunnel::crystal_component::render( scene_element_list& e ) const
       s_margin + 5, get_render_position().y + 5
       + (m_crystal_sprite.height() - m_crystal_sprite.height() ) / 2,
       m_crystal);
-  s2.set_scale_factor( 2*f, 2*f );
+  s2.set_scale_factor( 1.2 * f, 1.2 * f );
   
   bear::visual::scene_writing s3
     ( get_render_position().x + m_crystal_sprite.get_size().x + 
-      s_margin + m_crystal.get_width() * 2 * f, get_render_position().y
+      s_margin + m_crystal.get_width() * 1.2 * f, get_render_position().y
       + (m_crystal_sprite.height() - m_crystal_sprite.height() ) / 2,
       m_required_crystal );
   s3.set_scale_factor( f, f );
@@ -124,7 +124,7 @@ unsigned int tunnel::crystal_component::width() const
  */
 unsigned int tunnel::crystal_component::height() const
 {
-  return m_crystal_sprite.height() * 2;
+  return m_crystal_sprite.height() * 1.2;
 } // crystal_component::height()
 
 /*----------------------------------------------------------------------------*/
