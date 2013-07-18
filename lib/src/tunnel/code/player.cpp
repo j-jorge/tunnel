@@ -82,7 +82,7 @@ const bear::universe::time_type tunnel::player::s_time_to_jump = 1;
 const bear::universe::time_type tunnel::player::s_time_to_run = 2.5; // 1.2;
 const bear::universe::time_type tunnel::player::s_max_time_to_cling = 0.3;
 const bear::universe::time_type tunnel::player::s_max_time_to_hang = 1;
-const bear::universe::time_type tunnel::player::s_max_time_continue_jump = 0.26;
+const bear::universe::time_type tunnel::player::s_max_time_continue_jump = 0.28;
 
 const bear::universe::coordinate_type
 tunnel::player::s_move_force_in_idle = 200000;
