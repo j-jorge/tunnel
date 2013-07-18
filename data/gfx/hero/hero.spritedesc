@@ -119,6 +119,8 @@ run "guy/run.xcf.bz2"
 "run 1" image_size * 0.3 with run
   "hip"
 
+  "border 1"
+
   "body 4"
   "right arm back run 1"
   "right leg back 6"
@@ -126,6 +128,8 @@ run "guy/run.xcf.bz2"
 
 "run 2" image_size * 0.3 with run
   "hip"
+
+  "border 2"
 
   "body 4"
   "right arm back run 2"
@@ -135,6 +139,8 @@ run "guy/run.xcf.bz2"
 "run 3" image_size * 0.3 with run
   "hip"
 
+  "border 3"
+
   "body 4"
   "right arm back run 3"
   "right leg back 6"
@@ -142,6 +148,8 @@ run "guy/run.xcf.bz2"
 
 "run 4" image_size * 0.3 with run
   "hip"
+
+  "border 4"
 
   "body 4"
   "right arm back run 4"
