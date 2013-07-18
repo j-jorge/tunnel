@@ -117,7 +117,7 @@ const bear::universe::coordinate_type tunnel::player::s_speed_to_run = 580;
 
 const double tunnel::player::s_mass = 100;
 const double tunnel::player::s_density = 1.5;
-const double tunnel::player::s_energy = 100;
+const unsigned int tunnel::player::s_energy = 5;
 
 BASE_ITEM_EXPORT( player, tunnel )
 

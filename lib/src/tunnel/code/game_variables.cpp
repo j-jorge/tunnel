@@ -313,22 +313,22 @@ std::string tunnel::game_variables::get_energy_variable_name()
 /**
  * \brief Get the energy.
  */
-double tunnel::game_variables::get_energy()
+unsigned int tunnel::game_variables::get_energy()
 {
   return tunnel_game_variables_get_value
-    ( get_energy_variable_name(), (double)100 );
+    ( get_energy_variable_name(), (unsigned int)5 );
 } // game_variables::get_energy()
 
 /*----------------------------------------------------------------------------*/
 /**
  * \brief Set the energy.
- * \param v The maximum energy.
+ * \param e The energy.
  */
-void tunnel::game_variables::set_energy( double v )
+void tunnel::game_variables::set_energy( unsigned int e )
 {
   bear::engine::game::get_instance().set_game_variable
-    ( bear::engine::variable<double>
-      ( get_energy_variable_name(), v ) );
+    ( bear::engine::variable<unsigned int>
+      ( get_energy_variable_name(), e ) );
 } // game_variables::set_energy()
 
 /*----------------------------------------------------------------------------*/

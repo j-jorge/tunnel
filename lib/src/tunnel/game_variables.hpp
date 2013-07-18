@@ -59,8 +59,8 @@ namespace tunnel
     static void set_persistent_lives_count( unsigned int c );
 
     static std::string get_energy_variable_name();
-    static double get_energy();
-    static void set_energy( double b );
+    static unsigned int get_energy();
+    static void set_energy( unsigned int e );
 
     static std::string get_score_variable_name();
     static unsigned int get_score();

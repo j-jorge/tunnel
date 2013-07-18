@@ -546,7 +546,7 @@ namespace tunnel
     static const double s_density;
 
     /** \brief The energy of Player. */
-    static const double s_energy;
+    static const unsigned int s_energy;
   }; // class player
 } // namespace tunnel
 

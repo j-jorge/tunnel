@@ -33,6 +33,9 @@ set( LIBTUNNEL_SOURCE_FILES
   code/spring.cpp
 
   layer/code/misc_layer.cpp
+  layer/code/status_layer.cpp
+  layer/status/code/status_component.cpp
+  layer/status/code/energy_component.cpp
 
   message/code/get_player_instance.cpp
 
