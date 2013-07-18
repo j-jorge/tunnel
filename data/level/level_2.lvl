@@ -24437,6 +24437,17 @@
 </fields>
     </item><!-- tunnel::add_ingame_layers -->
 
+    <item class_name='tunnel::level_settings' fixed='false' id='level_settings'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='317'/>
+</field>
+<field name='base_item.position.left'>
+<real value='147'/>
+</field>
+</fields>
+    </item><!-- tunnel::level_settings -->
+
     <item class_name='bear::block' fixed='true'>
 <fields>
 <field name='item_with_friction.top_friction'>
@@ -35149,6 +35160,7 @@
 </items>
 
 <priority>
+<ref id="level_settings"/>
 </priority>
 
   </layer><!-- action_layer -->

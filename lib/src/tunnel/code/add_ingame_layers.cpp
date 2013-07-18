@@ -47,6 +47,17 @@ tunnel::add_ingame_layers::add_ingame_layers()
 
 /*----------------------------------------------------------------------------*/
 /**
+ * \brief Load the media required by this class.
+ */
+void tunnel::add_ingame_layers::pre_cache()
+{
+  super::pre_cache();
+
+  get_level_globals().load_font("font/Hand Drawn Shapes.ttf");
+} // add_ingame_layers::pre_cache()
+
+/*----------------------------------------------------------------------------*/
+/**
  * \brief Initialize the item.
  */
 void tunnel::add_ingame_layers::build()

@@ -420,6 +420,17 @@
 </fields>
     </item><!-- tunnel::layer_border -->
 
+    <item class_name='tunnel::level_settings' fixed='false' id='level_settings'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='314'/>
+</field>
+<field name='base_item.position.left'>
+<real value='143'/>
+</field>
+</fields>
+    </item><!-- tunnel::level_settings -->
+
     <item class_name='tunnel::add_ingame_layers' fixed='false'>
 <fields>
 <field name='base_item.position.bottom'>
@@ -7160,6 +7171,7 @@
 </items>
 
 <priority>
+<ref id="level_settings"/>
 </priority>
 
   </layer><!-- action_layer -->
