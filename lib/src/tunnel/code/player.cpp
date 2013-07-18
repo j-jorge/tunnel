@@ -400,6 +400,8 @@ void tunnel::player::on_enters_layer()
       m_origin_shader = glob.get_shader("shader/tunnel_origin.frag");
       m_target_shader = glob.get_shader("shader/tunnel_target.frag");
       m_common_shader = glob.get_shader("shader/tunnel_common.frag");
+      set_shader
+        ( get_level_globals().get_shader("shader/player_in_tunnel.frag") );
 
       save_current_position();
     }
@@ -1081,9 +1083,6 @@ void tunnel::player::apply_open_tunnel()
                 ( get_level_globals().get_shader
                   ("shader/player_in_tunnel.frag") );
           }
-
-      set_shader
-        ( get_level_globals().get_shader("shader/player_in_tunnel.frag") );
       
       for ( ; it != get_level().layer_end(); ++it )
         if ( it->get_tag() == m_tags[m_next_tag] )

@@ -162,16 +162,8 @@ void tunnel::crystal_component::on_crystal_changed(unsigned int number)
   m_crystal.create(m_font, oss.str());
 
   if ( number >= game_variables::get_crystal_count() )
-    {
-      m_crystal_sprite.set_intensity(0, 1, 0);
-      m_crystal->set_intensity(0, 1, 0);
-    }
+    m_crystal->set_intensity(0, 1, 0);
   else
-    {
-      m_crystal_sprite.set_intensity(1, 0, 0);
-      m_crystal->set_intensity(1, 0, 0);
-    }
-
-  //update_inactive_position();
+    m_crystal->set_intensity(1, 0, 0);
 } // crystal_component::on_crystal_changed()
 
