@@ -2935,6 +2935,7 @@ void tunnel::player::init_exported_methods()
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_fall, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_float, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_idle, void );
+  TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_injured, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_jump, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_look_upward, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_run, void );
