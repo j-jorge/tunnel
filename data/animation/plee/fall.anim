@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<animation loops='1' first_index='0' last_index='0' loop_back='true' auto_size='false' width='19' height='95' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
+<animation loops='1' first_index='0' last_index='0' loop_back='true' auto_size='true' width='38' height='88' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
   <frame duration='0.12'>
-    <sprite image='gfx/hero/hero-1.png' x='330' y='0' clip_width='21' clip_height='96' spritepos='idle 1' auto_size='true' width='21' height='96' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+    <sprite image='gfx/hero/hero-1.png' x='484' y='0' clip_width='38' clip_height='88' spritepos='fall 1' auto_size='true' width='38' height='88' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
   </frame>
 </animation>

@@ -26,8 +26,8 @@ animation/plee/crouch.canim
 0
 content_file
 animation/plee/fall.canim
-20
-96
+38
+88
 0
 0
 1
@@ -59,7 +59,7 @@ animation/plee/idle.canim
 0
 content_file
 animation/plee/jump.canim
-20
+21
 96
 0
 0
@@ -81,8 +81,8 @@ animation/plee/look_upward.canim
 0
 content_file
 animation/plee/run.canim
-75
-102
+32
+96
 0
 0
 1

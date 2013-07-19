@@ -3,6 +3,7 @@ sprite_sheet "hero-1" 1024 x 1024 margin 1 order "height"
 idle "guy/idle.xcf.bz2"
 walk "guy/walk.xcf.bz2"
 run "guy/run.xcf.bz2"
+fall "guy/fall.xcf.bz2"
 
 "idle 1" "idle" * 0.3 with idle
   "idle"
@@ -116,7 +117,7 @@ run "guy/run.xcf.bz2"
 /* Run */
 /*----------------------------------------------------------------------------*/
 
-"run 1" image_size * 0.3 with run
+"run 1" "border 1" * 0.3 with run
   "hip"
 
   "border 1"
@@ -126,7 +127,7 @@ run "guy/run.xcf.bz2"
   "right leg back 6"
 ;
 
-"run 2" image_size * 0.3 with run
+"run 2" "border 2" * 0.3 with run
   "hip"
 
   "border 2"
@@ -136,7 +137,7 @@ run "guy/run.xcf.bz2"
   "right leg back 6"
 ;
 
-"run 3" image_size * 0.3 with run
+"run 3" "border 3" * 0.3 with run
   "hip"
 
   "border 3"
@@ -146,7 +147,7 @@ run "guy/run.xcf.bz2"
   "right leg back 6"
 ;
 
-"run 4" image_size * 0.3 with run
+"run 4" "border 4" * 0.3 with run
   "hip"
 
   "border 4"
@@ -154,4 +155,12 @@ run "guy/run.xcf.bz2"
   "body 4"
   "right arm back run 4"
   "right leg back 6"
+;
+
+/*----------------------------------------------------------------------------*/
+/* Fall */
+/*----------------------------------------------------------------------------*/
+
+"fall 1" "border" * 0.3 with fall
+  glob "*"
 ;
