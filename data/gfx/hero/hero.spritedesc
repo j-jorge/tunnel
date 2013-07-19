@@ -5,6 +5,7 @@ walk "guy/walk.xcf.bz2"
 run "guy/run.xcf.bz2"
 fall "guy/fall.xcf.bz2"
 jump "guy/jump.xcf.bz2"
+open "guy/open.xcf.bz2"
 
 "idle 1" "idle" * 0.3 with idle
   "idle"
@@ -247,4 +248,12 @@ jump "guy/jump.xcf.bz2"
   "body"
   "leg up"
   "border 12"
+;
+
+/*----------------------------------------------------------------------------*/
+/* Open */
+/*----------------------------------------------------------------------------*/
+
+"open" "halo" * 0.3 with open
+  glob "*"
 ;

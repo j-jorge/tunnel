@@ -794,7 +794,7 @@
 <action name="teleport" duration="3" auto_next="idle">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/idle.canim' auto_size='true' width='21' height='96' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/teleport.canim' auto_size='true' width='89' height='117' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
