@@ -4,6 +4,7 @@ block "block.xcf.bz2"
 door "door.xcf.bz2"
 spring "spring.xcf.bz2"
 switch "switch.xcf.bz2"
+spikes "spikes.xcf.bz2"
 
 "block" image_size * 0.5 with block
   glob "*"
@@ -35,4 +36,8 @@ switch "switch.xcf.bz2"
 
 "switch base" autosize * 0.5 with switch
   "base"
+;
+
+"spikes" autosize * 0.5 with spikes
+  glob "*"
 ;
