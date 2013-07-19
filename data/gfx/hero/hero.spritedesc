@@ -4,6 +4,7 @@ idle "guy/idle.xcf.bz2"
 walk "guy/walk.xcf.bz2"
 run "guy/run.xcf.bz2"
 fall "guy/fall.xcf.bz2"
+jump "guy/jump.xcf.bz2"
 
 "idle 1" "idle" * 0.3 with idle
   "idle"
@@ -163,4 +164,87 @@ fall "guy/fall.xcf.bz2"
 
 "fall 1" "border" * 0.3 with fall
   glob "*"
+;
+
+/*----------------------------------------------------------------------------*/
+/* Jump */
+/*----------------------------------------------------------------------------*/
+
+"jump 1" "borders" * 0.3 with jump
+  "arm 0 d"
+  "b0"
+  "border 0"
+;
+
+"jump 2" "borders" * 0.3 with jump
+  "arm 1 d"
+  "b1"
+  "border 1"
+;
+
+"jump 3" "borders" * 0.3 with jump
+  "arm 2 d"
+  "b2"
+  "border 2"
+;
+
+"jump 4" "borders" * 0.3 with jump
+  "arm 3 d"
+  "b3"
+  "border 3"
+;
+
+"jump 5" "borders" * 0.3 with jump
+  "arm 4 d"
+  "b4"
+  "border 4"
+;
+
+"jump 6" "borders" * 0.3 with jump
+  "arm 5 d"
+  "b5"
+  "border 5"
+;
+
+"jump 7" "borders" * 0.3 with jump
+  "arm 5 u"
+  "b5"
+  "border 6"
+;
+
+"jump 8" "borders" * 0.3 with jump
+  "arm 4 u"
+  "b4"
+  "border 7"
+;
+
+"jump 9" "borders" * 0.3 with jump
+  "arm 3 u"
+  "b3"
+  "border 8"
+;
+
+"jump 10" "borders" * 0.3 with jump
+  "arm 2 u"
+  "b2"
+  "border 9"
+;
+
+"jump 11" "borders" * 0.3 with jump
+  "arm 1 u"
+  "b1"
+  "border 10"
+;
+
+"jump 12" "borders" * 0.3 with jump
+  "arm 0 u"
+  "b0"
+  "border 11"
+;
+
+"jump 13" "borders" * 0.3 with jump
+  "arm up"
+  "body"
+  "leg up"
+  "border 12"
 ;
