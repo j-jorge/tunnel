@@ -6,6 +6,7 @@ run "guy/run.xcf.bz2"
 fall "guy/fall.xcf.bz2"
 jump "guy/jump.xcf.bz2"
 open "guy/open.xcf.bz2"
+hurt "guy/hurt.xcf.bz2"
 
 "idle 1" "idle" * 0.3 with idle
   "idle"
@@ -255,5 +256,13 @@ open "guy/open.xcf.bz2"
 /*----------------------------------------------------------------------------*/
 
 "open" "halo" * 0.3 with open
+  glob "*"
+;
+
+/*----------------------------------------------------------------------------*/
+/* Hurt */
+/*----------------------------------------------------------------------------*/
+
+"hurt" "border" * 0.3 with hurt
   glob "*"
 ;
