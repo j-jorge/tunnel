@@ -50,7 +50,7 @@ void tunnel::state_player::do_move_right()
 void tunnel::state_player::do_jump()
 {
   if ( m_player_instance.has_bottom_contact() )
-    m_player_instance.start_action_model("jump");
+    m_player_instance.start_action_model("do_jump");
 } // state_player::do_jump()
 
 /*----------------------------------------------------------------------------*/

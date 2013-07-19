@@ -154,6 +154,7 @@ namespace tunnel
     void apply_move_left();
     void apply_impulse_jump();
     void apply_jump();
+    void apply_do_jump();
     void apply_continue_jump();
     void apply_start_jump();
     void apply_vertical_jump();

@@ -270,13 +270,18 @@ void tunnel::player::progress( bear::universe::time_type elapsed_time )
   m_fade_effect_tweener.update(elapsed_time);
   m_state_time += elapsed_time;
   m_run_time += elapsed_time;
-  m_jump_time += elapsed_time;
 
-  m_jump_force = get_mass() * 6000 * //7500 *
-    (1 - (m_jump_time / s_max_time_continue_jump)
-     * (m_jump_time / s_max_time_continue_jump) );
-
-  if (m_jump_force <= 0)
+  if ( m_impulse_jump_done )
+    {
+      m_jump_time += elapsed_time;
+      m_jump_force = get_mass() * 6000 *
+        (1 - (m_jump_time / s_max_time_continue_jump)
+         * (m_jump_time / s_max_time_continue_jump) );
+      
+      if (m_jump_force <= 0)
+        m_jump_force = 0;
+    }
+  else
     m_jump_force = 0;
 
   if ( is_crushed() && (m_current_state != player::dead_state) )
@@ -904,18 +909,21 @@ void tunnel::player::apply_move_left()
  */
 void tunnel::player::apply_impulse_jump()
 {
-  m_impulse_jump_done = true;
+  if ( ! m_impulse_jump_done )
+    {
+      m_impulse_jump_done = true;
 
-  if ( m_current_state == float_state )
-    {
-      add_internal_force
-        ( bear::universe::force_type(0, s_jump_force_in_float) );
-      start_action_model("jump");
-    }
-  else
-    {
-      m_jump_time = 0;
-      add_external_force( bear::universe::force_type(0, 2*s_jump_force ) );
+      if ( m_current_state == float_state )
+        {
+          add_internal_force
+            ( bear::universe::force_type(0, s_jump_force_in_float) );
+          start_action_model("jump");
+        }
+      else
+        {
+          m_jump_time = 0;
+          add_external_force( bear::universe::force_type(0, 2*s_jump_force ) );
+        }
     }
 } // player::apply_impulse_jump()
 
@@ -925,11 +933,25 @@ void tunnel::player::apply_impulse_jump()
  */
 void tunnel::player::apply_jump()
 {
-  m_impulse_jump_done = false;
+  m_jump_time = 0;
+  m_impulse_jump_done = true;
   m_move_force = s_move_force_in_jump;
   set_state(player::jump_state);
   m_progress = &player::progress_jump;
 } // player::apply_jump()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Apply the action do jump.
+ */
+void tunnel::player::apply_do_jump()
+{
+  m_jump_time = 0;
+  m_impulse_jump_done = false;
+  m_move_force = s_move_force_in_jump;
+  set_state(player::jump_state);
+  m_progress = &player::progress_jump;
+} // player::apply_do_jump()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -2942,6 +2964,7 @@ void tunnel::player::init_exported_methods()
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_injured, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_impulse_jump, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_jump, void );
+  TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_do_jump, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_look_upward, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_run, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_sink, void );

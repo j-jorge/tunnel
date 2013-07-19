@@ -78,6 +78,7 @@ namespace tunnel
     void apply_idle() const;
     void apply_impulse_jump() const;
     void apply_jump() const;
+    void apply_do_jump() const;
     void apply_look_upward() const;
     void apply_move_left() const;
     void apply_move_right() const;
