@@ -1332,7 +1332,7 @@ sound/plee/jump.ogg
 1
 
 0.09
-do_jump
+apply_impulse_jump
 12
 84
 align_left

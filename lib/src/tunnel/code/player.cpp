@@ -904,6 +904,8 @@ void tunnel::player::apply_move_left()
  */
 void tunnel::player::apply_impulse_jump()
 {
+  m_impulse_jump_done = true;
+
   if ( m_current_state == float_state )
     {
       add_internal_force
@@ -923,6 +925,7 @@ void tunnel::player::apply_impulse_jump()
  */
 void tunnel::player::apply_jump()
 {
+  m_impulse_jump_done = false;
   m_move_force = s_move_force_in_jump;
   set_state(player::jump_state);
   m_progress = &player::progress_jump;
@@ -1591,15 +1594,16 @@ void tunnel::player::progress_continue_idle
  */
 void tunnel::player::progress_jump( bear::universe::time_type elapsed_time )
 {
-  if ( !test_bottom_contact() )
-    {
-      if ( is_only_in_environment(bear::universe::water_environment) )
-        start_action_model("sink");
-      else if ( is_in_floating() )
-        start_action_model("float");
-      else if( get_speed().y <= 0 )
-        start_action_model("fall");
-    }
+  if ( m_impulse_jump_done )
+    if ( !test_bottom_contact() )
+      {
+        if ( is_only_in_environment(bear::universe::water_environment) )
+          start_action_model("sink");
+        else if ( is_in_floating() )
+          start_action_model("float");
+        else if( get_speed().y <= 0 )
+          start_action_model("fall");
+      }
 } // player::progress_jump()
 
 /*---------------------------------------------------------------------------*/
@@ -2936,6 +2940,7 @@ void tunnel::player::init_exported_methods()
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_float, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_idle, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_injured, void );
+  TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_impulse_jump, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_jump, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_look_upward, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_run, void );
