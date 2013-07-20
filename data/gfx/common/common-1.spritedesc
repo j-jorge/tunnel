@@ -1,10 +1,11 @@
-sprite_sheet "common-1" 1024 x 1024 margin 1 order "height"
+sprite_sheet "common-1" 512 x 1024 margin 1 order "height"
 
 block "block.xcf.bz2"
 door "door.xcf.bz2"
 spring "spring.xcf.bz2"
 switch "switch.xcf.bz2"
 spikes "spikes.xcf.bz2"
+platform "platform.xcf.bz2"
 
 "block" image_size * 0.5 with block
   glob "*"
@@ -39,5 +40,9 @@ spikes "spikes.xcf.bz2"
 ;
 
 "spikes" autosize * 0.5 with spikes
+  glob "*"
+;
+
+"platform" autosize * 0.5 with platform
   glob "*"
 ;
