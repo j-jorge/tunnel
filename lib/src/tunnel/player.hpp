@@ -154,6 +154,7 @@ namespace tunnel
     void apply_move_left();
     void apply_impulse_jump();
     void apply_jump();
+    void apply_do_jump();
     void apply_continue_jump();
     void apply_start_jump();
     void apply_vertical_jump();
@@ -480,6 +481,9 @@ namespace tunnel
 
     /** \brief Increment for the transparency when injured. */
     double m_opacity_inc;
+
+    /** \brief Indicates if the impulse_jump has been done. */
+    bool m_impulse_jump_done;
 
     /** \brief The minimum radius of teleportation circle. */
     static const bear::universe::coordinate_type s_min_teleportation_radius;
