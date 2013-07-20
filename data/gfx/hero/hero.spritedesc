@@ -7,6 +7,7 @@ fall "guy/fall.xcf.bz2"
 jump "guy/jump.xcf.bz2"
 open "guy/open.xcf.bz2"
 hurt "guy/hurt.xcf.bz2"
+equilibrium "guy/in-equilibrium.xcf.bz2"
 
 "idle 1" "idle" * 0.3 with idle
   "idle"
@@ -265,4 +266,35 @@ hurt "guy/hurt.xcf.bz2"
 
 "hurt" "border" * 0.3 with hurt
   glob "*"
+;
+
+/*----------------------------------------------------------------------------*/
+/* In equilibrium */
+/*----------------------------------------------------------------------------*/
+
+"equilibrium 1" "borders" * 0.3 with equilibrium
+  "body"
+
+  "border 1"
+  "right arm 1"
+  "left arm 3"
+  "left leg 3"
+;
+
+"equilibrium 2" "borders" * 0.3 with equilibrium
+  "body"
+
+  "border 2"
+  "right arm 2"
+  "left arm 2"
+  "left leg 2"
+;
+
+"equilibrium 3" "borders" * 0.3 with equilibrium
+  "body"
+
+  "border 3"
+  "right arm 3"
+  "left arm 1"
+  "left leg 1"
 ;
