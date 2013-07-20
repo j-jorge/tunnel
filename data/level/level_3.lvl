@@ -2693,9 +2693,6 @@
 <field name='base_item.size.width'>
 <real value='100'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -2715,9 +2712,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='2052'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -3605,9 +3599,6 @@
 <field name='base_item.size.width'>
 <real value='100'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -3627,9 +3618,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='2852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -3651,9 +3639,6 @@
 <field name='base_item.position.left'>
 <real value='2852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -3673,9 +3658,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='2852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -3697,9 +3679,6 @@
 <field name='base_item.position.left'>
 <real value='2852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -3719,9 +3698,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='2852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -3743,9 +3719,6 @@
 <field name='base_item.position.left'>
 <real value='2852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -3765,9 +3738,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='2852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -3789,9 +3759,6 @@
 <field name='base_item.position.left'>
 <real value='2852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -3811,9 +3778,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='2852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -3835,9 +3799,6 @@
 <field name='base_item.position.left'>
 <real value='2852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -3857,9 +3818,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='2852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -3881,9 +3839,6 @@
 <field name='base_item.position.left'>
 <real value='2852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -3903,9 +3858,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='2852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -3927,9 +3879,6 @@
 <field name='base_item.position.left'>
 <real value='2852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -3950,9 +3899,6 @@
 <field name='base_item.position.left'>
 <real value='2852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -3972,9 +3918,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='2852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -5080,9 +5023,6 @@
 <field name='base_item.size.width'>
 <real value='100'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -5103,9 +5043,6 @@
 <field name='base_item.position.left'>
 <real value='4652'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -5125,9 +5062,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='4652'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -5357,9 +5291,6 @@
 <field name='base_item.size.width'>
 <real value='100'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -5380,9 +5311,6 @@
 <field name='base_item.position.left'>
 <real value='5052'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -5402,9 +5330,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='5052'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -5520,7 +5445,7 @@
 <real value='60'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='274' y='0' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='224' y='101' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='item_with_activable_sides.top_side_is_active'>
 <bool value='1'/>
@@ -5597,9 +5522,6 @@
 <field name='descending_ceiling.apply_angle'>
 <bool value='0'/>
 </field>
-<field name='descending_ceiling.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='descending_ceiling.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -5622,9 +5544,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='5252'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -5938,9 +5857,6 @@
 <sprite image='gfx/theme/forest/forest-2.png' x='866' y='723' clip_width='100' clip_height='100' spritepos='ceiling slope corner' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='descending_ceiling.apply_angle'>
-<bool value='0'/>
-</field>
-<field name='descending_ceiling.left_side_is_active'>
 <bool value='0'/>
 </field>
 <field name='descending_ceiling.right_side_is_active'>
@@ -6632,9 +6548,6 @@
 <field name='base_item.size.width'>
 <real value='100'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -6654,9 +6567,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='6652'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -6868,9 +6778,6 @@
 <field name='base_item.size.width'>
 <real value='100'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -6890,9 +6797,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='6852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -7614,9 +7518,6 @@
 <field name='base_item.size.width'>
 <real value='100'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -7636,9 +7537,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='7252'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -8222,9 +8120,6 @@
 <field name='descending_ceiling.apply_angle'>
 <bool value='0'/>
 </field>
-<field name='descending_ceiling.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='descending_ceiling.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -8621,9 +8516,6 @@
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
-<field name='base_item.fixed.z'>
-<bool value='1'/>
-</field>
 <field name='base_item.mass'>
 <real value='400'/>
 </field>
@@ -8906,9 +8798,6 @@
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
-<field name='item_with_activable_sides.top_side_is_active'>
-<bool value='0'/>
-</field>
 </fields>
     </item><!-- bear::block -->
 
@@ -8925,9 +8814,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='8052'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -10441,9 +10327,6 @@
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/forest/forest-1.png' x='194' y='577' clip_width='200' clip_height='114' spritepos='ground corner' auto_size='true' width='200' height='114' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
-<field name='base_item.global'>
-<bool value='1'/>
-</field>
 <field name='base_item.position.bottom'>
 <real value='700'/>
 </field>
@@ -10493,9 +10376,6 @@
 </field>
 <field name='base_item.size.width'>
 <real value='100'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -10942,9 +10822,6 @@
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/forest/forest-1.png' x='194' y='577' clip_width='200' clip_height='114' spritepos='ground corner' auto_size='true' width='200' height='114' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</field>
-<field name='base_item.global'>
-<bool value='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='700'/>
@@ -13630,9 +13507,6 @@
 <field name='base_item.size.width'>
 <real value='100'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -13652,9 +13526,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='11252'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -13793,9 +13664,6 @@
 <field name='base_item.size.width'>
 <real value='100'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -13815,9 +13683,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='11252'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -13914,9 +13779,6 @@
 <field name='base_item.size.width'>
 <real value='100'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -13936,9 +13798,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='11252'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -14099,7 +13958,7 @@
 <real value='60'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='274' y='0' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='224' y='101' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='item_with_activable_sides.top_side_is_active'>
 <bool value='1'/>
@@ -15514,9 +15373,6 @@
 <field name='descending_ceiling.apply_angle'>
 <bool value='0'/>
 </field>
-<field name='descending_ceiling.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='descending_ceiling.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -15816,7 +15672,7 @@
 <real value='60'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='274' y='0' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='224' y='101' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='item_with_activable_sides.top_side_is_active'>
 <bool value='1'/>
@@ -26700,11 +26556,8 @@
 <items>
     <item class_name='bear::decorative_item' fixed='true'>
 <fields>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0313725' green_intensity='0.305882' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/far/bk_09.png' x='0' y='0' clip_width='1024' clip_height='54' spritepos='' auto_size='true' width='1024' height='54' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/far/bk_09.png' x='0' y='0' clip_width='1024' clip_height='54' spritepos='' auto_size='true' width='1024' height='54' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26714,11 +26567,8 @@
 <field name='base_item.position.bottom'>
 <real value='54'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0313725' green_intensity='0.305882' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/far/bk_06.png' x='0' y='0' clip_width='1024' clip_height='128' spritepos='' auto_size='true' width='1024' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/far/bk_06.png' x='0' y='0' clip_width='1024' clip_height='128' spritepos='' auto_size='true' width='1024' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26728,11 +26578,8 @@
 <field name='base_item.position.bottom'>
 <real value='182'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0313725' green_intensity='0.305882' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/far/bk_03.png' x='0' y='0' clip_width='1024' clip_height='256' spritepos='' auto_size='true' width='1024' height='256' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/far/bk_03.png' x='0' y='0' clip_width='1024' clip_height='256' spritepos='' auto_size='true' width='1024' height='256' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26742,11 +26589,8 @@
 <field name='base_item.position.bottom'>
 <real value='438'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0313725' green_intensity='0.305882' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/far/bk_00.png' x='0' y='0' clip_width='1024' clip_height='512' spritepos='' auto_size='true' width='1024' height='512' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/far/bk_00.png' x='0' y='0' clip_width='1024' clip_height='512' spritepos='' auto_size='true' width='1024' height='512' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26756,11 +26600,8 @@
 <field name='base_item.position.left'>
 <real value='1024'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0313725' green_intensity='0.305882' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/far/bk_10.png' x='0' y='0' clip_width='512' clip_height='54' spritepos='' auto_size='true' width='512' height='54' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/far/bk_10.png' x='0' y='0' clip_width='512' clip_height='54' spritepos='' auto_size='true' width='512' height='54' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26773,11 +26614,8 @@
 <field name='base_item.position.left'>
 <real value='1024'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0313725' green_intensity='0.305882' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/far/bk_07.png' x='0' y='0' clip_width='512' clip_height='128' spritepos='' auto_size='true' width='512' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/far/bk_07.png' x='0' y='0' clip_width='512' clip_height='128' spritepos='' auto_size='true' width='512' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26790,11 +26628,8 @@
 <field name='base_item.position.left'>
 <real value='1024'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0313725' green_intensity='0.305882' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/far/bk_04.png' x='0' y='0' clip_width='512' clip_height='256' spritepos='' auto_size='true' width='512' height='256' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/far/bk_04.png' x='0' y='0' clip_width='512' clip_height='256' spritepos='' auto_size='true' width='512' height='256' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26807,11 +26642,8 @@
 <field name='base_item.position.left'>
 <real value='1024'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0313725' green_intensity='0.305882' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/far/bk_01.png' x='0' y='0' clip_width='512' clip_height='512' spritepos='' auto_size='true' width='512' height='512' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/far/bk_01.png' x='0' y='0' clip_width='512' clip_height='512' spritepos='' auto_size='true' width='512' height='512' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26821,11 +26653,8 @@
 <field name='base_item.position.left'>
 <real value='1536'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0313725' green_intensity='0.305882' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/far/bk_11.png' x='0' y='0' clip_width='153' clip_height='54' spritepos='' auto_size='true' width='153' height='54' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/far/bk_11.png' x='0' y='0' clip_width='153' clip_height='54' spritepos='' auto_size='true' width='153' height='54' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26838,11 +26667,8 @@
 <field name='base_item.position.left'>
 <real value='1536'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0313725' green_intensity='0.305882' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/far/bk_08.png' x='0' y='0' clip_width='153' clip_height='128' spritepos='' auto_size='true' width='153' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/far/bk_08.png' x='0' y='0' clip_width='153' clip_height='128' spritepos='' auto_size='true' width='153' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26855,11 +26681,8 @@
 <field name='base_item.position.left'>
 <real value='1536'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0313725' green_intensity='0.305882' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/far/bk_05.png' x='0' y='0' clip_width='153' clip_height='256' spritepos='' auto_size='true' width='153' height='256' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/far/bk_05.png' x='0' y='0' clip_width='153' clip_height='256' spritepos='' auto_size='true' width='153' height='256' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26872,11 +26695,8 @@
 <field name='base_item.position.left'>
 <real value='1536'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0313725' green_intensity='0.305882' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/far/bk_02.png' x='0' y='0' clip_width='153' clip_height='512' spritepos='' auto_size='true' width='153' height='512' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/far/bk_02.png' x='0' y='0' clip_width='153' clip_height='512' spritepos='' auto_size='true' width='153' height='512' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26893,11 +26713,8 @@
 <items>
     <item class_name='bear::decorative_item' fixed='false'>
 <fields>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0' green_intensity='0.34902' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/near/bk_09.png' x='0' y='0' clip_width='1024' clip_height='32' spritepos='' auto_size='true' width='1024' height='32' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/near/bk_09.png' x='0' y='0' clip_width='1024' clip_height='32' spritepos='' auto_size='true' width='1024' height='32' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26907,11 +26724,8 @@
 <field name='base_item.position.bottom'>
 <real value='32'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0' green_intensity='0.34902' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/near/bk_06.png' x='0' y='0' clip_width='1024' clip_height='128' spritepos='' auto_size='true' width='1024' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/near/bk_06.png' x='0' y='0' clip_width='1024' clip_height='128' spritepos='' auto_size='true' width='1024' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26921,11 +26735,8 @@
 <field name='base_item.position.bottom'>
 <real value='160'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0' green_intensity='0.34902' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/near/bk_03.png' x='0' y='0' clip_width='1024' clip_height='256' spritepos='' auto_size='true' width='1024' height='256' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/near/bk_03.png' x='0' y='0' clip_width='1024' clip_height='256' spritepos='' auto_size='true' width='1024' height='256' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26935,11 +26746,8 @@
 <field name='base_item.position.bottom'>
 <real value='416'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0' green_intensity='0.34902' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/near/bk_00.png' x='0' y='0' clip_width='1024' clip_height='1024' spritepos='' auto_size='true' width='1024' height='1024' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/near/bk_00.png' x='0' y='0' clip_width='1024' clip_height='1024' spritepos='' auto_size='true' width='1024' height='1024' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26949,11 +26757,8 @@
 <field name='base_item.position.left'>
 <real value='1024'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0' green_intensity='0.34902' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/near/bk_10.png' x='0' y='0' clip_width='1024' clip_height='32' spritepos='' auto_size='true' width='1024' height='32' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/near/bk_10.png' x='0' y='0' clip_width='1024' clip_height='32' spritepos='' auto_size='true' width='1024' height='32' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26966,11 +26771,8 @@
 <field name='base_item.position.left'>
 <real value='1024'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0' green_intensity='0.34902' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/near/bk_07.png' x='0' y='0' clip_width='1024' clip_height='128' spritepos='' auto_size='true' width='1024' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/near/bk_07.png' x='0' y='0' clip_width='1024' clip_height='128' spritepos='' auto_size='true' width='1024' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -26983,11 +26785,8 @@
 <field name='base_item.position.left'>
 <real value='1024'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0' green_intensity='0.34902' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/near/bk_04.png' x='0' y='0' clip_width='1024' clip_height='256' spritepos='' auto_size='true' width='1024' height='256' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/near/bk_04.png' x='0' y='0' clip_width='1024' clip_height='256' spritepos='' auto_size='true' width='1024' height='256' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -27000,11 +26799,8 @@
 <field name='base_item.position.left'>
 <real value='1024'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0' green_intensity='0.34902' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/near/bk_01.png' x='0' y='0' clip_width='1024' clip_height='1024' spritepos='' auto_size='true' width='1024' height='1024' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/near/bk_01.png' x='0' y='0' clip_width='1024' clip_height='1024' spritepos='' auto_size='true' width='1024' height='1024' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -27014,11 +26810,8 @@
 <field name='base_item.position.left'>
 <real value='2048'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0' green_intensity='0.34902' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/near/bk_11.png' x='0' y='0' clip_width='512' clip_height='32' spritepos='' auto_size='true' width='512' height='32' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/near/bk_11.png' x='0' y='0' clip_width='512' clip_height='32' spritepos='' auto_size='true' width='512' height='32' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -27031,11 +26824,8 @@
 <field name='base_item.position.left'>
 <real value='2048'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0' green_intensity='0.34902' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/near/bk_08.png' x='0' y='0' clip_width='512' clip_height='128' spritepos='' auto_size='true' width='512' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/near/bk_08.png' x='0' y='0' clip_width='512' clip_height='128' spritepos='' auto_size='true' width='512' height='128' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -27048,11 +26838,8 @@
 <field name='base_item.position.left'>
 <real value='2048'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0' green_intensity='0.34902' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/near/bk_05.png' x='0' y='0' clip_width='512' clip_height='256' spritepos='' auto_size='true' width='512' height='256' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/near/bk_05.png' x='0' y='0' clip_width='512' clip_height='256' spritepos='' auto_size='true' width='512' height='256' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -27065,11 +26852,8 @@
 <field name='base_item.position.left'>
 <real value='2048'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0' green_intensity='0.34902' blue_intensity='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/bk/near/bk_02.png' x='0' y='0' clip_width='512' clip_height='1024' spritepos='' auto_size='true' width='512' height='1024' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/theme/placeholder/bk/near/bk_02.png' x='0' y='0' clip_width='512' clip_height='1024' spritepos='' auto_size='true' width='512' height='1024' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -27204,9 +26988,6 @@
 <field name='base_item.position.left'>
 <real value='1052'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -27226,9 +27007,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='1052'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -27250,9 +27028,6 @@
 <field name='base_item.position.left'>
 <real value='1052'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -27272,9 +27047,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='1052'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -27296,9 +27068,6 @@
 <field name='base_item.position.left'>
 <real value='1052'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -27318,9 +27087,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='1052'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -27375,9 +27141,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='1288'/>
-</field>
-<field name='player.can_transport'>
-<bool value='0'/>
 </field>
 </fields>
     </item><!-- tunnel::player -->
@@ -27502,9 +27265,6 @@
 <field name='base_item.position.left'>
 <real value='1652'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -27525,9 +27285,6 @@
 <field name='base_item.position.left'>
 <real value='1652'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -27547,9 +27304,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='1652'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -27615,7 +27369,7 @@
 <bool value='1'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='279' y='0' clip_width='200' clip_height='50' spritepos='platform' auto_size='true' width='200' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='3350'/>
@@ -27653,7 +27407,7 @@
 <real value='60'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='274' y='0' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='224' y='101' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='item_with_activable_sides.top_side_is_active'>
 <bool value='1'/>
@@ -27793,9 +27547,6 @@
 <field name='item_with_activable_sides.left_side_is_active'>
 <bool value='1'/>
 </field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='0'/>
-</field>
 </fields>
     </item><!-- bear::block -->
 
@@ -27815,9 +27566,6 @@
 </field>
 <field name='item_with_activable_sides.left_side_is_active'>
 <bool value='1'/>
-</field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='0'/>
 </field>
 </fields>
     </item><!-- bear::block -->
@@ -28497,9 +28245,6 @@
 </field>
 <field name='item_with_activable_sides.left_side_is_active'>
 <bool value='1'/>
-</field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='0'/>
 </field>
 </fields>
     </item><!-- bear::block -->
@@ -29509,14 +29254,8 @@
 <field name='item_with_z_shift.z_shift'>
 <integer value='-10'/>
 </field>
-<field name='item_with_decoration.extend_on_bounding_box'>
-<bool value='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</field>
-<field name='base_item.global'>
-<bool value='1'/>
+<sprite image='gfx/common/common-1.png' x='279' y='0' clip_width='200' clip_height='50' spritepos='platform' auto_size='true' width='200' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='4150'/>
@@ -29600,7 +29339,7 @@
 <real value='60'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='274' y='0' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='224' y='101' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='item_with_activable_sides.top_side_is_active'>
 <bool value='1'/>
@@ -30141,7 +29880,7 @@
 <bool value='1'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='51' y='101' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- tunnel::crystal -->
@@ -30335,14 +30074,8 @@
 <field name='item_with_z_shift.z_shift'>
 <integer value='-10'/>
 </field>
-<field name='item_with_decoration.extend_on_bounding_box'>
-<bool value='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</field>
-<field name='base_item.global'>
-<bool value='1'/>
+<sprite image='gfx/common/common-1.png' x='279' y='0' clip_width='200' clip_height='50' spritepos='platform' auto_size='true' width='200' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.mass'>
 <real value='100'/>
@@ -30355,12 +30088,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='5152'/>
-</field>
-<field name='base_item.size.height'>
-<real value='50'/>
-</field>
-<field name='base_item.size.width'>
-<real value='200'/>
 </field>
 <field name='base_ground.top_left_contact_mode'>
 <string value='range_contact'/>
@@ -30392,7 +30119,7 @@
 <real value='60'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='274' y='0' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='224' y='101' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='item_with_activable_sides.top_side_is_active'>
 <bool value='1'/>
@@ -30447,9 +30174,6 @@
 <sprite image='gfx/theme/placeholder/placeholder-2.png' x='402' y='502' clip_width='100' clip_height='100' spritepos='ceiling slope corner' auto_size='true' width='100' height='100' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='descending_ceiling.apply_angle'>
-<bool value='0'/>
-</field>
-<field name='descending_ceiling.left_side_is_active'>
 <bool value='0'/>
 </field>
 <field name='descending_ceiling.right_side_is_active'>
@@ -32221,9 +31945,6 @@
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
-<field name='base_item.global'>
-<bool value='1'/>
-</field>
 <field name='base_item.mass'>
 <real value='100'/>
 </field>
@@ -33241,9 +32962,6 @@
 <field name='descending_ceiling.apply_angle'>
 <bool value='0'/>
 </field>
-<field name='descending_ceiling.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='descending_ceiling.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -33267,9 +32985,6 @@
 <field name='base_item.position.left'>
 <real value='8452'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -33289,9 +33004,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='8452'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -33390,9 +33102,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='8652'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -33590,7 +33299,7 @@
 <real value='-0.2'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='274' y='0' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='224' y='101' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='item_with_activable_sides.top_side_is_active'>
 <bool value='1'/>
@@ -33908,9 +33617,6 @@
 <field name='base_item.position.left'>
 <real value='9052'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -34184,9 +33890,6 @@
 <field name='item_with_activable_sides.left_side_is_active'>
 <bool value='1'/>
 </field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='0'/>
-</field>
 </fields>
     </item><!-- bear::block -->
 
@@ -34206,9 +33909,6 @@
 </field>
 <field name='item_with_activable_sides.left_side_is_active'>
 <bool value='1'/>
-</field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='0'/>
 </field>
 </fields>
     </item><!-- bear::block -->
@@ -34230,9 +33930,6 @@
 <field name='item_with_activable_sides.left_side_is_active'>
 <bool value='1'/>
 </field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='0'/>
-</field>
 </fields>
     </item><!-- bear::block -->
 
@@ -34252,9 +33949,6 @@
 </field>
 <field name='item_with_activable_sides.left_side_is_active'>
 <bool value='1'/>
-</field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='0'/>
 </field>
 </fields>
     </item><!-- bear::block -->
@@ -34276,9 +33970,6 @@
 <field name='item_with_activable_sides.left_side_is_active'>
 <bool value='1'/>
 </field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='0'/>
-</field>
 </fields>
     </item><!-- bear::block -->
 
@@ -34298,9 +33989,6 @@
 </field>
 <field name='item_with_activable_sides.left_side_is_active'>
 <bool value='1'/>
-</field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='0'/>
 </field>
 </fields>
     </item><!-- bear::block -->
@@ -34322,9 +34010,6 @@
 <field name='item_with_activable_sides.left_side_is_active'>
 <bool value='1'/>
 </field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='0'/>
-</field>
 </fields>
     </item><!-- bear::block -->
 
@@ -34345,9 +34030,6 @@
 <field name='item_with_activable_sides.left_side_is_active'>
 <bool value='1'/>
 </field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='0'/>
-</field>
 </fields>
     </item><!-- bear::block -->
 
@@ -34367,9 +34049,6 @@
 </field>
 <field name='item_with_activable_sides.left_side_is_active'>
 <bool value='1'/>
-</field>
-<field name='item_with_activable_sides.right_side_is_active'>
-<bool value='0'/>
 </field>
 </fields>
     </item><!-- bear::block -->
@@ -34493,9 +34172,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='9452'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -35190,9 +34866,6 @@
 <field name='base_item.position.left'>
 <real value='10052'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -35212,9 +34885,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='10052'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -35236,9 +34906,6 @@
 <field name='base_item.position.left'>
 <real value='10052'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -35259,9 +34926,6 @@
 <field name='base_item.position.left'>
 <real value='10052'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -35281,9 +34945,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='10052'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -35578,7 +35239,7 @@
 <real value='60'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='274' y='0' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='224' y='101' clip_width='60' clip_height='45' spritepos='spring 3' auto_size='true' width='60' height='45' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='item_with_activable_sides.top_side_is_active'>
 <bool value='1'/>
@@ -36062,9 +35723,6 @@
 <field name='base_item.position.left'>
 <real value='10852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -36084,9 +35742,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='10852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -36108,9 +35763,6 @@
 <field name='base_item.position.left'>
 <real value='10852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -36130,9 +35782,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='10852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -36154,9 +35803,6 @@
 <field name='base_item.position.left'>
 <real value='10852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -36176,9 +35822,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='10852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -36200,9 +35843,6 @@
 <field name='base_item.position.left'>
 <real value='10852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -36222,9 +35862,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='10852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -36246,9 +35883,6 @@
 <field name='base_item.position.left'>
 <real value='10852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -36268,9 +35902,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='10852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -36292,9 +35923,6 @@
 <field name='base_item.position.left'>
 <real value='10852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -36314,9 +35942,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='10852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -36338,9 +35963,6 @@
 <field name='base_item.position.left'>
 <real value='10852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -36360,9 +35982,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='10852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
@@ -36384,9 +36003,6 @@
 <field name='base_item.position.left'>
 <real value='10852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -36407,9 +36023,6 @@
 <field name='base_item.position.left'>
 <real value='10852'/>
 </field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
-</field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
 </field>
@@ -36429,9 +36042,6 @@
 </field>
 <field name='base_item.position.left'>
 <real value='10852'/>
-</field>
-<field name='item_with_activable_sides.left_side_is_active'>
-<bool value='0'/>
 </field>
 <field name='item_with_activable_sides.right_side_is_active'>
 <bool value='1'/>
