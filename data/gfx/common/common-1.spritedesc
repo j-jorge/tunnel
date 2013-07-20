@@ -6,6 +6,7 @@ spring "spring.xcf.bz2"
 switch "switch.xcf.bz2"
 spikes "spikes.xcf.bz2"
 platform "platform.xcf.bz2"
+crystal "crystal.xcf.bz2"
 
 "block" image_size * 0.5 with block
   glob "*"
@@ -44,5 +45,9 @@ platform "platform.xcf.bz2"
 ;
 
 "platform" autosize * 0.5 with platform
+  glob "*"
+;
+
+"crystal" autosize * 0.5 with crystal
   glob "*"
 ;
