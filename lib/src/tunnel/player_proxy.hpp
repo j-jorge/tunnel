@@ -76,6 +76,7 @@ namespace tunnel
     void apply_game_over() const;
     void apply_hang() const;
     void apply_idle() const;
+    void apply_set_impulse_done() const;
     void apply_impulse_jump() const;
     void apply_jump() const;
     void apply_do_jump() const;
