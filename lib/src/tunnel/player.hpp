@@ -152,6 +152,7 @@ namespace tunnel
   public:
     void apply_move_right();
     void apply_move_left();
+    void apply_set_impulse_done();
     void apply_impulse_jump();
     void apply_jump();
     void apply_do_jump();

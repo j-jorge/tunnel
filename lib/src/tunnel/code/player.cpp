@@ -905,14 +905,21 @@ void tunnel::player::apply_move_left()
 
 /*----------------------------------------------------------------------------*/
 /**
+ * \brief Apply set impulsion of a jump.
+ */
+void tunnel::player::apply_set_impulse_done()
+{
+  m_impulse_jump_done = true;
+} // player::apply_set_impulse_done()
+
+/*----------------------------------------------------------------------------*/
+/**
  * \brief Apply impulsion of a jump.
  */
 void tunnel::player::apply_impulse_jump()
 {
   if ( ! m_impulse_jump_done )
     {
-      m_impulse_jump_done = true;
-
       if ( m_current_state == float_state )
         {
           add_internal_force
@@ -1617,15 +1624,17 @@ void tunnel::player::progress_continue_idle
 void tunnel::player::progress_jump( bear::universe::time_type elapsed_time )
 {
   if ( m_impulse_jump_done )
-    if ( !test_bottom_contact() )
-      {
-        if ( is_only_in_environment(bear::universe::water_environment) )
-          start_action_model("sink");
-        else if ( is_in_floating() )
-          start_action_model("float");
-        else if( get_speed().y <= 0 )
-          start_action_model("fall");
-      }
+    { 
+      if ( ! test_bottom_contact() )
+        {
+          if ( is_only_in_environment(bear::universe::water_environment) )
+            start_action_model("sink");
+          else if ( is_in_floating() )
+            start_action_model("float");
+          else if( get_speed().y <= 0 )
+            start_action_model("fall");
+        }
+    }
 } // player::progress_jump()
 
 /*---------------------------------------------------------------------------*/
@@ -2962,6 +2971,7 @@ void tunnel::player::init_exported_methods()
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_float, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_idle, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_injured, void );
+  TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_set_impulse_done, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_impulse_jump, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_jump, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_do_jump, void );
