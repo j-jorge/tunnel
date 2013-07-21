@@ -153,7 +153,7 @@
 <action name="jump" duration="0.355" auto_next="">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/jump.canim' auto_size='true' width='42' height='97' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/pushed-up.canim' auto_size='true' width='42' height='97' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -754,7 +754,7 @@
 <action name="unstable_ahead" duration="1" auto_next="">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/in-equilibrium.canim' auto_size='true' width='46' height='88' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/in-equilibrium.canim' auto_size='true' width='44' height='91' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
@@ -770,7 +770,7 @@
 <action name="unstable_backwards" duration="1" auto_next="">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/in-equilibrium.canim' auto_size='true' width='46' height='88' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/in-equilibrium.canim' auto_size='true' width='44' height='91' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
