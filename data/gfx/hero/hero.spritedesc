@@ -8,6 +8,7 @@ jump "guy/jump.xcf.bz2"
 open "guy/open.xcf.bz2"
 hurt "guy/hurt.xcf.bz2"
 equilibrium "guy/in-equilibrium.xcf.bz2"
+push "guy/push.xcf.bz2"
 
 "idle 1" "idle" * 0.3 with idle
   "idle"
@@ -296,5 +297,72 @@ equilibrium "guy/in-equilibrium.xcf.bz2"
   "border 3"
   "right arm 3"
   "left arm 1"
+  "left leg 1"
+;
+
+/*----------------------------------------------------------------------------*/
+/* Push */
+/*----------------------------------------------------------------------------*/
+
+"push 1" "borders" * 0.3 with push
+  "common"
+  "body"
+
+  "border 1"
+  "right leg 1"
+  "left leg 7"
+;
+
+"push 2" "borders" * 0.3 with push
+  "common"
+  "body"
+
+  "border 2"
+  "right leg 2"
+  "left leg 6"
+;
+
+"push 3" "borders" * 0.3 with push
+  "common"
+  "body"
+
+  "border 3"
+  "right leg 3"
+  "left leg 5"
+;
+
+"push 4" "borders" * 0.3 with push
+  "common"
+  "body"
+
+  "border 4"
+  "right leg 4"
+  "left leg 4"
+;
+
+"push 5" "borders" * 0.3 with push
+  "common"
+  "body"
+
+  "border 5"
+  "right leg 5"
+  "left leg 3"
+;
+
+"push 6" "borders" * 0.3 with push
+  "common"
+  "body"
+
+  "border 6"
+  "right leg 6"
+  "left leg 2"
+;
+
+"push 7" "borders" * 0.3 with push
+  "common"
+  "body"
+
+  "border 7"
+  "right leg 7"
   "left leg 1"
 ;

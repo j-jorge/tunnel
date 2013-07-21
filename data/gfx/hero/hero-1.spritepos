@@ -27,8 +27,15 @@ run 1: 0 118 32 96
 run 2: 33 118 32 96
 run 3: 66 118 32 96
 run 4: 99 118 32 96
-equilibrium 1: 132 118 44 91
-equilibrium 2: 177 118 44 91
-equilibrium 3: 222 118 44 91
-fall 1: 267 118 38 88
-hurt: 306 118 42 88
+push 1: 132 118 37 93
+push 2: 170 118 37 93
+push 3: 208 118 37 93
+push 4: 246 118 37 93
+push 5: 284 118 37 93
+push 6: 322 118 37 93
+push 7: 360 118 37 93
+equilibrium 1: 398 118 44 91
+equilibrium 2: 443 118 44 91
+equilibrium 3: 488 118 44 91
+fall 1: 533 118 38 88
+hurt: 572 118 42 88
