@@ -5,6 +5,12 @@
 <items>
     <item class_name='bear::camera' fixed='false'>
 <fields>
+<field name='base_item.position.bottom'>
+<real value='0'/>
+</field>
+<field name='base_item.position.left'>
+<real value='0'/>
+</field>
 <field name='base_item.size.height'>
 <real value='720'/>
 </field>
@@ -58,7 +64,7 @@
 <real value='0'/>
 </field>
 <field name='delayed_level_loading.level'>
-<string value='level/intro.cl'/>
+<string value='level/level_2.cl'/>
 </field>
 </fields>
     </item><!-- bear::delayed_level_loading -->
@@ -66,10 +72,10 @@
     <item class_name='bear::crossfade_sequence' fixed='true'>
 <fields>
 <field name='base_item.position.bottom'>
-<real value='380'/>
+<real value='392'/>
 </field>
 <field name='base_item.position.left'>
-<real value='292'/>
+<real value='312'/>
 </field>
 <field name='crossfade_sequence.duration_sequence'>
 <real value='2.5'/>
@@ -79,22 +85,37 @@
 <bool value='0'/>
 </field>
 <field name='crossfade_sequence.item_sequence'>
-<item_reference value='logo'/>
+<item_reference value='text-1'/>
 <item_reference value='loading'/>
 </field>
 </fields>
     </item><!-- bear::crossfade_sequence -->
 
-    <item class_name='bear::decorative_item' fixed='true' id='logo'>
+    <item class_name='bear::decorative_item' fixed='true' id='text-1'>
 <fields>
 <field name='base_item.position.bottom'>
-<real value='207.5'/>
+<real value='160'/>
 </field>
 <field name='base_item.position.left'>
-<real value='458'/>
+<real value='440'/>
 </field>
-<field name='item_with_decoration.sprite'>
-<sprite image='gfx/stuffomatic/stuffomatic.png' x='0' y='0' clip_width='364' clip_height='353' spritepos='' auto_size='true' width='364' height='353' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<field name='base_item.size.height'>
+<real value='400'/>
+</field>
+<field name='base_item.size.width'>
+<real value='400'/>
+</field>
+<field name='item_with_text.font'>
+<font path='font/Hand Drawn Shapes.ttf' size='50'/>
+</field>
+<field name='item_with_text.horizontal_align'>
+<string value='align_center'/>
+</field>
+<field name='item_with_text.text'>
+<string value='Texte...'/>
+</field>
+<field name='item_with_text.vertical_align'>
+<string value='align_middle'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
