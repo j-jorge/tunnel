@@ -271,7 +271,7 @@ void tunnel::player::progress( bear::universe::time_type elapsed_time )
   m_state_time += elapsed_time;
   m_run_time += elapsed_time;
 
-  if ( m_impulse_jump_done )
+  if ( m_impulse_jump_done && get_current_action_name() != "teleport")
     {
       m_jump_time += elapsed_time;
       m_jump_force = get_mass() * 6000 *
@@ -940,7 +940,6 @@ void tunnel::player::apply_impulse_jump()
  */
 void tunnel::player::apply_jump()
 {
-  m_jump_time = 0;
   m_impulse_jump_done = true;
   m_move_force = s_move_force_in_jump;
   set_state(player::jump_state);
@@ -2787,6 +2786,8 @@ void tunnel::player::end_fade_effect()
 void tunnel::player::finish_abort_tunnel()
 {
   m_can_teleport = true;
+  if ( m_state_before_teleport == "do_jump" && m_impulse_jump_done )
+    m_state_before_teleport = "jump";
   start_action_model(m_state_before_teleport);
   
   bear::universe::position_type center( get_center_of_mass()) ;
