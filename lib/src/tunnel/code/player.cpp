@@ -336,16 +336,8 @@ void tunnel::player::pre_cache()
   super::pre_cache();
 
   // player
-  get_level_globals().load_model("model/player/plee.cm");
+  get_level_globals().load_model("model/player/player.cm");
   
-  // halo for soul
-  get_level_globals().load_image("gfx/plee/misc.png");
-
-
-  // sounds
-  get_level_globals().load_sound("sound/plee/grr.wav");
-  get_level_globals().load_sound("sound/plee/snore.ogg");
-
   // shader
   get_level_globals().load_shader("shader/tunnel_origin.frag");
   get_level_globals().load_shader("shader/tunnel_target.frag");
@@ -386,7 +378,7 @@ void tunnel::player::on_enters_layer()
       m_want_clung_jump = false;
       bear::engine::level_globals& glob = get_level_globals();
       
-      set_model_actor( get_level_globals().get_model("model/player/plee.cm") );
+      set_model_actor(get_level_globals().get_model("model/player/player.cm"));
       start_action_model("idle");
 
       m_wait_state_number = 1;
