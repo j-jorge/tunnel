@@ -341,8 +341,6 @@ void tunnel::player::pre_cache()
   // halo for soul
   get_level_globals().load_image("gfx/plee/misc.png");
 
-  // halo for vertical jump
-  get_level_globals().load_animation("animation/plee/halo.canim");
 
   // sounds
   get_level_globals().load_sound("sound/plee/grr.wav");
@@ -388,12 +386,9 @@ void tunnel::player::on_enters_layer()
       m_want_clung_jump = false;
       bear::engine::level_globals& glob = get_level_globals();
       
-      m_halo_animation = new bear::visual::animation
-        ( glob.get_animation("animation/plee/halo.canim") );
-      
       set_model_actor( get_level_globals().get_model("model/player/plee.cm") );
       start_action_model("idle");
-      
+
       m_wait_state_number = 1;
       
       if ( m_editor_player || ! game_variables::is_editor_running() )
