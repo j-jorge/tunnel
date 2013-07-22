@@ -5,12 +5,6 @@
 <items>
     <item class_name='bear::camera' fixed='false'>
 <fields>
-<field name='base_item.position.bottom'>
-<real value='0'/>
-</field>
-<field name='base_item.position.left'>
-<real value='0'/>
-</field>
 <field name='base_item.size.height'>
 <real value='720'/>
 </field>
@@ -64,7 +58,7 @@
 <real value='0'/>
 </field>
 <field name='delayed_level_loading.level'>
-<string value='level/level_2.cl'/>
+<string value='level/level_1.cl'/>
 </field>
 </fields>
     </item><!-- bear::delayed_level_loading -->

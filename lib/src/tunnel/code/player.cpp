@@ -2889,23 +2889,24 @@ void tunnel::player::create_hit_star
       bear::visual::color_type("#FF0000") );
 
   s->set_size(200, 200);
-  s->set_z_position( super::get_z_position() + 10 );
+  s->set_z_position( super::get_z_position() - 10 );
   s->set_center_of_mass( pos );
   this->new_item(*s);
-  s->set_shader( bear::visual::shader_program() );
+  s->set_shader
+    ( get_level_globals().get_shader("shader/object_in_tunnel.frag") );
 
   bear::decorative_effect* decoration_effect = new bear::decorative_effect;
 
-  decoration_effect->set_duration(0.2);
-  decoration_effect->set_size_factor(1, 1.1);
-  decoration_effect->set_angle_offset(0, 0.2);
+  decoration_effect->set_duration(0.6);
+  decoration_effect->set_size_factor(1, 1.2);
+  decoration_effect->set_angle_offset(0, 3);
   decoration_effect->set_item(s, false);
 
   new_item( *decoration_effect );
 
   bear::delayed_kill_item* k = new bear::delayed_kill_item();
   k->add_item(s);
-  k->set_duration(0.4);
+  k->set_duration(0.6);
   k->set_center_of_mass( s->get_center_of_mass() );
 
   new_item( *k );
