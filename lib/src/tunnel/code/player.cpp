@@ -383,7 +383,6 @@ void tunnel::player::on_enters_layer()
       for ( unsigned int i=0; i <= player_action::max_value; ++i)
         m_authorized_action[i] = true;
       
-      m_wait_state_number = 0;
       m_want_clung_jump = false;
       bear::engine::level_globals& glob = get_level_globals();
       
@@ -393,7 +392,7 @@ void tunnel::player::on_enters_layer()
       set_model_actor( get_level_globals().get_model("model/player/plee.cm") );
       start_action_model("idle");
       
-      m_wait_state_number = 3;
+      m_wait_state_number = 1;
       
       if ( m_editor_player || ! game_variables::is_editor_running() )
         {

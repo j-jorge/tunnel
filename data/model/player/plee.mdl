@@ -146,7 +146,7 @@
 <snapshot date="0" function="apply_idle" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
 <mark_placements>
 <mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
+<mark_placement label="body" function="" x="6" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
 </mark_placements>
 </snapshot></snapshots>
 </action>
@@ -159,13 +159,13 @@
 </mark>
 </marks>
 <snapshots>
-<snapshot date="0" function="apply_jump" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
+<snapshot date="0" function="apply_jump" width="22" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
 <sound global="0">
 <file path="sound/plee/jump.ogg"/>
 </sound>
 <mark_placements>
 <mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="11" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
+<mark_placement label="body" function="" x="14" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
 </mark_placements>
 </snapshot></snapshots>
 </action>
@@ -178,10 +178,10 @@
 </mark>
 </marks>
 <snapshots>
-<snapshot date="0" function="apply_look_upward" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
+<snapshot date="0" function="apply_look_upward" width="16" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
 <mark_placements>
 <mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
+<mark_placement label="body" function="" x="8" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
 </mark_placements>
 </snapshot></snapshots>
 </action>
@@ -197,7 +197,7 @@
 <snapshot date="0" function="apply_run" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
 <mark_placements>
 <mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
+<mark_placement label="body" function="" x="1" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
 </mark_placements>
 </snapshot></snapshots>
 </action>
@@ -531,22 +531,6 @@
 </mark_placements>
 </snapshot></snapshots>
 </action>
-<action name="wait2" duration="0.4" auto_next="wait2">
-<marks>
-<mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/wait2.canim' auto_size='true' width='20' height='96' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</mark>
-<mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-</mark>
-</marks>
-<snapshots>
-<snapshot date="0" function="apply_wait" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
-<mark_placements>
-<mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-</mark_placements>
-</snapshot></snapshots>
-</action>
 <action name="walk" duration="0.96" auto_next="">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
@@ -559,46 +543,7 @@
 <snapshot date="0" function="apply_walk" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
 <mark_placements>
 <mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-</mark_placements>
-</snapshot></snapshots>
-</action>
-<action name="wait3" duration="1.6" auto_next="wait3">
-<sound global="0">
-<file path="sound/plee/snore.ogg"/>
-</sound>
-<marks>
-<mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-</mark>
-<mark label="balloon" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-</mark>
-<mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-</mark>
-</marks>
-<snapshots>
-<snapshot date="0" function="apply_wait" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
-<mark_placements>
-<mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="balloon" function="" x="76" y="137" width="0" height="0" z="-1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-</mark_placements>
-</snapshot><snapshot date="0.2" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
-<mark_placements>
-<mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="balloon" function="" x="76" y="137" width="0" height="0" z="-1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-</mark_placements>
-</snapshot><snapshot date="0.4" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
-<mark_placements>
-<mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="balloon" function="" x="76" y="137" width="0" height="0" z="-1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-</mark_placements>
-</snapshot><snapshot date="1.4" function="apply_wait" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
-<mark_placements>
-<mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="balloon" function="" x="76" y="137" width="0" height="0" z="-1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
+<mark_placement label="body" function="" x="2" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
 </mark_placements>
 </snapshot></snapshots>
 </action>
@@ -650,13 +595,13 @@
 </mark>
 </marks>
 <snapshots>
-<snapshot date="0" function="apply_injured" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
+<snapshot date="0" function="apply_injured" width="28" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
 <sound global="0">
 <file path="sound/plee/injured.ogg"/>
 </sound>
 <mark_placements>
 <mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
+<mark_placement label="body" function="" x="12" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
 </mark_placements>
 </snapshot></snapshots>
 </action>
@@ -760,10 +705,10 @@
 </mark>
 </marks>
 <snapshots>
-<snapshot date="0" function="apply_idle" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
+<snapshot date="0" function="apply_idle" width="16" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
 <mark_placements>
 <mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="44" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
+<mark_placement label="body" function="" x="8" y="44" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
 </mark_placements>
 </snapshot></snapshots>
 </action>
@@ -776,10 +721,10 @@
 </mark>
 </marks>
 <snapshots>
-<snapshot date="0" function="apply_idle" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
+<snapshot date="0" function="apply_idle" width="16" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
 <mark_placements>
 <mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="7" y="44" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
+<mark_placement label="body" function="" x="8" y="44" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
 </mark_placements>
 </snapshot></snapshots>
 </action>
@@ -792,10 +737,10 @@
 </mark>
 </marks>
 <snapshots>
-<snapshot date="0" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
+<snapshot date="0" width="16" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
 <mark_placements>
 <mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
+<mark_placement label="body" function="" x="8" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
 </mark_placements>
 </snapshot></snapshots>
 </action>
@@ -837,16 +782,16 @@
 <action name="push" duration="0.96" auto_next="">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation_file path='animation/plee/push.canim' auto_size='true' width='32' height='97' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<animation_file path='animation/plee/push.canim' auto_size='true' width='37' height='93' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>
 </marks>
 <snapshots>
-<snapshot date="0" function="apply_walk" width="12" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
+<snapshot date="0" function="apply_walk" width="23" height="84" x_alignment="align_left" y_alignment="align_bottom" x_alignment_value="0" y_alignment_value="0">
 <mark_placements>
 <mark_placement label="mouth" function="" x="9" y="66" width="0" height="0" z="1" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
-<mark_placement label="body" function="" x="5" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
+<mark_placement label="body" function="" x="8" y="45" width="0" height="0" z="0" angle="0" visible="1" x_easing="none:in" y_easing="none:in" width_easing="none:in" height_easing="none:in" angle_easing="none:in"/>
 </mark_placements>
 </snapshot></snapshots>
 </action>
