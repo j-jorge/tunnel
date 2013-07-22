@@ -135,7 +135,6 @@ namespace tunnel
     void start_action( player_action::value_type a ) const;
     void stop_action( player_action::value_type a ) const;
     void stop() const;
-    void update_throw_time_ratio() const;
 
     bear::engine::level& get_level() const;
     bear::engine::level_globals& get_level_globals() const;

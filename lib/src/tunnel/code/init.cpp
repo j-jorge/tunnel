@@ -36,10 +36,6 @@
  */
 void init_tunnel()
 {
-  bindtextdomain( "tunnel", "/usr/share/locale" );
-  bind_textdomain_codeset( "tunnel", "ISO-8859-15" );
-  textdomain( "tunnel" );
-
   bear::engine::game::get_instance().set_translator
     ( bear::engine::gettext_translator( "tunnel" ) );
 

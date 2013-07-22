@@ -115,7 +115,6 @@ namespace tunnel
     void disable_all_actions();
 
     double get_jump_time_ratio() const;
-    void update_throw_time_ratio();
     void set_throw_down(bool value);
     void set_throw_up(bool value);
 
