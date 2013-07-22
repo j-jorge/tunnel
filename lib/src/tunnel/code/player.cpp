@@ -1554,29 +1554,27 @@ void tunnel::player::progress_walk( bear::universe::time_type elapsed_time )
 
   if ( has_bottom_contact() )
     {
-      if ( has_left_contact() || has_right_contact() )
+      if ( ! test_push_state() )
         {
-          if ( get_current_action_name() != "push" )
-            start_action_model("push");
-        }
-      else if ( m_last_bottom_left == get_bottom_left() )
-        choose_idle_state();
-      else
-        {
-          bear::universe::speed_type speed( get_speed() );
-          // calculate the speed in the intern axis
-          bear::universe::coordinate_type speed_x =
-            speed.dot_product(get_x_axis());
-
-          if( std::abs(speed_x) >= s_speed_to_run )
-            {
-              if ( m_run_time >= s_time_to_run )
-                start_action_model("run");
-            }
-          else if ( speed_x == 0 )
+          if ( m_last_bottom_left == get_bottom_left() )
             choose_idle_state();
           else
-            m_move_force = get_move_force_in_walk();
+            {
+              bear::universe::speed_type speed( get_speed() );
+              // calculate the speed in the intern axis
+              bear::universe::coordinate_type speed_x =
+                speed.dot_product(get_x_axis());
+              
+              if( std::abs(speed_x) >= s_speed_to_run )
+                {
+                  if ( m_run_time >= s_time_to_run )
+                    start_action_model("run");
+                }
+              else if ( speed_x == 0 )
+                choose_idle_state();
+              else
+                m_move_force = get_move_force_in_walk();
+            }
         }
     }
   else
@@ -1596,18 +1594,16 @@ void tunnel::player::progress_idle( bear::universe::time_type elapsed_time )
     {
       m_run_time = 0;
 
-      if ( has_left_contact() || has_right_contact() ) 
+      if ( ! test_push_state() )
         {
-          if ( get_current_action_name() != "push" )
-            start_action_model("push");
+          if ( ( m_state_time >= s_time_to_wait ) &&
+               ( m_wait_state_number != 0 ) &&
+               ( !is_a_marionette() ) &&
+               m_authorized_action[player_action::wait] )
+            choose_wait_state();
+          else
+            progress_continue_idle(elapsed_time);
         }
-      else if ( ( m_state_time >= s_time_to_wait ) &&
-           ( m_wait_state_number != 0 ) &&
-           ( !is_a_marionette() ) &&
-           m_authorized_action[player_action::wait] )
-        choose_wait_state();
-      else
-        progress_continue_idle(elapsed_time);
     }
   else
     test_in_sky_or_swimm();
@@ -1711,17 +1707,15 @@ void tunnel::player::progress_run( bear::universe::time_type elapsed_time )
       bear::universe::coordinate_type speed_x =
         speed.dot_product(get_x_axis());
 
-      if ( has_left_contact() || has_right_contact() ) 
+      if ( ! test_push_state() )
         {
-          if ( get_current_action_name() != "push" )
-            start_action_model("push");
-        }
-      else if( std::abs(speed_x) < s_speed_to_run )
-        {
-          if( speed_x == 0 )
-            choose_idle_state();
-          else
-            choose_walk_state();
+          if( std::abs(speed_x) < s_speed_to_run )
+            {
+              if( speed_x == 0 )
+                choose_idle_state();
+              else
+                choose_walk_state();
+            }
         }
     }
   else
@@ -2399,6 +2393,28 @@ bool tunnel::player::test_walk()
 
   return result;
 } // player::test_walk()
+
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Test if Player push and change state thereof.
+ *         Return true if Player push.
+ */
+bool tunnel::player::test_push_state()
+{
+  bool result = false;
+  
+  if ( has_left_contact() && 
+       get_left_contact().get_max() >= 0.7 )
+    result = true;
+  else 
+    result = has_right_contact() && 
+      get_right_contact().get_max() >= 0.7;
+  
+  if ( result && get_current_action_name() != "push" )
+    start_action_model("push");
+  
+  return result;
+} // player::test_push_state()
 
 /*---------------------------------------------------------------------------*/
 /**

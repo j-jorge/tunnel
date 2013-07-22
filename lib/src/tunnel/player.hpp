@@ -248,6 +248,7 @@ namespace tunnel
     void progress_spot( bear::universe::time_type elapsed_time );
     
     bool test_walk();
+    bool test_push_state();
     bool test_bottom_contact();
     bool test_in_sky_or_swimm();
     void brake();
