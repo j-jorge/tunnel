@@ -26471,44 +26471,6 @@
 </fields>
     </item><!-- bear::block -->
 
-    <item class_name='bear::block' fixed='true'>
-<fields>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='1' green_intensity='0' blue_intensity='0'/>
-</field>
-<field name='item_with_friction.top_friction'>
-<real value='0.95'/>
-</field>
-<field name='item_with_z_shift.z_shift'>
-<integer value='-10'/>
-</field>
-<field name='item_with_decoration.extend_on_bounding_box'>
-<bool value='1'/>
-</field>
-<field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='152' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</field>
-<field name='base_item.position.bottom'>
-<real value='3004'/>
-</field>
-<field name='base_item.position.depth'>
-<integer value='-5'/>
-</field>
-<field name='base_item.position.left'>
-<real value='1589'/>
-</field>
-<field name='base_item.size.height'>
-<real value='70'/>
-</field>
-<field name='base_item.size.width'>
-<real value='147'/>
-</field>
-<field name='item_with_activable_sides.top_side_is_active'>
-<bool value='1'/>
-</field>
-</fields>
-    </item><!-- bear::block -->
-
     <item class_name='tunnel::clingable' fixed='true'>
 <fields>
 <field name='base_item.position.bottom'>
@@ -26525,6 +26487,38 @@
 </field>
 </fields>
     </item><!-- tunnel::clingable -->
+
+    <item class_name='tunnel::passive_enemy' fixed='true'>
+<fields>
+<field name='basic_renderable_item.color'>
+<color opacity='1' red_intensity='1' green_intensity='0' blue_intensity='0'/>
+</field>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/common/common-1.png' x='152' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='3004'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='-5'/>
+</field>
+<field name='base_item.position.left'>
+<real value='1626'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='passive_enemy.type_top_side'>
+<string value='attack'/>
+</field>
+</fields>
+    </item><!-- tunnel::passive_enemy -->
 
     <item class_name='bear::train' fixed='false' id='platform-2'>
 <fields>
@@ -26624,44 +26618,6 @@
 </fields>
     </item><!-- bear::forced_goto_creator -->
 
-    <item class_name='bear::block' fixed='true'>
-<fields>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='1' green_intensity='0' blue_intensity='0'/>
-</field>
-<field name='item_with_friction.top_friction'>
-<real value='0.95'/>
-</field>
-<field name='item_with_z_shift.z_shift'>
-<integer value='-10'/>
-</field>
-<field name='item_with_decoration.extend_on_bounding_box'>
-<bool value='1'/>
-</field>
-<field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='152' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</field>
-<field name='base_item.position.bottom'>
-<real value='3004'/>
-</field>
-<field name='base_item.position.depth'>
-<integer value='-5'/>
-</field>
-<field name='base_item.position.left'>
-<real value='1736'/>
-</field>
-<field name='base_item.size.height'>
-<real value='70'/>
-</field>
-<field name='base_item.size.width'>
-<real value='147'/>
-</field>
-<field name='item_with_activable_sides.top_side_is_active'>
-<bool value='1'/>
-</field>
-</fields>
-    </item><!-- bear::block -->
-
     <item class_name='bear::forced_movement_toggle' fixed='false' id='mvt-toggle'>
 <fields>
 <field name='base_item.position.bottom'>
@@ -26715,6 +26671,38 @@
 </field>
 </fields>
     </item><!-- bear::block -->
+
+    <item class_name='tunnel::passive_enemy' fixed='true'>
+<fields>
+<field name='basic_renderable_item.color'>
+<color opacity='1' red_intensity='1' green_intensity='0' blue_intensity='0'/>
+</field>
+<field name='item_with_friction.top_friction'>
+<real value='0.95'/>
+</field>
+<field name='item_with_z_shift.z_shift'>
+<integer value='-10'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/common/common-1.png' x='152' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+<field name='base_item.position.bottom'>
+<real value='3004'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='-5'/>
+</field>
+<field name='base_item.position.left'>
+<real value='1752'/>
+</field>
+<field name='item_with_activable_sides.top_side_is_active'>
+<bool value='1'/>
+</field>
+<field name='passive_enemy.type_top_side'>
+<string value='attack'/>
+</field>
+</fields>
+    </item><!-- tunnel::passive_enemy -->
 
     <item class_name='bear::block' fixed='true'>
 <fields>
@@ -34223,7 +34211,7 @@
 </fields>
     </item><!-- bear::slope -->
 
-    <item class_name='bear::block' fixed='true'>
+    <item class_name='tunnel::passive_enemy' fixed='true'>
 <fields>
 <field name='basic_renderable_item.color'>
 <color opacity='1' red_intensity='1' green_intensity='0' blue_intensity='0'/>
@@ -34233,9 +34221,6 @@
 </field>
 <field name='item_with_z_shift.z_shift'>
 <integer value='-10'/>
-</field>
-<field name='item_with_decoration.extend_on_bounding_box'>
-<bool value='1'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/common/common-1.png' x='152' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -34249,17 +34234,14 @@
 <field name='base_item.position.left'>
 <real value='10453'/>
 </field>
-<field name='base_item.size.height'>
-<real value='70'/>
-</field>
-<field name='base_item.size.width'>
-<real value='147'/>
-</field>
 <field name='item_with_activable_sides.top_side_is_active'>
 <bool value='1'/>
 </field>
+<field name='passive_enemy.type_top_side'>
+<string value='attack'/>
+</field>
 </fields>
-    </item><!-- bear::block -->
+    </item><!-- tunnel::passive_enemy -->
 
     <item class_name='bear::block' fixed='true'>
 <fields>
@@ -34333,7 +34315,7 @@
 </fields>
     </item><!-- bear::slope -->
 
-    <item class_name='bear::block' fixed='true'>
+    <item class_name='tunnel::passive_enemy' fixed='true'>
 <fields>
 <field name='basic_renderable_item.color'>
 <color opacity='1' red_intensity='1' green_intensity='0' blue_intensity='0'/>
@@ -34343,9 +34325,6 @@
 </field>
 <field name='item_with_z_shift.z_shift'>
 <integer value='-10'/>
-</field>
-<field name='item_with_decoration.extend_on_bounding_box'>
-<bool value='1'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/common/common-1.png' x='152' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
@@ -34357,19 +34336,16 @@
 <integer value='-5'/>
 </field>
 <field name='base_item.position.left'>
-<real value='10600'/>
-</field>
-<field name='base_item.size.height'>
-<real value='70'/>
-</field>
-<field name='base_item.size.width'>
-<real value='147'/>
+<real value='10579'/>
 </field>
 <field name='item_with_activable_sides.top_side_is_active'>
 <bool value='1'/>
 </field>
+<field name='passive_enemy.type_top_side'>
+<string value='attack'/>
+</field>
 </fields>
-    </item><!-- bear::block -->
+    </item><!-- tunnel::passive_enemy -->
 
     <item class_name='tunnel::clingable' fixed='true'>
 <fields>
