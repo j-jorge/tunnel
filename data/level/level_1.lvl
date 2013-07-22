@@ -2511,7 +2511,7 @@
     <item class_name='bear::decorative_item' fixed='true'>
 <fields>
 <field name='base_item.position.bottom'>
-<real value='1601'/>
+<real value='1496'/>
 </field>
 <field name='base_item.position.depth'>
 <integer value='-1000'/>
@@ -2540,7 +2540,7 @@
 <integer value='-10'/>
 </field>
 <field name='base_item.position.bottom'>
-<real value='1647'/>
+<real value='1542'/>
 </field>
 <field name='base_item.position.left'>
 <real value='4928'/>
@@ -2556,29 +2556,6 @@
 </field>
 </fields>
     </item><!-- bear::block -->
-
-    <item class_name='bear::decorative_item' fixed='true'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='1362'/>
-</field>
-<field name='base_item.position.depth'>
-<integer value='-1000'/>
-</field>
-<field name='base_item.position.left'>
-<real value='5024'/>
-</field>
-<field name='base_item.size.height'>
-<real value='100'/>
-</field>
-<field name='base_item.size.width'>
-<real value='200'/>
-</field>
-<field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/forest-2.png' x='408' y='893' clip_width='183' clip_height='107' spritepos='right branch' auto_size='true' width='183' height='107' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-</field>
-</fields>
-    </item><!-- bear::decorative_item -->
 
     <item class_name='bear::block' fixed='true'>
 <fields>
@@ -2602,32 +2579,6 @@
 </field>
 <field name='base_item.size.width'>
 <real value='200'/>
-</field>
-<field name='item_with_activable_sides.top_side_is_active'>
-<bool value='1'/>
-</field>
-</fields>
-    </item><!-- bear::block -->
-
-    <item class_name='bear::block' fixed='true'>
-<fields>
-<field name='item_with_friction.top_friction'>
-<real value='0.95'/>
-</field>
-<field name='item_with_z_shift.z_shift'>
-<integer value='-10'/>
-</field>
-<field name='base_item.position.bottom'>
-<real value='1403'/>
-</field>
-<field name='base_item.position.left'>
-<real value='5085'/>
-</field>
-<field name='base_item.size.height'>
-<real value='44'/>
-</field>
-<field name='base_item.size.width'>
-<real value='104'/>
 </field>
 <field name='item_with_activable_sides.top_side_is_active'>
 <bool value='1'/>
@@ -2693,7 +2644,7 @@
 <field name='slope.control_point.right.x'>
 <real value='-68'/>
 </field>
-<field name='slope.right_side_is_active'>
+<field name='slope.left_side_is_active'>
 <bool value='1'/>
 </field>
 <field name='slope.steepness'>
@@ -3838,7 +3789,7 @@
 <field name='slope.control_point.right.x'>
 <real value='-68'/>
 </field>
-<field name='slope.right_side_is_active'>
+<field name='slope.left_side_is_active'>
 <bool value='1'/>
 </field>
 <field name='slope.steepness'>
