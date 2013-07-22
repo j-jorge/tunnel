@@ -68,8 +68,8 @@ void tunnel::crystal_component::build()
   m_required_crystal->set_intensity(0, 1, 0);
   
   m_crystal_sprite =
-    get_level_globals().auto_sprite( "gfx/status/status.png", "heart" );
-  m_crystal_sprite.set_intensity(1, 0, 0);
+    get_level_globals().auto_sprite( "gfx/common/common-1.png", "crystal" );
+  m_crystal_sprite.set_intensity(1, 1, 0);
 
   super::build();
 } // crystal_component::build()
@@ -92,14 +92,14 @@ void tunnel::crystal_component::render( scene_element_list& e ) const
       s_margin + 5, get_render_position().y + 5
       + (m_crystal_sprite.height() - m_crystal_sprite.height() ) / 2,
       m_crystal);
-  s2.set_scale_factor( 1.2 * f, 1.2 * f );
+  s2.set_scale_factor( 1 * f, 1 * f );
   
   bear::visual::scene_writing s3
     ( get_render_position().x + m_crystal_sprite.get_size().x + 
-      s_margin + m_crystal.get_width() * 1.2 * f, get_render_position().y
+      s_margin + m_crystal.get_width() * 1 * f, get_render_position().y
       + (m_crystal_sprite.height() - m_crystal_sprite.height() ) / 2,
       m_required_crystal );
-  s3.set_scale_factor( f, f );
+  s3.set_scale_factor( 0.7 * f, 0.7 * f );
   
   e.push_back( s1 );
   e.push_back( s2 );
@@ -124,7 +124,7 @@ unsigned int tunnel::crystal_component::width() const
  */
 unsigned int tunnel::crystal_component::height() const
 {
-  return m_crystal_sprite.height() * 1.2;
+  return m_crystal_sprite.height();
 } // crystal_component::height()
 
 /*----------------------------------------------------------------------------*/
