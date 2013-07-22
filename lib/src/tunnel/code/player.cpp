@@ -569,7 +569,7 @@ void tunnel::player::stop_action( player_action::value_type a )
  * \param action The action to start.
  */
 void tunnel::player::start_action_model(const std::string& action)
-{
+{ 
   start_model_action(action);
 } // player::start_action_model()
 
@@ -1555,7 +1555,12 @@ void tunnel::player::progress_walk( bear::universe::time_type elapsed_time )
 
   if ( has_bottom_contact() )
     {
-      if ( m_last_bottom_left == get_bottom_left() )
+      if ( has_left_contact() || has_right_contact() )
+        {
+          if ( get_current_action_name() != "push" )
+            start_action_model("push");
+        }
+      else if ( m_last_bottom_left == get_bottom_left() )
         choose_idle_state();
       else
         {
@@ -1592,7 +1597,12 @@ void tunnel::player::progress_idle( bear::universe::time_type elapsed_time )
     {
       m_run_time = 0;
 
-      if ( ( m_state_time >= s_time_to_wait ) &&
+      if ( has_left_contact() || has_right_contact() ) 
+        {
+          if ( get_current_action_name() != "push" )
+            start_action_model("push");
+        }
+      else if ( ( m_state_time >= s_time_to_wait ) &&
            ( m_wait_state_number != 0 ) &&
            ( !is_a_marionette() ) &&
            m_authorized_action[player_action::wait] )
@@ -1702,7 +1712,12 @@ void tunnel::player::progress_run( bear::universe::time_type elapsed_time )
       bear::universe::coordinate_type speed_x =
         speed.dot_product(get_x_axis());
 
-      if( std::abs(speed_x) < s_speed_to_run )
+      if ( has_left_contact() || has_right_contact() ) 
+        {
+          if ( get_current_action_name() != "push" )
+            start_action_model("push");
+        }
+      else if( std::abs(speed_x) < s_speed_to_run )
         {
           if( speed_x == 0 )
             choose_idle_state();
