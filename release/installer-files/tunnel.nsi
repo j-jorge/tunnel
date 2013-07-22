@@ -62,9 +62,9 @@ Section "Install"
   File /r "bin\*.dll"
   File /r "bin\tunnel-launcher.exe"
 
-  SetOutPath "$INSTDIR\share\super-great-park"
+  SetOutPath "$INSTDIR\share\tunnel"
 
-  File /r "share\super-great-park\"
+  File /r "share\tunnel\"
 
   SetOutPath "$INSTDIR\share\locale"
 
