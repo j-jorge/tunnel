@@ -157,7 +157,7 @@ subdirs(
   launcher
   lib
   data
-  #release
+  release
   #desktop
   )
 
