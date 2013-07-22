@@ -76,7 +76,6 @@ tunnel::player::s_time_before_teleportation = 1.5;
 const bear::universe::coordinate_type 
 tunnel::player::s_tunnel_expand_duration = 0.2;
 
-const bear::universe::size_type tunnel::player::s_max_halo_height = 64;
 const bear::universe::time_type tunnel::player::s_time_to_crouch = 0.5;
 const bear::universe::time_type tunnel::player::s_time_to_look_upward = 0.5;
 const bear::universe::time_type tunnel::player::s_time_to_wait = 3;
@@ -132,8 +131,7 @@ tunnel::player::player()
 : m_current_state(roar_state), m_last_visual_time(0),
   m_status_look_upward(false),
   m_status_crouch(false), m_can_cling(false),
-  m_cling_orientation(false), m_halo_animation(NULL),
-  m_halo_hand_animation(NULL), m_move_right(false), m_move_left(false),
+  m_cling_orientation(false), m_move_right(false), m_move_left(false),
   m_move_force(0), m_nb_bottom_contact(0),
   m_controller_number(0),
   m_hot_spot_position(0, 0),
@@ -161,7 +159,6 @@ tunnel::player::player( const player& p )
     m_status_look_upward(p. m_status_look_upward),
     m_status_crouch(p.m_status_crouch), m_can_cling(p. m_can_cling),
     m_cling_orientation(p.m_cling_orientation),
-    m_halo_animation(NULL), m_halo_hand_animation(NULL),
     m_move_right(p. m_move_right), m_move_left(p.m_move_left), m_move_force(0),
     m_nb_bottom_contact(0), m_controller_number(0),
     m_hot_spot_position(0, 0),
@@ -242,12 +239,6 @@ tunnel::player::~player()
   for (i=0; i!=m_states.size(); ++i)
     delete m_states[i];
 
-  if ( m_halo_animation )
-    delete m_halo_animation;
-
-  if ( m_halo_hand_animation )
-    delete m_halo_hand_animation;
-
   m_level_progress_done.disconnect();
 } // player::~player()
 
@@ -314,8 +305,6 @@ void tunnel::player::get_visual
 ( std::list<bear::engine::scene_visual>& visuals ) const
 {
   super::get_visual(visuals);
-
-  render_halos(visuals);
 
   std::list< std::list<bear::engine::scene_visual> >::const_iterator it;
 
@@ -965,7 +954,6 @@ void tunnel::player::apply_start_jump()
 {
   set_state(player::start_jump_state);
   m_progress = &player::progress_start_jump;
-  m_halo_animation->reset();
 } // player::apply_start_jump()
 
 /*----------------------------------------------------------------------------*/
@@ -1804,8 +1792,6 @@ void tunnel::player::progress_teleport( bear::universe::time_type elapsed_time )
  */
 void tunnel::player::progress_start_jump( bear::universe::time_type elapsed_time )
 {
-  m_halo_animation->next(elapsed_time);
-
   brake();
 
   if ( !has_bottom_contact() )
@@ -2500,47 +2486,11 @@ void tunnel::player::roar_shake()
  * \param force The force of the shaker.
  * \param duration The duration of the shaker.
  */
-void tunnel::player::shake(double force, bear::universe::time_type duration) const
+void tunnel::player::shake
+(double force, bear::universe::time_type duration) const
 {
   bear::camera_shaker::shake_around( *this, force, duration );
 } // player::shake()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Render halos.
- * \param visuals (out) The sprites of the item, and their positions.
- */
-void tunnel::player::render_halos
-( std::list<bear::engine::scene_visual>& visuals ) const
-{
-  render_jump_halo(visuals);
-} // player::render_halos()
-
-/*----------------------------------------------------------------------------*/
-/**
- * \brief Render jump halo.
- * \param visuals (out) The sprites of the item, and their positions.
- */
-void tunnel::player::render_jump_halo
-( std::list<bear::engine::scene_visual>& visuals ) const
-{
-  if ( m_current_state == player::start_jump_state )
-    {
-      bear::universe::size_type height
-        ( s_max_halo_height * (m_state_time / s_time_to_jump) );
-
-      bear::visual::sprite current_sprite(m_halo_animation->get_sprite());
-      current_sprite.set_height((unsigned int)height);
-      current_sprite.set_angle
-        ( current_sprite.get_angle() + get_visual_angle() );
-
-      visuals.push_front
-        ( bear::engine::scene_visual
-          ( get_bottom_middle().x - current_sprite.width() / 2,
-            get_bottom(),
-            current_sprite, get_z_position()+1 ) );
-    }
-} // player::render_jump_halo()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -2552,8 +2502,6 @@ tunnel::player::get_visuals_without_invincibility
 ( std::list<bear::engine::scene_visual>& visuals ) const
 {
   super::get_visual(visuals);
-
-  render_halos(visuals);
 } // player::get_visuals_without_invincibility()
 /*---------------------------------------------------------------------------*/
 /**

@@ -8,7 +8,7 @@
 */
 /**
  * \file
- * \brief Definition of the class describing a state of Plee.
+ * \brief Definition of the class describing a state of Player.
  * \author Sebastien Angibaud
  */
 #ifndef __TUNNEL_STATE_PLAYER_HPP__

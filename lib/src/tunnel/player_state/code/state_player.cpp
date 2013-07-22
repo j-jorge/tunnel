@@ -8,7 +8,7 @@
 */
 /**
  * \file
- * \brief Implementation of the tunnel::state_plee class.
+ * \brief Implementation of the tunnel::state_player class.
  * \author Sebastien Angibaud
  */
 #include "tunnel/player_state/state_player.hpp"

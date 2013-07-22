@@ -254,10 +254,6 @@ namespace tunnel
     void roar_shake();
     void shake(double force, bear::universe::time_type duration) const;
 
-    void render_halos
-    ( std::list<bear::engine::scene_visual>& visuals ) const;
-    void render_jump_halo
-    ( std::list<bear::engine::scene_visual>& visuals ) const;
     void get_visuals_without_invincibility
     ( std::list<bear::engine::scene_visual>& visuals ) const;
 
@@ -343,12 +339,6 @@ namespace tunnel
 
     /** \brief Indicates the duration of the paralyze state. */
     bear::universe::time_type m_paralyze_duration;
-
-    /** \brief The animation of the halo. */
-    bear::visual::animation* m_halo_animation;
-
-    /** \brief The animation of the halo on the hand. */
-    bear::visual::animation* m_halo_hand_animation;
 
     /** \brief The list of last visual when Player is invincible. */
     std::list< std::list<bear::engine::scene_visual> > m_last_visuals;
@@ -498,9 +488,6 @@ namespace tunnel
 
     /** \brief The duration of the tunnel expand after the teleportation. */
     static const bear::universe::coordinate_type s_tunnel_expand_duration;
-
-    /** \brief The maximum halo height. */
-    static const bear::universe::size_type s_max_halo_height;
 
     /** \brief  The time to crouch. */
     static const bear::universe::time_type s_time_to_crouch;
