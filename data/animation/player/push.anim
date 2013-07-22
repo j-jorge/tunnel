@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation loops='0' first_index='0' last_index='6' loop_back='true' auto_size='true' width='37' height='93' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
+  <frame duration='0.07'>
+    <sprite image='gfx/hero/hero-1.png' x='132' y='118' clip_width='37' clip_height='93' spritepos='push 1' auto_size='true' width='37' height='93' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+  </frame>
+  <frame duration='0.07'>
+    <sprite image='gfx/hero/hero-1.png' x='170' y='118' clip_width='37' clip_height='93' spritepos='push 2' auto_size='true' width='37' height='93' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+  </frame>
+  <frame duration='0.07'>
+    <sprite image='gfx/hero/hero-1.png' x='208' y='118' clip_width='37' clip_height='93' spritepos='push 3' auto_size='true' width='37' height='93' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+  </frame>
+  <frame duration='0.07'>
+    <sprite image='gfx/hero/hero-1.png' x='246' y='118' clip_width='37' clip_height='93' spritepos='push 4' auto_size='true' width='37' height='93' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+  </frame>
+  <frame duration='0.07'>
+    <sprite image='gfx/hero/hero-1.png' x='284' y='118' clip_width='37' clip_height='93' spritepos='push 5' auto_size='true' width='37' height='93' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+  </frame>
+  <frame duration='0.07'>
+    <sprite image='gfx/hero/hero-1.png' x='322' y='118' clip_width='37' clip_height='93' spritepos='push 6' auto_size='true' width='37' height='93' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+  </frame>
+  <frame duration='0.07'>
+    <sprite image='gfx/hero/hero-1.png' x='360' y='118' clip_width='37' clip_height='93' spritepos='push 7' auto_size='true' width='37' height='93' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+  </frame>
+</animation>
