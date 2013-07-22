@@ -57,6 +57,22 @@ bool tunnel::level_exit::set_string_field
   return result;
 } // level_exit::set_string_field()
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Do one iteration in the progression of the item.
+ * \param elapsed_time Elapsed time since the last call.
+ */
+void tunnel::level_exit::progress( bear::universe::time_type elapsed_time )
+{
+  super::progress( elapsed_time );
+
+  if ( game_variables::get_founded_crystal_count() < 
+       game_variables::get_crystal_count() )
+    get_rendering_attributes().set_color( bear::visual::color_type("#FF0000") );
+  else
+    get_rendering_attributes().set_color( bear::visual::color_type("#00FF00") );
+} // level_exit::progress()
+
 /*----------------------------------------------------------------------------*/
 /**
  * \brief Call collision_check_and_align().

@@ -22,7 +22,9 @@
 #include "generic_items/tweener_item.hpp"
 #include "generic_items/camera_shaker.hpp"
 #include "generic_items/decorative_effect.hpp"
+#include "generic_items/delayed_kill_item.hpp"
 #include "generic_items/shader/layer_shader.hpp"
+#include "generic_items/star.hpp"
 #include "universe/forced_movement/forced_tracking.hpp"
 
 #include "tunnel/camera_on_player.hpp"
@@ -1142,14 +1144,21 @@ void tunnel::player::apply_teleport()
 {
   if ( ! m_tunnel_aborted )
     {
-      if ( check_can_teleport() )
+      std::list<const physical_item*> bad_items;
+      
+      if ( check_can_teleport(bad_items) )
         {
           m_level_progress_done =
           get_level().on_progress_done
           ( boost::bind( &player::on_level_progress_done, this ) );
         }
       else
-        m_tunnel_aborted = true;
+        {
+          std::list<const physical_item*>::const_iterator it;
+          for ( it = bad_items.begin(); it != bad_items.end(); ++it )
+            create_hit_star((*it)->get_center_of_mass());
+          m_tunnel_aborted = true;
+        }
     }
   else
     m_tunnel_aborted = true;
@@ -2626,10 +2635,12 @@ void tunnel::player::search_transportable
 /**
  * \brief Test if the player can teleport in the next tag.
  */
-bool tunnel::player::check_can_teleport() const
+bool tunnel::player::check_can_teleport
+( std::list<const physical_item*>& bad_items ) const
 {
   bool result = false;
   
+  bad_items.clear();
   std::list<physical_item*> transportables;
   search_transportable(transportables);
   
@@ -2649,14 +2660,22 @@ bool tunnel::player::check_can_teleport() const
               for ( it_transportable = transportables.begin(); 
                     it_transportable != transportables.end(); 
                     ++it_transportable)
-                it->get_world().pick_items_in_rectangle
-                  (items, (*it_transportable)->get_bounding_box(), filter);
+                {
+                  items.clear();
+                  it->get_world().pick_items_in_rectangle
+                    (items, (*it_transportable)->get_bounding_box(), filter);
+                  if ( ! items.empty() )
+                    bad_items.push_back(*it_transportable);
+                }
             }
 
+          items.clear();
           it->get_world().pick_items_in_rectangle
               (items, get_bounding_box(), filter);
+          if ( ! items.empty() )
+            bad_items.push_back(this);
 
-          result = items.empty();
+          result = bad_items.empty();
         }
     }
 
@@ -2855,6 +2874,42 @@ void tunnel::player::thwart_gravity()
       add_external_force(force);
     }
 } // player::thwart_gravity()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Create a star to show bad items during teleportation.
+ * \param pos The center of mass of the star.
+ */
+void tunnel::player::create_hit_star
+( const bear::universe::position_type& pos ) const
+{
+  bear::star* s =
+    new bear::star
+    ( 4, 0.35, bear::visual::color_type("#FF0000"), 1,
+      bear::visual::color_type("#FF0000") );
+
+  s->set_size(200, 200);
+  s->set_z_position( super::get_z_position() + 10 );
+  s->set_center_of_mass( pos );
+  this->new_item(*s);
+  s->set_shader( bear::visual::shader_program() );
+
+  bear::decorative_effect* decoration_effect = new bear::decorative_effect;
+
+  decoration_effect->set_duration(0.2);
+  decoration_effect->set_size_factor(1, 1.1);
+  decoration_effect->set_angle_offset(0, 0.2);
+  decoration_effect->set_item(s, false);
+
+  new_item( *decoration_effect );
+
+  bear::delayed_kill_item* k = new bear::delayed_kill_item();
+  k->add_item(s);
+  k->set_duration(0.4);
+  k->set_center_of_mass( s->get_center_of_mass() );
+
+  new_item( *k );
+} // player::create_hit_star()
 
 /*----------------------------------------------------------------------------*/
 /**

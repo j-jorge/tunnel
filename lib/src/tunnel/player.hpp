@@ -267,7 +267,7 @@ namespace tunnel
     void update_layer_visibility();
     void update_layer_activity();
     void search_transportable(std::list<physical_item*>& transportables) const;
-    bool check_can_teleport() const;
+    bool check_can_teleport(std::list<const physical_item*>& bad_items) const;
     void init_shaders();
     void remove_shaders();
     void teleport_in_new_layer();
@@ -275,6 +275,7 @@ namespace tunnel
     void end_fade_effect();
     void finish_abort_tunnel();
     void thwart_gravity();
+    void create_hit_star( const bear::universe::position_type& pos ) const;
     void create_camera();
     void injure( const bear::engine::base_item& attacker );
     void finish_injure();

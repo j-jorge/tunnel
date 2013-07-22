@@ -4719,7 +4719,7 @@
     <item class_name='bear::descending_ceiling' fixed='true'>
 <fields>
 <field name='base_item.position.bottom'>
-<real value='4304'/>
+<real value='4307'/>
 </field>
 <field name='base_item.position.left'>
 <real value='3921'/>
@@ -4754,7 +4754,7 @@
 <sprite image='gfx/theme/forest/forest-1.png' x='503' y='577' clip_width='107' clip_height='109' spritepos='top-left' auto_size='true' width='107' height='109' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
-<real value='4404'/>
+<real value='4407'/>
 </field>
 <field name='base_item.position.left'>
 <real value='3921'/>
@@ -5011,7 +5011,7 @@
     <item class_name='bear::descending_ceiling' fixed='true'>
 <fields>
 <field name='base_item.position.bottom'>
-<real value='4304'/>
+<real value='4307'/>
 </field>
 <field name='base_item.position.left'>
 <real value='4021'/>
@@ -5043,7 +5043,7 @@
 <sprite image='gfx/theme/forest/forest-1.png' x='503' y='577' clip_width='107' clip_height='109' spritepos='top-left' auto_size='true' width='107' height='109' mirror='boolean_true' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
-<real value='4404'/>
+<real value='4407'/>
 </field>
 <field name='base_item.position.depth'>
 <integer value='10'/>
@@ -10181,7 +10181,7 @@
 <bool value='1'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/forest/forest-1.png' x='719' y='577' clip_width='200' clip_height='109' spritepos='top' auto_size='true' width='200' height='109' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='279' y='0' clip_width='200' clip_height='50' spritepos='platform' auto_size='true' width='200' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='4954'/>
@@ -26120,9 +26120,6 @@
 </field>
 <field name='base_item.size.width'>
 <real value='100'/>
-</field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0745098' green_intensity='0.843137' blue_intensity='0.0901961'/>
 </field>
 <field name='item_with_decoration.extend_on_bounding_box'>
 <bool value='1'/>

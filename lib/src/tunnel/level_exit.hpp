@@ -47,6 +47,7 @@ namespace tunnel
     bool is_valid() const;
     bool set_string_field( const std::string& name, const std::string& value );
     
+    void progress( bear::universe::time_type elapsed_time );
     void collision
     ( bear::engine::base_item& that, bear::universe::collision_info& info );
 
