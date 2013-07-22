@@ -2818,9 +2818,6 @@
 <field name='base_item.size.width'>
 <real value='100'/>
 </field>
-<field name='basic_renderable_item.color'>
-<color opacity='1' red_intensity='0.0745098' green_intensity='0.843137' blue_intensity='0.0901961'/>
-</field>
 <field name='item_with_decoration.extend_on_bounding_box'>
 <bool value='1'/>
 </field>

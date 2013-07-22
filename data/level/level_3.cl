@@ -14227,12 +14227,6 @@ base_item.size.height
 42
 base_item.size.width
 100
-100
-basic_renderable_item.color
-1
-0.0745098
-0.843137
-0.0901961
 43
 item_with_decoration.extend_on_bounding_box
 1
@@ -61477,7 +61471,7 @@ gfx/theme/placeholder/placeholder-1.png
 0
 200
 200
-1
+0
 0
 1
 1
