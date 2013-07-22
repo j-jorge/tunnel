@@ -2150,6 +2150,8 @@ void tunnel::player::progress_injure_state
           this->get_rendering_attributes().set_opacity(m_opacity_injured);
         }
     }
+  else
+    this->get_rendering_attributes().set_opacity(1);
 } // player::progress_injure()
 
 /*----------------------------------------------------------------------------*/
