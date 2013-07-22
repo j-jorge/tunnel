@@ -26528,11 +26528,8 @@
 <field name='item_with_z_shift.z_shift'>
 <integer value='-10'/>
 </field>
-<field name='item_with_decoration.extend_on_bounding_box'>
-<bool value='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='279' y='0' clip_width='200' clip_height='50' spritepos='platform' auto_size='true' width='200' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='4154'/>
@@ -32454,11 +32451,8 @@
 <field name='item_with_z_shift.z_shift'>
 <integer value='-10'/>
 </field>
-<field name='item_with_decoration.extend_on_bounding_box'>
-<bool value='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/theme/placeholder/placeholder-1.png' x='101' y='402' clip_width='200' clip_height='100' spritepos='top' auto_size='true' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='279' y='0' clip_width='200' clip_height='50' spritepos='platform' auto_size='true' width='200' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='4954'/>
