@@ -37,6 +37,9 @@ namespace tunnel
     static bool is_editor_running();
     static void set_editor_running(bool value);
 
+    static bool is_level_finished();
+    static void set_level_is_finished(bool value);
+
     static std::string get_next_level_name();
     static void set_next_level_name( const std::string& n );
 

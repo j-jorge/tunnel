@@ -81,7 +81,7 @@ void tunnel::status_layer::progress( bear::universe::time_type elapsed_time )
  */
 void tunnel::status_layer::render( scene_element_list& e ) const
 {
-  if ( ! get_level().is_paused() )
+  if ( ! get_level().is_paused() && ! game_variables::is_level_finished() )
     {
       component_list::const_iterator it;
       for ( it = m_components.begin(); 

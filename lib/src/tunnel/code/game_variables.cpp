@@ -106,6 +106,26 @@ void tunnel::game_variables::set_editor_running(bool value)
   bear::engine::game::get_instance().set_game_variable
     ( bear::engine::variable<bool>( "editor_running" , value ) );
 } // game_variables::set_editor_running()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Tell if a the level is finished.
+ */
+bool tunnel::game_variables::is_level_finished()
+{
+  return tunnel_game_variables_get_value( "level_finished", false );
+} // game_variables::is_level_finished()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set if the level is finished.
+ * \param value The new value.
+ */
+void tunnel::game_variables::set_level_is_finished(bool value)
+{
+  bear::engine::game::get_instance().set_game_variable
+    ( bear::engine::variable<bool>( "level_finished" , value ) );
+} // game_variables::set_level_is_finished()
     
 /*----------------------------------------------------------------------------*/
 /**

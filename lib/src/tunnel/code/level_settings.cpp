@@ -35,6 +35,7 @@ void tunnel::level_settings::build()
 
   game_variables::set_crystal_count(0);
   game_variables::set_founded_crystal_count(0);
-  
+  game_variables::set_level_is_finished(false);
+
   kill();
 } // level_settings::build()

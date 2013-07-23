@@ -13,8 +13,11 @@
  */
 #include "tunnel/level_exit.hpp"
 
+#include "tunnel/defines.hpp"
 #include "tunnel/game_variables.hpp"
 #include "tunnel/player.hpp"
+
+#include "generic_items/delayed_level_loading.hpp"
 
 BASE_ITEM_EXPORT( level_exit, tunnel )
 
@@ -91,9 +94,15 @@ void tunnel::level_exit::collision
       if (other != NULL)
         {
           m_opened = true;
-          bear::engine::game::get_instance().set_waiting_level
-            ( m_level_filename );
-          
+          game_variables::set_level_is_finished(true);
+
+          bear::delayed_level_loading* item = new bear::delayed_level_loading
+            ( m_level_filename, 2, false, 2, 
+              TUNNEL_TRANSITION_EFFECT_DEFAULT_TARGET_NAME);
+          new_item(*item);
+          item->set_global(true);
+          item->set_center_of_mass(get_center_of_mass());
+
           kill();
         }
     }
