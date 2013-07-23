@@ -23,6 +23,7 @@
 #include "generic_items/camera_shaker.hpp"
 #include "generic_items/decorative_effect.hpp"
 #include "generic_items/delayed_kill_item.hpp"
+#include "generic_items/delayed_level_loading.hpp"
 #include "generic_items/shader/layer_shader.hpp"
 #include "generic_items/star.hpp"
 #include "universe/forced_movement/forced_tracking.hpp"
@@ -1215,6 +1216,13 @@ void tunnel::player::apply_die()
 {
   set_state(dead_state);
   m_progress = &player::progress_dead;
+
+  bear::delayed_level_loading* item = new bear::delayed_level_loading
+    ( get_level().get_filename(), 1, false, 1, 
+      TUNNEL_TRANSITION_EFFECT_DEFAULT_TARGET_NAME);
+  new_item(*item);
+  item->set_global(true);
+  item->set_center_of_mass(get_center_of_mass());
 } // player::apply_die()
 
 /*----------------------------------------------------------------------------*/
@@ -1650,8 +1658,7 @@ void tunnel::player::progress_fall( bear::universe::time_type elapsed_time )
  */
 void tunnel::player::progress_dead( bear::universe::time_type elapsed_time )
 {
-  bear::engine::game::get_instance().set_waiting_level
-    ( get_level().get_filename() );
+  // do nothing
 } // player::progress_dead()
 
 /*---------------------------------------------------------------------------*/
