@@ -2825,7 +2825,7 @@
 <sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='level_exit.next_level'>
-<string value='level/level_3.cl'/>
+<string value='level/end.cl'/>
 </field>
 </fields>
     </item><!-- tunnel::level_exit -->
