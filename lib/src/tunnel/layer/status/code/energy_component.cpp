@@ -69,11 +69,14 @@ void tunnel::energy_component::render( scene_element_list& e ) const
 {
   unsigned int nb = game_variables::get_energy();
 
-  for ( unsigned int i = 0; i < nb; ++i )
+  for ( unsigned int i = 0; i < 5; ++i )
     {
       bear::visual::scene_sprite s
         ( get_render_position().x + 2 + i * (m_sprite.width() + s_margin ),
           get_render_position().y, m_sprite);
+      if ( i >= nb )
+        s.get_rendering_attributes().set_color
+          (bear::visual::color_type("#000000"));
       e.push_back( s ); 
     } 
 } // energy_component::render()
