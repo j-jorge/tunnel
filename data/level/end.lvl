@@ -3,8 +3,82 @@
   <layer class_name='action_layer' name='' width='1280' height='768' fit_level='1' tag=''>
 
 <items>
+    <item class_name='bear::browser_launcher_toggle' fixed='true' id='google'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='0'/>
+</field>
+<field name='base_item.position.left'>
+<real value='0'/>
+</field>
+<field name='base_item.size.height'>
+<real value='100'/>
+</field>
+<field name='base_item.size.width'>
+<real value='100'/>
+</field>
+<field name='browser_launcher_toggle.url'>
+<string value='http://www.google.fr'/>
+</field>
+</fields>
+    </item><!-- bear::browser_launcher_toggle -->
+
+    <item class_name='bear::mouse_over_manager' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='0'/>
+</field>
+<field name='base_item.position.left'>
+<real value='0'/>
+</field>
+<field name='mouse_over_manager.animation_off'>
+<animation loops='0' first_index='0' last_index='0' loop_back='false' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
+  <frame duration='1'>
+    <sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='0' blue_intensity='0'/>
+  </frame>
+</animation>
+</field>
+<field name='mouse_over_manager.animation_on'>
+<animation loops='0' first_index='0' last_index='0' loop_back='false' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='0.145098' green_intensity='1' blue_intensity='0'>
+  <frame duration='1'>
+    <sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+  </frame>
+</animation>
+</field>
+<field name='mouse_over_manager.items'>
+<item_reference value='google'/>
+</field>
+</fields>
+    </item><!-- bear::mouse_over_manager -->
+
+    <item class_name='bear::mouse_detector' fixed='true'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='0'/>
+</field>
+<field name='base_item.position.left'>
+<real value='0'/>
+</field>
+<field name='base_item.size.height'>
+<real value='100'/>
+</field>
+<field name='base_item.size.width'>
+<real value='100'/>
+</field>
+<field name='mouse_detector.toggle'>
+<item_reference value='google'/>
+</field>
+</fields>
+    </item><!-- bear::mouse_detector -->
+
     <item class_name='bear::camera' fixed='false'>
 <fields>
+<field name='base_item.position.bottom'>
+<real value='0'/>
+</field>
+<field name='base_item.position.left'>
+<real value='0'/>
+</field>
 <field name='base_item.size.height'>
 <real value='720'/>
 </field>
