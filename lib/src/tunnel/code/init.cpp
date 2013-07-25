@@ -16,6 +16,8 @@
 #include "tunnel/defines.hpp"
 #include "tunnel/controller_config.hpp"
 #include "tunnel/game_variables.hpp"
+#include "tunnel/util/util.hpp"
+
 #include "engine/game.hpp"
 #include "engine/system/game_filesystem.hpp"
 #include "engine/variable/variable.hpp"
@@ -45,4 +47,6 @@ void init_tunnel()
   controller.load();
 
   controller.save_controller_layout( 1 );
+
+  tunnel::util::send_version();
 } // init_tunnel()

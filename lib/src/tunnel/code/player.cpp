@@ -64,6 +64,7 @@
 
 #include "tunnel/util/layer_util.hpp"
 #include "tunnel/util/player_util.hpp"
+#include "tunnel/util/util.hpp"
 
 #include <claw/tween/easing/easing_back.hpp>
 #include <claw/tween/easing/easing_linear.hpp>

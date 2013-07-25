@@ -23,6 +23,21 @@
 
 /*----------------------------------------------------------------------------*/
 /**
+ * \brief Send statistic information when the player start a level.
+ * \param filename The filename of the level.
+ */
+void tunnel::util::send_start_level( const std::string& filename )
+{
+  std::list<bear::engine::stat_variable> vars;
+ 
+  vars.push_back
+    ( bear::engine::stat_variable( "level", filename ) );
+
+  bear::engine::game::get_instance().send_data( "start-level", vars );
+} // util::send_start_level()
+
+/*----------------------------------------------------------------------------*/
+/**
  * \brief Send statistic information when the player quit a level.
  * \param filename The filename of the level.
  */
