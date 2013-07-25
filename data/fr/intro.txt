@@ -1,0 +1,102 @@
+# Lines starting with a # are comments
+#
+# Lines starting with #font indicate the path ans the size of the font
+# to use to display the content of the next lines
+#
+# Lines starting with #intensity indicate the color and the opacity of the text
+# for the next lines. The format is:
+#
+#  #intensity red green blue opacity
+#
+# where each component take its value in [0,1].
+# 
+#font font/hand-drawn-shapes.ttf 32
+#align align_left
+#color 1 1 1
+Si j'avais su
+qu'il y aurait tant de cours,
+je n'aurais pas choisi le module de dieu.
+Ce sont les premiers travaux pratiques
+et je suis déjà crevé.
+
+
+Regardez qui vient. Quelle tête de crétin.
+
+
+#color 1 0.75 0
+Bonjour tout le monde,
+je suis votre professeur et je vais faire
+de vous les meilleurs dieux des univers.
+
+Durant ces premiers travaux pratiques,
+vous aurez à aider un gardien
+des frontières des univers.
+
+
+#color 1 1 1
+Je suis si fatigué. Je vais faire une
+sieste dès la fin du courszzzzZZZzz...
+
+
+
+
+zzZZZzz
+
+#color 1 0.75 0
+...rès important de ne jamais éteindr...
+
+
+#color 1 1 1
+
+zzzzzZZZzzzzzzZzzzzzz
+
+
+#color 1 0.75 0
+...rêts à être téléportés vers vos mento...
+
+
+
+
+#color 1 1 1
+zzzZZZzz
+
+hein?
+
+zz
+
+oaaaaaaaah !
+
+
+Quoi ! Où suis-je ?
+
+#color 0 0.75 1
+Salut gamin, je suis un gardien des
+frontières des univers. J'ai été désigné
+pour être ton mentor pendant ces TP.
+
+Tu vois cette machine ? Il y en a une
+similaire sur chaque frontière des univers.
+
+Elles servent à maintenir l'équilibre
+global. Comme tu peux voir, elles sont
+alimentées à partir de ces matériaux, et un
+de tes objectifs en tant que dieu est de
+trouver ces matériaux.
+
+Mais fait attention. Aussi longtemps
+qu'elles tournent bien, l'équilibre global
+est maintenu. Mais si jamais elles
+s'arrêtent, quelque chose de mal arrivera.
+NE TOUCHE PAS À ÇA !
+
+#color 1 0 0
+*CLANG*
+
+#color 1 1 1
+Euh?
+
+#color 1 0.75 0
+Oh moi-même !
+Va trouver les matériaux avant
+qu'on meurre !
+Vite !
