@@ -41,6 +41,7 @@ BASE_ITEM_EXPORT( add_ingame_layers, tunnel )
  * \brief Constructor.
  */
 tunnel::add_ingame_layers::add_ingame_layers()
+: m_add_status_layer(true)
 {
 
 } // add_ingame_layers::add_ingame_layers()
@@ -68,7 +69,8 @@ void tunnel::add_ingame_layers::build()
   
   get_level().push_layer( transition );
   get_level().push_layer( new misc_layer() );   
-  get_level().push_layer( new status_layer() );  
+  if ( m_add_status_layer ) 
+    get_level().push_layer( new status_layer() );  
   
 #ifndef NDEBUG
   get_level().push_layer( new bear::link_layer );
@@ -82,3 +84,22 @@ void tunnel::add_ingame_layers::build()
 
   kill();
 } // add_ingame_layers::build()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set a field of type \c boolean.
+ * \param name The name of the field.
+ * \param value The value of the field.
+ */
+bool 
+tunnel::add_ingame_layers::set_bool_field( const std::string& name, bool value )
+{
+  bool result(true);
+
+  if ( name == "add_ingame_layers.add_status_layer" )
+    m_add_status_layer = value;
+  else
+    result = super::set_bool_field(name, value);
+
+  return result;
+} // add_ingame_layers::set_bool_field()

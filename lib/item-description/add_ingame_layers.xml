@@ -4,4 +4,10 @@
     <class>bear::base_item</class>
   </inherit>
   <description>This class adds the layers for the graphical user interface in the current level.</description>
+  <fields>
+    <field type="boolean" name="add_ingame_layers.add_status_layer">
+      <description>Tell if we must add status layer.</description>
+      <default_value>true</default_value>
+    </field>
+  </fields>
 </item>
