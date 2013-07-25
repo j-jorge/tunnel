@@ -29,8 +29,8 @@ je suis votre professeur et je vais faire
 de vous les meilleurs dieux des univers.
 
 Durant ces premiers travaux pratiques,
-vous aurez à aider un gardien
-des frontières des univers.
+vous aurez à aider un des gardiens
+aux frontières des univers.
 
 
 #color 1 1 1
@@ -60,7 +60,7 @@ zzzzzZZZzzzzzzZzzzzzz
 #color 1 1 1
 zzzZZZzz
 
-hein?
+hein ?
 
 zz
 
