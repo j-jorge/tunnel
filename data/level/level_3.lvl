@@ -31580,7 +31580,8 @@
 </field>
 <field name='linear_movement_sequence_loop.positions'>
 <real value='0'/>
-<real value='3'/>
+<real value='2'/>
+<real value='5'/>
 </field>
 </fields>
     </item><!-- bear::linear_movement_sequence_loop -->
@@ -32093,7 +32094,7 @@
 <real value='1'/>
 </field>
 <field name='forced_goto_creator.duration'>
-<real value='10'/>
+<real value='6'/>
 </field>
 <field name='forced_goto_creator.length.x'>
 <real value='1300'/>
@@ -32116,7 +32117,7 @@
 <real value='1'/>
 </field>
 <field name='forced_goto_creator.duration'>
-<real value='10'/>
+<real value='6'/>
 </field>
 <field name='forced_goto_creator.length.x'>
 <real value='-1300'/>

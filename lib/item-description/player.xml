@@ -14,5 +14,9 @@
       <description>Indicates if the player can transport objects.</description>
       <default_value>false</default_value>
     </field>
+    <field type="boolean" name="player.must_create_camera">
+      <description>Indicates if the player must create a camera.</description>
+      <default_value>true</default_value>
+    </field>
   </fields>
 </item>

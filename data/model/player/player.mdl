@@ -122,11 +122,7 @@
 <action name="jump" duration="0.355" auto_next="">
 <marks>
 <mark label="body" apply_angle_to_animation="0" pause_animation_when_hidden="0">
-<animation loops='1' first_index='0' last_index='0' loop_back='false' auto_size='true' width='42' height='97' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
-  <frame duration='0.015'>
-    <sprite image='gfx/hero/hero-1.png' x='936' y='0' clip_width='42' clip_height='97' spritepos='jump 13' auto_size='true' width='42' height='97' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
-  </frame>
-</animation>
+<animation_file path='animation/player/pushed-up.canim' auto_size='true' width='42' height='97' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </mark>
 <mark label="mouth" apply_angle_to_animation="0" pause_animation_when_hidden="0">
 </mark>

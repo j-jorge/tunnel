@@ -477,6 +477,9 @@ namespace tunnel
     /** \brief Indicates if the impulse_jump has been done. */
     bool m_impulse_jump_done;
 
+     /** \brief Indicates if we must create a camera. */
+    bool m_must_create_camera;
+
     /** \brief The minimum radius of teleportation circle. */
     static const bear::universe::coordinate_type s_min_teleportation_radius;
 
