@@ -1363,7 +1363,7 @@ decorative_item.shadow.y
 -5
 49
 item_with_text.font
-font/Hand Drawn Shapes.ttf
+font/hand-drawn-shapes.ttf
 50
 44
 item_with_text.horizontal_align
