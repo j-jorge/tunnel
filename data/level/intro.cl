@@ -1860,7 +1860,7 @@ base_item.size.width
 600
 44
 rolling_credits.credits
-en/intro.txt
+i18n/en/intro.txt
 42
 rolling_credits.fading_duration
 1

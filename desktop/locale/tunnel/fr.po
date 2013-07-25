@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-25 18:52+0200\n"
-"PO-Revision-Date: 2013-07-25 18:54+0100\n"
+"POT-Creation-Date: 2013-07-25 19:01+0200\n"
+"PO-Revision-Date: 2013-07-25 19:03+0100\n"
 "Last-Translator: Julien Jorge <julien.jorge@gamned.org>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -119,10 +119,6 @@ msgstr ""
 #: ../../../data/model/player/player.mdl
 msgid "animation/player/walk.canim"
 msgstr ""
-
-#: ../../../data/level/intro.lvl
-msgid "en/intro.txt"
-msgstr "fr/intro.txt"
 
 #: ../../../data/level/intro.lvl
 msgid "font/fixed-10x20.png"
@@ -515,6 +511,11 @@ msgstr ""
 #: ../../../data/level/title.lvl
 msgid "gfx/title/logo.png"
 msgstr ""
+
+#: ../../../data/level/intro.lvl
+#| msgid "en/intro.txt"
+msgid "i18n/en/intro.txt"
+msgstr "i18n/fr/intro.txt"
 
 #: ../../../lib/src/tunnel/code/controller_layout.cpp:554
 msgid "joystick "

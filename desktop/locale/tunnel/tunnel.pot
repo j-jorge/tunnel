@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-25 18:52+0200\n"
+"POT-Creation-Date: 2013-07-25 19:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,10 +119,6 @@ msgstr ""
 
 #: ../../../data/model/player/player.mdl
 msgid "animation/player/walk.canim"
-msgstr ""
-
-#: ../../../data/level/intro.lvl
-msgid "en/intro.txt"
 msgstr ""
 
 #: ../../../data/level/intro.lvl
@@ -515,6 +511,10 @@ msgstr ""
 #: ../../../data/level/end.lvl ../../../data/level/intro.lvl
 #: ../../../data/level/title.lvl
 msgid "gfx/title/logo.png"
+msgstr ""
+
+#: ../../../data/level/intro.lvl
+msgid "i18n/en/intro.txt"
 msgstr ""
 
 #: ../../../lib/src/tunnel/code/controller_layout.cpp:554

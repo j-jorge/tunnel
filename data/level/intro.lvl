@@ -1020,7 +1020,7 @@
 <real value='600'/>
 </field>
 <field name='rolling_credits.credits'>
-<string value='en/intro.txt'/>
+<string value='i18n/en/intro.txt'/>
 </field>
 <field name='rolling_credits.fading_duration'>
 <real value='1'/>
