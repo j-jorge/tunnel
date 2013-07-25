@@ -22,15 +22,14 @@ namespace tunnel
    * \brief Utility functions about tunnel.
    * \author Sébastien angibaud
    */
-  class util
+  namespace util
   {
-  public:
-    static void send_quit_level( const std::string& filename );
-    static void send_complete_level( const std::string& filename );
-    static void send_die_level( const std::string& filename );
-    static void send_version();
-
-  }; // class util
+    void send_start_level( const std::string& filename );
+    void send_quit_level( const std::string& filename );
+    void send_complete_level( const std::string& filename );
+    void send_die_level( const std::string& filename );
+    void send_version();
+  } // namespace util
 
 } // namespace tunnel
 

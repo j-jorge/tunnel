@@ -579,11 +579,8 @@
 <field name='base_item.size.width'>
 <real value='400'/>
 </field>
-<field name='item_with_decoration.extend_on_bounding_box'>
-<bool value='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/title/logo.png' x='0' y='0' clip_width='500' clip_height='500' spritepos='' auto_size='true' width='500' height='500' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/title/logo.png' x='0' y='0' clip_width='400' clip_height='400' spritepos='logo' auto_size='true' width='400' height='400' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -603,12 +600,9 @@
 <real value='2'/>
 </field>
 <field name='delayed_level_loading.level'>
-<string value='level/intro.cl'/>
+<string value='level/level_1.cl'/>
 </field>
 <field name='delayed_level_loading.load_on_input'>
-<bool value='1'/>
-</field>
-<field name='delayed_level_loading.push_mode'>
 <bool value='1'/>
 </field>
 <field name='delayed_level_loading.transition_layer_name'>
