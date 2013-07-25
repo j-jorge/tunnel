@@ -2864,7 +2864,6 @@ void tunnel::player::create_hit_star
  */
 void tunnel::player::create_camera()
 {
- std:cout << "create camera" << std::endl;
   tunnel::camera_on_player* item = new tunnel::camera_on_player();
   
   item->set_active_on_build();
