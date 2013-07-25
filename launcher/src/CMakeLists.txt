@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.6)
-project(rp-launcher)
+project(tunnel-launcher)
 
 set( TUNNEL_LAUNCHER_TARGET_NAME tunnel-launcher )
 
