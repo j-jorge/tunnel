@@ -1,0 +1,87 @@
+# Lines starting with a # are comments
+#
+# Lines starting with #font indicate the path ans the size of the font
+# to use to display the content of the next lines
+#
+# Lines starting with #intensity indicate the color and the opacity of the text
+# for the next lines. The format is:
+#
+#  #intensity red green blue opacity
+#
+# where each component take its value in [0,1].
+# 
+#font font/hand-drawn-shape.ttf 16
+#color 1 1 1
+If I knew there would be so many courses, I would not have chosen the God class. It's the first practicals and I'm already tired.
+
+
+See who's coming. Looks like a moron.
+
+
+
+#color 1 0.75 0
+Hello everybody, I'm your teacher and I'm going to make each of you one of the best god the universes have ever seen.
+
+During this first practicals you will have to help the guardians at the borders of the universe.
+
+
+#color 1 1 1
+I'm too tired. I'm going to take a nap as soon as he ZZZzzzz…
+
+
+
+
+zzzZZzz
+
+#color 1 0.75 0
+…ery important not to stope the…
+
+
+#color 1 1 1
+
+zzzzzzzzzzzzzzZzzzzzz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+zzzZZZzz
+
+hum?
+
+zz
+
+Yaaaaaaaaawn!
+
+
+What! Where am I?
+
+#color 1 0.5 0
+Hello kid, I'm a guardian of the borders of the universes. I have been designated to be your mentor during these practicals.
+
+See this machine? There is a similar one on every border of the universes.
+
+We use them to preserve the global equilibrium. As you can see, they are powered by particular materials, and one of your goals as a god is to find these materials.
+
+But be careful. As long as they run well, the global equilibrium is preserved. But if they ever stop, really bad things will happen. DON'T TOUCH THIS!
+
+#color 1 0 0
+*KLANK*
+
+#color 1 1 1
+Meh?
+
+#color 1 0.5 0
+Oh my self! Go find the materials before we die! Hurry!
