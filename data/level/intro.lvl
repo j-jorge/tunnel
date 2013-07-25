@@ -935,6 +935,9 @@
 <items>
     <item class_name='bear::camera' fixed='false'>
 <fields>
+<field name='base_item.position.left'>
+<real value='0'/>
+</field>
 <field name='base_item.size.height'>
 <real value='720'/>
 </field>
@@ -956,7 +959,7 @@
 <real value='225'/>
 </field>
 <field name='delayed_level_loading.delay'>
-<real value='4.5'/>
+<real value='30'/>
 </field>
 <field name='delayed_level_loading.fade_duration'>
 <real value='0'/>
@@ -964,60 +967,40 @@
 <field name='delayed_level_loading.level'>
 <string value='level/title.cl'/>
 </field>
+<field name='delayed_level_loading.load_on_input'>
+<bool value='1'/>
+</field>
 <field name='delayed_level_loading.push_mode'>
 <bool value='1'/>
 </field>
 </fields>
     </item><!-- bear::delayed_level_loading -->
 
-    <item class_name='bear::crossfade_sequence' fixed='true'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='392'/>
-</field>
-<field name='base_item.position.left'>
-<real value='312'/>
-</field>
-<field name='crossfade_sequence.duration_sequence'>
-<real value='2.5'/>
-</field>
-<field name='crossfade_sequence.fadeout_for_last_item'>
-<bool value='0'/>
-</field>
-<field name='crossfade_sequence.item_sequence'>
-<item_reference value='text-1'/>
-</field>
-</fields>
-    </item><!-- bear::crossfade_sequence -->
-
-    <item class_name='bear::decorative_item' fixed='true' id='text-1'>
+    <item class_name='bear::rolling_credits' fixed='true'>
 <fields>
 <field name='base_item.position.bottom'>
 <real value='160'/>
 </field>
 <field name='base_item.position.left'>
-<real value='440'/>
+<real value='340'/>
 </field>
 <field name='base_item.size.height'>
 <real value='400'/>
 </field>
 <field name='base_item.size.width'>
-<real value='400'/>
+<real value='600'/>
 </field>
-<field name='item_with_text.font'>
-<font path='font/Hand Drawn Shapes.ttf' size='50'/>
+<field name='rolling_credits.credits'>
+<string value='dl/intro.txt'/>
 </field>
-<field name='item_with_text.horizontal_align'>
-<string value='align_center'/>
+<field name='rolling_credits.fading_duration'>
+<real value='1'/>
 </field>
-<field name='item_with_text.text'>
-<string value='Texte...'/>
-</field>
-<field name='item_with_text.vertical_align'>
-<string value='align_middle'/>
+<field name='rolling_credits.movement_duration'>
+<real value='10'/>
 </field>
 </fields>
-    </item><!-- bear::decorative_item -->
+    </item><!-- bear::rolling_credits -->
 
 </items>
 
