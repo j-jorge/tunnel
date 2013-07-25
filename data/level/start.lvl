@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<level name='' width='1280' height='768' music=''>
-  <layer class_name='action_layer' name='' width='1280' height='768' fit_level='1' tag=''>
+<level name='' width='10000' height='2768' music=''>
+  <layer class_name='action_layer' name='' width='10000' height='2768' fit_level='1' tag=''>
 
 <items>
     <item class_name='bear::camera' fixed='false'>
@@ -55,10 +55,7 @@
 <real value='4.5'/>
 </field>
 <field name='delayed_level_loading.level'>
-<string value='level/title.cl'/>
-</field>
-<field name='delayed_level_loading.transition_layer_name'>
-<string value='transition_effect_layer'/>
+<string value='level/intro.cl'/>
 </field>
 </fields>
     </item><!-- bear::delayed_level_loading -->
@@ -84,6 +81,20 @@
 </field>
 </fields>
     </item><!-- bear::crossfade_sequence -->
+
+    <item class_name='tunnel::add_ingame_layers' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='57'/>
+</field>
+<field name='base_item.position.left'>
+<real value='335'/>
+</field>
+<field name='add_ingame_layers.add_status_layer'>
+<bool value='0'/>
+</field>
+</fields>
+    </item><!-- tunnel::add_ingame_layers -->
 
     <item class_name='bear::decorative_item' fixed='true' id='logo'>
 <fields>

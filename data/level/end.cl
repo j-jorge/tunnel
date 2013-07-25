@@ -688,7 +688,7 @@ bear::camera
 bear::cursor
 bear::browser_launcher_toggle
 bear::mouse_detector
-bear::level_popper_toggle
+bear::level_loader_toggle
 bear::mouse_detector
 bear::browser_launcher_toggle
 bear::mouse_detector
@@ -822,12 +822,9 @@ base_item.position.bottom
 42
 base_item.position.left
 6459
-42
-level_popper_toggle.fade_duration
-2
 44
-level_popper_toggle.transition_layer_name
-transition_effect_layer
+level_loader_toggle.level
+level/title.cl
 31
 1
 42
