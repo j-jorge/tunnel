@@ -466,8 +466,20 @@
 <field name='base_item.position.left'>
 <real value='5572'/>
 </field>
+<field name='base_item.size.height'>
+<real value='10'/>
+</field>
+<field name='base_item.size.width'>
+<real value='10'/>
+</field>
+<field name='basic_renderable_item.gap.x'>
+<integer value='2'/>
+</field>
+<field name='basic_renderable_item.gap.y'>
+<integer value='-25'/>
+</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/status/status.png' x='0' y='0' clip_width='33' clip_height='33' spritepos='cursor' auto_size='true' width='33' height='33' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='cursor.visible_duration'>
 <real value='5'/>
@@ -515,10 +527,13 @@
     <item class_name='bear::browser_launcher_toggle' fixed='true' id='facebook'>
 <fields>
 <field name='base_item.position.bottom'>
-<real value='714'/>
+<real value='660'/>
 </field>
 <field name='base_item.position.left'>
-<real value='5640'/>
+<real value='5703'/>
+</field>
+<field name='browser_launcher_toggle.url'>
+<string value='http://www.facebook.com/share.php?u=http://www.stuff-o-matic.com/tunnel/'/>
 </field>
 </fields>
     </item><!-- bear::browser_launcher_toggle -->
@@ -529,7 +544,7 @@
 <real value='567'/>
 </field>
 <field name='base_item.position.left'>
-<real value='5676'/>
+<real value='5756'/>
 </field>
 <field name='base_item.size.height'>
 <real value='50'/>
@@ -552,16 +567,22 @@
     <item class_name='bear::decorative_item' fixed='false'>
 <fields>
 <field name='base_item.position.bottom'>
-<real value='618'/>
+<real value='567'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='-100'/>
 </field>
 <field name='base_item.position.left'>
-<real value='5695'/>
+<real value='5756'/>
 </field>
 <field name='base_item.size.height'>
 <real value='50'/>
 </field>
 <field name='base_item.size.width'>
 <real value='50'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/title/logo.png' x='401' y='102' clip_width='50' clip_height='50' spritepos='facebook' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -603,34 +624,6 @@
 </fields>
     </item><!-- bear::block -->
 
-    <item class_name='bear::browser_launcher_toggle' fixed='true' id='twitter'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='693'/>
-</field>
-<field name='base_item.position.left'>
-<real value='5861'/>
-</field>
-</fields>
-    </item><!-- bear::browser_launcher_toggle -->
-
-    <item class_name='bear::decorative_item' fixed='false'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='622'/>
-</field>
-<field name='base_item.position.left'>
-<real value='5897'/>
-</field>
-<field name='base_item.size.height'>
-<real value='50'/>
-</field>
-<field name='base_item.size.width'>
-<real value='50'/>
-</field>
-</fields>
-    </item><!-- bear::decorative_item -->
-
     <item class_name='bear::decorative_item' fixed='true'>
 <fields>
 <field name='base_item.position.bottom'>
@@ -645,14 +638,25 @@
 <field name='base_item.size.width'>
 <real value='400'/>
 </field>
-<field name='item_with_decoration.extend_on_bounding_box'>
-<bool value='1'/>
-</field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/title/logo.png' x='0' y='0' clip_width='500' clip_height='500' spritepos='' auto_size='true' width='500' height='500' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/title/logo.png' x='0' y='0' clip_width='400' clip_height='400' spritepos='logo' auto_size='true' width='400' height='400' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::browser_launcher_toggle' fixed='true' id='twitter'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='655'/>
+</field>
+<field name='base_item.position.left'>
+<real value='5924'/>
+</field>
+<field name='browser_launcher_toggle.url'>
+<string value='http://twitter.com/share?url=http://www.stuff-o-matic.com/tunnel/'/>
+</field>
+</fields>
+    </item><!-- bear::browser_launcher_toggle -->
 
     <item class_name='bear::mouse_detector' fixed='true' id='mouse_twitter'>
 <fields>
@@ -660,7 +664,7 @@
 <real value='568'/>
 </field>
 <field name='base_item.position.left'>
-<real value='5942'/>
+<real value='5968'/>
 </field>
 <field name='base_item.size.height'>
 <real value='50'/>
@@ -679,6 +683,29 @@
 </field>
 </fields>
     </item><!-- bear::mouse_detector -->
+
+    <item class_name='bear::decorative_item' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='568'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='-100'/>
+</field>
+<field name='base_item.position.left'>
+<real value='5968.67'/>
+</field>
+<field name='base_item.size.height'>
+<real value='50'/>
+</field>
+<field name='base_item.size.width'>
+<real value='50'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/title/logo.png' x='452' y='51' clip_width='50' clip_height='50' spritepos='twitter' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
 
     <item class_name='bear::straight_slope' fixed='true'>
 <fields>
@@ -708,6 +735,9 @@
 <field name='base_item.position.bottom'>
 <real value='643'/>
 </field>
+<field name='base_item.position.depth'>
+<integer value='100'/>
+</field>
 <field name='base_item.position.left'>
 <real value='6045'/>
 </field>
@@ -716,6 +746,20 @@
 </field>
 <field name='base_item.size.width'>
 <real value='50'/>
+</field>
+<field name='mouse_over_manager.animation_off'>
+<animation loops='0' first_index='0' last_index='0' loop_back='false' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
+  <frame duration='1'>
+    <sprite image='gfx/title/logo.png' x='401' y='0' clip_width='50' clip_height='50' spritepos='focus lights' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='0' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+  </frame>
+</animation>
+</field>
+<field name='mouse_over_manager.animation_on'>
+<animation loops='0' first_index='0' last_index='0' loop_back='false' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
+  <frame duration='1'>
+    <sprite image='gfx/title/logo.png' x='401' y='0' clip_width='50' clip_height='50' spritepos='focus lights' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+  </frame>
+</animation>
 </field>
 <field name='mouse_over_manager.items'>
 <item_reference value='mouse_site'/>
@@ -740,6 +784,55 @@
 </fields>
     </item><!-- bear::browser_launcher_toggle -->
 
+    <item class_name='bear::decorative_item' fixed='false'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='568'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='-100'/>
+</field>
+<field name='base_item.position.left'>
+<real value='6181'/>
+</field>
+<field name='base_item.size.height'>
+<real value='50'/>
+</field>
+<field name='base_item.size.width'>
+<real value='50'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/title/logo.png' x='401' y='51' clip_width='50' clip_height='50' spritepos='web' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
+
+    <item class_name='bear::mouse_detector' fixed='true' id='mouse_site'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='568'/>
+</field>
+<field name='base_item.position.left'>
+<real value='6181.33'/>
+</field>
+<field name='base_item.size.height'>
+<real value='50'/>
+</field>
+<field name='base_item.size.width'>
+<real value='50'/>
+</field>
+<field name='mouse_detector.middle_button'>
+<bool value='1'/>
+</field>
+<field name='mouse_detector.right_button'>
+<bool value='1'/>
+</field>
+<field name='mouse_detector.toggle'>
+<item_reference value='site'/>
+</field>
+</fields>
+    </item><!-- bear::mouse_detector -->
+
     <item class_name='bear::block' fixed='true'>
 <fields>
 <field name='item_with_friction.top_friction'>
@@ -763,13 +856,13 @@
 </fields>
     </item><!-- bear::block -->
 
-    <item class_name='bear::mouse_detector' fixed='true' id='mouse_site'>
+    <item class_name='bear::mouse_detector' fixed='true' id='mouse_popper'>
 <fields>
 <field name='base_item.position.bottom'>
 <real value='568'/>
 </field>
 <field name='base_item.position.left'>
-<real value='6208'/>
+<real value='6394'/>
 </field>
 <field name='base_item.size.height'>
 <real value='50'/>
@@ -784,7 +877,7 @@
 <bool value='1'/>
 </field>
 <field name='mouse_detector.toggle'>
-<item_reference value='site'/>
+<item_reference value='popper_toggle'/>
 </field>
 </fields>
     </item><!-- bear::mouse_detector -->
@@ -792,16 +885,22 @@
     <item class_name='bear::decorative_item' fixed='false'>
 <fields>
 <field name='base_item.position.bottom'>
-<real value='620'/>
+<real value='568'/>
+</field>
+<field name='base_item.position.depth'>
+<integer value='-100'/>
 </field>
 <field name='base_item.position.left'>
-<real value='6267'/>
+<real value='6394'/>
 </field>
 <field name='base_item.size.height'>
 <real value='50'/>
 </field>
 <field name='base_item.size.width'>
 <real value='50'/>
+</field>
+<field name='item_with_decoration.sprite'>
+<sprite image='gfx/title/logo.png' x='452' y='0' clip_width='50' clip_height='50' spritepos='back' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- bear::decorative_item -->
@@ -845,49 +944,6 @@
 </field>
 </fields>
     </item><!-- bear::level_popper_toggle -->
-
-    <item class_name='bear::mouse_detector' fixed='true' id='mouse_popper'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='568'/>
-</field>
-<field name='base_item.position.left'>
-<real value='6474'/>
-</field>
-<field name='base_item.size.height'>
-<real value='50'/>
-</field>
-<field name='base_item.size.width'>
-<real value='50'/>
-</field>
-<field name='mouse_detector.middle_button'>
-<bool value='1'/>
-</field>
-<field name='mouse_detector.right_button'>
-<bool value='1'/>
-</field>
-<field name='mouse_detector.toggle'>
-<item_reference value='popper_toggle'/>
-</field>
-</fields>
-    </item><!-- bear::mouse_detector -->
-
-    <item class_name='bear::decorative_item' fixed='false'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='637'/>
-</field>
-<field name='base_item.position.left'>
-<real value='6504'/>
-</field>
-<field name='base_item.size.height'>
-<real value='50'/>
-</field>
-<field name='base_item.size.width'>
-<real value='50'/>
-</field>
-</fields>
-    </item><!-- bear::decorative_item -->
 
     <item class_name='bear::slope' fixed='true'>
 <fields>
