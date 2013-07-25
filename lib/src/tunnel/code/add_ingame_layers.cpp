@@ -27,10 +27,10 @@
 #include "tunnel/layer/status_layer.hpp"
 
 #ifndef NDEBUG
+#include "generic_items/layer/item_information_layer.hpp"
 #include "generic_items/layer/physics_layer.hpp"
 #include "generic_items/layer/link_layer.hpp"
 #include "generic_items/layer/recent_path_layer.hpp"
-#include "generic_items/layer/runtime_settings_layer.hpp"
 #include "generic_items/layer/wireframe_layer.hpp"
 #endif
 
@@ -71,13 +71,11 @@ void tunnel::add_ingame_layers::build()
   get_level().push_layer( new status_layer() );  
   
 #ifndef NDEBUG
+  get_level().push_layer( new bear::item_information_layer );
   get_level().push_layer( new bear::link_layer );
   get_level().push_layer( new bear::physics_layer );
   get_level().push_layer( new bear::wireframe_layer );
   get_level().push_layer( new bear::recent_path_layer );
-  get_level().push_layer
-    ( new bear::runtime_settings_layer
-      ( get_level_globals().get_font("font/fixed-10x20.fnt",12) ) );
 #endif
 
   kill();
