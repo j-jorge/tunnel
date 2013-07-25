@@ -1,0 +1,16 @@
+0 {
+  player.set_marionette(1); 
+}
+
++11 {
+  player.apply_open_tunnel();
+}
+
++3.5 {
+  player_intro.release_player();
+}
+
++ 2.0 {
+  script.end();
+}
+

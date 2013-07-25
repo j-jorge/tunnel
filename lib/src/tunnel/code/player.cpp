@@ -2996,6 +2996,7 @@ void tunnel::player::on_init_shaders()
  */
 void tunnel::player::init_exported_methods()
 {
+  TEXT_INTERFACE_CONNECT_METHOD_1( player, set_marionette, void, bool );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_roar, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_disappear, void );
   TEXT_INTERFACE_CONNECT_METHOD_0( player, apply_game_over, void );

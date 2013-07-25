@@ -54,11 +54,11 @@
 <field name='delayed_level_loading.delay'>
 <real value='4.5'/>
 </field>
-<field name='delayed_level_loading.fade_duration'>
-<real value='0'/>
-</field>
 <field name='delayed_level_loading.level'>
 <string value='level/title.cl'/>
+</field>
+<field name='delayed_level_loading.transition_layer_name'>
+<string value='transition_effect_layer'/>
 </field>
 </fields>
     </item><!-- bear::delayed_level_loading -->
