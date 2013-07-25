@@ -786,6 +786,9 @@
 <field name='base_item.size.width'>
 <real value='565'/>
 </field>
+<field name='basic_renderable_item.color'>
+<color opacity='1' red_intensity='0' green_intensity='0' blue_intensity='0'/>
+</field>
 <field name='item_with_text.font'>
 <font path='font/Hand Drawn Shapes.ttf' size='50'/>
 </field>
@@ -1695,7 +1698,7 @@
 </fields>
     </item><!-- bear::slope -->
 
-    <item class_name='bear::forced_goto_creator' fixed='false' id='join_player'>
+    <item class_name='bear::forced_goto_creator' fixed='false' id='goto_back'>
 <fields>
 <field name='base_item.position.bottom'>
 <real value='1968'/>
@@ -1874,7 +1877,7 @@
 <real value='5382'/>
 </field>
 <field name='forced_sequence_creator.movements'>
-<item_reference value='join_player'/>
+<item_reference value='goto_back'/>
 <item_reference value='stay-1'/>
 </field>
 </fields>
@@ -2015,6 +2018,26 @@
 </fields>
     </item><!-- bear::decorative_effect -->
 
+    <item class_name='bear::decorative_rectangle' fixed='false' id='rectangle'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='2402'/>
+</field>
+<field name='base_item.position.left'>
+<real value='5460'/>
+</field>
+<field name='base_item.size.height'>
+<real value='720'/>
+</field>
+<field name='base_item.size.width'>
+<real value='1280'/>
+</field>
+<field name='decorative_rectangle.fill_color'>
+<color opacity='1' red_intensity='0' green_intensity='0' blue_intensity='0'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_rectangle -->
+
     <item class_name='bear::camera' fixed='false' id='camera'>
 <fields>
 <field name='base_item.position.bottom'>
@@ -2049,26 +2072,6 @@
 </field>
 </fields>
     </item><!-- bear::camera -->
-
-    <item class_name='bear::decorative_rectangle' fixed='false' id='rectangle'>
-<fields>
-<field name='base_item.position.bottom'>
-<real value='2402'/>
-</field>
-<field name='base_item.position.left'>
-<real value='5460'/>
-</field>
-<field name='base_item.size.height'>
-<real value='720'/>
-</field>
-<field name='base_item.size.width'>
-<real value='1280'/>
-</field>
-<field name='decorative_rectangle.fill_color'>
-<color opacity='1' red_intensity='0' green_intensity='0' blue_intensity='0'/>
-</field>
-</fields>
-    </item><!-- bear::decorative_rectangle -->
 
     <item class_name='bear::block' fixed='true'>
 <fields>
