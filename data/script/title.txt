@@ -7,7 +7,7 @@
 }
 
 +3.5 {
-  player_intro.release_player();
+  player.release_player();
 }
 
 + 2.0 {
