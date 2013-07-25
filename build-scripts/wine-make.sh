@@ -1,7 +1,5 @@
 #!/bin/sh
 
-rm -f CMakeCache.txt
-
 . tunnel/build-scripts/version.sh
 
 do_build() {
