@@ -141,7 +141,7 @@ tunnel::player::player()
   m_next_tag(0), m_teleport_time(0), m_tunnel_aborted(false), 
   m_fade_effect_intensity(1), m_can_teleport(true),
   m_enters_layer_done(false), m_editor_player(false),
-  m_opacity_injured(1), m_opacity_inc(-0.02)
+  m_opacity_injured(1), m_opacity_inc(-0.02), m_must_create_camera(true)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -169,7 +169,7 @@ tunnel::player::player( const player& p )
     m_teleport_time(p.m_teleport_time), m_tunnel_aborted(p.m_tunnel_aborted),
     m_fade_effect_intensity(1), m_can_teleport(true), 
     m_enters_layer_done(false), m_editor_player(false),
-    m_opacity_injured(1), m_opacity_inc(-0.02)
+    m_opacity_injured(1), m_opacity_inc(-0.02), m_must_create_camera(true)
 {
   init();
 } // player::player()
@@ -406,6 +406,8 @@ bool tunnel::player::set_bool_field( const std::string& name, bool value )
     m_editor_player = value;
   else if ( name == "player.can_transport" )
     m_can_transport = value;
+  else if ( name == "player.must_create_camera" )
+    m_must_create_camera = value;
   else
     result = super::set_bool_field( name, value );
 
@@ -2862,6 +2864,7 @@ void tunnel::player::create_hit_star
  */
 void tunnel::player::create_camera()
 {
+ std:cout << "create camera" << std::endl;
   tunnel::camera_on_player* item = new tunnel::camera_on_player();
   
   item->set_active_on_build();
@@ -2944,7 +2947,8 @@ void tunnel::player::on_level_progress_done()
  */
 void tunnel::player::on_level_started()
 {
-  create_camera();
+  if ( m_must_create_camera )
+    create_camera();
   
   bear::engine::level::layer_iterator it = get_level().layer_begin();
 
