@@ -7,3 +7,7 @@ status_img "status.xcf.bz2"
 "heart" autosize * 0.5 with status_img
   "heart"
   ;
+
+"cursor" autosize * 0.5 with status_img
+  "cursor"
+;
