@@ -1061,7 +1061,7 @@ mouth
 1
 0
 apply_look_upward
-16
+12
 84
 align_left
 align_bottom
@@ -1089,7 +1089,7 @@ align_bottom
 1
 
 0
-8
+6
 8
 1
 45
@@ -2840,7 +2840,7 @@ mouth
 1
 0
 apply_walk
-23
+12
 84
 align_left
 align_bottom
@@ -2868,7 +2868,7 @@ align_bottom
 1
 
 0
-8
+-3
 8
 1
 45

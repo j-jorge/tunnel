@@ -46,6 +46,12 @@ namespace tunnel
 
     void pre_cache();
     void build();
+
+    bool set_bool_field( const std::string& name, bool value );
+    
+  private:
+    /* \brief Indicates if we must add status layer. */
+    bool m_add_status_layer;
   }; // class add_ingame_layers
 } // namespace tunnel
 
