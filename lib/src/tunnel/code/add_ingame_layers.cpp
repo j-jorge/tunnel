@@ -54,7 +54,7 @@ void tunnel::add_ingame_layers::pre_cache()
 {
   super::pre_cache();
 
-  get_level_globals().load_font("font/Hand Drawn Shapes.ttf");
+  get_level_globals().load_font("font/hand-drawn-shapes.ttf");
 } // add_ingame_layers::pre_cache()
 
 /*----------------------------------------------------------------------------*/

@@ -935,9 +935,6 @@
 <items>
     <item class_name='bear::camera' fixed='false'>
 <fields>
-<field name='base_item.position.left'>
-<real value='0'/>
-</field>
 <field name='base_item.size.height'>
 <real value='720'/>
 </field>
@@ -949,6 +946,41 @@
 </field>
 </fields>
     </item><!-- bear::camera -->
+
+    <item class_name='bear::decorative_item' fixed='true' id='text-1'>
+<fields>
+<field name='base_item.position.bottom'>
+<real value='10'/>
+</field>
+<field name='base_item.position.left'>
+<real value='10'/>
+</field>
+<field name='base_item.size.height'>
+<real value='41'/>
+</field>
+<field name='base_item.size.width'>
+<real value='565'/>
+</field>
+<field name='item_with_text.font'>
+<font path='font/hand-drawn-shapes.ttf' size='50'/>
+</field>
+<field name='item_with_text.horizontal_align'>
+<string value='align_left'/>
+</field>
+<field name='item_with_text.text'>
+<string value='Press any key to skip'/>
+</field>
+<field name='item_with_text.vertical_align'>
+<string value='align_middle'/>
+</field>
+<field name='decorative_item.shadow.x'>
+<real value='5'/>
+</field>
+<field name='decorative_item.shadow.y'>
+<real value='-5'/>
+</field>
+</fields>
+    </item><!-- bear::decorative_item -->
 
     <item class_name='bear::delayed_level_loading' fixed='true'>
 <fields>
@@ -991,13 +1023,13 @@
 <real value='600'/>
 </field>
 <field name='rolling_credits.credits'>
-<string value='dl/intro.txt'/>
+<string value='en/intro.txt'/>
 </field>
 <field name='rolling_credits.fading_duration'>
 <real value='1'/>
 </field>
 <field name='rolling_credits.movement_duration'>
-<real value='10'/>
+<real value='25'/>
 </field>
 </fields>
     </item><!-- bear::rolling_credits -->

@@ -32,7 +32,7 @@ base_item.size.width
 180
 49
 item_with_text.font
-font/Hand Drawn Shapes.ttf
+font/hand-drawn-shapes.ttf
 50
 43
 item_with_text.stretched_text
