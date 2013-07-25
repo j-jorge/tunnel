@@ -158,7 +158,7 @@ subdirs(
   lib
   data
   release
-  #desktop
+  desktop
   )
 
 install(

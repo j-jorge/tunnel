@@ -1,0 +1,5 @@
+?package(tunnel):needs="X11" section="Games/Action" \
+  title="Tunnel" \
+  command="@CMAKE_INSTALL_PREFIX@/@TUNNEL_INSTALL_EXECUTABLE_DIR@/tunnel" \
+  hints="." \
+  icon="@CMAKE_INSTALL_PREFIX@/share/pixmaps/tunnel.xpm"

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+
+Name=Tunnel
+
+TryExec=@CMAKE_INSTALL_PREFIX@/@TUNNEL_INSTALL_EXECUTABLE_DIR@/tunnel-launcher
+Exec=@CMAKE_INSTALL_PREFIX@/@TUNNEL_INSTALL_EXECUTABLE_DIR@/tunnel-launcher
+Terminal=false
+Icon=tunnel
+
+StartupNotify=true
+Type=Application
+Categories=Game;ArcadeGame;

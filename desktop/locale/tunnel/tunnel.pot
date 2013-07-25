@@ -1,0 +1,550 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-25 18:52+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../data/level/test/test_seb_1.lvl
+msgid "FIN"
+msgstr ""
+
+#: ../../../data/level/test/test_seb_1.lvl
+msgid "ID4"
+msgstr ""
+
+#: ../../../data/level/test/test_seb_1.lvl
+msgid "ID_1"
+msgstr ""
+
+#: ../../../data/level/test/test_seb_1.lvl
+msgid "ID_2"
+msgstr ""
+
+#: ../../../data/level/test/test_seb_1.lvl
+msgid "ID_3"
+msgstr ""
+
+#: ../../../data/level/start.lvl
+msgid "Loading..."
+msgstr ""
+
+#: ../../../data/level/intro.lvl
+msgid "Press any key to skip"
+msgstr ""
+
+#: ../../../data/level/title.lvl
+msgid "Press any key to start"
+msgstr ""
+
+#: ../../../data/level/level_3.lvl ../../../data/level/level_2.lvl
+msgid "animation/common/spring.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/crouch.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/fall.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/float.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/float_and_swim.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/idle.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/in-equilibrium.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/injured.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/jump.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/look_upward.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/push.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/pushed-up.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/run.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/sink.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/swimming.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/teleport.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/wait1.canim"
+msgstr ""
+
+#: ../../../data/model/player/player.mdl
+msgid "animation/player/walk.canim"
+msgstr ""
+
+#: ../../../data/level/intro.lvl
+msgid "en/intro.txt"
+msgstr ""
+
+#: ../../../data/level/intro.lvl
+msgid "font/fixed-10x20.png"
+msgstr ""
+
+#: ../../../data/level/intro.lvl
+msgid "font/fixed_white-7x12.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/placeholder.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+#: ../../../data/level/test/worlds.lvl ../../../data/model/door.mdl
+#: ../../../data/model/door_switch.mdl
+#: ../../../data/animation/common/spring.anim
+msgid "gfx/common/common-1.png"
+msgstr ""
+
+#: ../../../data/level/intro.lvl ../../../data/animation/player/drown.anim
+#: ../../../data/animation/player/pushed-up.anim
+#: ../../../data/animation/player/teleport.anim
+#: ../../../data/animation/player/walk.anim
+#: ../../../data/animation/player/swimming.anim
+#: ../../../data/animation/player/look_upward.anim
+#: ../../../data/animation/player/run.anim
+#: ../../../data/animation/player/float_and_swim.anim
+#: ../../../data/animation/player/fall.anim
+#: ../../../data/animation/player/idle.anim
+#: ../../../data/animation/player/wait1.anim
+#: ../../../data/animation/player/jump.anim
+#: ../../../data/animation/player/push.anim
+#: ../../../data/animation/player/injured.anim
+#: ../../../data/animation/player/in-equilibrium.anim
+#: ../../../data/animation/player/sink.anim
+#: ../../../data/animation/player/crouch.anim
+#: ../../../data/animation/player/float.anim
+msgid "gfx/hero/hero-1.png"
+msgstr ""
+
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+msgid "gfx/status/status.png"
+msgstr ""
+
+#: ../../../data/level/start.lvl
+msgid "gfx/stuffomatic/stuffomatic.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/far/bk_00.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/far/bk_01.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/far/bk_02.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/far/bk_03.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/far/bk_04.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/far/bk_05.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/far/bk_06.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/far/bk_07.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/far/bk_08.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/far/bk_09.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/far/bk_10.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/far/bk_11.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/near/bk_00.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/near/bk_01.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/near/bk_02.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/near/bk_03.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/near/bk_04.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/near/bk_05.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/near/bk_06.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/near/bk_07.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/near/bk_08.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/near/bk_09.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/near/bk_10.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/bk/near/bk_11.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/forest-1.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_seb_1.lvl
+#: ../../../data/level/test/test_julien.lvl
+msgid "gfx/theme/forest/forest-2.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/far/bk_00.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/far/bk_01.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/far/bk_02.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/far/bk_03.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/far/bk_04.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/far/bk_05.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/far/bk_06.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/far/bk_07.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/far/bk_08.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/far/bk_09.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/far/bk_10.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/far/bk_11.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/near/bk_00.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/near/bk_01.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/near/bk_02.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/near/bk_03.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/near/bk_04.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/near/bk_05.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/near/bk_06.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/near/bk_07.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/near/bk_08.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/near/bk_09.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/near/bk_10.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl ../../../data/level/level_2.lvl
+msgid "gfx/theme/placeholder/bk/near/bk_11.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/placeholder.lvl ../../../data/level/end.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_julien_2.lvl
+#: ../../../data/level/test/worlds.lvl
+msgid "gfx/theme/placeholder/placeholder-1.png"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl ../../../data/level/level_3.lvl
+#: ../../../data/level/placeholder.lvl ../../../data/level/end.lvl
+#: ../../../data/level/intro.lvl ../../../data/level/title.lvl
+#: ../../../data/level/level_2.lvl ../../../data/level/test/test_julien_2.lvl
+#: ../../../data/level/test/worlds.lvl
+msgid "gfx/theme/placeholder/placeholder-2.png"
+msgstr ""
+
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+#: ../../../data/level/title.lvl
+msgid "gfx/title/logo.png"
+msgstr ""
+
+#: ../../../lib/src/tunnel/code/controller_layout.cpp:554
+msgid "joystick "
+msgstr ""
+
+#: ../../../data/level/level_3.lvl
+msgid "level/end.cl"
+msgstr ""
+
+#: ../../../data/level/start.lvl
+msgid "level/intro.cl"
+msgstr ""
+
+#: ../../../data/level/title.lvl
+msgid "level/level_1.cl"
+msgstr ""
+
+#: ../../../data/level/level_1.lvl
+msgid "level/level_2.cl"
+msgstr ""
+
+#: ../../../data/level/level_2.lvl
+msgid "level/level_3.cl"
+msgstr ""
+
+#: ../../../data/level/end.lvl ../../../data/level/intro.lvl
+msgid "level/title.cl"
+msgstr ""
+
+#: ../../../data/level/title.lvl
+msgid "script/title.txt"
+msgstr ""
