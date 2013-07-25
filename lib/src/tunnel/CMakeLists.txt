@@ -75,6 +75,7 @@ set( LIBTUNNEL_SOURCE_FILES
 
   util/code/layer_util.cpp
   util/code/player_util.cpp
+  util/code/util.cpp
 )
 
 add_library( ${LIBTUNNEL_TARGET_NAME} SHARED ${LIBTUNNEL_SOURCE_FILES} )

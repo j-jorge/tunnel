@@ -16,6 +16,7 @@
 #include "tunnel/defines.hpp"
 #include "tunnel/game_variables.hpp"
 #include "tunnel/player.hpp"
+#include "tunnel/util/util.hpp"
 
 #include "generic_items/delayed_level_loading.hpp"
 
@@ -102,6 +103,8 @@ void tunnel::level_exit::collision
           new_item(*item);
           item->set_global(true);
           item->set_center_of_mass(get_center_of_mass());
+
+          util::send_complete_level( get_level().get_filename() );
 
           kill();
         }

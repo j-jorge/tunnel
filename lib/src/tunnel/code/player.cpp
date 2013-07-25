@@ -1225,6 +1225,8 @@ void tunnel::player::apply_die()
   new_item(*item);
   item->set_global(true);
   item->set_center_of_mass(get_center_of_mass());
+
+  util::send_die_level( get_level().get_filename() );
 } // player::apply_die()
 
 /*----------------------------------------------------------------------------*/
