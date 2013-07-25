@@ -1,0 +1,35 @@
+sprite_sheet "logo" 512 x 512 margin 1
+
+logo_img "logo.xcf.bz2"
+buttons_img "buttons.xcf.bz2"
+
+"logo" autosize * 0.4 with logo_img
+  glob "*"
+  exclude "pattern"
+  exclude "halo flat"
+;
+
+"focus lights" autosize * 0.125 with buttons_img
+  "focus lights"
+;
+
+"back" autosize * 0.125 with buttons_img
+  "back"
+  "background"
+;
+
+"web" autosize * 0.125 with buttons_img
+  "web"
+  "background"
+;
+
+"twitter" autosize * 0.125 with buttons_img
+  "twitter"
+  "background"
+;
+
+"facebook" autosize * 0.125 with buttons_img
+  "facebook"
+  "background"
+;
+
