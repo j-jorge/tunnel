@@ -10,53 +10,54 @@
 #
 # where each component take its value in [0,1].
 # 
-#font font/hand-drawn-shapes.ttf 16
+#font font/hand-drawn-shapes.ttf 32
+#align align_left
 #color 1 1 1
-If I knew there would be so many courses, I would not have chosen the God class. It's the first practicals and I'm already tired.
+If I knew there would have been
+so many courses,
+I would not have chosen the god class.
+It's the first practicals and
+I'm already tired.
 
 
-See who's coming. Looks like a moron.
-
+Look who's coming. Looks like a moron.
 
 
 #color 1 0.75 0
-Hello everybody, I'm your teacher and I'm going to make each of you one of the best god the universes have ever seen.
+Hello everybody,
+I'm your teacher and I'm going to make each
+of you one of the best god in the universes.
 
-During this first practicals you will have to help the guardians at the borders of the universe.
+During this first practicals you will have
+to help the guardians at the borders of
+the universes.
 
 
 #color 1 1 1
-I'm too tired. I'm going to take a nap as soon as he ZZZzzzz…
+I'm so tired. I'm going to take a nap
+right after this curzZZzzzz...
 
 
 
 
-zzzZZzz
+zzZZZzz
 
 #color 1 0.75 0
-…ery important not to stope the…
+...ery important to never turn off...
 
 
 #color 1 1 1
 
-zzzzzzzzzzzzzzZzzzzzz
+zzzzzZZZzzzzzzZzzzzzz
+
+
+#color 1 0.75 0
+...eady to be teleported near your mento...
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#color 1 1 1
 zzzZZZzz
 
 hum?
@@ -68,14 +69,25 @@ Yaaaaaaaaawn!
 
 What! Where am I?
 
-#color 1 0.5 0
-Hello kid, I'm a guardian of the borders of the universes. I have been designated to be your mentor during these practicals.
+#color 0 0.75 1
+Hello kid, I'm a guardian of the borders of
+the universes. I have been designated to be
+your mentor during these practicals.
 
-See this machine? There is a similar one on every border of the universes.
+See this machine? There is a similar one on
+every border of the universes.
 
-We use them to preserve the global equilibrium. As you can see, they are powered by particular materials, and one of your goals as a god is to find these materials.
+We use them to preserve the global
+equilibrium. As you can see, they are
+powered by particular materials, and one of
+your goals as a god is to find these
+materials.
 
-But be careful. As long as they run well, the global equilibrium is preserved. But if they ever stop, really bad things will happen. DON'T TOUCH THIS!
+But be careful. As long as they run well,
+the global equilibrium is preserved.
+But if they ever stop,
+really bad things will happen.
+DON'T TOUCH THIS!
 
 #color 1 0 0
 *KLANK*
@@ -83,5 +95,7 @@ But be careful. As long as they run well, the global equilibrium is preserved. B
 #color 1 1 1
 Meh?
 
-#color 1 0.5 0
-Oh my self! Go find the materials before we die! Hurry!
+#color 1 0.75 0
+Oh my self!
+Go find the materials before we die!
+Hurry!

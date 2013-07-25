@@ -962,7 +962,7 @@
 <real value='565'/>
 </field>
 <field name='item_with_text.font'>
-<font path='font/hand-drawn-shapes.ttf' size='50'/>
+<font path='font/hand-drawn-shapes.ttf' size='25'/>
 </field>
 <field name='item_with_text.horizontal_align'>
 <string value='align_left'/>
@@ -971,7 +971,7 @@
 <string value='Press any key to skip'/>
 </field>
 <field name='item_with_text.vertical_align'>
-<string value='align_middle'/>
+<string value='align_bottom'/>
 </field>
 <field name='decorative_item.shadow.x'>
 <real value='5'/>
@@ -991,7 +991,7 @@
 <real value='225'/>
 </field>
 <field name='delayed_level_loading.delay'>
-<real value='30'/>
+<real value='150'/>
 </field>
 <field name='delayed_level_loading.fade_duration'>
 <real value='0'/>
@@ -1000,9 +1000,6 @@
 <string value='level/title.cl'/>
 </field>
 <field name='delayed_level_loading.load_on_input'>
-<bool value='1'/>
-</field>
-<field name='delayed_level_loading.push_mode'>
 <bool value='1'/>
 </field>
 </fields>
@@ -1029,7 +1026,7 @@
 <real value='1'/>
 </field>
 <field name='rolling_credits.movement_duration'>
-<real value='25'/>
+<real value='20'/>
 </field>
 </fields>
     </item><!-- bear::rolling_credits -->

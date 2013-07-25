@@ -1833,7 +1833,7 @@ decorative_item.shadow.y
 49
 item_with_text.font
 font/hand-drawn-shapes.ttf
-50
+25
 44
 item_with_text.horizontal_align
 align_left
@@ -1842,7 +1842,7 @@ item_with_text.text
 Press any key to skip
 44
 item_with_text.vertical_align
-align_middle
+align_bottom
 32
 bear::rolling_credits
 1
@@ -1866,7 +1866,7 @@ rolling_credits.fading_duration
 1
 42
 rolling_credits.movement_duration
-25
+20
 32
 bear::delayed_level_loading
 1
@@ -1878,7 +1878,7 @@ base_item.position.left
 225
 42
 delayed_level_loading.delay
-30
+150
 42
 delayed_level_loading.fade_duration
 0
@@ -1887,9 +1887,6 @@ delayed_level_loading.level
 level/title.cl
 43
 delayed_level_loading.load_on_input
-1
-43
-delayed_level_loading.push_mode
 1
 32
 bear::camera
