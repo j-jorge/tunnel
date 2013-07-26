@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 install(
-  DIRECTORY "animation" "font" "gfx" "i18n" "level" "model"
-  #"music"
-  "script"
+  DIRECTORY "animation" "font" "gfx" "i18n" "level" "model" "music" "script"
   "shader"
   #"sound"
   DESTINATION ${TUNNEL_INSTALL_DATA_DIR}
@@ -27,6 +25,9 @@ install(
   PATTERN "*.flac" EXCLUDE
   PATTERN "*.gz" EXCLUDE
   PATTERN "*.bz2" EXCLUDE
+  PATTERN "*.wav" EXCLUDE
+  PATTERN "*.spritedesc" EXCLUDE
+  PATTERN "*.sh" EXCLUDE
   PATTERN "README" EXCLUDE
 )
 
