@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<level name='' width='16000' height='7000' music=''>
+<level name='' width='16000' height='7000' music='music/level.ogg'>
   <layer class_name='decoration_layer' name='far' width='1689' height='950' fit_level='0' tag='group 2'>
 
 <items>
