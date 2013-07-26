@@ -6,7 +6,7 @@ Thank you for playing Tunnel. Here are some information you may find interesting
 
 == System requirements ==
 
-The game requires 80 Mo of free space on the hard disc to be
+The game requires 30 Mo of free space on the hard disc to be
 installed.
 
 Running the game requires a hardware accelerated graphics card
