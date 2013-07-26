@@ -5,7 +5,8 @@ buttons_img "buttons.xcf.bz2"
 
 "logo" autosize * 0.4 with logo_img
   glob "*"
-  exclude glob "pattern*"
+  exclude glob "pattern *"
+  exclude "pattern"
   exclude "halo flat"
 ;
 
