@@ -270,7 +270,7 @@ namespace tunnel
     void end_fade_effect();
     void finish_abort_tunnel();
     void thwart_gravity();
-    void create_hit_star( const bear::universe::position_type& pos ) const;
+    void create_hit_star( const bear::universe::position_type& pos );
     void create_camera();
     void injure( const bear::engine::base_item& attacker );
     void finish_injure();
@@ -281,7 +281,7 @@ namespace tunnel
 
     static void init_exported_methods();
 
-  protected:
+  private:
     /** \brief Number of actions of the state named "wait". */
     unsigned int m_wait_state_number;
 
@@ -294,7 +294,6 @@ namespace tunnel
     /** \brief The time over which Player can run. */
     static const bear::universe::time_type s_time_to_run;
 
-  private:
      /** \brief What Player is doing. */
     player_action::value_type m_current_action;
 

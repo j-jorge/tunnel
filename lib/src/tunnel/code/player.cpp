@@ -25,7 +25,6 @@
 #include "generic_items/delayed_kill_item.hpp"
 #include "generic_items/delayed_level_loading.hpp"
 #include "generic_items/shader/layer_shader.hpp"
-#include "generic_items/star.hpp"
 #include "universe/forced_movement/forced_tracking.hpp"
 
 #include "tunnel/camera_on_player.hpp"
@@ -335,6 +334,8 @@ void tunnel::player::pre_cache()
   get_level_globals().load_shader("shader/tunnel_common.frag");
   get_level_globals().load_shader("shader/player_in_tunnel.frag");
   get_level_globals().load_shader("shader/object_in_tunnel.frag");
+
+  get_level_globals().load_image("gfx/effect/light-star-dark.png");
 } // player::pre_cache()
 
 /*----------------------------------------------------------------------------*/
@@ -2836,33 +2837,44 @@ void tunnel::player::thwart_gravity()
  * \param pos The center of mass of the star.
  */
 void tunnel::player::create_hit_star
-( const bear::universe::position_type& pos ) const
+( const bear::universe::position_type& pos )
 {
-  bear::star* s =
-    new bear::star
-    ( 4, 0.35, bear::visual::color_type("#FF0000"), 1,
-      bear::visual::color_type("#FF0000") );
+  bear::visual::sprite sprite
+    ( get_level_globals().auto_sprite
+      ( "gfx/effect/light-star-dark.png", "star" ) );
+  sprite.colorize( bear::visual::color_type("#FF0000") );
+  sprite.set_size( 1, 1 );
 
-  s->set_size(200, 200);
-  s->set_z_position( super::get_z_position() - 10 );
-  s->set_center_of_mass( pos );
-  this->new_item(*s);
-  s->set_shader
+  bear::decorative_item* item = new bear::decorative_item;
+  item->set_sprite( sprite );
+  item->auto_size();
+  item->extend_to_bounding_box( true );
+  item->set_z_position( get_z_position() - 10 );
+  item->set_center_of_mass( pos );
+
+  new_item(*item);
+
+  bear::universe::forced_tracking mvt( bear::universe::position_type(0, 0) );
+  mvt.set_reference_point_on_center( *this );
+
+  item->set_forced_movement( mvt );
+  item->set_shader
     ( get_level_globals().get_shader("shader/object_in_tunnel.frag") );
 
   bear::decorative_effect* decoration_effect = new bear::decorative_effect;
 
   decoration_effect->set_duration(0.6);
-  decoration_effect->set_size_factor(1, 1.2);
-  decoration_effect->set_angle_offset(0, 3);
-  decoration_effect->set_item(s, false);
+  decoration_effect->resize_item( true );
+  decoration_effect->set_size_factor(200, 0);
+  decoration_effect->set_angle_offset(0, 0.5);
+  decoration_effect->set_item(item, false);
 
   new_item( *decoration_effect );
 
-  bear::delayed_kill_item* k = new bear::delayed_kill_item();
-  k->add_item(s);
+  bear::delayed_kill_item* k = new bear::delayed_kill_item;
+  k->add_item(item);
   k->set_duration(0.6);
-  k->set_center_of_mass( s->get_center_of_mass() );
+  k->set_center_of_mass( item->get_center_of_mass() );
 
   new_item( *k );
 } // player::create_hit_star()
