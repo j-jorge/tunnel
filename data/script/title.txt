@@ -2,7 +2,7 @@
   player.set_marionette(1); 
 }
 
-+11 {
++35 {
   player.apply_open_tunnel();
 }
 

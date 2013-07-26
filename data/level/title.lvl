@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<level name='' width='17000' height='4000' music=''>
+<level name='' width='17000' height='4000' music='music/title.ogg'>
   <layer class_name='decoration_layer' name='far' width='1689' height='950' fit_level='0' tag='group 1'>
 
 <items>
@@ -1704,7 +1704,7 @@
 <real value='1'/>
 </field>
 <field name='forced_goto_creator.duration'>
-<real value='10'/>
+<real value='34'/>
 </field>
 <field name='forced_goto_creator.length.x'>
 <real value='0'/>

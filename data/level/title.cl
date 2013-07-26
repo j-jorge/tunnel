@@ -4,7 +4,7 @@
 
 17000
 4000
-
+music/title.ogg
 188
 10
 70
@@ -2912,7 +2912,7 @@ forced_goto_creator.acceleration_time
 1
 42
 forced_goto_creator.duration
-10
+34
 42
 forced_goto_creator.length.x
 0
