@@ -1552,8 +1552,10 @@ void tunnel::player::progress_walk( bear::universe::time_type elapsed_time )
   if ( has_bottom_contact() )
     {
       if ( ! test_push_state() )
-        {
-          if ( m_last_bottom_left == get_bottom_left() )
+        { 
+          if ( get_current_action_name() == "push" )
+            start_action_model("walk");
+          else if ( m_last_bottom_left == get_bottom_left() )
             choose_idle_state();
           else
             {
@@ -1593,7 +1595,9 @@ void tunnel::player::progress_idle( bear::universe::time_type elapsed_time )
 
       if ( ! test_push_state() )
         {
-          if ( ( m_state_time >= s_time_to_wait ) &&
+          if ( get_current_action_name() == "push" )
+            start_action_model("idle");
+          else if ( ( m_state_time >= s_time_to_wait ) &&
                ( m_wait_state_number != 0 ) &&
                ( !is_a_marionette() ) &&
                m_authorized_action[player_action::wait] )
@@ -1705,7 +1709,9 @@ void tunnel::player::progress_run( bear::universe::time_type elapsed_time )
 
       if ( ! test_push_state() )
         {
-          if( std::abs(speed_x) < s_speed_to_run )
+          if ( get_current_action_name() == "push" )
+            start_action_model("run");
+          else if( std::abs(speed_x) < s_speed_to_run )
             {
               if( speed_x == 0 )
                 choose_idle_state();
