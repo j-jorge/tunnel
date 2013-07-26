@@ -68,34 +68,3 @@ Yaaaaaaaaawn!
 
 
 What! Where am I?
-
-#color 0 0.75 1
-Hello kid, I'm a guardian of the borders of
-the universes. I have been designated to be
-your mentor during these practicals.
-
-See this machine? There is a similar one on
-every border of the universes.
-
-We use them to preserve the global
-equilibrium. As you can see, they are
-powered by particular materials, and one of
-your goals as a god is to find these
-materials.
-
-But be careful. As long as they run well,
-the global equilibrium is preserved.
-But if they ever stop,
-really bad things will happen.
-DON'T TOUCH THIS!
-
-#color 1 0 0
-*KLANK*
-
-#color 1 1 1
-Meh?
-
-#color 1 0.75 0
-Oh my self!
-Go find the materials before we die!
-Hurry!

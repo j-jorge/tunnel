@@ -991,7 +991,7 @@
 <real value='225'/>
 </field>
 <field name='delayed_level_loading.delay'>
-<real value='150'/>
+<real value='105'/>
 </field>
 <field name='delayed_level_loading.fade_duration'>
 <real value='0'/>

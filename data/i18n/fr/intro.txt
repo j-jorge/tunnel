@@ -68,35 +68,3 @@ oaaaaaaaah !
 
 
 Quoi ! Où suis-je ?
-
-#color 0 0.75 1
-Salut gamin, je suis un gardien des
-frontières des univers. J'ai été désigné
-pour être ton mentor pendant ces TP.
-
-Tu vois cette machine ? Il y en a une
-similaire sur chaque frontière des univers.
-
-Elles servent à maintenir l'équilibre
-global. Comme tu peux voir, elles sont
-alimentées à partir de ces matériaux, et un
-de tes objectifs en tant que dieu est de
-trouver ces matériaux.
-
-Mais fait attention. Aussi longtemps
-qu'elles tournent bien, l'équilibre global
-est maintenu. Mais si jamais elles
-s'arrêtent, quelque chose de mal arrivera.
-NE TOUCHE PAS À ÇA !
-
-#color 1 0 0
-*CLANG*
-
-#color 1 1 1
-Euh?
-
-#color 1 0.75 0
-Oh moi-même !
-Va trouver les matériaux avant
-qu'on meurre !
-Vite !

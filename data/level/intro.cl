@@ -1878,7 +1878,7 @@ base_item.position.left
 225
 42
 delayed_level_loading.delay
-150
+105
 42
 delayed_level_loading.fade_duration
 0
