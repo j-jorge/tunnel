@@ -16,6 +16,9 @@
 #include "tunnel/game_variables.hpp"
 #include "tunnel/player.hpp"
 
+#include "generic_items/decorative_item.hpp"
+#include "universe/forced_movement/forced_rotation.hpp"
+
 BASE_ITEM_EXPORT( crystal, tunnel )
 
 /*----------------------------------------------------------------------------*/
@@ -39,6 +42,29 @@ void tunnel::crystal::build()
   m_level_started =
     get_level().on_started
     ( boost::bind( &crystal::on_level_started, this ) );
+
+  bear::visual::sprite sprite
+    ( get_level_globals().auto_sprite( "gfx/effect/light-star.png", "star" ) );
+  sprite.set_size( 2 * get_size() );
+
+  bear::decorative_item* item = new bear::decorative_item;
+  item->set_sprite( sprite );
+  item->set_z_position( get_z_position() - 10 );
+  item->set_center_of_mass( get_center_of_mass() );
+  item->set_system_angle_as_visual_angle( true );
+
+  new_item(*item);
+
+  bear::universe::forced_rotation mvt;
+  mvt.set_radius(0);
+  mvt.set_reference_point_on_center( *this );
+  mvt.set_total_time( 20 );
+  mvt.set_acceleration_time( 0 );
+  mvt.set_angle_application( bear::universe::forced_rotation::apply_force );
+
+  item->set_forced_movement( mvt );
+
+  kill_when_dying( *item );
 } // crystal::build()
 
 /*----------------------------------------------------------------------------*/
