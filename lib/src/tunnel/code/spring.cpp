@@ -13,4 +13,28 @@
  */
 #include "tunnel/spring.hpp"
 
+#include "engine/level_globals.hpp"
+
 BASE_ITEM_EXPORT( spring, tunnel )
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Loads the resources used by this item.
+ */
+void tunnel::spring::pre_cache()
+{
+  super::pre_cache();
+
+  get_level_globals().load_sound( "sound/boing.ogg" );
+} // spring::pre_cache()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Initialize the item.
+ */
+void tunnel::spring::build()
+{
+  super::build();
+
+  set_bounce_sound( get_level_globals().new_sample( "sound/boing.ogg" ) );
+} // spring::build()

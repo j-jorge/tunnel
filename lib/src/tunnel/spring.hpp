@@ -36,6 +36,12 @@ namespace tunnel
   public:
     /** \brief The type of the parent class. */
     typedef bear::spring super;
+
+  public:
+    void pre_cache();
+
+    void build();
+
   }; // class spring
 } // namespace tunnel
 
