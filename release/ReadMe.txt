@@ -1,8 +1,9 @@
 == Tunnel ==
 
-Copyright © 2013 Stuffomatic®. All rights reserved.
+Copyright Â© 2013 StuffomaticÂ®. All rights reserved.
 
-Thank you for playing Tunnel. Here are some information you may find interesting.
+Thank you for playing Tunnel. Here are some information you may find
+interesting.
 
 == System requirements ==
 
@@ -10,9 +11,9 @@ The game requires 30 Mo of free space on the hard disc to be
 installed.
 
 Running the game requires a hardware accelerated graphics card
-supporting OpenGL 2.1, with at least 128 Mo of memory. The game
-will consume something like 70 Mo of the main system memory and should
-run well with a processor at 2 GHz.
+supporting OpenGL 2.1 supporting fragment shaders, with at least 128 Mo
+of memory. The game will consume something like 70 Mo of the main
+system memory and should run well with a processor at 2 GHz.
 
 The game runs with a resolution of 1280x720. You will need a keyboard to
 play.
