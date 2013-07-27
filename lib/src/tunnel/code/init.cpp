@@ -41,6 +41,8 @@ void init_tunnel()
   bear::engine::game::get_instance().set_translator
     ( bear::engine::gettext_translator( "tunnel" ) );
 
+  bear::engine::game::get_instance().set_dumb_rendering( true );
+
   srand( time(NULL) );
 
   tunnel::controller_config controller;

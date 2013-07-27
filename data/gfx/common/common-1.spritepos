@@ -1,11 +1,12 @@
 door: 0 0 50 200
 block: 51 0 100 100
-spikes: 152 0 126 64
-platform: 279 0 200 50
-crystal: 51 101 50 50
-spring 1: 102 101 60 45
-spring 2: 163 101 60 45
-spring 3: 224 101 60 45
-switch button 1: 285 101 60 22
-switch button 2: 346 101 60 22
-switch base: 285 124 200 16
+exit: 152 0 95 95
+spikes: 248 0 126 64
+platform: 51 101 200 50
+crystal: 375 0 50 50
+spring 1: 426 0 60 45
+spring 2: 252 101 60 45
+spring 3: 313 101 60 45
+switch button 1: 374 101 60 22
+switch button 2: 435 101 60 22
+switch base: 248 65 200 16

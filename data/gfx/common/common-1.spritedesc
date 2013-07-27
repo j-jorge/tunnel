@@ -7,6 +7,7 @@ switch "switch.xcf.bz2"
 spikes "spikes.xcf.bz2"
 platform "platform.xcf.bz2"
 crystal "crystal.xcf.bz2"
+exit "exit.xcf.bz2"
 
 "block" image_size * 0.5 with block
   glob "*"
@@ -49,5 +50,9 @@ crystal "crystal.xcf.bz2"
 ;
 
 "crystal" autosize * 0.5 with crystal
+  glob "*"
+;
+
+"exit" autosize * 0.2 with exit
   glob "*"
 ;
