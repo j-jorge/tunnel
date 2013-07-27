@@ -137,7 +137,8 @@ align_bottom
 0
 0
 0
-0
+1
+sound/door/door-closing.ogg
 0
 25
 8
@@ -206,7 +207,8 @@ align_bottom
 0
 0
 0
-0
+1
+sound/door/door-opening.ogg
 0
 25
 8
