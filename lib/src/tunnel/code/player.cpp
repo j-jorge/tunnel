@@ -336,6 +336,9 @@ void tunnel::player::pre_cache()
   get_level_globals().load_shader("shader/object_in_tunnel.frag");
 
   get_level_globals().load_image("gfx/effect/light-star-dark.png");
+
+  get_level_globals().load_sound("sound/player/bwow.ogg");
+  get_level_globals().load_sound("sound/player/bwow-inverse.ogg");
 } // player::pre_cache()
 
 /*----------------------------------------------------------------------------*/
@@ -1122,26 +1125,28 @@ void tunnel::player::apply_abort_tunnel()
  */
 void tunnel::player::apply_teleport()
 {
-  if ( ! m_tunnel_aborted )
-    {
-      std::list<const physical_item*> bad_items;
+  if ( m_tunnel_aborted )
+    return;
+
+  std::list<const physical_item*> bad_items;
       
-      if ( check_can_teleport(bad_items) )
-        {
-          m_level_progress_done =
-          get_level().on_progress_done
-          ( boost::bind( &player::on_level_progress_done, this ) );
-        }
-      else
-        {
-          std::list<const physical_item*>::const_iterator it;
-          for ( it = bad_items.begin(); it != bad_items.end(); ++it )
-            create_hit_star((*it)->get_center_of_mass());
-          m_tunnel_aborted = true;
-        }
+  if ( check_can_teleport(bad_items) )
+    {
+      get_level_globals().play_sound("sound/player/bwow.ogg");
+      
+      m_level_progress_done =
+        get_level().on_progress_done
+        ( boost::bind( &player::on_level_progress_done, this ) );
     }
   else
-    m_tunnel_aborted = true;
+    {
+      get_level_globals().play_sound("sound/player/bwow-inverse.ogg");
+      
+      std::list<const physical_item*>::const_iterator it;
+      for ( it = bad_items.begin(); it != bad_items.end(); ++it )
+        create_hit_star((*it)->get_center_of_mass());
+      m_tunnel_aborted = true;
+    }
 } // player::apply_end_teleport()
 
 /*----------------------------------------------------------------------------*/
