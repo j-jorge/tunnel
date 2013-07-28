@@ -1,0 +1,8 @@
+sprite_sheet "screen" 512 x 512 margin 0
+
+img "screen.xcf.bz2"
+
+"screen" autosize * 1 with img
+  glob "*"
+  ;
+
