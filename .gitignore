@@ -6,6 +6,9 @@ cmake_uninstall.cmake
 CMakeCache.txt
 install_manifest.txt
 
+desktop/applications/tunnel.desktop
+desktop/menu/tunnel
+
 # Binaries
 bin
 
