@@ -63,8 +63,11 @@ namespace tunnel
     /** \brief Action code: Slap. */
     static const value_type slap = crouch + 1;
 
+    /** \brief Action code: Create a ground. */
+    static const value_type create_ground = slap + 1;
+
     /** \brief Action code: teleport. */
-    static const value_type teleport = slap + 1;
+    static const value_type teleport = create_ground + 1;
 
     /** \brief Action code: captive the player. */
     static const value_type captive = teleport + 1;

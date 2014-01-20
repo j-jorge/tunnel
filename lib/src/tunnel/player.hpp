@@ -49,6 +49,10 @@ namespace tunnel
       < bear::engine::messageable_item
         < bear::engine::base_item > > > super;
 
+    /** \brief The type of an handle on a base_item. */
+    typedef
+    bear::universe::derived_item_handle<bear::engine::base_item> handle_type;
+
     TEXT_INTERFACE_DECLARE_METHOD_LIST(super, init_exported_methods)
 
   protected:
@@ -275,6 +279,9 @@ namespace tunnel
     void injure( const bear::engine::base_item& attacker );
     void finish_injure();
 
+    void create_ground();
+    void remove_ground();
+
     void on_level_progress_done();
     void on_level_started();
     void on_init_shaders();
@@ -476,8 +483,14 @@ namespace tunnel
     /** \brief Indicates if the impulse_jump has been done. */
     bool m_impulse_jump_done;
 
-     /** \brief Indicates if we must create a camera. */
+    /** \brief Indicates if we must create a camera. */
     bool m_must_create_camera;
+
+    /** \brief Indicates if we can create a ground. */
+    bool m_can_create_ground;
+
+    /** \brief The block that is under the player with bonus. */
+    handle_type m_ground;
 
     /** \brief The minimum radius of teleportation circle. */
     static const bear::universe::coordinate_type s_min_teleportation_radius;
