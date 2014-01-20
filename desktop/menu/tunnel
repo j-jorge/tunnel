@@ -1,5 +1,5 @@
 ?package(tunnel):needs="X11" section="Games/Action" \
   title="Tunnel" \
-  command="/usr/bin/tunnel" \
+  command="/usr/local/bin/tunnel" \
   hints="." \
-  icon="/usr/share/pixmaps/tunnel.xpm"
+  icon="/usr/local/share/pixmaps/tunnel.xpm"

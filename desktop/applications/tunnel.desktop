@@ -3,8 +3,8 @@ Version=1.0
 
 Name=Tunnel
 
-TryExec=/usr/bin/tunnel-launcher
-Exec=/usr/bin/tunnel-launcher
+TryExec=/usr/local/bin/tunnel-launcher
+Exec=/usr/local/bin/tunnel-launcher
 Terminal=false
 Icon=tunnel
 

@@ -18,6 +18,7 @@
 #include "engine/level.hpp"
 #include "engine/world.hpp"
 
+#include "generic_items/block.hpp"
 #include "generic_items/decorative_item.hpp"
 #include "generic_items/tweener_item.hpp"
 #include "generic_items/camera_shaker.hpp"
@@ -141,7 +142,8 @@ tunnel::player::player()
   m_next_tag(0), m_teleport_time(0), m_tunnel_aborted(false), 
   m_fade_effect_intensity(1), m_can_teleport(true),
   m_enters_layer_done(false), m_editor_player(false),
-  m_opacity_injured(1), m_opacity_inc(-0.02), m_must_create_camera(true)
+  m_opacity_injured(1), m_opacity_inc(-0.02), m_must_create_camera(true),
+  m_can_create_ground(true), m_ground(NULL)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -169,7 +171,8 @@ tunnel::player::player( const player& p )
     m_teleport_time(p.m_teleport_time), m_tunnel_aborted(p.m_tunnel_aborted),
     m_fade_effect_intensity(1), m_can_teleport(true), 
     m_enters_layer_done(false), m_editor_player(false),
-    m_opacity_injured(1), m_opacity_inc(-0.02), m_must_create_camera(true)
+    m_opacity_injured(1), m_opacity_inc(-0.02), m_must_create_camera(true),
+    m_can_create_ground(true), m_ground(NULL)
 {
   init();
 } // player::player()
@@ -260,7 +263,10 @@ void tunnel::player::progress( bear::universe::time_type elapsed_time )
     dummy_progress_input_actions(elapsed_time);
 
   super::progress(elapsed_time);
-  
+
+  if ( m_ground != handle_type(NULL) )
+    m_ground->set_horizontal_middle( get_horizontal_middle() );
+
   m_fade_effect_tweener.update(elapsed_time);
   m_state_time += elapsed_time;
   m_run_time += elapsed_time;
@@ -456,6 +462,8 @@ void tunnel::player::start_action( player_action::value_type a )
       case player_action::slap :
         //m_states[m_current_state]->do_slap(); 
         break;
+      case player_action::create_ground :
+        create_ground(); break;
       case player_action::teleport :
         m_states[m_current_state]->do_teleport(); break;
       case player_action::look_upward : do_start_look_upward(); break;
@@ -533,6 +541,8 @@ void tunnel::player::stop_action( player_action::value_type a )
       case player_action::jump :
         m_states[m_current_state]->do_stop_vertical_jump(); break;
       case player_action::slap : break;
+      case player_action::create_ground : 
+        remove_ground(); break;
       case player_action::teleport : 
         m_states[m_current_state]->do_stop_teleport(); break;
       case player_action::look_upward : do_stop_look_upward(); break;
@@ -937,6 +947,7 @@ void tunnel::player::apply_jump()
  */
 void tunnel::player::apply_do_jump()
 {
+  remove_ground();
   m_jump_time = 0;
   m_impulse_jump_done = false;
   m_move_force = s_move_force_in_jump;
@@ -2743,6 +2754,14 @@ void tunnel::player::teleport_in_new_layer()
               }
           }
 
+        if ( m_ground != handle_type(NULL) )
+          {
+            bear::engine::base_item * obj = 
+              (bear::engine::base_item*)(m_ground.get());
+            get_layer().drop_item(*obj);
+            it->add_item(*obj);
+          }
+        
         get_layer().drop_item(*this);
         it->add_item(*this);
       }
@@ -2943,6 +2962,39 @@ void tunnel::player::finish_injure()
   m_is_injured = false;
   m_states[m_current_state]->do_finish_injured();
 } // player::finish_injure()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Create a ground.
+ */
+void tunnel::player::create_ground()
+{
+  if ( m_can_create_ground && has_bottom_contact() )
+    if ( m_ground == handle_type(NULL) )
+      {
+        bear::block* item = new bear::block();
+  
+        item->set_size(100,100);
+        item->set_top_middle( get_bottom_middle() );
+        item->set_global( is_global() );
+        item->set_phantom(true);
+        item->set_top_side_activation(true);
+
+        new_item( *item );
+
+        m_ground = handle_type(item);
+      }
+} // player::create_ground()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Remove the ground.
+ */
+void tunnel::player::remove_ground()
+{
+  if ( m_ground != handle_type(NULL) )
+    m_ground->kill();
+} // player::remove_ground()
 
 /*----------------------------------------------------------------------------*/
 /**
