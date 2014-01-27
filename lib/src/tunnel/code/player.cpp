@@ -33,6 +33,7 @@
 #include "tunnel/item_picking_filter.hpp"
 #include "tunnel/item_brick/transportable.hpp"
 #include "tunnel/player_action.hpp"
+#include "tunnel/seed.hpp"
 
 #include "tunnel/player_state/state_player.hpp"
 #include "tunnel/player_state/state_roar.hpp"
@@ -143,7 +144,8 @@ tunnel::player::player()
   m_fade_effect_intensity(1), m_can_teleport(true),
   m_enters_layer_done(false), m_editor_player(false),
   m_opacity_injured(1), m_opacity_inc(-0.02), m_must_create_camera(true),
-  m_can_create_ground(true), m_ground(NULL)
+  m_can_create_ground(true), m_ground(NULL), m_seed(NULL),
+  m_seed_teleportation(false)
 {
   set_mass(s_mass);
   set_density(s_density);
@@ -172,7 +174,8 @@ tunnel::player::player( const player& p )
     m_fade_effect_intensity(1), m_can_teleport(true), 
     m_enters_layer_done(false), m_editor_player(false),
     m_opacity_injured(1), m_opacity_inc(-0.02), m_must_create_camera(true),
-    m_can_create_ground(true), m_ground(NULL)
+    m_can_create_ground(true), m_ground(NULL), m_seed(NULL),
+    m_seed_teleportation(false)
 {
   init();
 } // player::player()
@@ -301,6 +304,8 @@ void tunnel::player::progress( bear::universe::time_type elapsed_time )
 
   progress_injure_state(elapsed_time);
   m_last_bottom_left = get_bottom_left();
+
+  //std::cout << get_level().get_camera()->get_left() << " - " << get_level().get_camera()->get_bottom() << std::endl;
 } // player::progress()
 
 /*----------------------------------------------------------------------------*/
@@ -464,6 +469,8 @@ void tunnel::player::start_action( player_action::value_type a )
         break;
       case player_action::create_ground :
         create_ground(); break;
+      case player_action::create_seed :
+        create_seed(); break;
       case player_action::teleport :
         m_states[m_current_state]->do_teleport(); break;
       case player_action::look_upward : do_start_look_upward(); break;
@@ -505,6 +512,8 @@ void tunnel::player::do_action
             case player_action::jump :
               m_states[m_current_state]->do_continue_jump(); break;
             case player_action::slap : break;
+            case player_action::create_seed : break;
+            case player_action::create_ground : break;
             case player_action::teleport : break;
             case player_action::look_upward :
               m_states[m_current_state]->do_continue_look_upward(); break;
@@ -541,6 +550,7 @@ void tunnel::player::stop_action( player_action::value_type a )
       case player_action::jump :
         m_states[m_current_state]->do_stop_vertical_jump(); break;
       case player_action::slap : break;
+      case player_action::create_seed : break;
       case player_action::create_ground : 
         remove_ground(); break;
       case player_action::teleport : 
@@ -1071,7 +1081,7 @@ void tunnel::player::apply_slap()
  */
 void tunnel::player::apply_open_tunnel()
 {
-  if ( m_can_teleport )
+  if ( m_can_teleport && ! m_seed_teleportation )
     {
       m_can_teleport = false;
       m_teleport_time = 0;
@@ -1158,7 +1168,7 @@ void tunnel::player::apply_teleport()
         create_hit_star((*it)->get_center_of_mass());
       m_tunnel_aborted = true;
     }
-} // player::apply_end_teleport()
+} // player::apply_teleport()
 
 /*----------------------------------------------------------------------------*/
 /**
@@ -2227,6 +2237,12 @@ void tunnel::player::regenerate()
   m_injured_time = 0;
   m_opacity_injured = 1;
   m_opacity_inc = -0.02;  
+
+  if ( m_seed != NULL )
+    {
+      m_seed->remove();
+      m_seed = NULL;
+    }
 } // player::regenerate()
 
 /*----------------------------------------------------------------------------*/
@@ -2998,6 +3014,76 @@ void tunnel::player::remove_ground()
 
 /*----------------------------------------------------------------------------*/
 /**
+ * \brief Create a seed.
+ */
+void tunnel::player::create_seed()
+{
+  if ( m_seed != NULL )
+    teleport_on_seed();
+  else
+    {
+      m_seed = new seed(m_current_tag);
+      new_item( *m_seed );
+      m_seed->set_bottom_middle( get_bottom_middle() );
+      m_seed->set_z_position( get_z_position() - 1 );
+    }
+} // player::create_seed()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Remove the seed.
+ */
+void tunnel::player::remove_seed()
+{
+  if ( m_seed != NULL )
+    {
+      m_seed->remove();
+      m_seed = NULL;
+    }
+} // player::remove_seed()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Teleport on seed.
+ */
+void tunnel::player::teleport_on_seed()
+{
+  if ( m_seed != NULL && m_can_teleport )
+    {
+      m_seed_teleportation = true;
+
+      // teleport
+      if ( m_seed->get_tag() != m_current_tag )
+        {
+          m_next_tag = m_seed->get_tag();
+          
+          m_level_progress_done =
+            get_level().on_progress_done
+            ( boost::bind( &player::on_level_progress_done, this ) );
+
+          m_current_tag = m_next_tag;
+          update_layer_visibility();
+        }
+      else
+        set_on_seed();
+    }
+} // player::teleport_on_seed()
+
+/*----------------------------------------------------------------------------*/
+/**
+ * \brief Set the player on the seed.
+ */
+void tunnel::player::set_on_seed()
+{
+  set_bottom_middle
+    ( m_seed->get_bottom_middle() + 
+      bear::universe::position_type(0,10) );
+  remove_seed();
+  m_seed_teleportation = false;
+} // player::set_on_seed()
+ 
+/*----------------------------------------------------------------------------*/
+/**
  * \brief Teleports the player in the target layer.
  */
 void tunnel::player::on_level_progress_done()
@@ -3008,14 +3094,19 @@ void tunnel::player::on_level_progress_done()
   // move the player in the layer of the new tag
   teleport_in_new_layer();
   
-  m_radius_tweener =
-    claw::tween::single_tweener
-    ( m_teleportation_radius, 
-      bear::engine::game::get_instance().get_window_size().x, 
-      s_tunnel_expand_duration,
-      &claw::tween::easing_back::ease_in );
-
-  m_level_progress_done.disconnect();
+  if ( m_seed_teleportation )
+    set_on_seed();
+  else
+    {
+      m_radius_tweener =
+        claw::tween::single_tweener
+        ( m_teleportation_radius, 
+          bear::engine::game::get_instance().get_window_size().x, 
+          s_tunnel_expand_duration,
+          &claw::tween::easing_back::ease_in );
+      
+      m_level_progress_done.disconnect();
+    }
 } // player::on_level_progress_done()
 
 /*----------------------------------------------------------------------------*/

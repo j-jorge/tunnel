@@ -29,6 +29,7 @@
 namespace tunnel
 {
   class state_player;
+  class seed;
 
   /**
    * \brief The class describing a player.
@@ -281,6 +282,10 @@ namespace tunnel
 
     void create_ground();
     void remove_ground();
+    void create_seed();
+    void remove_seed();
+    void teleport_on_seed();
+    void set_on_seed();
 
     void on_level_progress_done();
     void on_level_started();
@@ -491,6 +496,12 @@ namespace tunnel
 
     /** \brief The block that is under the player with bonus. */
     handle_type m_ground;
+
+    /** \brief The seed for teleportation. */
+    seed* m_seed;
+    
+    /** \brief Indicates that there is a teleportation on a seed. */
+    bool m_seed_teleportation;
 
     /** \brief The minimum radius of teleportation circle. */
     static const bear::universe::coordinate_type s_min_teleportation_radius;
