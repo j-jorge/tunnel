@@ -66,8 +66,11 @@ namespace tunnel
     /** \brief Action code: Create a ground. */
     static const value_type create_ground = slap + 1;
 
+    /** \brief Action code: Create a ground. */
+    static const value_type create_seed = create_ground + 1;
+
     /** \brief Action code: teleport. */
-    static const value_type teleport = create_ground + 1;
+    static const value_type teleport = create_seed + 1;
 
     /** \brief Action code: captive the player. */
     static const value_type captive = teleport + 1;
