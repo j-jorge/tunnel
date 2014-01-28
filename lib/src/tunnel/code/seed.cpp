@@ -53,7 +53,8 @@ void tunnel::seed::on_enters_layer()
   super::on_enters_layer();
 
   set_model_actor( get_level_globals().get_model("model/seed.cm") );
-  start_model_action("idle");
+  start_model_action("idle");  
+  set_can_move_items(false);
 } // seed::on_enters_layer()
 
 /*----------------------------------------------------------------------------*/
