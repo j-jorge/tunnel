@@ -106,7 +106,7 @@ void tunnel::status_component::render( scene_element_list& e ) const
  * \brief Add a new signal.
  * \param s The signal to add.
  */
-void tunnel::status_component::add_signal(const boost::signals::connection& s)
+void tunnel::status_component::add_signal(const boost::signals2::connection& s)
 {
   m_signals.push_back(s);
 } // status_component::add_signal()

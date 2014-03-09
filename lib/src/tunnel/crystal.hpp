@@ -21,7 +21,7 @@
 #include "engine/item_brick/item_with_decoration.hpp"
 #include "engine/export.hpp"
 
-#include <boost/signals/connection.hpp>
+#include <boost/signals2/connection.hpp>
 
 namespace tunnel
 {
@@ -59,7 +59,7 @@ namespace tunnel
     bool m_given;
 
     /** \brief The connection to the signal emitted when the level starts. */
-    boost::signals::connection m_level_started;  
+    boost::signals2::connection m_level_started;  
   }; // class crystal
 } // namespace tunnel
 

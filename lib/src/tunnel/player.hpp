@@ -23,7 +23,7 @@
 #include <set>
 #include <list>
 
-#include <boost/signals/connection.hpp>
+#include <boost/signals2/connection.hpp>
 #include <claw/tween/single_tweener.hpp>
 
 namespace tunnel
@@ -439,18 +439,18 @@ namespace tunnel
 
     /** \brief The connection to the signal emitted by the end of the progress
         of the layer. */
-    boost::signals::connection m_level_progress_done;    
+    boost::signals2::connection m_level_progress_done;    
 
     /** \brief The connection to the signal emitted when the level starts. */
-    boost::signals::connection m_level_started;  
+    boost::signals2::connection m_level_started;  
 
     /** \brief The connection to the signal emitted by the end of the progress
         of the layer. */
-    boost::signals::connection m_init_shaders;
+    boost::signals2::connection m_init_shaders;
 
     /** \brief The connection to the signal emitted by the end of the progress
         of the layer. */
-    boost::signals::connection m_remove_shaders;  
+    boost::signals2::connection m_remove_shaders;  
 
     /** \brief The shader for origin layer. */
     bear::visual::shader_program m_origin_shader;
