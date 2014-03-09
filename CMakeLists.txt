@@ -94,7 +94,7 @@ link_directories(
 # Boost
 include(FindBoost)
 
-find_package( Boost 1.35 REQUIRED COMPONENTS signals)
+find_package( Boost 1.35 REQUIRED COMPONENTS filesystem thread )
 
 if( NOT Boost_FOUND )
   message( FATAL_ERROR 
