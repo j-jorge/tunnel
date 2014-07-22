@@ -8,13 +8,14 @@ msgstr ""
 "Project-Id-Version: 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-25 19:01+0200\n"
-"PO-Revision-Date: 2013-07-25 19:03+0100\n"
-"Last-Translator: Julien Jorge <julien.jorge@gamned.org>\n"
+"PO-Revision-Date: 2014-07-22 22:45+0100\n"
+"Last-Translator: Julien Jorge <julien.jorge@stuff-o-matic.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
+"Language: fr\n"
 
 #: ../../../data/level/test/test_seb_1.lvl
 msgid "FIN"
@@ -38,7 +39,7 @@ msgstr ""
 
 #: ../../../data/level/start.lvl
 msgid "Loading..."
-msgstr "Chargement…"
+msgstr "Chargement..."
 
 #: ../../../data/level/intro.lvl
 msgid "Press any key to skip"
