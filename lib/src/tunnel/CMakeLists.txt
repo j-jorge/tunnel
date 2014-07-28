@@ -79,7 +79,15 @@ set( LIBTUNNEL_SOURCE_FILES
   util/code/util.cpp
 )
 
-add_library( ${LIBTUNNEL_TARGET_NAME} SHARED ${LIBTUNNEL_SOURCE_FILES} )
+if( BUILD_PLATFORM STREQUAL "android" )
+  set( TUNNEL_LINK_TYPE STATIC )
+else()
+  set( TUNNEL_LINK_TYPE SHARED )
+endif()
+
+add_library(
+  ${LIBTUNNEL_TARGET_NAME} ${TUNNEL_LINK_TYPE} ${LIBTUNNEL_SOURCE_FILES}
+  )
 
 set_target_properties(
   ${LIBTUNNEL_TARGET_NAME}

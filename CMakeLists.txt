@@ -138,13 +138,22 @@ if( TUNNEL_TAG )
 endif()
 
 #-------------------------------------------------------------------------------
-subdirs(
-  launcher
-  lib
-  data
-  release
-  desktop
-  )
+if( BUILD_PLATFORM STREQUAL "android" )
+  subdirs(
+    lib
+    data
+    android
+    desktop
+    )
+else()
+  subdirs(
+    launcher
+    lib
+    data
+    release
+    desktop
+    )
+endif()
 
 install(
   DIRECTORY "lib/item-description"
