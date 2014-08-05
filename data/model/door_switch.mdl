@@ -2,24 +2,24 @@
 <model>
 <action name="state_1" duration="1" auto_next="">
 <marks>
-<mark label="base" apply_angle_to_animation="0" pause_animation_when_hidden="0">
+<mark label="base" apply_angle_to_animation="0" pause_animation_when_hidden="0" reset_animation_with_action="1">
 <animation loops='0' first_index='0' last_index='0' loop_back='false' auto_size='true' width='200' height='16' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
   <frame duration='1'>
-    <sprite image='gfx/common/common-1.png' x='285' y='124' clip_width='200' clip_height='16' spritepos='switch base' auto_size='true' width='200' height='16' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+    <sprite image='gfx/common/common-1.png' x='86' y='152' clip_width='200' clip_height='16' spritepos='switch base' auto_size='true' width='200' height='16' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
   </frame>
 </animation>
 </mark>
-<mark label="button_1" apply_angle_to_animation="0" pause_animation_when_hidden="0">
+<mark label="button_1" apply_angle_to_animation="0" pause_animation_when_hidden="0" reset_animation_with_action="1">
 <animation loops='0' first_index='0' last_index='0' loop_back='false' auto_size='true' width='60' height='22' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
   <frame duration='1'>
-    <sprite image='gfx/common/common-1.png' x='285' y='101' clip_width='60' clip_height='22' spritepos='switch button 1' auto_size='true' width='60' height='22' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+    <sprite image='gfx/common/common-1.png' x='283' y='65' clip_width='60' clip_height='22' spritepos='switch button 1' auto_size='true' width='60' height='22' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
   </frame>
 </animation>
 </mark>
-<mark label="button_2" apply_angle_to_animation="0" pause_animation_when_hidden="0">
+<mark label="button_2" apply_angle_to_animation="0" pause_animation_when_hidden="0" reset_animation_with_action="1">
 <animation loops='0' first_index='0' last_index='0' loop_back='false' auto_size='true' width='60' height='22' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
   <frame duration='1'>
-    <sprite image='gfx/common/common-1.png' x='346' y='101' clip_width='60' clip_height='22' spritepos='switch button 2' auto_size='true' width='60' height='22' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+    <sprite image='gfx/common/common-1.png' x='344' y='65' clip_width='60' clip_height='22' spritepos='switch button 2' auto_size='true' width='60' height='22' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
   </frame>
 </animation>
 </mark>
@@ -38,24 +38,24 @@
 </action>
 <action name="state_2" duration="1" auto_next="">
 <marks>
-<mark label="base" apply_angle_to_animation="0" pause_animation_when_hidden="0">
+<mark label="base" apply_angle_to_animation="0" pause_animation_when_hidden="0" reset_animation_with_action="1">
 <animation loops='0' first_index='0' last_index='0' loop_back='false' auto_size='true' width='200' height='16' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
   <frame duration='1'>
-    <sprite image='gfx/common/common-1.png' x='285' y='124' clip_width='200' clip_height='16' spritepos='switch base' auto_size='true' width='200' height='16' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+    <sprite image='gfx/common/common-1.png' x='86' y='152' clip_width='200' clip_height='16' spritepos='switch base' auto_size='true' width='200' height='16' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
   </frame>
 </animation>
 </mark>
-<mark label="button_1" apply_angle_to_animation="0" pause_animation_when_hidden="0">
+<mark label="button_1" apply_angle_to_animation="0" pause_animation_when_hidden="0" reset_animation_with_action="1">
 <animation loops='0' first_index='0' last_index='0' loop_back='false' auto_size='true' width='60' height='22' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
   <frame duration='1'>
-    <sprite image='gfx/common/common-1.png' x='285' y='101' clip_width='60' clip_height='22' spritepos='switch button 1' auto_size='true' width='60' height='22' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+    <sprite image='gfx/common/common-1.png' x='283' y='65' clip_width='60' clip_height='22' spritepos='switch button 1' auto_size='true' width='60' height='22' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
   </frame>
 </animation>
 </mark>
-<mark label="button_2" apply_angle_to_animation="0" pause_animation_when_hidden="0">
+<mark label="button_2" apply_angle_to_animation="0" pause_animation_when_hidden="0" reset_animation_with_action="1">
 <animation loops='0' first_index='0' last_index='0' loop_back='false' auto_size='true' width='60' height='22' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'>
   <frame duration='1'>
-    <sprite image='gfx/common/common-1.png' x='346' y='101' clip_width='60' clip_height='22' spritepos='switch button 2' auto_size='true' width='60' height='22' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+    <sprite image='gfx/common/common-1.png' x='344' y='65' clip_width='60' clip_height='22' spritepos='switch button 2' auto_size='true' width='60' height='22' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
   </frame>
 </animation>
 </mark>

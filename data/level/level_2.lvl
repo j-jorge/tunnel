@@ -11819,7 +11819,7 @@
 <bool value='1'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='51' y='101' clip_width='200' clip_height='50' spritepos='platform' auto_size='true' width='200' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='86' y='101' clip_width='200' clip_height='50' spritepos='platform' auto_size='true' width='200' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='4954'/>
@@ -27760,7 +27760,7 @@
 <real value='100'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='152' y='0' clip_width='95' clip_height='95' spritepos='exit' auto_size='true' width='95' height='95' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='187' y='0' clip_width='95' clip_height='95' spritepos='exit' auto_size='true' width='95' height='95' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='level_exit.next_level'>
 <string value='level/level_3.cl'/>
@@ -28132,7 +28132,7 @@
 <integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='248' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='283' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='3004'/>
@@ -28161,7 +28161,7 @@
 <integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='51' y='101' clip_width='200' clip_height='50' spritepos='platform' auto_size='true' width='200' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='86' y='101' clip_width='200' clip_height='50' spritepos='platform' auto_size='true' width='200' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='4154'/>
@@ -28313,7 +28313,7 @@
 <integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='248' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='283' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='3004'/>
@@ -29541,7 +29541,7 @@
 <bool value='1'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='86' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='4307'/>
@@ -29815,7 +29815,7 @@
 <bool value='1'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='86' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='item_with_restricted_z_collision.max_z_for_collision'>
 <integer value='-1000'/>
@@ -30361,7 +30361,7 @@
 <color opacity='1' red_intensity='1' green_intensity='0.996078' blue_intensity='0'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='375' y='0' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='410' y='0' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- tunnel::crystal -->
@@ -30418,7 +30418,7 @@
 <bool value='1'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='86' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.mass'>
 <real value='400'/>
@@ -30706,7 +30706,7 @@
 <color opacity='1' red_intensity='1' green_intensity='0.996078' blue_intensity='0'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='375' y='0' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='410' y='0' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- tunnel::crystal -->
@@ -30936,7 +30936,7 @@
 <bool value='1'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='86' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='true' width='100' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='item_with_restricted_z_collision.max_z_for_collision'>
 <integer value='-1000'/>
@@ -31196,7 +31196,7 @@
 <real value='0.95'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='51' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='false' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='86' y='0' clip_width='100' clip_height='100' spritepos='block' auto_size='false' width='200' height='100' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='4289'/>
@@ -33175,7 +33175,7 @@
 <color opacity='1' red_intensity='1' green_intensity='0.996078' blue_intensity='0'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='375' y='0' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='410' y='0' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- tunnel::crystal -->
@@ -34113,7 +34113,7 @@
 <integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='51' y='101' clip_width='200' clip_height='50' spritepos='platform' auto_size='true' width='200' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='86' y='101' clip_width='200' clip_height='50' spritepos='platform' auto_size='true' width='200' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='4954'/>
@@ -34174,7 +34174,7 @@
 <color opacity='1' red_intensity='1' green_intensity='0.996078' blue_intensity='0'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='375' y='0' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='410' y='0' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- tunnel::crystal -->
@@ -35879,7 +35879,7 @@
 <integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='248' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='283' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='1604'/>
@@ -35983,7 +35983,7 @@
 <integer value='-10'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='248' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='283' y='0' clip_width='126' clip_height='64' spritepos='spikes' auto_size='true' width='126' height='64' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 <field name='base_item.position.bottom'>
 <real value='1604'/>
@@ -37537,7 +37537,7 @@
 <color opacity='1' red_intensity='1' green_intensity='0.996078' blue_intensity='0'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='375' y='0' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='410' y='0' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- tunnel::crystal -->
@@ -48281,9 +48281,6 @@
 <items>
     <item class_name='bear::decorative_item' fixed='true'>
 <fields>
-<field name='base_item.position.left'>
-<real value='0'/>
-</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/effect/screen.png' x='0' y='0' clip_width='255' clip_height='360' spritepos='screen' auto_size='true' width='255' height='360' mirror='boolean_false' flip='boolean_true' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -48294,9 +48291,6 @@
 <fields>
 <field name='base_item.position.bottom'>
 <real value='360'/>
-</field>
-<field name='base_item.position.left'>
-<real value='0'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/effect/screen.png' x='0' y='0' clip_width='255' clip_height='360' spritepos='screen' auto_size='true' width='255' height='360' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>

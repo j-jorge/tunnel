@@ -3265,7 +3265,7 @@
 <bool value='1'/>
 </field>
 <field name='item_with_decoration.sprite'>
-<sprite image='gfx/common/common-1.png' x='375' y='0' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
+<sprite image='gfx/common/common-1.png' x='410' y='0' clip_width='50' clip_height='50' spritepos='crystal' auto_size='true' width='50' height='50' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
 </fields>
     </item><!-- tunnel::crystal -->
@@ -3648,9 +3648,6 @@
 <items>
     <item class_name='bear::decorative_item' fixed='true'>
 <fields>
-<field name='base_item.position.left'>
-<real value='0'/>
-</field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/effect/screen.png' x='0' y='0' clip_width='255' clip_height='360' spritepos='screen' auto_size='true' width='255' height='360' mirror='boolean_false' flip='boolean_true' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
 </field>
@@ -3661,9 +3658,6 @@
 <fields>
 <field name='base_item.position.bottom'>
 <real value='360'/>
-</field>
-<field name='base_item.position.left'>
-<real value='0'/>
 </field>
 <field name='item_with_decoration.sprite'>
 <sprite image='gfx/effect/screen.png' x='0' y='0' clip_width='255' clip_height='360' spritepos='screen' auto_size='true' width='255' height='360' mirror='boolean_false' flip='boolean_false' angle='0' opacity='1' red_intensity='1' green_intensity='1' blue_intensity='1'/>
